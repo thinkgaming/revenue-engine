@@ -1,270 +1,0 @@
-TThinkGaming
-v5
-r1
-cCheck dependencies
-cProcessPCH /var/folders/6p/mh6f0l0n6l7fn2qhdms2pmzw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/ThinkGaming-Prefix-dyukomuygxgnawffidtzifsqxxug/ThinkGaming-Prefix.pch.pth ThinkGaming/ThinkGaming-Prefix.pch normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cProcessPCH /var/folders/6p/mh6f0l0n6l7fn2qhdms2pmzw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/ThinkGaming-Prefix-ayqjvlrxsodojafixqfdflslzezz/ThinkGaming-Prefix.pch.pth ThinkGaming/ThinkGaming-Prefix.pch normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/Objects-normal/armv7/ThinkGaming.o "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming.m" normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/Objects-normal/armv7s/ThinkGaming.o "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming.m" normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cLibtool "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/Objects-normal/armv7/libThinkGaming.a" normal armv7
-cLibtool "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/Objects-normal/armv7s/libThinkGaming.a" normal armv7s
-cCreateUniversalBinary "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/Release-iphoneos/libThinkGaming.a" normal "armv7 armv7s"
-cPBXCp ThinkGaming/ThinkGaming.h build/Release-iphoneos/include/ThinkGaming/ThinkGaming.h
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk
-c0000000050ED385D0000000000000110
-t1357723741
-s272
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/AdSupport.framework/AdSupport
-c00000000516D37380000000000008BE0
-t1366112056
-s35808
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/Foundation.framework/Foundation
-c00000000516D373A000000000062AD10
-t1366112058
-s6466832
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
-c00000000516D373A00000000000015F7
-t1366112058
-s5623
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/UIKit.framework/UIKit
-c00000000516D373C00000000011BCDF0
-t1366112060
-s18599408
-
-N/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/../AFNetworking/AFHTTPClient.h
-c00000000518A70A00000000000009528
-t1368027296
-s38184
-
-N/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/../AFNetworking/AFHTTPRequestOperation.h
-c00000000518A70A00000000000001907
-t1368027296
-s6407
-
-N/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/../AFNetworking/AFJSONRequestOperation.h
-c00000000518A70A00000000000000E83
-t1368027296
-s3715
-
-N/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/../AFNetworking/AFURLConnectionOperation.h
-c00000000518A70A00000000000004E1A
-t1368027296
-s19994
-
-N/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/../Reachabilty/Reachability.h
-c000000004F90DE700000000000001D26
-t1334894192
-s7462
-
-N/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming-Prefix.pch
-c00000000518D122800000000000000A3
-t1368199720
-s163
-i<Foundation/Foundation.h>
-
-N/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming.h
-c00000000519A249D0000000000000384
-t1369056413
-s900
-
-N/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming.m
-c00000000519A3A9B0000000000001DD3
-t1369062043
-s7635
-
-N/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/Release-iphoneos/include/ThinkGaming/ThinkGaming.h
-t1369058915
-s900
-
-N/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/Release-iphoneos/libThinkGaming.a
-t2
-s0
-
-N/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/Objects-normal/armv7/ThinkGaming.LinkFileList
-c00000000519A3AA5000000000000009B
-t1369062053
-s155
-
-N/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/Objects-normal/armv7/ThinkGaming.o
-t2
-s0
-
-N/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/Objects-normal/armv7/libThinkGaming.a
-t2
-s0
-
-N/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/Objects-normal/armv7s/ThinkGaming.LinkFileList
-c00000000519A3AA5000000000000009C
-t1369062053
-s156
-
-N/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/Objects-normal/armv7s/ThinkGaming.o
-t2
-s0
-
-N/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/Objects-normal/armv7s/libThinkGaming.a
-t2
-s0
-
-N/var/folders/6p/mh6f0l0n6l7fn2qhdms2pmzw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/ThinkGaming-Prefix-ayqjvlrxsodojafixqfdflslzezz/ThinkGaming-Prefix.pch.pth
-t2
-s0
-
-N/var/folders/6p/mh6f0l0n6l7fn2qhdms2pmzw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/ThinkGaming-Prefix-chsfbbuavjeqwaehexfwhibxmzjg/ThinkGaming-Prefix.pch.pth
-t2
-s0
-
-N/var/folders/6p/mh6f0l0n6l7fn2qhdms2pmzw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/ThinkGaming-Prefix-dyukomuygxgnawffidtzifsqxxug/ThinkGaming-Prefix.pch.pth
-t2
-s0
-
-N/var/folders/6p/mh6f0l0n6l7fn2qhdms2pmzw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/ThinkGaming-Prefix-glbwxbgqvyvgqiccxtntinknussp/ThinkGaming-Prefix.pch.pth
-t2
-s0
-
-CCheck dependencies
-r0
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies779f8b25724ab741^43589525724ab741^---0#1#0#--18"Check dependencies36"7AB1F6F4-4A88-40E7-840C-4EC32A43BBC5-
-
-CCompileC build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/Objects-normal/armv7/ThinkGaming.o "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming.m" normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s390754853.800660
-e390754854.029009
-r1
-xCompileC
-xbuild/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/Objects-normal/armv7/ThinkGaming.o
-x/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming.m
-xnormal
-xarmv7
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-oIn file included from /Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming.m:8:
-oIn file included from /Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming.h:11:
-o/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/../AFNetworking/AFHTTPClient.h:84:9: warning: SystemConfiguration framework not found in project, or not included in precompiled header. Network reachability functionality will not be available. [-W#pragma-messages]
-o#pragma message("SystemConfiguration framework not found in project, or not included in precompiled header. Network reachability functionality will not be available.")
-o        ^
-o/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/../AFNetworking/AFHTTPClient.h:89:9: warning: MobileCoreServices framework not found in project, or not included in precompiled header. Automatic MIME type detection when uploading files in multipart requests will not be available. [-W#pragma-messages]
-o#pragma message("MobileCoreServices framework not found in project, or not included in precompiled header. Automatic MIME type detection when uploading files in multipart requests will not be available.")
-o        ^
-o2 warnings generated.
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection94"Compile /Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming.mcc5fcd25724ab741^a06b0726724ab741^-1231"In file included from /Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming.m:8:In file included from /Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming.h:11:/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/../AFNetworking/AFHTTPClient.h:84:9: warning: SystemConfiguration framework not found in project, or not included in precompiled header. Network reachability functionality will not be available. [-W#pragma-messages]#pragma message("SystemConfiguration framework not found in project, or not included in precompiled header. Network reachability functionality will not be available.")        ^/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/../AFNetworking/AFHTTPClient.h:89:9: warning: MobileCoreServices framework not found in project, or not included in precompiled header. Automatic MIME type detection when uploading files in multipart requests will not be available. [-W#pragma-messages]#pragma message("MobileCoreServices framework not found in project, or not included in precompiled header. Automatic MIME type detection when uploading files in multipart requests will not be available.")        ^2 warnings generated.2(36%IDEClangDiagnosticActivityLogMessage2@148"SystemConfiguration framework not found in project, or not included in precompiled header. Network reachability functionality will not be available.-390754854#18446744073709551615#0#2(2@111"In file included from /Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming.m:8:-390754854#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@104"file://localhost/Volumes/Macintosh%20HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming.m0000000000000000^7#8#7#8#109#0#30"Apple LLVM compiler 4.2 Notice--2@112"In file included from /Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming.h:11:-390754854#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@104"file://localhost/Volumes/Macintosh%20HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming.h0000000000000000^10#8#10#8#168#0#30"Apple LLVM compiler 4.2 Notice--1#27"com.apple.dt.IDE.diagnostic3@94"file://localhost/Volumes/Macintosh%20HD/Users/dan/Code/ThinkGaming/AFNetworking/AFHTTPClient.h0000000000000000^83#8#83#8#4897#0#25"#pragma message Directive--2@185"MobileCoreServices framework not found in project, or not included in precompiled header. Automatic MIME type detection when uploading files in multipart requests will not be available.-390754854#18446744073709551615#0#2(2@111"In file included from /Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming.m:8:-390754854#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@104"file://localhost/Volumes/Macintosh%20HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming.m0000000000000000^7#8#7#8#109#0#30"Apple LLVM compiler 4.2 Notice--2@112"In file included from /Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming.h:11:-390754854#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@104"file://localhost/Volumes/Macintosh%20HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming.h0000000000000000^10#8#10#8#168#0#30"Apple LLVM compiler 4.2 Notice--1#27"com.apple.dt.IDE.diagnostic3@94"file://localhost/Volumes/Macintosh%20HD/Users/dan/Code/ThinkGaming/AFNetworking/AFHTTPClient.h0000000000000000^88#8#88#8#5129#0#25"#pragma message Directive--0#0#0#-19%DVTDocumentLocation4@104"file://localhost/Volumes/Macintosh%20HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming.m0000000000000000^3510"CompileC build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/Objects-normal/armv7/ThinkGaming.o ThinkGaming/ThinkGaming.m normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming"    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch armv7 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -miphoneos-version-min=6.0 -iquote "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/ThinkGaming-generated-files.hmap" "-I/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/ThinkGaming-own-target-headers.hmap" "-I/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/ThinkGaming-all-target-headers.hmap" -iquote "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/ThinkGaming-project-headers.hmap" "-I/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/Release-iphoneos/include" -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include "-I/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/DerivedSources/armv7" "-I/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/DerivedSources" "-F/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/Release-iphoneos" -include /var/folders/6p/mh6f0l0n6l7fn2qhdms2pmzw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/ThinkGaming-Prefix-ayqjvlrxsodojafixqfdflslzezz/ThinkGaming-Prefix.pch -MMD -MT dependencies -MF "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/Objects-normal/armv7/ThinkGaming.d" --serialize-diagnostics "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/Objects-normal/armv7/ThinkGaming.dia" -c "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming.m" -o "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/Objects-normal/armv7/ThinkGaming.o"36"436547DD-5807-4B2A-AC08-433EEC1F624D-
-
-CCompileC build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/Objects-normal/armv7s/ThinkGaming.o "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming.m" normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s390754853.828156
-e390754854.038911
-r1
-xCompileC
-xbuild/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/Objects-normal/armv7s/ThinkGaming.o
-x/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming.m
-xnormal
-xarmv7s
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-oIn file included from /Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming.m:8:
-oIn file included from /Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming.h:11:
-o/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/../AFNetworking/AFHTTPClient.h:84:9: warning: SystemConfiguration framework not found in project, or not included in precompiled header. Network reachability functionality will not be available. [-W#pragma-messages]
-o#pragma message("SystemConfiguration framework not found in project, or not included in precompiled header. Network reachability functionality will not be available.")
-o        ^
-o/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/../AFNetworking/AFHTTPClient.h:89:9: warning: MobileCoreServices framework not found in project, or not included in precompiled header. Automatic MIME type detection when uploading files in multipart requests will not be available. [-W#pragma-messages]
-o#pragma message("MobileCoreServices framework not found in project, or not included in precompiled header. Automatic MIME type detection when uploading files in multipart requests will not be available.")
-o        ^
-o2 warnings generated.
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection94"Compile /Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming.m7cb4d425724ab741^e9f30926724ab741^-1231"In file included from /Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming.m:8:In file included from /Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming.h:11:/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/../AFNetworking/AFHTTPClient.h:84:9: warning: SystemConfiguration framework not found in project, or not included in precompiled header. Network reachability functionality will not be available. [-W#pragma-messages]#pragma message("SystemConfiguration framework not found in project, or not included in precompiled header. Network reachability functionality will not be available.")        ^/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/../AFNetworking/AFHTTPClient.h:89:9: warning: MobileCoreServices framework not found in project, or not included in precompiled header. Automatic MIME type detection when uploading files in multipart requests will not be available. [-W#pragma-messages]#pragma message("MobileCoreServices framework not found in project, or not included in precompiled header. Automatic MIME type detection when uploading files in multipart requests will not be available.")        ^2 warnings generated.2(36%IDEClangDiagnosticActivityLogMessage2@148"SystemConfiguration framework not found in project, or not included in precompiled header. Network reachability functionality will not be available.-390754854#18446744073709551615#0#2(2@111"In file included from /Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming.m:8:-390754854#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@104"file://localhost/Volumes/Macintosh%20HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming.m0000000000000000^7#8#7#8#109#0#30"Apple LLVM compiler 4.2 Notice--2@112"In file included from /Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming.h:11:-390754854#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@104"file://localhost/Volumes/Macintosh%20HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming.h0000000000000000^10#8#10#8#168#0#30"Apple LLVM compiler 4.2 Notice--1#27"com.apple.dt.IDE.diagnostic3@94"file://localhost/Volumes/Macintosh%20HD/Users/dan/Code/ThinkGaming/AFNetworking/AFHTTPClient.h0000000000000000^83#8#83#8#4897#0#25"#pragma message Directive--2@185"MobileCoreServices framework not found in project, or not included in precompiled header. Automatic MIME type detection when uploading files in multipart requests will not be available.-390754854#18446744073709551615#0#2(2@111"In file included from /Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming.m:8:-390754854#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@104"file://localhost/Volumes/Macintosh%20HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming.m0000000000000000^7#8#7#8#109#0#30"Apple LLVM compiler 4.2 Notice--2@112"In file included from /Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming.h:11:-390754854#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@104"file://localhost/Volumes/Macintosh%20HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming.h0000000000000000^10#8#10#8#168#0#30"Apple LLVM compiler 4.2 Notice--1#27"com.apple.dt.IDE.diagnostic3@94"file://localhost/Volumes/Macintosh%20HD/Users/dan/Code/ThinkGaming/AFNetworking/AFHTTPClient.h0000000000000000^88#8#88#8#5129#0#25"#pragma message Directive--0#0#0#-19%DVTDocumentLocation4@104"file://localhost/Volumes/Macintosh%20HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming.m0000000000000000^3517"CompileC build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/Objects-normal/armv7s/ThinkGaming.o ThinkGaming/ThinkGaming.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming"    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch armv7s -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -miphoneos-version-min=6.0 -iquote "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/ThinkGaming-generated-files.hmap" "-I/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/ThinkGaming-own-target-headers.hmap" "-I/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/ThinkGaming-all-target-headers.hmap" -iquote "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/ThinkGaming-project-headers.hmap" "-I/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/Release-iphoneos/include" -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include "-I/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/DerivedSources/armv7s" "-I/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/DerivedSources" "-F/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/Release-iphoneos" -include /var/folders/6p/mh6f0l0n6l7fn2qhdms2pmzw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/ThinkGaming-Prefix-dyukomuygxgnawffidtzifsqxxug/ThinkGaming-Prefix.pch -MMD -MT dependencies -MF "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/Objects-normal/armv7s/ThinkGaming.d" --serialize-diagnostics "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/Objects-normal/armv7s/ThinkGaming.dia" -c "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming.m" -o "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/Objects-normal/armv7s/ThinkGaming.o"36"8119834E-83B7-400F-9EC6-D2AC2FE9EE9C-
-
-CCreateUniversalBinary "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/Release-iphoneos/libThinkGaming.a" normal "armv7 armv7s"
-s390754854.063563
-e390754854.077414
-r1
-xCreateUniversalBinary
-x/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/Release-iphoneos/libThinkGaming.a
-xnormal
-xarmv7 armv7s
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection124"Create universal binary /Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/Release-iphoneos/libThinkGaming.a399d1026724ab741^18d01326724ab741^---0#0#0#-19%DVTDocumentLocation2@118"file://localhost/Volumes/Macintosh%20HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/Release-iphoneos/libThinkGaming.a000000000080d041^601"CreateUniversalBinary build/Release-iphoneos/libThinkGaming.a normal "armv7 armv7s"    cd "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming"    libtool -static "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/Objects-normal/armv7/libThinkGaming.a" "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/Objects-normal/armv7s/libThinkGaming.a" -o "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/Release-iphoneos/libThinkGaming.a"36"437D5672-1F6A-4FFD-AE46-7B9C29D9B03D-
-
-CLibtool "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/Objects-normal/armv7/libThinkGaming.a" normal armv7
-s390754854.035801
-e390754854.046611
-r1
-xLibtool
-x/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/Objects-normal/armv7/libThinkGaming.a
-xnormal
-xarmv7
-o/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool: -dynamic not specified the following flags are invalid: -ObjC 
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection117"Libtool build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/Objects-normal/armv7/libThinkGaming.a normal armv7c9920926724ab741^07ef0b26724ab741^-159"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool: -dynamic not specified the following flags are invalid: -ObjC -0#0#0#--963"Libtool build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/Objects-normal/armv7/libThinkGaming.a normal armv7    cd "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming"    setenv IPHONEOS_DEPLOYMENT_TARGET 6.0    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool -static -arch_only armv7 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk "-L/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/Release-iphoneos" -filelist "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/Objects-normal/armv7/ThinkGaming.LinkFileList" -ObjC -framework AdSupport -framework UIKit -framework Foundation -o "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/Objects-normal/armv7/libThinkGaming.a"36"3BE8E41A-32BC-4446-B505-4C4EE1130A25-
-
-CLibtool "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/Objects-normal/armv7s/libThinkGaming.a" normal armv7s
-s390754854.046132
-e390754854.056721
-r1
-xLibtool
-x/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/Objects-normal/armv7s/libThinkGaming.a
-xnormal
-xarmv7s
-o/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool: -dynamic not specified the following flags are invalid: -ObjC 
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection119"Libtool build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/Objects-normal/armv7s/libThinkGaming.a normal armv7s68410c26724ab741^ad880e26724ab741^-159"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool: -dynamic not specified the following flags are invalid: -ObjC -0#0#0#--968"Libtool build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/Objects-normal/armv7s/libThinkGaming.a normal armv7s    cd "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming"    setenv IPHONEOS_DEPLOYMENT_TARGET 6.0    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool -static -arch_only armv7s -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk "-L/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/Release-iphoneos" -filelist "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/Objects-normal/armv7s/ThinkGaming.LinkFileList" -ObjC -framework AdSupport -framework UIKit -framework Foundation -o "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/Objects-normal/armv7s/libThinkGaming.a"36"77D47643-91E2-4E3F-AFDC-83C8713BD7DA-
-
-CPBXCp ThinkGaming/ThinkGaming.h build/Release-iphoneos/include/ThinkGaming/ThinkGaming.h
-s390751715.245233
-e390751715.248644
-r1
-xPBXCp
-xThinkGaming/ThinkGaming.h
-xbuild/Release-iphoneos/include/ThinkGaming/ThinkGaming.h
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection61"Copy build/Release-iphoneos/include/ThinkGaming/ThinkGaming.hb3253fe3654ab741^76a73fe3654ab741^---0#0#0#-19%DVTDocumentLocation2@135"file://localhost/Volumes/Macintosh%20HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/Release-iphoneos/include/ThinkGaming/ThinkGaming.h000000000080d041^1491"PBXCp ThinkGaming/ThinkGaming.h build/Release-iphoneos/include/ThinkGaming/ThinkGaming.h    cd "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming"    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/libexec:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/local/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Tools:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-debug-symbols -strip-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming.h" "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/Release-iphoneos/include/ThinkGaming"36"F446206A-7CE5-4291-8837-2A8347FE647A-
-
-CProcessPCH /var/folders/6p/mh6f0l0n6l7fn2qhdms2pmzw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/ThinkGaming-Prefix-ayqjvlrxsodojafixqfdflslzezz/ThinkGaming-Prefix.pch.pth ThinkGaming/ThinkGaming-Prefix.pch normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s390754853.588407
-e390754853.793890
-r1
-xProcessPCH
-x/var/folders/6p/mh6f0l0n6l7fn2qhdms2pmzw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/ThinkGaming-Prefix-ayqjvlrxsodojafixqfdflslzezz/ThinkGaming-Prefix.pch.pth
-xThinkGaming/ThinkGaming-Prefix.pch
-xnormal
-xarmv7
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection45"Precompile ThinkGaming/ThinkGaming-Prefix.pch0e159725724ab741^603ccb25724ab741^---0#0#0#-19%DVTDocumentLocation2@113"file://localhost/Volumes/Macintosh%20HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming-Prefix.pch0000000000000000^3470"ProcessPCH /var/folders/6p/mh6f0l0n6l7fn2qhdms2pmzw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/ThinkGaming-Prefix-ayqjvlrxsodojafixqfdflslzezz/ThinkGaming-Prefix.pch.pth ThinkGaming/ThinkGaming-Prefix.pch normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming"    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch armv7 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -miphoneos-version-min=6.0 -iquote "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/ThinkGaming-generated-files.hmap" "-I/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/ThinkGaming-own-target-headers.hmap" "-I/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/ThinkGaming-all-target-headers.hmap" -iquote "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/ThinkGaming-project-headers.hmap" "-I/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/Release-iphoneos/include" -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include "-I/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/DerivedSources/armv7" "-I/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/DerivedSources" "-F/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/Release-iphoneos" --serialize-diagnostics /var/folders/6p/mh6f0l0n6l7fn2qhdms2pmzw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/ThinkGaming-Prefix-ayqjvlrxsodojafixqfdflslzezz/ThinkGaming-Prefix.pch.dia -c "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming-Prefix.pch" -o /var/folders/6p/mh6f0l0n6l7fn2qhdms2pmzw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/ThinkGaming-Prefix-ayqjvlrxsodojafixqfdflslzezz/ThinkGaming-Prefix.pch.pth -MMD -MT dependencies -MF /var/folders/6p/mh6f0l0n6l7fn2qhdms2pmzw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/ThinkGaming-Prefix-ayqjvlrxsodojafixqfdflslzezz/ThinkGaming-Prefix.pch.d36"462C1C01-0498-4522-9962-2B1BED7D4C44-
-
-CProcessPCH /var/folders/6p/mh6f0l0n6l7fn2qhdms2pmzw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/ThinkGaming-Prefix-chsfbbuavjeqwaehexfwhibxmzjg/ThinkGaming-Prefix.pch.pth ThinkGaming/ThinkGaming-Prefix.pch normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s390751815.283480
-e390751815.482249
-r1
-xProcessPCH
-x/var/folders/6p/mh6f0l0n6l7fn2qhdms2pmzw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/ThinkGaming-Prefix-chsfbbuavjeqwaehexfwhibxmzjg/ThinkGaming-Prefix.pch.pth
-xThinkGaming/ThinkGaming-Prefix.pch
-xnormal
-xarmv7
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection45"Precompile ThinkGaming/ThinkGaming-Prefix.pchbd384947664ab741^4b737b47664ab741^---0#0#0#-19%DVTDocumentLocation2@113"file://localhost/Volumes/Macintosh%20HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming-Prefix.pch0000000000000000^4390"ProcessPCH /var/folders/6p/mh6f0l0n6l7fn2qhdms2pmzw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/ThinkGaming-Prefix-chsfbbuavjeqwaehexfwhibxmzjg/ThinkGaming-Prefix.pch.pth ThinkGaming/ThinkGaming-Prefix.pch normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming"    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/libexec:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/local/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Tools:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch armv7 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -miphoneos-version-min=6.1 -iquote "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/ThinkGaming-generated-files.hmap" "-I/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/ThinkGaming-own-target-headers.hmap" "-I/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/ThinkGaming-all-target-headers.hmap" -iquote "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/ThinkGaming-project-headers.hmap" "-I/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/Release-iphoneos/include" -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include "-I/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/DerivedSources/armv7" "-I/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/DerivedSources" "-F/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/Release-iphoneos" --serialize-diagnostics /var/folders/6p/mh6f0l0n6l7fn2qhdms2pmzw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/ThinkGaming-Prefix-chsfbbuavjeqwaehexfwhibxmzjg/ThinkGaming-Prefix.pch.dia -c "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming-Prefix.pch" -o /var/folders/6p/mh6f0l0n6l7fn2qhdms2pmzw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/ThinkGaming-Prefix-chsfbbuavjeqwaehexfwhibxmzjg/ThinkGaming-Prefix.pch.pth -MMD -MT dependencies -MF /var/folders/6p/mh6f0l0n6l7fn2qhdms2pmzw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/ThinkGaming-Prefix-chsfbbuavjeqwaehexfwhibxmzjg/ThinkGaming-Prefix.pch.d36"0C99E976-2D15-441A-8FE3-3AA8DCF5368C-
-
-CProcessPCH /var/folders/6p/mh6f0l0n6l7fn2qhdms2pmzw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/ThinkGaming-Prefix-dyukomuygxgnawffidtzifsqxxug/ThinkGaming-Prefix.pch.pth ThinkGaming/ThinkGaming-Prefix.pch normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s390754853.588394
-e390754853.820380
-r1
-xProcessPCH
-x/var/folders/6p/mh6f0l0n6l7fn2qhdms2pmzw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/ThinkGaming-Prefix-dyukomuygxgnawffidtzifsqxxug/ThinkGaming-Prefix.pch.pth
-xThinkGaming/ThinkGaming-Prefix.pch
-xnormal
-xarmv7s
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection45"Precompile ThinkGaming/ThinkGaming-Prefix.pchec149725724ab741^1405d225724ab741^---0#0#0#-19%DVTDocumentLocation2@113"file://localhost/Volumes/Macintosh%20HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming-Prefix.pch0000000000000000^3473"ProcessPCH /var/folders/6p/mh6f0l0n6l7fn2qhdms2pmzw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/ThinkGaming-Prefix-dyukomuygxgnawffidtzifsqxxug/ThinkGaming-Prefix.pch.pth ThinkGaming/ThinkGaming-Prefix.pch normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming"    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch armv7s -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -miphoneos-version-min=6.0 -iquote "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/ThinkGaming-generated-files.hmap" "-I/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/ThinkGaming-own-target-headers.hmap" "-I/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/ThinkGaming-all-target-headers.hmap" -iquote "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/ThinkGaming-project-headers.hmap" "-I/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/Release-iphoneos/include" -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include "-I/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/DerivedSources/armv7s" "-I/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/DerivedSources" "-F/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/Release-iphoneos" --serialize-diagnostics /var/folders/6p/mh6f0l0n6l7fn2qhdms2pmzw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/ThinkGaming-Prefix-dyukomuygxgnawffidtzifsqxxug/ThinkGaming-Prefix.pch.dia -c "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming-Prefix.pch" -o /var/folders/6p/mh6f0l0n6l7fn2qhdms2pmzw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/ThinkGaming-Prefix-dyukomuygxgnawffidtzifsqxxug/ThinkGaming-Prefix.pch.pth -MMD -MT dependencies -MF /var/folders/6p/mh6f0l0n6l7fn2qhdms2pmzw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/ThinkGaming-Prefix-dyukomuygxgnawffidtzifsqxxug/ThinkGaming-Prefix.pch.d36"760B6250-96CF-4DED-AEF4-6E83FF5DBA14-
-
-CProcessPCH /var/folders/6p/mh6f0l0n6l7fn2qhdms2pmzw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/ThinkGaming-Prefix-glbwxbgqvyvgqiccxtntinknussp/ThinkGaming-Prefix.pch.pth ThinkGaming/ThinkGaming-Prefix.pch normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s390751815.283508
-e390751815.491559
-r1
-xProcessPCH
-x/var/folders/6p/mh6f0l0n6l7fn2qhdms2pmzw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/ThinkGaming-Prefix-glbwxbgqvyvgqiccxtntinknussp/ThinkGaming-Prefix.pch.pth
-xThinkGaming/ThinkGaming-Prefix.pch
-xnormal
-xarmv7s
-xobjective-c
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection45"Precompile ThinkGaming/ThinkGaming-Prefix.pch0d364947664ab741^0ad97d47664ab741^---0#0#0#-19%DVTDocumentLocation2@113"file://localhost/Volumes/Macintosh%20HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming-Prefix.pch0000000000000000^4393"ProcessPCH /var/folders/6p/mh6f0l0n6l7fn2qhdms2pmzw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/ThinkGaming-Prefix-glbwxbgqvyvgqiccxtntinknussp/ThinkGaming-Prefix.pch.pth ThinkGaming/ThinkGaming-Prefix.pch normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming"    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/libexec:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/local/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Tools:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch armv7s -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wenum-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -miphoneos-version-min=6.1 -iquote "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/ThinkGaming-generated-files.hmap" "-I/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/ThinkGaming-own-target-headers.hmap" "-I/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/ThinkGaming-all-target-headers.hmap" -iquote "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/ThinkGaming-project-headers.hmap" "-I/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/Release-iphoneos/include" -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include "-I/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/DerivedSources/armv7s" "-I/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/ThinkGaming.build/Release-iphoneos/ThinkGaming.build/DerivedSources" "-F/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/build/Release-iphoneos" --serialize-diagnostics /var/folders/6p/mh6f0l0n6l7fn2qhdms2pmzw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/ThinkGaming-Prefix-glbwxbgqvyvgqiccxtntinknussp/ThinkGaming-Prefix.pch.dia -c "/Volumes/Macintosh HD/Users/dan/Code/ThinkGaming/ThinkGaming/ThinkGaming/ThinkGaming-Prefix.pch" -o /var/folders/6p/mh6f0l0n6l7fn2qhdms2pmzw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/ThinkGaming-Prefix-glbwxbgqvyvgqiccxtntinknussp/ThinkGaming-Prefix.pch.pth -MMD -MT dependencies -MF /var/folders/6p/mh6f0l0n6l7fn2qhdms2pmzw0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/ThinkGaming-Prefix-glbwxbgqvyvgqiccxtntinknussp/ThinkGaming-Prefix.pch.d36"61083403-0CE7-434D-AB19-5FBCBDEF1256-
-
