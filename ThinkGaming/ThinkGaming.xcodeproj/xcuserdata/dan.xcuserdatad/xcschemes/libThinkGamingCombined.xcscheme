@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3738D3C1174A65620088D46B"
-               BuildableName = "libThinkGamingCombo"
+               BuildableName = "libThinkGamingCombined"
                BlueprintName = "libThinkGamingCombined"
                ReferencedContainer = "container:ThinkGaming.xcodeproj">
             </BuildableReference>

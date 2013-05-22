@@ -315,7 +315,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "XCODEBUILD_PATH=/Applications/Xcode.app/Contents/Developer/usr/bin\nXCODEBUILD=$XCODEBUILD_PATH/xcodebuild\n\n#$XCODEBUILD -project ThinkGaming.xcodeproj -target \"ThinkGaming\" -sdk \"iphonesimulator\" -configuration \"Debug\" clean build\n#$XCODEBUILD -project ThinkGaming.xcodeproj -target \"ThinkGaming\" -sdk \"iphoneos\" -configuration \"Debug\" clean build\n\nXCODEBUILD -project ThinkGaming.xcodeproj -configuration \"${CONFIGURATION}\" -target \"ThinkGaming\" -sdk \"iphoneos\" ${ACTION} RUN_CLANG_STATIC_ANALYZER=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\nXCODEBUILD -project ThinkGaming.xcodeproj -configuration \"${CONFIGURATION}\" -target \"ThinkGaming\" -sdk \"iphonesimulator\" ${ACTION} RUN_CLANG_STATIC_ANALYZER=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n\nlipo -create -output \"${BUILT_PRODUCTS_DIR}/../libThinkGaming.a\" \"${BUILT_PRODUCTS_DIR}/../Debug-iphoneos/libThinkGaming.a\" \"${BUILT_PRODUCTS_DIR}/../Debug-iphonesimulator/libThinkGaming.a\"";
+			shellScript = "XCODEBUILD_PATH=/Applications/Xcode.app/Contents/Developer/usr/bin\nXCODEBUILD=$XCODEBUILD_PATH/xcodebuild\n\n#$XCODEBUILD -project ThinkGaming.xcodeproj -target \"ThinkGaming\" -sdk \"iphonesimulator\" -configuration \"Debug\" clean build\n#$XCODEBUILD -project ThinkGaming.xcodeproj -target \"ThinkGaming\" -sdk \"iphoneos\" -configuration \"Debug\" clean build\n\nXCODEBUILD -project ThinkGaming.xcodeproj -configuration \"Release\" -target \"ThinkGaming\" -sdk \"iphoneos\" ${ACTION} RUN_CLANG_STATIC_ANALYZER=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\nXCODEBUILD -project ThinkGaming.xcodeproj -configuration \"Release\" -target \"ThinkGaming\" -sdk \"iphonesimulator\" ${ACTION} RUN_CLANG_STATIC_ANALYZER=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n\nmkdir -p \"${SRCROOT}/libs\"\ncp \"${SRCROOT}/ThinkGaming/ThinkGaming.h\" \"${SRCROOT}/libs/\"\n\nlipo -create -output \"${SRCROOT}/libs/libThinkGaming.a\" \"${BUILT_PRODUCTS_DIR}/../Release-iphoneos/libThinkGaming.a\" \"${BUILT_PRODUCTS_DIR}/../Release-iphonesimulator/libThinkGaming.a\"";
 		};
 		3738D3E5174C02A60088D46B /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -328,7 +328,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "XCODEBUILD_PATH=/Applications/Xcode.app/Contents/Developer/usr/bin\nXCODEBUILD=$XCODEBUILD_PATH/xcodebuild\n\n#$XCODEBUILD -project ThinkGaming.xcodeproj -target \"ThinkGaming\" -sdk \"iphonesimulator\" -configuration \"Debug\" clean build\n#$XCODEBUILD -project ThinkGaming.xcodeproj -target \"ThinkGaming\" -sdk \"iphoneos\" -configuration \"Debug\" clean build\n\nXCODEBUILD -project ThinkGaming.xcodeproj -configuration \"${CONFIGURATION}\" -target \"ThinkGamingAF\" -sdk \"iphoneos\" ${ACTION} RUN_CLANG_STATIC_ANALYZER=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\nXCODEBUILD -project ThinkGaming.xcodeproj -configuration \"${CONFIGURATION}\" -target \"ThinkGamingAF\" -sdk \"iphonesimulator\" ${ACTION} RUN_CLANG_STATIC_ANALYZER=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n\nlipo -create -output \"${BUILT_PRODUCTS_DIR}/../libThinkGaming.a\" \"${BUILT_PRODUCTS_DIR}/../Debug-iphoneos/libThinkGamingAF.a\" \"${BUILT_PRODUCTS_DIR}/../Debug-iphonesimulator/libThinkGamingAF.a\"";
+			shellScript = "XCODEBUILD_PATH=/Applications/Xcode.app/Contents/Developer/usr/bin\nXCODEBUILD=$XCODEBUILD_PATH/xcodebuild\n\n#$XCODEBUILD -project ThinkGaming.xcodeproj -target \"ThinkGaming\" -sdk \"iphonesimulator\" -configuration \"Debug\" clean build\n#$XCODEBUILD -project ThinkGaming.xcodeproj -target \"ThinkGaming\" -sdk \"iphoneos\" -configuration \"Debug\" clean build\n\nXCODEBUILD -project ThinkGaming.xcodeproj -configuration \"Release\" -target \"ThinkGamingAF\" -sdk \"iphoneos\" ${ACTION} RUN_CLANG_STATIC_ANALYZER=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\nXCODEBUILD -project ThinkGaming.xcodeproj -configuration \"Release\" -target \"ThinkGamingAF\" -sdk \"iphonesimulator\" ${ACTION} RUN_CLANG_STATIC_ANALYZER=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n\nmkdir -p \"${SRCROOT}/libs\"\ncp \"${SRCROOT}/ThinkGaming/ThinkGaming.h\" \"${SRCROOT}/libs/\"\n\nlipo -create -output \"${SRCROOT}/libs/libThinkGamingAF.a\" \"${BUILT_PRODUCTS_DIR}/../Release-iphoneos/libThinkGamingAF.a\" \"${BUILT_PRODUCTS_DIR}/../Release-iphonesimulator/libThinkGamingAF.a\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -366,14 +366,20 @@
 		3738D3C3174A65620088D46B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEPLOYMENT_LOCATION = NO;
+				INSTALL_PATH = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = NO;
 			};
 			name = Debug;
 		};
 		3738D3C4174A65620088D46B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEPLOYMENT_LOCATION = NO;
+				INSTALL_PATH = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = NO;
 			};
 			name = Release;
 		};
@@ -383,9 +389,11 @@
 				DSTROOT = /tmp/ThinkGamingAF.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ThinkGamingAF/ThinkGamingAF-Prefix.pch";
+				INSTALL_PATH = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
 			};
 			name = Debug;
 		};
@@ -395,9 +403,11 @@
 				DSTROOT = /tmp/ThinkGamingAF.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ThinkGamingAF/ThinkGamingAF-Prefix.pch";
+				INSTALL_PATH = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
 			};
 			name = Release;
 		};
@@ -405,6 +415,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = NO;
 			};
 			name = Debug;
 		};
@@ -412,6 +423,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = NO;
 			};
 			name = Release;
 		};
@@ -478,7 +490,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
 			};
 			name = Debug;
 		};
@@ -492,7 +504,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
 			};
 			name = Release;
 		};
@@ -506,6 +518,7 @@
 				3738D3C4174A65620088D46B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3738D3D3174AA7E10088D46B /* Build configuration list for PBXNativeTarget "ThinkGamingAF" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +527,7 @@
 				3738D3D5174AA7E10088D46B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3738D3E2174C02840088D46B /* Build configuration list for PBXAggregateTarget "libThinkGameingCombinedAF" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +536,7 @@
 				3738D3E4174C02840088D46B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5220542C173D49A700A9D253 /* Build configuration list for PBXProject "ThinkGaming" */ = {
 			isa = XCConfigurationList;

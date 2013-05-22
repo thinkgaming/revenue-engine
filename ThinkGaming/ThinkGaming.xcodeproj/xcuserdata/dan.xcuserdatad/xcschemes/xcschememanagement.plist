@@ -14,15 +14,15 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
-		<key>libThinkGameingCombinedAF.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
-		</dict>
-		<key>libThinkGamingCombo.xcscheme</key>
+		<key>libThinkGamingCombined.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
+		</dict>
+		<key>libThinkGamingCombinedAF.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
