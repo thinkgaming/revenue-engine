@@ -12,6 +12,7 @@
 #import <AdSupport/ASIdentifierManager.h>
 
 #define QUEUE_FLUSH_TIME 30 // In seconds
+#define MAX_NUM_BYTES   (64 * 1024) // Max number of bytes to send per event
 
 @interface ThinkGaming ()
 - (void)logEvent:(NSString *)eventName withParameters:(NSDictionary *)parameters timed:(BOOL)timed stopTimer:(BOOL)stopTimer;
@@ -48,7 +49,7 @@ static ThinkGaming* sharedSingleton;
 	{
 		if (!sharedSingleton)
         {
-            NSLog(@"Creating singleton");
+            //NSLog(@"Creating singleton");
 			sharedSingleton = [[ThinkGaming alloc] initWithBaseURL:[NSURL URLWithString:kThinkGamingAPIBaseURLString]];
         }
 	}
@@ -103,35 +104,36 @@ static ThinkGaming* sharedSingleton;
     // Might want to do some size checking for user data or check validity (non-binary items)?
     if (parameters) [dict setValue:parameters forKey:@"__TG__userData"];
     
-    
-    [sharedSingleton.queue addObject:dict];
+    NSData * data = [NSPropertyListSerialization dataFromPropertyList:dict
+                                                               format:NSPropertyListBinaryFormat_v1_0 errorDescription:NULL];
+    if([data length] < MAX_NUM_BYTES)
+        [sharedSingleton.queue addObject:dict];
+    else
+    {
+        NSLog(@"ThinkGaming - Size of event data (%d) exceeded max (%d). Not sent.", [data length], MAX_NUM_BYTES);
+    }
 }
 
 - (void) dispatchEvents {
     
-    NSLog(@"ThinkGaming - dispatching events");
+    //NSLog(@"ThinkGaming - dispatching events");
     if (![self isConnected]) return;
     
     if([queue count] == 0) return;
     
     NSMutableURLRequest *request = [sharedSingleton requestWithMethod:@"POST" path:@"/logEvent" parameters:[NSDictionary dictionaryWithObject:queue forKey:@"__TG__payload"]];
     
-    NSLog(@"ThinkGaming - sending: %@", [NSDictionary dictionaryWithObject:queue forKey:@"__TG__payload"]);
+    //NSLog(@"ThinkGaming - sending: %@", [NSDictionary dictionaryWithObject:queue forKey:@"__TG__payload"]);
     
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"Request Successful");
+        //NSLog(@"Request Successful");
         [queue removeAllObjects];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"[ThinkGaming - Error]: (%@ %@) %@", operation.request.HTTPMethod, operation.request.URL.relativePath, error);
     }];
 
-    /*[self enqueueBatchOfHTTPRequestOperations:queue progressBlock:^(NSUInteger numberOfFinishedOperations, NSUInteger totalNumberOfOperations) {
-        NSLog(@"event logged");
-    } completionBlock:^(NSArray *operations) {
-        NSLog(@"all events logged");
-    }];*/
     [operation start];
 }
 
@@ -156,7 +158,7 @@ static ThinkGaming* sharedSingleton;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if (![defaults objectForKey:@"__TG__firstLaunchDate"]) // Check to see if we have ever launched
     {
-        NSLog(@"ThinkGaming - first time run");
+        //NSLog(@"ThinkGaming - first time run");
         // First time we're run, so lets get some IDs and save 'em out
         NSString *identifierForVendor = @"";
         NSString *advertisingIdentifier = @"";
