@@ -30,14 +30,9 @@ static NSString * const kThinkGamingAPIBaseURLString = @"https://api.thinkgaming
 
 static ThinkGaming* sharedSingleton;
 
--(void) dealloc
-{
-    // Kill the timer
-    [self.dispatchTimer invalidate];
-    self.dispatchTimer = nil;
-    
-    // Purge the queue
-    [self dispatchEvents];
+-(void) dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidEnterBackgroundNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationWillEnterForegroundNotification object:nil];
 }
 
 + (ThinkGaming*)sharedSingleton {
@@ -78,24 +73,46 @@ static ThinkGaming* sharedSingleton;
     //    [self setDefaultSSLPinningMode:AFSSLPinningModePublicKey];
     //}
     
-    self.dispatchTimer = [NSTimer scheduledTimerWithTimeInterval:QUEUE_FLUSH_TIME target:self selector:@selector(dispatchEvents) userInfo:nil repeats:YES];
-    
+    [self initTimer];
     self.queue = [[NSMutableArray alloc] init];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillResignActive:) name:UIApplicationWillResignActiveNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidBecomeActive:) name:UIApplicationDidBecomeActiveNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidEnterBackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillEnterForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
     
     return self;
 }
 
-#pragma mark - Application Lifecycle
-- (void) applicationWillResignActive:(NSNotification *)notification {
-    
-    
+- (void) initTimer {
+    self.dispatchTimer = [NSTimer scheduledTimerWithTimeInterval:QUEUE_FLUSH_TIME target:self selector:@selector(dispatchEvents) userInfo:nil repeats:YES];
 }
 
-- (void) applicationDidBecomeActive:(NSNotification *)notification {
+- (void) destroyTimer {
+    [self.dispatchTimer invalidate];
+    self.dispatchTimer = nil;
+}
+
+#pragma mark - Application Lifecycle
+- (void) applicationDidEnterBackground:(NSNotification *)notification {
+    [self destroyTimer];
     
+    UIApplication *application = [UIApplication sharedApplication];
+    __block UIBackgroundTaskIdentifier background_task;
+    
+    void (^completeBlock)(void) = ^{
+        [application endBackgroundTask: background_task];
+        background_task = UIBackgroundTaskInvalid;
+    };
+    
+    
+    background_task = [application beginBackgroundTaskWithExpirationHandler:completeBlock];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [self dispatchEvents];
+        completeBlock();
+    });
+}
+
+- (void) applicationWillEnterForeground:(NSNotification *)notification {
+    [self initTimer];
 }
 
 
