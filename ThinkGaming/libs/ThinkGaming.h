@@ -10,11 +10,7 @@
 
 #import "AFHTTPClient.h"
 
-@interface ThinkGaming : AFHTTPClient {
-    NSMutableArray *queue;
-    NSTimer *dispatchTimer;
-    NSString *apiKey;
-}
+@interface ThinkGaming : AFHTTPClient
 
 + (ThinkGaming *)sharedSingleton;
 
