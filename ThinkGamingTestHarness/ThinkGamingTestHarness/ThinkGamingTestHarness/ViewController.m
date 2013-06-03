@@ -7,12 +7,38 @@
 //
 
 #import "ViewController.h"
+#import "ThinkGaming.h"
 
 @interface ViewController ()
+
+@property (weak) IBOutlet UITextField *apiKeyField;
+@property (weak) IBOutlet UITextField *eventField;
+
+- (IBAction)didTapInit:(id)sender;
+- (IBAction)didTapLog:(id)sender;
+- (IBAction)didTapStartTimed:(id)sender;
+- (IBAction)didTapEndTimed:(id)sender;
 
 @end
 
 @implementation ViewController
+
+- (IBAction)didTapInit:(id)sender {
+    [ThinkGaming startSession:self.apiKeyField.text];
+}
+
+- (IBAction)didTapLog:(id)sender {
+    [ThinkGaming logEvent:self.eventField.text];
+}
+
+- (IBAction)didTapStartTimed:(id)sender {
+    [ThinkGaming logEvent:self.eventField.text timed:YES];
+}
+
+- (IBAction)didTapEndTimed:(id)sender {
+    [ThinkGaming endTimedEvent:self.eventField.text withParameters:nil];
+}
+
 
 - (void)viewDidLoad
 {
