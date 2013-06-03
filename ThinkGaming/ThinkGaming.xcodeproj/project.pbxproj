@@ -33,7 +33,7 @@
 
 /* Begin PBXBuildFile section */
 		3738D3BA174A57A50088D46B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3738D3B9174A57A50088D46B /* UIKit.framework */; };
-		3738D3BC174A57BD0088D46B /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3738D3BB174A57BD0088D46B /* AdSupport.framework */; };
+		3738D3BC174A57BD0088D46B /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3738D3BB174A57BD0088D46B /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		3738D3CB174AA7E10088D46B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52205434173D49A800A9D253 /* Foundation.framework */; };
 		3738D3D0174AA7E10088D46B /* ThinkGamingAF.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3738D3CF174AA7E10088D46B /* ThinkGamingAF.h */; };
 		3738D3D2174AA7E10088D46B /* ThinkGamingAF.m in Sources */ = {isa = PBXBuildFile; fileRef = 3738D3D1174AA7E10088D46B /* ThinkGamingAF.m */; };
