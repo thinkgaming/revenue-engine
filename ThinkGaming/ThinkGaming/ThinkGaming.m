@@ -85,9 +85,24 @@ static ThinkGaming* sharedSingleton;
     dispatchTimer = [NSTimer scheduledTimerWithTimeInterval:QUEUE_FLUSH_TIME target:self selector:@selector(dispatchEvents) userInfo:nil repeats:YES];
     
     queue = [[NSMutableArray alloc] init];
-        
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillResignActive:) name:UIApplicationWillResignActiveNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidBecomeActive:) name:UIApplicationDidBecomeActiveNotification object:nil];
+    
     return self;
 }
+
+#pragma mark - Application Lifecycle
+- (void) applicationWillResignActive:(NSNotification *)notification {
+    
+    
+}
+
+- (void) applicationDidBecomeActive:(NSNotification *)notification {
+    
+}
+
+
 
 #pragma mark Private Methods
 
