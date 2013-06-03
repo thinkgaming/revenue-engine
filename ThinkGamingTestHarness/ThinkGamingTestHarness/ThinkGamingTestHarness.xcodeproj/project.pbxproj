@@ -1,0 +1,305 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		86B1847D175CC12800D41466 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B1847C175CC12800D41466 /* UIKit.framework */; };
+		86B1847F175CC12800D41466 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B1847E175CC12800D41466 /* Foundation.framework */; };
+		86B18481175CC12800D41466 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B18480175CC12800D41466 /* CoreGraphics.framework */; };
+		86B18487175CC12800D41466 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 86B18485175CC12800D41466 /* InfoPlist.strings */; };
+		86B18489175CC12800D41466 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B18488175CC12800D41466 /* main.m */; };
+		86B1848D175CC12800D41466 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B1848C175CC12800D41466 /* AppDelegate.m */; };
+		86B1848F175CC12800D41466 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 86B1848E175CC12800D41466 /* Default.png */; };
+		86B18491175CC12800D41466 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 86B18490175CC12800D41466 /* Default@2x.png */; };
+		86B18493175CC12800D41466 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 86B18492175CC12800D41466 /* Default-568h@2x.png */; };
+		86B18496175CC12800D41466 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86B18494175CC12800D41466 /* MainStoryboard.storyboard */; };
+		86B18499175CC12800D41466 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B18498175CC12800D41466 /* ViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		86B18479175CC12800D41466 /* ThinkGamingTestHarness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThinkGamingTestHarness.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		86B1847C175CC12800D41466 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		86B1847E175CC12800D41466 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		86B18480175CC12800D41466 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		86B18484175CC12800D41466 /* ThinkGamingTestHarness-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ThinkGamingTestHarness-Info.plist"; sourceTree = "<group>"; };
+		86B18486175CC12800D41466 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		86B18488175CC12800D41466 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		86B1848A175CC12800D41466 /* ThinkGamingTestHarness-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ThinkGamingTestHarness-Prefix.pch"; sourceTree = "<group>"; };
+		86B1848B175CC12800D41466 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		86B1848C175CC12800D41466 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		86B1848E175CC12800D41466 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		86B18490175CC12800D41466 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		86B18492175CC12800D41466 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		86B18495175CC12800D41466 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		86B18497175CC12800D41466 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		86B18498175CC12800D41466 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		86B18476175CC12800D41466 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86B1847D175CC12800D41466 /* UIKit.framework in Frameworks */,
+				86B1847F175CC12800D41466 /* Foundation.framework in Frameworks */,
+				86B18481175CC12800D41466 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		86B18470175CC12800D41466 = {
+			isa = PBXGroup;
+			children = (
+				86B18482175CC12800D41466 /* ThinkGamingTestHarness */,
+				86B1847B175CC12800D41466 /* Frameworks */,
+				86B1847A175CC12800D41466 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		86B1847A175CC12800D41466 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				86B18479175CC12800D41466 /* ThinkGamingTestHarness.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		86B1847B175CC12800D41466 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				86B1847C175CC12800D41466 /* UIKit.framework */,
+				86B1847E175CC12800D41466 /* Foundation.framework */,
+				86B18480175CC12800D41466 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		86B18482175CC12800D41466 /* ThinkGamingTestHarness */ = {
+			isa = PBXGroup;
+			children = (
+				86B1848B175CC12800D41466 /* AppDelegate.h */,
+				86B1848C175CC12800D41466 /* AppDelegate.m */,
+				86B18494175CC12800D41466 /* MainStoryboard.storyboard */,
+				86B18497175CC12800D41466 /* ViewController.h */,
+				86B18498175CC12800D41466 /* ViewController.m */,
+				86B18483175CC12800D41466 /* Supporting Files */,
+			);
+			path = ThinkGamingTestHarness;
+			sourceTree = "<group>";
+		};
+		86B18483175CC12800D41466 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				86B18484175CC12800D41466 /* ThinkGamingTestHarness-Info.plist */,
+				86B18485175CC12800D41466 /* InfoPlist.strings */,
+				86B18488175CC12800D41466 /* main.m */,
+				86B1848A175CC12800D41466 /* ThinkGamingTestHarness-Prefix.pch */,
+				86B1848E175CC12800D41466 /* Default.png */,
+				86B18490175CC12800D41466 /* Default@2x.png */,
+				86B18492175CC12800D41466 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		86B18478175CC12800D41466 /* ThinkGamingTestHarness */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 86B1849C175CC12800D41466 /* Build configuration list for PBXNativeTarget "ThinkGamingTestHarness" */;
+			buildPhases = (
+				86B18475175CC12800D41466 /* Sources */,
+				86B18476175CC12800D41466 /* Frameworks */,
+				86B18477175CC12800D41466 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ThinkGamingTestHarness;
+			productName = ThinkGamingTestHarness;
+			productReference = 86B18479175CC12800D41466 /* ThinkGamingTestHarness.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		86B18471175CC12800D41466 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = thinkgaming;
+			};
+			buildConfigurationList = 86B18474175CC12800D41466 /* Build configuration list for PBXProject "ThinkGamingTestHarness" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 86B18470175CC12800D41466;
+			productRefGroup = 86B1847A175CC12800D41466 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				86B18478175CC12800D41466 /* ThinkGamingTestHarness */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		86B18477175CC12800D41466 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86B18487175CC12800D41466 /* InfoPlist.strings in Resources */,
+				86B1848F175CC12800D41466 /* Default.png in Resources */,
+				86B18491175CC12800D41466 /* Default@2x.png in Resources */,
+				86B18493175CC12800D41466 /* Default-568h@2x.png in Resources */,
+				86B18496175CC12800D41466 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		86B18475175CC12800D41466 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86B18489175CC12800D41466 /* main.m in Sources */,
+				86B1848D175CC12800D41466 /* AppDelegate.m in Sources */,
+				86B18499175CC12800D41466 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		86B18485175CC12800D41466 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				86B18486175CC12800D41466 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		86B18494175CC12800D41466 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				86B18495175CC12800D41466 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		86B1849A175CC12800D41466 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		86B1849B175CC12800D41466 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		86B1849D175CC12800D41466 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ThinkGamingTestHarness/ThinkGamingTestHarness-Prefix.pch";
+				INFOPLIST_FILE = "ThinkGamingTestHarness/ThinkGamingTestHarness-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		86B1849E175CC12800D41466 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ThinkGamingTestHarness/ThinkGamingTestHarness-Prefix.pch";
+				INFOPLIST_FILE = "ThinkGamingTestHarness/ThinkGamingTestHarness-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		86B18474175CC12800D41466 /* Build configuration list for PBXProject "ThinkGamingTestHarness" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86B1849A175CC12800D41466 /* Debug */,
+				86B1849B175CC12800D41466 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		86B1849C175CC12800D41466 /* Build configuration list for PBXNativeTarget "ThinkGamingTestHarness" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86B1849D175CC12800D41466 /* Debug */,
+				86B1849E175CC12800D41466 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 86B18471175CC12800D41466 /* Project object */;
+}
