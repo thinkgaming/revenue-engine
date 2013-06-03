@@ -154,8 +154,6 @@
 		52205428173D49A700A9D253 = {
 			isa = PBXGroup;
 			children = (
-				3738D3BB174A57BD0088D46B /* AdSupport.framework */,
-				3738D3B9174A57A50088D46B /* UIKit.framework */,
 				52205460173D656300A9D253 /* Reachabilty */,
 				52205443173D4F3700A9D253 /* AFNetworking */,
 				52205436173D49A800A9D253 /* ThinkGaming */,
@@ -177,6 +175,8 @@
 		52205433173D49A800A9D253 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3738D3BB174A57BD0088D46B /* AdSupport.framework */,
+				3738D3B9174A57A50088D46B /* UIKit.framework */,
 				52205434173D49A800A9D253 /* Foundation.framework */,
 			);
 			name = Frameworks;
