@@ -30,15 +30,11 @@ static NSString * const kThinkGamingAPIBaseURLString = @"https://api.thinkgaming
 
 static ThinkGaming* sharedSingleton;
 
-@synthesize queue;
-@synthesize dispatchTimer;
-@synthesize apiKey;
-
 -(void) dealloc
 {
     // Kill the timer
-    [dispatchTimer invalidate];
-    dispatchTimer = nil;
+    [self.dispatchTimer invalidate];
+    self.dispatchTimer = nil;
     
     // Purge the queue
     [self dispatchEvents];
@@ -82,9 +78,9 @@ static ThinkGaming* sharedSingleton;
     //    [self setDefaultSSLPinningMode:AFSSLPinningModePublicKey];
     //}
     
-    dispatchTimer = [NSTimer scheduledTimerWithTimeInterval:QUEUE_FLUSH_TIME target:self selector:@selector(dispatchEvents) userInfo:nil repeats:YES];
+    self.dispatchTimer = [NSTimer scheduledTimerWithTimeInterval:QUEUE_FLUSH_TIME target:self selector:@selector(dispatchEvents) userInfo:nil repeats:YES];
     
-    queue = [[NSMutableArray alloc] init];
+    self.queue = [[NSMutableArray alloc] init];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillResignActive:) name:UIApplicationWillResignActiveNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidBecomeActive:) name:UIApplicationDidBecomeActiveNotification object:nil];
@@ -110,7 +106,7 @@ static ThinkGaming* sharedSingleton;
     
     NSNumber *curTimestamp = [NSNumber numberWithDouble:[[NSDate date] timeIntervalSince1970]];
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
-    [dict setValue:apiKey forKey:@"__TG__apiKey"];
+    [dict setValue:self.apiKey forKey:@"__TG__apiKey"];
     [dict setValue:curTimestamp forKey:@"__TG__timestamp"];
     [dict setValue:eventName forKey:@"__TG__eventName"];
     [dict setValue:[NSNumber numberWithBool:timed] forKey:@"__TG__timed"];
@@ -134,9 +130,9 @@ static ThinkGaming* sharedSingleton;
     //NSLog(@"ThinkGaming - dispatching events");
     if (![self isConnected]) return;
     
-    if([queue count] == 0) return;
+    if([self.queue count] == 0) return;
     
-    NSMutableURLRequest *request = [sharedSingleton requestWithMethod:@"POST" path:@"/logEvent" parameters:[NSDictionary dictionaryWithObject:queue forKey:@"__TG__payload"]];
+    NSMutableURLRequest *request = [sharedSingleton requestWithMethod:@"POST" path:@"/logEvent" parameters:[NSDictionary dictionaryWithObject:self.queue forKey:@"__TG__payload"]];
     
     //NSLog(@"ThinkGaming - sending: %@", [NSDictionary dictionaryWithObject:queue forKey:@"__TG__payload"]);
     
@@ -144,7 +140,7 @@ static ThinkGaming* sharedSingleton;
     
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         //NSLog(@"Request Successful");
-        [queue removeAllObjects];
+        [self.queue removeAllObjects];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"[ThinkGaming - Error]: (%@ %@) %@", operation.request.HTTPMethod, operation.request.URL.relativePath, error);
     }];
