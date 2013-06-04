@@ -10,6 +10,9 @@
 #import "AFHTTPRequestOperation.h"
 #import "Reachability.h"
 #import <AdSupport/ASIdentifierManager.h>
+#import <ifaddrs.h>
+#import <arpa/inet.h>
+
 
 #define QUEUE_FLUSH_TIME 30 // In seconds
 #define MAX_NUM_BYTES   (64 * 1024) // Max number of bytes to send per event
@@ -28,7 +31,9 @@
 
 @implementation ThinkGaming
 
-static NSString * const kThinkGamingAPIBaseURLString = @"http://api.thinkgaming.com";
+//static NSString * const kThinkGamingAPIBaseURLString = @"https://api.thinkgaming.com";
+static NSString * const kThinkGamingAPIBaseURLString = @"http://api.thinkgaming.com:8080/";
+static NSString * const kLoggingPath = @"/log_activity2/";
 
 static ThinkGaming* sharedSingleton;
 
@@ -80,7 +85,7 @@ static ThinkGaming* sharedSingleton;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidEnterBackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillEnterForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
-    
+        
     return self;
 }
 
@@ -130,6 +135,23 @@ static ThinkGaming* sharedSingleton;
     [dict setValue:eventName forKey:@"__TG__eventName"];
     [dict setValue:[NSNumber numberWithBool:timed] forKey:@"__TG__timed"];
     [dict setValue:[NSNumber numberWithBool:stopTimer] forKey:@"__TG__stopTimer"];
+    NSString *ipAddress = [self getIPAddress];
+    if(ipAddress)
+    {
+        [dict setValue:ipAddress forKey:@"__TG__IPAddress"];
+    }
+    
+    NSString *locale = [self getUserLanguage];
+    if(locale)
+    {
+        [dict setValue:locale forKey:@"__TG__locale"];
+    }
+    
+    NSString *deviceID = [ThinkGaming deviceId];
+    if(deviceID)
+    {
+        [dict setValue:deviceID forKey:@"__TG__userID"];
+    }
     
     // Might want to do some size checking for user data or check validity (non-binary items)?
     if (parameters) [dict setValue:parameters forKey:@"__TG__userData"];
@@ -164,9 +186,9 @@ static ThinkGaming* sharedSingleton;
     
     if([self.queue count] == 0) return;
     
-    NSMutableURLRequest *request = [sharedSingleton requestWithMethod:@"POST" path:@"/logEvent" parameters:[NSDictionary dictionaryWithObject:self.queue forKey:@"__TG__payload"]];
+    NSMutableURLRequest *request = [sharedSingleton requestWithMethod:@"POST" path:kLoggingPath parameters:[NSDictionary dictionaryWithObject:queue forKey:@"__TG__payload"]];
     
-    //NSLog(@"ThinkGaming - sending: %@", [NSDictionary dictionaryWithObject:queue forKey:@"__TG__payload"]);
+    NSLog(@"ThinkGaming - sending: %@", [NSDictionary dictionaryWithObject:queue forKey:@"__TG__payload"]);
     
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     
@@ -251,4 +273,73 @@ static ThinkGaming* sharedSingleton;
 + (void)endTimedEvent:(NSString *)eventName withParameters:(NSDictionary *)parameters {
     [sharedSingleton logEvent:eventName withParameters:parameters timed:YES stopTimer:YES];
 }
+
+- (NSString *)getIPAddress
+{
+    struct ifaddrs *interfaces = NULL;
+    struct ifaddrs *temp_addr = NULL;
+    NSString *wifiAddress = nil;
+    NSString *cellAddress = nil;
+    
+    // retrieve the current interfaces - returns 0 on success
+    if(!getifaddrs(&interfaces)) {
+        // Loop through linked list of interfaces
+        temp_addr = interfaces;
+        while(temp_addr != NULL) {
+            sa_family_t sa_type = temp_addr->ifa_addr->sa_family;
+            if(sa_type == AF_INET || sa_type == AF_INET6) {
+                NSString *name = [NSString stringWithUTF8String:temp_addr->ifa_name];
+                NSString *addr = [NSString stringWithUTF8String:inet_ntoa(((struct sockaddr_in *)temp_addr->ifa_addr)->sin_addr)]; // pdp_ip0
+                //NSLog(@"NAME: \"%@\" addr: %@", name, addr); // see for yourself
+                
+                if([name isEqualToString:@"en0"]) {
+                    // Interface is the wifi connection on the iPhone
+                    wifiAddress = addr;
+                } else
+                    if([name isEqualToString:@"pdp_ip0"]) {
+                        // Interface is the cell connection on the iPhone
+                        cellAddress = addr;
+                    }
+            }
+            temp_addr = temp_addr->ifa_next;
+        }
+        // Free memory
+        freeifaddrs(interfaces);
+    }
+    NSString *addr = wifiAddress ? wifiAddress : cellAddress;
+    return addr ? addr : @"0.0.0.0";
+}
+
+-(NSString*) getUserLanguage
+{
+    NSLocale *locale = [NSLocale currentLocale];
+    
+    NSString *language = [locale localeIdentifier]; //[locale displayNameForKey:NSLocaleIdentifier value:[locale localeIdentifier]];
+    return language;
+}
+
+
++(NSString*) deviceId {
+    
+    NSString *uniqueID;
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    id uuid = [defaults objectForKey:@"uniqueID"];
+    if (uuid)
+        uniqueID = (NSString *)uuid;
+    else {
+        CFUUIDRef cfUuid = CFUUIDCreate(NULL);
+        CFStringRef cfUuidString = CFUUIDCreateString(NULL, cfUuid);
+        CFRelease(cfUuid);
+        uniqueID = (__bridge NSString *)cfUuidString;
+        [defaults setObject:uniqueID forKey:@"uniqueID"];
+        CFRelease(cfUuidString);
+        [[NSUserDefaults standardUserDefaults] synchronize];
+
+    }
+    
+    return uniqueID;
+
+}
+
+
 @end
