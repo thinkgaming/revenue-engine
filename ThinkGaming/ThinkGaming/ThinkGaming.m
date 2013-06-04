@@ -28,7 +28,7 @@
 
 @implementation ThinkGaming
 
-static NSString * const kThinkGamingAPIBaseURLString = @"https://api.thinkgaming.com";
+static NSString * const kThinkGamingAPIBaseURLString = @"http://api.thinkgaming.com";
 
 static ThinkGaming* sharedSingleton;
 
@@ -165,7 +165,9 @@ static ThinkGaming* sharedSingleton;
     if([self.queue count] == 0) return;
     
     NSMutableURLRequest *request = [sharedSingleton requestWithMethod:@"POST" path:@"/logEvent" parameters:[NSDictionary dictionaryWithObject:self.queue forKey:@"__TG__payload"]];
-        
+    
+    //NSLog(@"ThinkGaming - sending: %@", [NSDictionary dictionaryWithObject:queue forKey:@"__TG__payload"]);
+    
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
