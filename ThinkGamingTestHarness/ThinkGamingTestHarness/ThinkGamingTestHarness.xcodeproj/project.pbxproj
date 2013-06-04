@@ -20,7 +20,7 @@
 		86B18499175CC12800D41466 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B18498175CC12800D41466 /* ViewController.m */; };
 		86B184B8175E7C7A00D41466 /* libThinkGaming.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B184B7175E7C7A00D41466 /* libThinkGaming.a */; };
 		86B184BB175E7D4200D41466 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B184BA175E7D4200D41466 /* SystemConfiguration.framework */; };
-		86B184BD175E7D6A00D41466 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B184BC175E7D6A00D41466 /* AdSupport.framework */; };
+		86B184BD175E7D6A00D41466 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B184BC175E7D6A00D41466 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
