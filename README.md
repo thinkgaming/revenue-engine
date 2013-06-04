@@ -6,15 +6,11 @@ ThinkSDK
 // User instructions
 Getting started
 
-There are 2 versions of the ThinkGaming library. 
-
-If you are using the AFNetworking library in your project:
- - Copy the libThinkGaming.a and ThinkGaming.h files to your project.
- - Make sure the libThinkGaming.a library shows up in the "Link Binaries With Libraries" section in your project's Build Phases tab
- 
-If you are NOT using the AFNetworking library in your project:
  - Copy the libThinkGamingAF.a and ThinkGaming.h files to your project.
  - Make sure the libThinkGamingAF.a library shows up in the "Link Binaries With Libraries" section in your project's Build Phases tab
+
+ - Make sure your app references SystemConfiguration.framework for Reachability
+ - Make sure your app references AdSupport.framework for AdSupport support. This can be optional, and the SDK support iOS 5.
  
 Once you have determined that the project successfully compiles, start the ThinkGaming session with the following call in your Application's AppDelegate:
 
@@ -39,5 +35,5 @@ To pass in user-defined parameters, create an NSDictionary and pass it to any of
 
 
 // COMPILATION INSTRUCTIONS
-To create the libraries, choose either the libThinkGamingCombined or libThinkGamingCombinedAF schemes. This will clean and build the appropriate static libraries in both
+To create the libraries, choose the libThinkGamingCombined. This will clean and build the appropriate static libraries in both
 simulator and device targets, and combine them into a single static library, as well as move the resulting .a and .h files into the libs directory via a post-build script.
