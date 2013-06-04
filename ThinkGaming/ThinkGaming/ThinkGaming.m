@@ -12,19 +12,18 @@
 #import <AdSupport/ASIdentifierManager.h>
 #import <ifaddrs.h>
 #import <arpa/inet.h>
+#import "EventQueue.h"
 
 
 #define QUEUE_FLUSH_TIME 30 // In seconds
 #define MAX_NUM_BYTES   (64 * 1024) // Max number of bytes to send per event
-#define MAX_QUEUE_ITEM_COUNT 500
-#define PURGE_SIZE_COUNT 25
 
 @interface ThinkGaming ()
 - (void)logEvent:(NSString *)eventName withParameters:(NSDictionary *)parameters timed:(BOOL)timed stopTimer:(BOOL)stopTimer;
 - (void) dispatchEvents;
 - (BOOL) isConnected;
 
-@property (nonatomic, retain) NSMutableArray *queue;
+@property (nonatomic, retain) EventQueue *eventQueue;
 @property (nonatomic, retain) NSTimer *dispatchTimer;
 @property (nonatomic, retain) NSString *apiKey;
 @end
@@ -80,7 +79,7 @@ static ThinkGaming* sharedSingleton;
     //}
     
     [self initTimer];
-    self.queue = [[NSMutableArray alloc] init];
+    self.eventQueue = [[EventQueue alloc] init];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidEnterBackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillEnterForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
@@ -159,33 +158,15 @@ static ThinkGaming* sharedSingleton;
                                                                format:NSPropertyListBinaryFormat_v1_0 errorDescription:NULL];
     
     if([data length] < MAX_NUM_BYTES)
-        [sharedSingleton.queue addObject:dict];
+        [self.eventQueue addEvent:dict];
     else
     {
         NSLog(@"ThinkGaming - Size of event data (%d) exceeded max (%d). Not sent.", [data length], MAX_NUM_BYTES);
     }
     
-    if ([self queueSizeExceedsThreshold]) {
-        [self purgeSomeOldItems];
-    }
 }
 
 #pragma mark - Queue handlers
-- (void) purgeSomeOldItems {
-    [self.queue removeObjectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, PURGE_SIZE_COUNT)]];
-}
-
-- (BOOL) queueSizeExceedsThreshold {
-    bool exceeds = self.queue.count >= MAX_QUEUE_ITEM_COUNT;
-    return exceeds;
-}
-
-- (NSMutableArray *) drainCurrentEventQueue {
-    NSMutableArray *copyOfQueue = [self.queue copy];
-    self.queue = nil;
-    self.queue = [NSMutableArray array];
-    return copyOfQueue;
-}
 
 
 - (void) dispatchEvents {
@@ -193,12 +174,10 @@ static ThinkGaming* sharedSingleton;
     //NSLog(@"ThinkGaming - dispatching events");
     if (![self isConnected]) return;
     
-    if([self.queue count] == 0) return;
+    NSMutableArray *events = [self.eventQueue drainEvents];
+    NSMutableURLRequest *request = [sharedSingleton requestWithMethod:@"POST" path:kLoggingPath parameters:[NSDictionary dictionaryWithObject:events forKey:@"__TG__payload"]];
     
-    NSMutableArray *copyOfQueue = [self drainCurrentEventQueue];
-    NSMutableURLRequest *request = [sharedSingleton requestWithMethod:@"POST" path:kLoggingPath parameters:[NSDictionary dictionaryWithObject:copyOfQueue forKey:@"__TG__payload"]];
-    
-    NSLog(@"ThinkGaming - sending: %@", [NSDictionary dictionaryWithObject:self.queue forKey:@"__TG__payload"]);
+    NSLog(@"ThinkGaming - sending: %@", [NSDictionary dictionaryWithObject:events forKey:@"__TG__payload"]);
     
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     

@@ -51,6 +51,8 @@
 		52205435173D49A800A9D253 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52205434173D49A800A9D253 /* Foundation.framework */; };
 		5220543A173D49A800A9D253 /* ThinkGaming.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 52205439173D49A800A9D253 /* ThinkGaming.h */; };
 		5220543C173D49A800A9D253 /* ThinkGaming.m in Sources */ = {isa = PBXBuildFile; fileRef = 5220543B173D49A800A9D253 /* ThinkGaming.m */; };
+		86B184B1175E6C1A00D41466 /* EventQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B184B0175E6C1A00D41466 /* EventQueue.m */; };
+		86B184B2175E6C1A00D41466 /* EventQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B184B0175E6C1A00D41466 /* EventQueue.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -109,6 +111,8 @@
 		52205456173D4F3700A9D253 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		52205461173D656300A9D253 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		52205462173D656300A9D253 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		86B184AF175E6C1A00D41466 /* EventQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventQueue.h; sourceTree = "<group>"; };
+		86B184B0175E6C1A00D41466 /* EventQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventQueue.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +189,8 @@
 		52205436173D49A800A9D253 /* ThinkGaming */ = {
 			isa = PBXGroup;
 			children = (
+				86B184AF175E6C1A00D41466 /* EventQueue.h */,
+				86B184B0175E6C1A00D41466 /* EventQueue.m */,
 				52205439173D49A800A9D253 /* ThinkGaming.h */,
 				5220543B173D49A800A9D253 /* ThinkGaming.m */,
 				52205437173D49A800A9D253 /* Supporting Files */,
@@ -349,6 +355,7 @@
 				3738D3DE174AA7F70088D46B /* AFXMLRequestOperation.m in Sources */,
 				3738D3DF174AA7F70088D46B /* UIImageView+AFNetworking.m in Sources */,
 				3738D3E0174AAFBA0088D46B /* ThinkGaming.m in Sources */,
+				86B184B2175E6C1A00D41466 /* EventQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5220543C173D49A800A9D253 /* ThinkGaming.m in Sources */,
+				86B184B1175E6C1A00D41466 /* EventQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
