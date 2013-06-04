@@ -186,9 +186,9 @@ static ThinkGaming* sharedSingleton;
     
     if([self.queue count] == 0) return;
     
-    NSMutableURLRequest *request = [sharedSingleton requestWithMethod:@"POST" path:kLoggingPath parameters:[NSDictionary dictionaryWithObject:queue forKey:@"__TG__payload"]];
+    NSMutableURLRequest *request = [sharedSingleton requestWithMethod:@"POST" path:kLoggingPath parameters:[NSDictionary dictionaryWithObject:self.queue forKey:@"__TG__payload"]];
     
-    NSLog(@"ThinkGaming - sending: %@", [NSDictionary dictionaryWithObject:queue forKey:@"__TG__payload"]);
+    NSLog(@"ThinkGaming - sending: %@", [NSDictionary dictionaryWithObject:self.queue forKey:@"__TG__payload"]);
     
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     
