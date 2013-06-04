@@ -21,6 +21,7 @@
 		86B184B8175E7C7A00D41466 /* libThinkGaming.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B184B7175E7C7A00D41466 /* libThinkGaming.a */; };
 		86B184BB175E7D4200D41466 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B184BA175E7D4200D41466 /* SystemConfiguration.framework */; };
 		86B184BD175E7D6A00D41466 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B184BC175E7D6A00D41466 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		86B184C2175E812700D41466 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B184C1175E812700D41466 /* Reachability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,9 +42,11 @@
 		86B18497175CC12800D41466 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		86B18498175CC12800D41466 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		86B184A3175CC2BE00D41466 /* ThinkGaming.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ThinkGaming.h; path = ../../ThinkGaming/ThinkGaming/ThinkGaming.h; sourceTree = "<group>"; };
-		86B184B7175E7C7A00D41466 /* libThinkGaming.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libThinkGaming.a; path = "../../ThinkGaming/build/Release-iphoneos/libThinkGaming.a"; sourceTree = "<group>"; };
+		86B184B7175E7C7A00D41466 /* libThinkGaming.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libThinkGaming.a; path = "../../ThinkGaming/build/Release-iphoneos/libThinkGaming.a"; sourceTree = "<group>"; };
 		86B184BA175E7D4200D41466 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		86B184BC175E7D6A00D41466 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		86B184C0175E812700D41466 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		86B184C1175E812700D41466 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +100,8 @@
 		86B18482175CC12800D41466 /* ThinkGamingTestHarness */ = {
 			isa = PBXGroup;
 			children = (
+				86B184C0175E812700D41466 /* Reachability.h */,
+				86B184C1175E812700D41466 /* Reachability.m */,
 				86B1848B175CC12800D41466 /* AppDelegate.h */,
 				86B1848C175CC12800D41466 /* AppDelegate.m */,
 				86B18494175CC12800D41466 /* MainStoryboard.storyboard */,
@@ -190,6 +195,7 @@
 				86B18489175CC12800D41466 /* main.m in Sources */,
 				86B1848D175CC12800D41466 /* AppDelegate.m in Sources */,
 				86B18499175CC12800D41466 /* ViewController.m in Sources */,
+				86B184C2175E812700D41466 /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
