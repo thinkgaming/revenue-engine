@@ -13,6 +13,7 @@
 #import <ifaddrs.h>
 #import <arpa/inet.h>
 #import "EventQueue.h"
+#import "ThinkGamingApiAdapter.h"
 
 
 #define QUEUE_FLUSH_TIME 30 // In seconds
@@ -70,8 +71,6 @@ static ThinkGaming* sharedSingleton;
     [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
     [self setParameterEncoding:AFJSONParameterEncoding];
     
-    // Accept HTTP Header; see http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.1
-	[self setDefaultHeader:@"Accept" value:@"application/json"];
     
     // By default, the example ships with SSL pinning enabled for the app.net API pinned against the public key of adn.cer file included with the example. In order to make it easier for developers who are new to AFNetworking, SSL pinning is automatically disabled if the base URL has been changed. This will allow developers to hack around with the example, without getting tripped up by SSL pinning.
     //if ([[url scheme] isEqualToString:@"https"] && [[url host] isEqualToString:@"alpha-api.app.net"]) {
@@ -170,25 +169,16 @@ static ThinkGaming* sharedSingleton;
 
 
 - (void) dispatchEvents {
-    
-    //NSLog(@"ThinkGaming - dispatching events");
     if (![self isConnected]) return;
     
     NSMutableArray *events = [self.eventQueue drainEvents];
-    NSMutableURLRequest *request = [sharedSingleton requestWithMethod:@"POST" path:kLoggingPath parameters:[NSDictionary dictionaryWithObject:events forKey:@"__TG__payload"]];
-    
-    NSLog(@"ThinkGaming - sending: %@", [NSDictionary dictionaryWithObject:events forKey:@"__TG__payload"]);
-    
-    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"Request Successful");
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        //[self.queue insertObjects:copyOfQueue atIndexes:[NSIndexSet indexSetWithIndex:0]]; Need to be sure it's a server failure before doing this.
-        NSLog(@"[ThinkGaming - Error]: (%@ %@) %@", operation.request.HTTPMethod, operation.request.URL.relativePath, error);
-    }];
-    
-    [operation start];
+    if (events) {
+        [ThinkGamingApiAdapter dispatchEvents:[NSDictionary dictionaryWithObject:events forKey:@"__TG__payload"] success:^(NSData *result) {
+            
+        } error:^(NSError *err) {
+            
+        }];
+    }
 }
 
 - (BOOL) isConnected
