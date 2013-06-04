@@ -13,6 +13,8 @@
 
 #define QUEUE_FLUSH_TIME 30 // In seconds
 #define MAX_NUM_BYTES   (64 * 1024) // Max number of bytes to send per event
+#define MAX_QUEUE_ITEM_COUNT 500
+#define PURGE_SIZE_COUNT 25
 
 @interface ThinkGaming ()
 - (void)logEvent:(NSString *)eventName withParameters:(NSDictionary *)parameters timed:(BOOL)timed stopTimer:(BOOL)stopTimer;
@@ -134,12 +136,25 @@ static ThinkGaming* sharedSingleton;
     
     NSData * data = [NSPropertyListSerialization dataFromPropertyList:dict
                                                                format:NSPropertyListBinaryFormat_v1_0 errorDescription:NULL];
+    
     if([data length] < MAX_NUM_BYTES)
         [sharedSingleton.queue addObject:dict];
     else
     {
         NSLog(@"ThinkGaming - Size of event data (%d) exceeded max (%d). Not sent.", [data length], MAX_NUM_BYTES);
     }
+    
+    if ([self queueSizeExceedsThreshold]) {
+        [self purgeSomeOldItems];
+    }
+}
+
+- (void) purgeSomeOldItems {
+    [self.queue removeObjectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, PURGE_SIZE_COUNT)]];
+}
+
+- (BOOL) queueSizeExceedsThreshold {
+    return self.queue.count <= MAX_QUEUE_ITEM_COUNT;
 }
 
 - (void) dispatchEvents {
@@ -150,9 +165,7 @@ static ThinkGaming* sharedSingleton;
     if([self.queue count] == 0) return;
     
     NSMutableURLRequest *request = [sharedSingleton requestWithMethod:@"POST" path:@"/logEvent" parameters:[NSDictionary dictionaryWithObject:self.queue forKey:@"__TG__payload"]];
-    
-    //NSLog(@"ThinkGaming - sending: %@", [NSDictionary dictionaryWithObject:queue forKey:@"__TG__payload"]);
-    
+        
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -161,7 +174,7 @@ static ThinkGaming* sharedSingleton;
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"[ThinkGaming - Error]: (%@ %@) %@", operation.request.HTTPMethod, operation.request.URL.relativePath, error);
     }];
-
+    
     [operation start];
 }
 
@@ -207,7 +220,7 @@ static ThinkGaming* sharedSingleton;
         [firstRunDict setValue:curTimestamp forKey:@"__TG__firstLaunchDate"];
         [firstRunDict setValue:identifierForVendor forKey:@"__TG__identifierForVendor"];
         [firstRunDict setValue:advertisingIdentifier forKey:@"__TG__advertisingIdentifier"];
-
+        
         [sharedSingleton logEvent:@"__TG__firstLaunch" withParameters:firstRunDict timed:NO stopTimer:NO];
     }
     else
