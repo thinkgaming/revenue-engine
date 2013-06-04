@@ -18,56 +18,20 @@
 			name = libThinkGamingCombined;
 			productName = libThinkGamingCombo;
 		};
-		3738D3E1174C02830088D46B /* libThinkGameingCombinedAF */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 3738D3E2174C02840088D46B /* Build configuration list for PBXAggregateTarget "libThinkGameingCombinedAF" */;
-			buildPhases = (
-				3738D3E5174C02A60088D46B /* ShellScript */,
-			);
-			dependencies = (
-			);
-			name = libThinkGameingCombinedAF;
-			productName = libThinkGameingCombinedAF;
-		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
 		3738D3BA174A57A50088D46B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3738D3B9174A57A50088D46B /* UIKit.framework */; };
 		3738D3BC174A57BD0088D46B /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3738D3BB174A57BD0088D46B /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		3738D3CB174AA7E10088D46B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52205434173D49A800A9D253 /* Foundation.framework */; };
-		3738D3D0174AA7E10088D46B /* ThinkGamingAF.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3738D3CF174AA7E10088D46B /* ThinkGamingAF.h */; };
-		3738D3D2174AA7E10088D46B /* ThinkGamingAF.m in Sources */ = {isa = PBXBuildFile; fileRef = 3738D3D1174AA7E10088D46B /* ThinkGamingAF.m */; };
-		3738D3D6174AA7F70088D46B /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 52205462173D656300A9D253 /* Reachability.m */; };
-		3738D3D7174AA7F70088D46B /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 52205445173D4F3700A9D253 /* AFHTTPClient.m */; };
-		3738D3D8174AA7F70088D46B /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 52205447173D4F3700A9D253 /* AFHTTPRequestOperation.m */; };
-		3738D3D9174AA7F70088D46B /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 52205449173D4F3700A9D253 /* AFImageRequestOperation.m */; };
-		3738D3DA174AA7F70088D46B /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5220544B173D4F3700A9D253 /* AFJSONRequestOperation.m */; };
-		3738D3DB174AA7F70088D46B /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5220544D173D4F3700A9D253 /* AFNetworkActivityIndicatorManager.m */; };
-		3738D3DC174AA7F70088D46B /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 52205450173D4F3700A9D253 /* AFPropertyListRequestOperation.m */; };
-		3738D3DD174AA7F70088D46B /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 52205452173D4F3700A9D253 /* AFURLConnectionOperation.m */; };
-		3738D3DE174AA7F70088D46B /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 52205454173D4F3700A9D253 /* AFXMLRequestOperation.m */; };
-		3738D3DF174AA7F70088D46B /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 52205456173D4F3700A9D253 /* UIImageView+AFNetworking.m */; };
-		3738D3E0174AAFBA0088D46B /* ThinkGaming.m in Sources */ = {isa = PBXBuildFile; fileRef = 5220543B173D49A800A9D253 /* ThinkGaming.m */; };
 		52205435173D49A800A9D253 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52205434173D49A800A9D253 /* Foundation.framework */; };
 		5220543A173D49A800A9D253 /* ThinkGaming.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 52205439173D49A800A9D253 /* ThinkGaming.h */; };
 		5220543C173D49A800A9D253 /* ThinkGaming.m in Sources */ = {isa = PBXBuildFile; fileRef = 5220543B173D49A800A9D253 /* ThinkGaming.m */; };
 		86B184B1175E6C1A00D41466 /* EventQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B184B0175E6C1A00D41466 /* EventQueue.m */; };
-		86B184B2175E6C1A00D41466 /* EventQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B184B0175E6C1A00D41466 /* EventQueue.m */; };
 		86B184B5175E6F2400D41466 /* ThinkGamingApiAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B184B4175E6F2400D41466 /* ThinkGamingApiAdapter.m */; };
-		86B184B6175E6F2400D41466 /* ThinkGamingApiAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B184B4175E6F2400D41466 /* ThinkGamingApiAdapter.m */; };
+		86B184B9175E7C9600D41466 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 52205462173D656300A9D253 /* Reachability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		3738D3C8174AA7E10088D46B /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/${PRODUCT_NAME}";
-			dstSubfolderSpec = 16;
-			files = (
-				3738D3D0174AA7E10088D46B /* ThinkGamingAF.h in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		5220542F173D49A800A9D253 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -83,34 +47,11 @@
 /* Begin PBXFileReference section */
 		3738D3B9174A57A50088D46B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3738D3BB174A57BD0088D46B /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
-		3738D3CA174AA7E10088D46B /* libThinkGamingAF.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libThinkGamingAF.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		3738D3CE174AA7E10088D46B /* ThinkGamingAF-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ThinkGamingAF-Prefix.pch"; sourceTree = "<group>"; };
-		3738D3CF174AA7E10088D46B /* ThinkGamingAF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThinkGamingAF.h; sourceTree = "<group>"; };
-		3738D3D1174AA7E10088D46B /* ThinkGamingAF.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThinkGamingAF.m; sourceTree = "<group>"; };
 		52205431173D49A800A9D253 /* libThinkGaming.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libThinkGaming.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		52205434173D49A800A9D253 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		52205438173D49A800A9D253 /* ThinkGaming-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ThinkGaming-Prefix.pch"; sourceTree = "<group>"; };
 		52205439173D49A800A9D253 /* ThinkGaming.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThinkGaming.h; sourceTree = "<group>"; };
 		5220543B173D49A800A9D253 /* ThinkGaming.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThinkGaming.m; sourceTree = "<group>"; };
-		52205444173D4F3700A9D253 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
-		52205445173D4F3700A9D253 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
-		52205446173D4F3700A9D253 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
-		52205447173D4F3700A9D253 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
-		52205448173D4F3700A9D253 /* AFImageRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFImageRequestOperation.h; sourceTree = "<group>"; };
-		52205449173D4F3700A9D253 /* AFImageRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFImageRequestOperation.m; sourceTree = "<group>"; };
-		5220544A173D4F3700A9D253 /* AFJSONRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFJSONRequestOperation.h; sourceTree = "<group>"; };
-		5220544B173D4F3700A9D253 /* AFJSONRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFJSONRequestOperation.m; sourceTree = "<group>"; };
-		5220544C173D4F3700A9D253 /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
-		5220544D173D4F3700A9D253 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
-		5220544E173D4F3700A9D253 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
-		5220544F173D4F3700A9D253 /* AFPropertyListRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPropertyListRequestOperation.h; sourceTree = "<group>"; };
-		52205450173D4F3700A9D253 /* AFPropertyListRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFPropertyListRequestOperation.m; sourceTree = "<group>"; };
-		52205451173D4F3700A9D253 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
-		52205452173D4F3700A9D253 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
-		52205453173D4F3700A9D253 /* AFXMLRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFXMLRequestOperation.h; sourceTree = "<group>"; };
-		52205454173D4F3700A9D253 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
-		52205455173D4F3700A9D253 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
-		52205456173D4F3700A9D253 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		52205461173D656300A9D253 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		52205462173D656300A9D253 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		86B184AF175E6C1A00D41466 /* EventQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventQueue.h; sourceTree = "<group>"; };
@@ -120,14 +61,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3738D3C7174AA7E10088D46B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3738D3CB174AA7E10088D46B /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		5220542E173D49A800A9D253 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -141,31 +74,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3738D3CC174AA7E10088D46B /* ThinkGamingAF */ = {
-			isa = PBXGroup;
-			children = (
-				3738D3CF174AA7E10088D46B /* ThinkGamingAF.h */,
-				3738D3D1174AA7E10088D46B /* ThinkGamingAF.m */,
-				3738D3CD174AA7E10088D46B /* Supporting Files */,
-			);
-			path = ThinkGamingAF;
-			sourceTree = "<group>";
-		};
-		3738D3CD174AA7E10088D46B /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				3738D3CE174AA7E10088D46B /* ThinkGamingAF-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		52205428173D49A700A9D253 = {
 			isa = PBXGroup;
 			children = (
 				52205460173D656300A9D253 /* Reachabilty */,
-				52205443173D4F3700A9D253 /* AFNetworking */,
 				52205436173D49A800A9D253 /* ThinkGaming */,
-				3738D3CC174AA7E10088D46B /* ThinkGamingAF */,
 				52205433173D49A800A9D253 /* Frameworks */,
 				52205432173D49A800A9D253 /* Products */,
 			);
@@ -175,7 +88,6 @@
 			isa = PBXGroup;
 			children = (
 				52205431173D49A800A9D253 /* libThinkGaming.a */,
-				3738D3CA174AA7E10088D46B /* libThinkGamingAF.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -197,9 +109,9 @@
 				86B184B0175E6C1A00D41466 /* EventQueue.m */,
 				52205439173D49A800A9D253 /* ThinkGaming.h */,
 				5220543B173D49A800A9D253 /* ThinkGaming.m */,
-				52205437173D49A800A9D253 /* Supporting Files */,
 				86B184B3175E6F2400D41466 /* ThinkGamingApiAdapter.h */,
 				86B184B4175E6F2400D41466 /* ThinkGamingApiAdapter.m */,
+				52205437173D49A800A9D253 /* Supporting Files */,
 			);
 			path = ThinkGaming;
 			sourceTree = "<group>";
@@ -210,33 +122,6 @@
 				52205438173D49A800A9D253 /* ThinkGaming-Prefix.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		52205443173D4F3700A9D253 /* AFNetworking */ = {
-			isa = PBXGroup;
-			children = (
-				52205444173D4F3700A9D253 /* AFHTTPClient.h */,
-				52205445173D4F3700A9D253 /* AFHTTPClient.m */,
-				52205446173D4F3700A9D253 /* AFHTTPRequestOperation.h */,
-				52205447173D4F3700A9D253 /* AFHTTPRequestOperation.m */,
-				52205448173D4F3700A9D253 /* AFImageRequestOperation.h */,
-				52205449173D4F3700A9D253 /* AFImageRequestOperation.m */,
-				5220544A173D4F3700A9D253 /* AFJSONRequestOperation.h */,
-				5220544B173D4F3700A9D253 /* AFJSONRequestOperation.m */,
-				5220544C173D4F3700A9D253 /* AFNetworkActivityIndicatorManager.h */,
-				5220544D173D4F3700A9D253 /* AFNetworkActivityIndicatorManager.m */,
-				5220544E173D4F3700A9D253 /* AFNetworking.h */,
-				5220544F173D4F3700A9D253 /* AFPropertyListRequestOperation.h */,
-				52205450173D4F3700A9D253 /* AFPropertyListRequestOperation.m */,
-				52205451173D4F3700A9D253 /* AFURLConnectionOperation.h */,
-				52205452173D4F3700A9D253 /* AFURLConnectionOperation.m */,
-				52205453173D4F3700A9D253 /* AFXMLRequestOperation.h */,
-				52205454173D4F3700A9D253 /* AFXMLRequestOperation.m */,
-				52205455173D4F3700A9D253 /* UIImageView+AFNetworking.h */,
-				52205456173D4F3700A9D253 /* UIImageView+AFNetworking.m */,
-			);
-			name = AFNetworking;
-			path = ../AFNetworking;
 			sourceTree = "<group>";
 		};
 		52205460173D656300A9D253 /* Reachabilty */ = {
@@ -252,23 +137,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3738D3C9174AA7E10088D46B /* ThinkGamingAF */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3738D3D3174AA7E10088D46B /* Build configuration list for PBXNativeTarget "ThinkGamingAF" */;
-			buildPhases = (
-				3738D3C6174AA7E10088D46B /* Sources */,
-				3738D3C7174AA7E10088D46B /* Frameworks */,
-				3738D3C8174AA7E10088D46B /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ThinkGamingAF;
-			productName = ThinkGamingAF;
-			productReference = 3738D3CA174AA7E10088D46B /* libThinkGamingAF.a */;
-			productType = "com.apple.product-type.library.static";
-		};
 		52205430173D49A800A9D253 /* ThinkGaming */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5220543F173D49A800A9D253 /* Build configuration list for PBXNativeTarget "ThinkGaming" */;
@@ -309,8 +177,6 @@
 			targets = (
 				52205430173D49A800A9D253 /* ThinkGaming */,
 				3738D3C1174A65620088D46B /* libThinkGamingCombined */,
-				3738D3C9174AA7E10088D46B /* ThinkGamingAF */,
-				3738D3E1174C02830088D46B /* libThinkGameingCombinedAF */,
 			);
 		};
 /* End PBXProject section */
@@ -329,43 +195,9 @@
 			shellPath = /bin/sh;
 			shellScript = "XCODEBUILD_PATH=/Applications/Xcode.app/Contents/Developer/usr/bin\nXCODEBUILD=$XCODEBUILD_PATH/xcodebuild\n\n#$XCODEBUILD -project ThinkGaming.xcodeproj -target \"ThinkGaming\" -sdk \"iphonesimulator\" -configuration \"Debug\" clean build\n#$XCODEBUILD -project ThinkGaming.xcodeproj -target \"ThinkGaming\" -sdk \"iphoneos\" -configuration \"Debug\" clean build\n\nXCODEBUILD -project ThinkGaming.xcodeproj -configuration \"Release\" -target \"ThinkGaming\" -sdk \"iphoneos\" ${ACTION} RUN_CLANG_STATIC_ANALYZER=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\nXCODEBUILD -project ThinkGaming.xcodeproj -configuration \"Release\" -target \"ThinkGaming\" -sdk \"iphonesimulator\" ${ACTION} RUN_CLANG_STATIC_ANALYZER=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n\nmkdir -p \"${SRCROOT}/libs\"\ncp \"${SRCROOT}/ThinkGaming/ThinkGaming.h\" \"${SRCROOT}/libs/\"\n\nlipo -create -output \"${SRCROOT}/libs/libThinkGaming.a\" \"${BUILT_PRODUCTS_DIR}/../Release-iphoneos/libThinkGaming.a\" \"${BUILT_PRODUCTS_DIR}/../Release-iphonesimulator/libThinkGaming.a\"";
 		};
-		3738D3E5174C02A60088D46B /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "XCODEBUILD_PATH=/Applications/Xcode.app/Contents/Developer/usr/bin\nXCODEBUILD=$XCODEBUILD_PATH/xcodebuild\n\n#$XCODEBUILD -project ThinkGaming.xcodeproj -target \"ThinkGaming\" -sdk \"iphonesimulator\" -configuration \"Debug\" clean build\n#$XCODEBUILD -project ThinkGaming.xcodeproj -target \"ThinkGaming\" -sdk \"iphoneos\" -configuration \"Debug\" clean build\n\nXCODEBUILD -project ThinkGaming.xcodeproj -configuration \"Release\" -target \"ThinkGamingAF\" -sdk \"iphoneos\" ${ACTION} RUN_CLANG_STATIC_ANALYZER=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\nXCODEBUILD -project ThinkGaming.xcodeproj -configuration \"Release\" -target \"ThinkGamingAF\" -sdk \"iphonesimulator\" ${ACTION} RUN_CLANG_STATIC_ANALYZER=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n\nmkdir -p \"${SRCROOT}/libs\"\ncp \"${SRCROOT}/ThinkGaming/ThinkGaming.h\" \"${SRCROOT}/libs/\"\n\nlipo -create -output \"${SRCROOT}/libs/libThinkGamingAF.a\" \"${BUILT_PRODUCTS_DIR}/../Release-iphoneos/libThinkGamingAF.a\" \"${BUILT_PRODUCTS_DIR}/../Release-iphonesimulator/libThinkGamingAF.a\"";
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3738D3C6174AA7E10088D46B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3738D3D2174AA7E10088D46B /* ThinkGamingAF.m in Sources */,
-				3738D3D6174AA7F70088D46B /* Reachability.m in Sources */,
-				3738D3D7174AA7F70088D46B /* AFHTTPClient.m in Sources */,
-				3738D3D8174AA7F70088D46B /* AFHTTPRequestOperation.m in Sources */,
-				3738D3D9174AA7F70088D46B /* AFImageRequestOperation.m in Sources */,
-				3738D3DA174AA7F70088D46B /* AFJSONRequestOperation.m in Sources */,
-				3738D3DB174AA7F70088D46B /* AFNetworkActivityIndicatorManager.m in Sources */,
-				3738D3DC174AA7F70088D46B /* AFPropertyListRequestOperation.m in Sources */,
-				3738D3DD174AA7F70088D46B /* AFURLConnectionOperation.m in Sources */,
-				3738D3DE174AA7F70088D46B /* AFXMLRequestOperation.m in Sources */,
-				3738D3DF174AA7F70088D46B /* UIImageView+AFNetworking.m in Sources */,
-				3738D3E0174AAFBA0088D46B /* ThinkGaming.m in Sources */,
-				86B184B2175E6C1A00D41466 /* EventQueue.m in Sources */,
-				86B184B6175E6F2400D41466 /* ThinkGamingApiAdapter.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		5220542D173D49A800A9D253 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -373,6 +205,7 @@
 				5220543C173D49A800A9D253 /* ThinkGaming.m in Sources */,
 				86B184B1175E6C1A00D41466 /* EventQueue.m in Sources */,
 				86B184B5175E6F2400D41466 /* ThinkGamingApiAdapter.m in Sources */,
+				86B184B9175E7C9600D41466 /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,50 +227,6 @@
 			buildSettings = {
 				DEPLOYMENT_LOCATION = NO;
 				INSTALL_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = NO;
-			};
-			name = Release;
-		};
-		3738D3D4174AA7E10088D46B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DSTROOT = /tmp/ThinkGamingAF.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ThinkGamingAF/ThinkGamingAF-Prefix.pch";
-				INSTALL_PATH = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = NO;
-			};
-			name = Debug;
-		};
-		3738D3D5174AA7E10088D46B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DSTROOT = /tmp/ThinkGamingAF.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ThinkGamingAF/ThinkGamingAF-Prefix.pch";
-				INSTALL_PATH = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = NO;
-			};
-			name = Release;
-		};
-		3738D3E3174C02840088D46B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = NO;
-			};
-			name = Debug;
-		};
-		3738D3E4174C02840088D46B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = NO;
 			};
@@ -532,24 +321,6 @@
 			buildConfigurations = (
 				3738D3C3174A65620088D46B /* Debug */,
 				3738D3C4174A65620088D46B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3738D3D3174AA7E10088D46B /* Build configuration list for PBXNativeTarget "ThinkGamingAF" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3738D3D4174AA7E10088D46B /* Debug */,
-				3738D3D5174AA7E10088D46B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3738D3E2174C02840088D46B /* Build configuration list for PBXAggregateTarget "libThinkGameingCombinedAF" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3738D3E3174C02840088D46B /* Debug */,
-				3738D3E4174C02840088D46B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

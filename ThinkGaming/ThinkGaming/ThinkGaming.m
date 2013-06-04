@@ -6,8 +6,6 @@
 //
 
 #import "ThinkGaming.h"
-#import "AFJSONRequestOperation.h"
-#import "AFHTTPRequestOperation.h"
 #import "Reachability.h"
 #import <AdSupport/ASIdentifierManager.h>
 #import <ifaddrs.h>
@@ -20,7 +18,6 @@
 #define MAX_NUM_BYTES   (64 * 1024) // Max number of bytes to send per event
 
 @interface ThinkGaming ()
-- (void)logEvent:(NSString *)eventName withParameters:(NSDictionary *)parameters timed:(BOOL)timed stopTimer:(BOOL)stopTimer;
 - (void) dispatchEvents;
 - (BOOL) isConnected;
 
@@ -30,9 +27,6 @@
 @end
 
 @implementation ThinkGaming
-
-static NSString * const kThinkGamingAPIBaseURLString = @"http://api.thinkgaming.com:8080/";
-static NSString * const kLoggingPath = @"/log_activity2/";
 
 static ThinkGaming* sharedSingleton;
 
@@ -47,7 +41,7 @@ static ThinkGaming* sharedSingleton;
 		if (!sharedSingleton)
         {
             //NSLog(@"Creating singleton");
-			sharedSingleton = [[ThinkGaming alloc] initWithBaseURL:[NSURL URLWithString:kThinkGamingAPIBaseURLString]];
+			sharedSingleton = [[ThinkGaming alloc] init];
         }
 	}
 	return sharedSingleton;
@@ -62,16 +56,12 @@ static ThinkGaming* sharedSingleton;
 	return sharedSingleton;
 }
 
-- (id)initWithBaseURL:(NSURL *)url {
-    self = [super initWithBaseURL:url];
+- (id)init {
+    self = [super init];
     if (!self) {
         return nil;
     }
-    
-    [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
-    [self setParameterEncoding:AFJSONParameterEncoding];
-    
-    
+        
     // By default, the example ships with SSL pinning enabled for the app.net API pinned against the public key of adn.cer file included with the example. In order to make it easier for developers who are new to AFNetworking, SSL pinning is automatically disabled if the base URL has been changed. This will allow developers to hack around with the example, without getting tripped up by SSL pinning.
     //if ([[url scheme] isEqualToString:@"https"] && [[url host] isEqualToString:@"alpha-api.app.net"]) {
     //    [self setDefaultSSLPinningMode:AFSSLPinningModePublicKey];
