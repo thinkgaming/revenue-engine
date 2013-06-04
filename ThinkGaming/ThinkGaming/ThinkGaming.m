@@ -31,7 +31,6 @@
 
 @implementation ThinkGaming
 
-//static NSString * const kThinkGamingAPIBaseURLString = @"https://api.thinkgaming.com";
 static NSString * const kThinkGamingAPIBaseURLString = @"http://api.thinkgaming.com:8080/";
 static NSString * const kLoggingPath = @"/log_activity2/";
 
@@ -171,13 +170,23 @@ static ThinkGaming* sharedSingleton;
     }
 }
 
+#pragma mark - Queue handlers
 - (void) purgeSomeOldItems {
     [self.queue removeObjectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, PURGE_SIZE_COUNT)]];
 }
 
 - (BOOL) queueSizeExceedsThreshold {
-    return self.queue.count <= MAX_QUEUE_ITEM_COUNT;
+    bool exceeds = self.queue.count >= MAX_QUEUE_ITEM_COUNT;
+    return exceeds;
 }
+
+- (NSMutableArray *) drainCurrentEventQueue {
+    NSMutableArray *copyOfQueue = [self.queue copy];
+    self.queue = nil;
+    self.queue = [NSMutableArray array];
+    return copyOfQueue;
+}
+
 
 - (void) dispatchEvents {
     
@@ -186,16 +195,17 @@ static ThinkGaming* sharedSingleton;
     
     if([self.queue count] == 0) return;
     
-    NSMutableURLRequest *request = [sharedSingleton requestWithMethod:@"POST" path:kLoggingPath parameters:[NSDictionary dictionaryWithObject:self.queue forKey:@"__TG__payload"]];
+    NSMutableArray *copyOfQueue = [self drainCurrentEventQueue];
+    NSMutableURLRequest *request = [sharedSingleton requestWithMethod:@"POST" path:kLoggingPath parameters:[NSDictionary dictionaryWithObject:copyOfQueue forKey:@"__TG__payload"]];
     
     NSLog(@"ThinkGaming - sending: %@", [NSDictionary dictionaryWithObject:self.queue forKey:@"__TG__payload"]);
     
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        //NSLog(@"Request Successful");
-        [self.queue removeAllObjects];
+        NSLog(@"Request Successful");
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        //[self.queue insertObjects:copyOfQueue atIndexes:[NSIndexSet indexSetWithIndex:0]]; Need to be sure it's a server failure before doing this.
         NSLog(@"[ThinkGaming - Error]: (%@ %@) %@", operation.request.HTTPMethod, operation.request.URL.relativePath, error);
     }];
     
@@ -209,7 +219,7 @@ static ThinkGaming* sharedSingleton;
     return !(netStatus == NotReachable);
 }
 
-#pragma mark Public Methods
+#pragma mark - Public Methods
 
 + (void)startSession:(NSString *)key {
     //if (![sharedSingleton isConnected]) return;
@@ -273,6 +283,8 @@ static ThinkGaming* sharedSingleton;
 + (void)endTimedEvent:(NSString *)eventName withParameters:(NSDictionary *)parameters {
     [sharedSingleton logEvent:eventName withParameters:parameters timed:YES stopTimer:YES];
 }
+
+#pragma mark - Device helpers
 
 - (NSString *)getIPAddress
 {
