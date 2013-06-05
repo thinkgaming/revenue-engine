@@ -8,9 +8,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#import "AFHTTPClient.h"
 
-@interface ThinkGaming : AFHTTPClient
+@interface ThinkGaming : NSObject
 
 + (ThinkGaming *)sharedSingleton;
 
