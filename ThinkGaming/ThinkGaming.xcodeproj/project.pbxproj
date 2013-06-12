@@ -288,6 +288,7 @@
 		52205440173D49A800A9D253 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Think Gaming LLC (A52MVTZYUR)";
 				DSTROOT = /tmp/ThinkGaming.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ThinkGaming/ThinkGaming-Prefix.pch";
@@ -295,6 +296,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5ED29C66-2492-49DB-95DD-A983D95DAD5F";
 				SKIP_INSTALL = NO;
 			};
 			name = Debug;
@@ -302,6 +304,7 @@
 		52205441173D49A800A9D253 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Think Gaming LLC (A52MVTZYUR)";
 				DSTROOT = /tmp/ThinkGaming.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ThinkGaming/ThinkGaming-Prefix.pch";
@@ -309,6 +312,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5ED29C66-2492-49DB-95DD-A983D95DAD5F";
 				SKIP_INSTALL = NO;
 			};
 			name = Release;

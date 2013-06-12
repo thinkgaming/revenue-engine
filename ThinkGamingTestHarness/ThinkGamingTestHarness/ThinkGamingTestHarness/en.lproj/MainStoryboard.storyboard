@@ -1,15 +1,92 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="efG-N5-alm">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Product List View Controller - IAP-->
+        <scene sceneID="6KO-W8-DSC">
+            <objects>
+                <viewController id="Ya7-hY-lXi" customClass="IAPProductListViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GY9-PB-zdi">
+                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="40n-HL-fJM">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="jrZ-E6-WJc" kind="embed" identifier="embed" id="TUU-wl-md0"/>
+                                </connections>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zth-m8-d6D">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Load List">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapLoadList:" destination="Ya7-hY-lXi" eventType="touchUpInside" id="EMA-WN-yXQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Zth-m8-d6D" firstAttribute="top" secondItem="GY9-PB-zdi" secondAttribute="top" constant="20" symbolic="YES" type="default" id="42q-kN-IME"/>
+                            <constraint firstItem="40n-HL-fJM" firstAttribute="top" secondItem="GY9-PB-zdi" secondAttribute="top" constant="77" id="My0-bV-Xbg"/>
+                            <constraint firstItem="Zth-m8-d6D" firstAttribute="leading" secondItem="GY9-PB-zdi" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="RGB-Rc-pC9"/>
+                            <constraint firstAttribute="trailing" secondItem="Zth-m8-d6D" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="a8K-bd-yyL"/>
+                            <constraint firstItem="40n-HL-fJM" firstAttribute="bottom" secondItem="GY9-PB-zdi" secondAttribute="bottom" type="default" id="mqv-D7-ZjV"/>
+                            <constraint firstItem="40n-HL-fJM" firstAttribute="trailing" secondItem="GY9-PB-zdi" secondAttribute="trailing" type="default" id="ofG-9k-qMA"/>
+                            <constraint firstItem="40n-HL-fJM" firstAttribute="leading" secondItem="GY9-PB-zdi" secondAttribute="leading" type="default" id="qZz-F7-JHL"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="IAP" id="lBo-Re-dSS"/>
+                    <connections>
+                        <outlet property="loadListButton" destination="Zth-m8-d6D" id="rE0-hS-qab"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tnu-gg-wrm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="924" y="905"/>
+        </scene>
+        <!--Product List Table View Controller-->
+        <scene sceneID="zWn-IF-ZXa">
+            <objects>
+                <tableViewController id="jrZ-E6-WJc" customClass="IAPProductListTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="0Is-x6-t7H">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="422"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="IQO-tS-uBh">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="jrZ-E6-WJc" id="ggX-Er-IoI"/>
+                            <outlet property="delegate" destination="jrZ-E6-WJc" id="Cpc-R1-Ynv"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hmK-te-LiO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1386" y="978"/>
+        </scene>
+        <!--View Controller - Logger-->
         <scene sceneID="5">
             <objects>
                 <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="026414f17e48602f2c42d83bd6e0390ab8aa84a4c9700190b91065b8" borderStyle="roundedRect" placeholder="API Key" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dln-Zj-xz0">
@@ -95,6 +172,7 @@
                             <constraint firstAttribute="trailing" secondItem="flX-sf-QvF" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="zcV-8m-M0l"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Logger" id="XcM-hl-bOY"/>
                     <connections>
                         <outlet property="apiKeyField" destination="dln-Zj-xz0" id="8xi-Pf-wKJ"/>
                         <outlet property="eventField" destination="flX-sf-QvF" id="DUw-sO-f2m"/>
@@ -102,9 +180,39 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="924" y="202"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Vfk-OI-IVw">
+            <objects>
+                <tabBarController id="efG-N5-alm" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="WtY-ZB-OFK">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="2" kind="relationship" relationship="viewControllers" id="CVi-vu-bs0"/>
+                        <segue destination="Ya7-hY-lXi" kind="relationship" relationship="viewControllers" id="u9V-n5-Voe"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rab-0O-Fxu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="398" y="202"/>
         </scene>
     </scenes>
     <classes>
+        <class className="IAPProductListTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/IAPProductListTableViewController.h"/>
+        </class>
+        <class className="IAPProductListViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/IAPProductListViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="didTapLoadList:"/>
+                <relationship kind="outlet" name="loadListButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>

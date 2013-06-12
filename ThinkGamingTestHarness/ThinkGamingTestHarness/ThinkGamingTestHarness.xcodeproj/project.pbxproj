@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		860273CA17673B3800D08D6C /* IAPAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 860273C917673B3800D08D6C /* IAPAdapter.m */; };
+		860273CC17673F5B00D08D6C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 860273CB17673F5B00D08D6C /* StoreKit.framework */; };
+		860273CF1767459900D08D6C /* ThinkGamingIAPAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 860273CE1767459900D08D6C /* ThinkGamingIAPAdapter.m */; };
+		865E8BC417674CD1007DCE32 /* IAPProductListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 865E8BC317674CD1007DCE32 /* IAPProductListViewController.m */; };
+		865E8BC717674CE9007DCE32 /* IAPProductListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 865E8BC617674CE9007DCE32 /* IAPProductListTableViewController.m */; };
 		86B1847D175CC12800D41466 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B1847C175CC12800D41466 /* UIKit.framework */; };
 		86B1847F175CC12800D41466 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B1847E175CC12800D41466 /* Foundation.framework */; };
 		86B18481175CC12800D41466 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B18480175CC12800D41466 /* CoreGraphics.framework */; };
@@ -25,6 +30,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		860273C817673B3800D08D6C /* IAPAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPAdapter.h; sourceTree = "<group>"; };
+		860273C917673B3800D08D6C /* IAPAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPAdapter.m; sourceTree = "<group>"; };
+		860273CB17673F5B00D08D6C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		860273CD1767459900D08D6C /* ThinkGamingIAPAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThinkGamingIAPAdapter.h; sourceTree = "<group>"; };
+		860273CE1767459900D08D6C /* ThinkGamingIAPAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThinkGamingIAPAdapter.m; sourceTree = "<group>"; };
+		865E8BC217674CD0007DCE32 /* IAPProductListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPProductListViewController.h; sourceTree = "<group>"; };
+		865E8BC317674CD1007DCE32 /* IAPProductListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPProductListViewController.m; sourceTree = "<group>"; };
+		865E8BC517674CE9007DCE32 /* IAPProductListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPProductListTableViewController.h; sourceTree = "<group>"; };
+		865E8BC617674CE9007DCE32 /* IAPProductListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPProductListTableViewController.m; sourceTree = "<group>"; };
 		86B18479175CC12800D41466 /* ThinkGamingTestHarness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThinkGamingTestHarness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86B1847C175CC12800D41466 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		86B1847E175CC12800D41466 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -54,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				860273CC17673F5B00D08D6C /* StoreKit.framework in Frameworks */,
 				86B184BD175E7D6A00D41466 /* AdSupport.framework in Frameworks */,
 				86B184BB175E7D4200D41466 /* SystemConfiguration.framework in Frameworks */,
 				86B184B8175E7C7A00D41466 /* libThinkGaming.a in Frameworks */,
@@ -69,8 +84,8 @@
 		86B18470175CC12800D41466 = {
 			isa = PBXGroup;
 			children = (
-				86B184BC175E7D6A00D41466 /* AdSupport.framework */,
 				86B184BA175E7D4200D41466 /* SystemConfiguration.framework */,
+				86B184BC175E7D6A00D41466 /* AdSupport.framework */,
 				86B184B7175E7C7A00D41466 /* libThinkGaming.a */,
 				86B184A3175CC2BE00D41466 /* ThinkGaming.h */,
 				86B18482175CC12800D41466 /* ThinkGamingTestHarness */,
@@ -90,6 +105,7 @@
 		86B1847B175CC12800D41466 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				860273CB17673F5B00D08D6C /* StoreKit.framework */,
 				86B1847C175CC12800D41466 /* UIKit.framework */,
 				86B1847E175CC12800D41466 /* Foundation.framework */,
 				86B18480175CC12800D41466 /* CoreGraphics.framework */,
@@ -108,6 +124,14 @@
 				86B18497175CC12800D41466 /* ViewController.h */,
 				86B18498175CC12800D41466 /* ViewController.m */,
 				86B18483175CC12800D41466 /* Supporting Files */,
+				860273C817673B3800D08D6C /* IAPAdapter.h */,
+				860273C917673B3800D08D6C /* IAPAdapter.m */,
+				860273CD1767459900D08D6C /* ThinkGamingIAPAdapter.h */,
+				860273CE1767459900D08D6C /* ThinkGamingIAPAdapter.m */,
+				865E8BC217674CD0007DCE32 /* IAPProductListViewController.h */,
+				865E8BC317674CD1007DCE32 /* IAPProductListViewController.m */,
+				865E8BC517674CE9007DCE32 /* IAPProductListTableViewController.h */,
+				865E8BC617674CE9007DCE32 /* IAPProductListTableViewController.m */,
 			);
 			path = ThinkGamingTestHarness;
 			sourceTree = "<group>";
@@ -154,6 +178,16 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = thinkgaming;
+				TargetAttributes = {
+					86B18478175CC12800D41466 = {
+						DevelopmentTeam = A52MVTZYUR;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
+					};
+				};
 			};
 			buildConfigurationList = 86B18474175CC12800D41466 /* Build configuration list for PBXProject "ThinkGamingTestHarness" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -192,10 +226,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				860273CF1767459900D08D6C /* ThinkGamingIAPAdapter.m in Sources */,
 				86B18489175CC12800D41466 /* main.m in Sources */,
 				86B1848D175CC12800D41466 /* AppDelegate.m in Sources */,
 				86B18499175CC12800D41466 /* ViewController.m in Sources */,
+				860273CA17673B3800D08D6C /* IAPAdapter.m in Sources */,
 				86B184C2175E812700D41466 /* Reachability.m in Sources */,
+				865E8BC417674CD1007DCE32 /* IAPProductListViewController.m in Sources */,
+				865E8BC717674CE9007DCE32 /* IAPProductListTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +318,8 @@
 		86B1849D175CC12800D41466 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Aaron Junod (544RP3RHEL)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ThinkGamingTestHarness/ThinkGamingTestHarness-Prefix.pch";
 				INFOPLIST_FILE = "ThinkGamingTestHarness/ThinkGamingTestHarness-Info.plist";
@@ -288,6 +328,8 @@
 					"\"$(SRCROOT)/../../../../../Library/Developer/Xcode/DerivedData/ThinkGaming-goihdayjxsjoprbmmqijsomdphkq/Build/Products/Debug-iphoneos\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5ED29C66-2492-49DB-95DD-A983D95DAD5F";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "FE49589D-9C97-4868-AA76-A9AE4C3239EB";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -295,6 +337,8 @@
 		86B1849E175CC12800D41466 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Think Gaming LLC (A52MVTZYUR)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ThinkGamingTestHarness/ThinkGamingTestHarness-Prefix.pch";
 				INFOPLIST_FILE = "ThinkGamingTestHarness/ThinkGamingTestHarness-Info.plist";
@@ -303,6 +347,7 @@
 					"\"$(SRCROOT)/../../../../../Library/Developer/Xcode/DerivedData/ThinkGaming-goihdayjxsjoprbmmqijsomdphkq/Build/Products/Debug-iphoneos\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5ED29C66-2492-49DB-95DD-A983D95DAD5F";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

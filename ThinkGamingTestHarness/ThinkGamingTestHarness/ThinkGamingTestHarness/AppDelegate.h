@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define IN_APP_PURCHASE_SHARED_SECRET @"c8e3703ad5354ef8976120f3485b82d4"
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
