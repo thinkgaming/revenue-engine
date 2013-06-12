@@ -12,9 +12,12 @@
 
 typedef void (^DidDownloadProductsBlock)(BOOL success, NSArray * products);
 
-@interface IAPAdapter : NSObject <SKProductsRequestDelegate>
+@interface IAPAdapter : NSObject <SKProductsRequestDelegate, SKPaymentTransactionObserver>
 
 - (id)initWithProductIds:(NSArray * )productIdentifiers;
 - (void)requestProducts:(DidDownloadProductsBlock)didDownloadProductsBlock;
+
+- (void) buyProduct:(SKProduct *)product;
+- (BOOL) productPurchased:(NSString *)productIdentifier;
 
 @end

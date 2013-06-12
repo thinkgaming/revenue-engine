@@ -8,6 +8,7 @@
 
 #import "IAPProductListTableViewController.h"
 #import "ThinkGamingIAPAdapter.h"
+#import "IAPProductCell.h"
 
 @interface IAPProductListTableViewController ()
 @property (strong) NSArray *productList;
@@ -33,8 +34,21 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"IAPProductCell";
+    IAPProductCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    SKProduct *product = self.productList[indexPath.row];
+    cell.descriptionLabel.text = product.localizedDescription;
+    cell.titleLabel.text = product.localizedTitle;
+    cell.priceLabel.text = [product.price stringValue];
+    cell.productIdentifierLabel.text = product.productIdentifier;
+    cell.product = product;
+    
+    if ([[ThinkGamingIAPAdapter shared] productPurchased:product.productIdentifier]) {
+        [cell.buyButton setTitle:@"Buy Again" forState:UIControlStateNormal];
+    } else {
+        [cell.buyButton setTitle:@"Buy" forState:UIControlStateNormal];
+    }
     
     return cell;
 }
