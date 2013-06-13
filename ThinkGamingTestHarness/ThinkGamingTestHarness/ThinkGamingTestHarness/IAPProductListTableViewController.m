@@ -21,6 +21,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.productList = [NSArray array];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didUpdatePurchases) name:kDidUpdatePurchasesDatabase object:nil];
+}
+
+- (void) didUpdatePurchases {
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source

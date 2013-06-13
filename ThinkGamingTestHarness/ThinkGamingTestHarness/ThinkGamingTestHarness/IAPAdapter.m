@@ -87,6 +87,10 @@
     [[SKPaymentQueue defaultQueue] addPayment:payment];
 }
 
+- (void) restoreCompletedTransactions {
+    [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
+}
+
 - (BOOL) productPurchased:(NSString *)productIdentifier {
     return [self.purchasedProductIdentifiers containsObject:productIdentifier];
 }
@@ -102,6 +106,7 @@
 
 - (void) restoreTransaction:(SKPaymentTransaction *)transaction {
     [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+    [self storePurchasedProductIdentifier:transaction.originalTransaction.payment.productIdentifier];
 }
 
 - (void) paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transactions {
@@ -119,6 +124,8 @@
                 break;
         }
     }];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kDidUpdatePurchasesDatabase object:nil];
 }
 
 @end

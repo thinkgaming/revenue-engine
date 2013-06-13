@@ -19,6 +19,9 @@
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zth-m8-d6D">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="129" id="hR5-cL-yG8"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Load List">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -31,13 +34,30 @@
                                     <action selector="didTapLoadList:" destination="Ya7-hY-lXi" eventType="touchUpInside" id="EMA-WN-yXQ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QzE-XZ-KDY">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="138" id="GDk-6s-aGE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Restore">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapRefreshPurchases:" destination="Ya7-hY-lXi" eventType="touchUpInside" id="pXk-dh-AWI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Zth-m8-d6D" firstAttribute="top" secondItem="GY9-PB-zdi" secondAttribute="top" constant="20" symbolic="YES" type="default" id="42q-kN-IME"/>
+                            <constraint firstItem="QzE-XZ-KDY" firstAttribute="top" secondItem="GY9-PB-zdi" secondAttribute="top" constant="20" symbolic="YES" type="default" id="6Cf-bR-mJM"/>
+                            <constraint firstAttribute="trailing" secondItem="QzE-XZ-KDY" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="L2b-dP-icR"/>
                             <constraint firstItem="40n-HL-fJM" firstAttribute="top" secondItem="GY9-PB-zdi" secondAttribute="top" constant="77" id="My0-bV-Xbg"/>
                             <constraint firstItem="Zth-m8-d6D" firstAttribute="leading" secondItem="GY9-PB-zdi" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="RGB-Rc-pC9"/>
-                            <constraint firstAttribute="trailing" secondItem="Zth-m8-d6D" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="a8K-bd-yyL"/>
                             <constraint firstItem="40n-HL-fJM" firstAttribute="bottom" secondItem="GY9-PB-zdi" secondAttribute="bottom" type="default" id="mqv-D7-ZjV"/>
                             <constraint firstItem="40n-HL-fJM" firstAttribute="trailing" secondItem="GY9-PB-zdi" secondAttribute="trailing" type="default" id="ofG-9k-qMA"/>
                             <constraint firstItem="40n-HL-fJM" firstAttribute="leading" secondItem="GY9-PB-zdi" secondAttribute="leading" type="default" id="qZz-F7-JHL"/>
@@ -73,7 +93,7 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APf-jy-P70">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="APf-jy-P70">
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -285,6 +305,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/IAPProductListViewController.h"/>
             <relationships>
                 <relationship kind="action" name="didTapLoadList:"/>
+                <relationship kind="action" name="didTapRefreshPurchases:"/>
                 <relationship kind="outlet" name="loadListButton" candidateClass="UIButton"/>
             </relationships>
         </class>

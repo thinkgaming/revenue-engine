@@ -20,4 +20,6 @@ typedef void (^DidDownloadProductsBlock)(BOOL success, NSArray * products);
 - (void) buyProduct:(SKProduct *)product;
 - (BOOL) productPurchased:(NSString *)productIdentifier;
 
+- (void) restoreCompletedTransactions;
+
 @end

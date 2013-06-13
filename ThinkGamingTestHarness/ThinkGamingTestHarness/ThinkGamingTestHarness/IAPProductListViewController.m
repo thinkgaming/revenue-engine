@@ -8,11 +8,14 @@
 
 #import "IAPProductListViewController.h"
 #import "IAPProductListTableViewController.h"
+#import "ThinkGamingIAPAdapter.h"
 
 @interface IAPProductListViewController ()
 @property (weak) IAPProductListTableViewController *productListTableView;
 @property (weak) IBOutlet UIButton *loadListButton;
+
 -(IBAction)didTapLoadList:(id)sender;
+-(IBAction)didTapRefreshPurchases:(id)sender;
 
 @end
 
@@ -30,6 +33,10 @@
 
 - (IBAction)didTapLoadList:(id)sender {
     [self.productListTableView loadList];
+}
+
+-(IBAction)didTapRefreshPurchases:(id)sender {
+    [[ThinkGamingIAPAdapter shared] restoreCompletedTransactions];
 }
 
 
