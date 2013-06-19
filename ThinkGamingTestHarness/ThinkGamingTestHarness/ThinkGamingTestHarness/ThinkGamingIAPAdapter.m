@@ -14,7 +14,7 @@
     static dispatch_once_t once;
     static ThinkGamingIAPAdapter *sharedAdapter;
     dispatch_once(&once, ^{
-        sharedAdapter = [[self alloc] initWithProductIds:@[@"com.thinkgaming.testharness.arrows.10", @"com.thinkgaming.testharness.arrows.10.tier2", @"com.thinkgaming.testharness.pro", @"com.thinkgaming.testharness.pro.tier2"]];
+        sharedAdapter = [[self alloc] initWithProductIds:@[@"com.thinkgaming.testharness.arrows.10", @"com.thinkgaming.testharness.arrows.10.tier2", @"com.thinkgaming.testharness.pro", @"com.thinkgaming.testharness.pro.tier2", @"com.thinkgaming.testharness.leather.armor", @"com.thinkgaming.testharness.leather.armor.10"]];
     });
     return sharedAdapter;
 }
