@@ -5,7 +5,7 @@
 //  Copyright (c) 2013 ThinkGaming. All rights reserved.
 //
 
-#import "ThinkGaming.h"
+#import "ThinkGamingLogger.h"
 #import "Reachability.h"
 #import <AdSupport/ASIdentifierManager.h>
 #import <ifaddrs.h>
@@ -17,7 +17,7 @@
 #define QUEUE_FLUSH_TIME 30 // In seconds
 #define MAX_NUM_BYTES   (64 * 1024) // Max number of bytes to send per event
 
-@interface ThinkGaming ()
+@interface ThinkGamingLogger ()
 - (void) dispatchEvents;
 - (BOOL) isConnected;
 
@@ -26,22 +26,22 @@
 @property (nonatomic, retain) NSString *apiKey;
 @end
 
-@implementation ThinkGaming
+@implementation ThinkGamingLogger
 
-static ThinkGaming* sharedSingleton;
+static ThinkGamingLogger* sharedSingleton;
 
 -(void) dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidEnterBackgroundNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationWillEnterForegroundNotification object:nil];
 }
 
-+ (ThinkGaming*)sharedSingleton {
++ (ThinkGamingLogger*)shared {
 	@synchronized(self)
 	{
 		if (!sharedSingleton)
         {
             //NSLog(@"Creating singleton");
-			sharedSingleton = [[ThinkGaming alloc] init];
+			sharedSingleton = [[ThinkGamingLogger alloc] init];
         }
 	}
 	return sharedSingleton;
@@ -134,7 +134,7 @@ static ThinkGaming* sharedSingleton;
         [dict setValue:locale forKey:@"__TG__locale"];
     }
     
-    NSString *deviceID = [ThinkGaming deviceId];
+    NSString *deviceID = [ThinkGamingLogger deviceId];
     if(deviceID)
     {
         [dict setValue:deviceID forKey:@"__TG__userID"];
@@ -180,11 +180,11 @@ static ThinkGaming* sharedSingleton;
 
 #pragma mark - Public Methods
 
-+ (void)startSession:(NSString *)key {
++ (ThinkGamingLogger *)startSession:(NSString *)key {
     //if (![sharedSingleton isConnected]) return;
     
     NSLog(@"ThinkGaming - starting session.");
-    [ThinkGaming sharedSingleton]; // Init if not already started
+    [ThinkGamingLogger shared]; // Init if not already started
     sharedSingleton.apiKey = key;
     
     
@@ -218,9 +218,9 @@ static ThinkGaming* sharedSingleton;
     }
     else
     {
-        [ThinkGaming logEvent:@"__TG__sessionStart"];
+        [ThinkGamingLogger logEvent:@"__TG__sessionStart"];
     }
-    // TODO handshake?
+    return sharedSingleton;
 }
 
 + (void)logEvent:(NSString *)eventName {

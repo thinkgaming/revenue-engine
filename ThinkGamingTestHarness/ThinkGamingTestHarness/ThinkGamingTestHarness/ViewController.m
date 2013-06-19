@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "ThinkGaming.h"
+#import "ThinkGamingLogger.h"
 #import "Reachability.h"
 
 @interface ViewController ()
@@ -25,19 +25,19 @@
 @implementation ViewController
 
 - (IBAction)didTapInit:(id)sender {
-    [ThinkGaming startSession:self.apiKeyField.text];
+    [ThinkGamingLogger startSession:self.apiKeyField.text];
 }
 
 - (IBAction)didTapLog:(id)sender {
-    [ThinkGaming logEvent:self.eventField.text];
+    [ThinkGamingLogger logEvent:self.eventField.text];
 }
 
 - (IBAction)didTapStartTimed:(id)sender {
-    [ThinkGaming logEvent:self.eventField.text timed:YES];
+//    [ThinkGamingLogger logEvent:self.eventField.text timed:YES];
 }
 
 - (IBAction)didTapEndTimed:(id)sender {
-    [ThinkGaming endTimedEvent:self.eventField.text withParameters:nil];
+//    [ThinkGamingLogger endTimedEvent:self.eventField.text withParameters:nil];
 }
 
 

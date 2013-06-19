@@ -24,8 +24,8 @@
 		3738D3BA174A57A50088D46B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3738D3B9174A57A50088D46B /* UIKit.framework */; };
 		3738D3BC174A57BD0088D46B /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3738D3BB174A57BD0088D46B /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		52205435173D49A800A9D253 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52205434173D49A800A9D253 /* Foundation.framework */; };
-		5220543A173D49A800A9D253 /* ThinkGaming.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 52205439173D49A800A9D253 /* ThinkGaming.h */; };
-		5220543C173D49A800A9D253 /* ThinkGaming.m in Sources */ = {isa = PBXBuildFile; fileRef = 5220543B173D49A800A9D253 /* ThinkGaming.m */; };
+		5220543A173D49A800A9D253 /* ThinkGamingLogger.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 52205439173D49A800A9D253 /* ThinkGamingLogger.h */; };
+		5220543C173D49A800A9D253 /* ThinkGamingLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5220543B173D49A800A9D253 /* ThinkGamingLogger.m */; };
 		86B184B1175E6C1A00D41466 /* EventQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B184B0175E6C1A00D41466 /* EventQueue.m */; };
 		86B184B5175E6F2400D41466 /* ThinkGamingApiAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B184B4175E6F2400D41466 /* ThinkGamingApiAdapter.m */; };
 		86B184B9175E7C9600D41466 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 52205462173D656300A9D253 /* Reachability.m */; };
@@ -38,7 +38,7 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
-				5220543A173D49A800A9D253 /* ThinkGaming.h in CopyFiles */,
+				5220543A173D49A800A9D253 /* ThinkGamingLogger.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,8 +50,8 @@
 		52205431173D49A800A9D253 /* libThinkGaming.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libThinkGaming.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		52205434173D49A800A9D253 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		52205438173D49A800A9D253 /* ThinkGaming-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ThinkGaming-Prefix.pch"; sourceTree = "<group>"; };
-		52205439173D49A800A9D253 /* ThinkGaming.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThinkGaming.h; sourceTree = "<group>"; };
-		5220543B173D49A800A9D253 /* ThinkGaming.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThinkGaming.m; sourceTree = "<group>"; };
+		52205439173D49A800A9D253 /* ThinkGamingLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThinkGamingLogger.h; sourceTree = "<group>"; };
+		5220543B173D49A800A9D253 /* ThinkGamingLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThinkGamingLogger.m; sourceTree = "<group>"; };
 		52205461173D656300A9D253 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		52205462173D656300A9D253 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		86B184AF175E6C1A00D41466 /* EventQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventQueue.h; sourceTree = "<group>"; };
@@ -107,8 +107,8 @@
 			children = (
 				86B184AF175E6C1A00D41466 /* EventQueue.h */,
 				86B184B0175E6C1A00D41466 /* EventQueue.m */,
-				52205439173D49A800A9D253 /* ThinkGaming.h */,
-				5220543B173D49A800A9D253 /* ThinkGaming.m */,
+				52205439173D49A800A9D253 /* ThinkGamingLogger.h */,
+				5220543B173D49A800A9D253 /* ThinkGamingLogger.m */,
 				86B184B3175E6F2400D41466 /* ThinkGamingApiAdapter.h */,
 				86B184B4175E6F2400D41466 /* ThinkGamingApiAdapter.m */,
 				52205437173D49A800A9D253 /* Supporting Files */,
@@ -202,7 +202,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5220543C173D49A800A9D253 /* ThinkGaming.m in Sources */,
+				5220543C173D49A800A9D253 /* ThinkGamingLogger.m in Sources */,
 				86B184B1175E6C1A00D41466 /* EventQueue.m in Sources */,
 				86B184B5175E6F2400D41466 /* ThinkGamingApiAdapter.m in Sources */,
 				86B184B9175E7C9600D41466 /* Reachability.m in Sources */,
