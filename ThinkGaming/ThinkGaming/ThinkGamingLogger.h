@@ -42,6 +42,9 @@ Start session with given API key (get your API key from your dashboard)
  Convenience objects for timed events.
  */
 @interface ThinkGamingEvent : NSObject
+@property (strong) NSString *eventName;
+- (id) initWithEventName:(NSString *)eventName;
+
 - (ThinkGamingEvent *)endTimedEvent;
 - (ThinkGamingEvent *)endTimedEventWithParameters:(NSDictionary *)parameters;
 @end

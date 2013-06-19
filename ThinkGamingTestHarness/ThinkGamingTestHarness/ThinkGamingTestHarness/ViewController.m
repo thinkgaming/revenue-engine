@@ -33,11 +33,11 @@
 }
 
 - (IBAction)didTapStartTimed:(id)sender {
-//    [ThinkGamingLogger logEvent:self.eventField.text timed:YES];
+    [ThinkGamingLogger startTimedEvent:self.eventField.text];
 }
 
 - (IBAction)didTapEndTimed:(id)sender {
-//    [ThinkGamingLogger endTimedEvent:self.eventField.text withParameters:nil];
+    [ThinkGamingLogger endTimedEvent:self.eventField.text];
 }
 
 

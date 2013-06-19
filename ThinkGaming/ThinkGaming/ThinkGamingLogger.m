@@ -61,11 +61,6 @@ static ThinkGamingLogger* sharedSingleton;
     if (!self) {
         return nil;
     }
-        
-    // By default, the example ships with SSL pinning enabled for the app.net API pinned against the public key of adn.cer file included with the example. In order to make it easier for developers who are new to AFNetworking, SSL pinning is automatically disabled if the base URL has been changed. This will allow developers to hack around with the example, without getting tripped up by SSL pinning.
-    //if ([[url scheme] isEqualToString:@"https"] && [[url host] isEqualToString:@"alpha-api.app.net"]) {
-    //    [self setDefaultSSLPinningMode:AFSSLPinningModePublicKey];
-    //}
     
     [self initTimer];
     self.eventQueue = [[EventQueue alloc] init];
@@ -239,9 +234,25 @@ static ThinkGamingLogger* sharedSingleton;
     [sharedSingleton logEvent:eventName withParameters:parameters timed:timed stopTimer:NO];
 }
 
-+ (void)endTimedEvent:(NSString *)eventName withParameters:(NSDictionary *)parameters {
++ (ThinkGamingEvent *)endTimedEvent:(NSString *)eventName withParameters:(NSDictionary *)parameters {
     [sharedSingleton logEvent:eventName withParameters:parameters timed:YES stopTimer:YES];
+    return [[ThinkGamingEvent alloc] initWithEventName:eventName];
 }
+
++ (ThinkGamingEvent *)startTimedEvent:(NSString *)eventName {
+    return [self startTimedEvent:eventName withParameters:nil];
+}
+
++ (ThinkGamingEvent *)startTimedEvent:(NSString *)eventName withParameters:(NSDictionary *)parameters {
+    [sharedSingleton logEvent:eventName withParameters:parameters timed:YES stopTimer:NO];
+    return [[ThinkGamingEvent alloc] initWithEventName:eventName];
+}
+
++ (ThinkGamingEvent *)endTimedEvent:(NSString *)eventName {
+    return [self endTimedEvent:eventName withParameters:nil];
+}
+
+
 
 #pragma mark - Device helpers
 
@@ -310,6 +321,27 @@ static ThinkGamingLogger* sharedSingleton;
     
     return uniqueID;
 
+}
+
+
+@end
+
+@implementation ThinkGamingEvent
+
+- (id) initWithEventName:(NSString *)eventName {
+    if (self = [super init]) {
+        self.eventName = eventName;
+    }
+    return self;
+}
+
+- (ThinkGamingEvent *)endTimedEvent {
+    return [self endTimedEventWithParameters:nil];
+}
+
+- (ThinkGamingEvent *)endTimedEventWithParameters:(NSDictionary *)parameters {
+    [ThinkGamingLogger endTimedEvent:self.eventName withParameters:parameters];
+    return self;
 }
 
 
