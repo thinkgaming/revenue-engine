@@ -7,7 +7,18 @@
 //
 
 #import "ThinkGamingStoreUI.h"
+#import "ThinkGamingStoreUIViewController.h"
 
 @implementation ThinkGamingStoreUI
+
++ (void) showStore {
+    UIWindow *rootWindow = [UIApplication sharedApplication].windows[0];
+    
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"ThinkGamingStoreUIStoryBoard" bundle:nil];
+    ThinkGamingStoreUIViewController *storeUI = [storyBoard instantiateInitialViewController];
+    
+    [rootWindow addSubview:storeUI.view];
+    
+}
 
 @end

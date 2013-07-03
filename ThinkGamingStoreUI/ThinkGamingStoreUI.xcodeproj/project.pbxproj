@@ -7,140 +7,158 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		863770741782EE4B005D1DEE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 863770731782EE4B005D1DEE /* Foundation.framework */; };
-		863770791782EE4B005D1DEE /* ThinkGamingStoreUI.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 863770781782EE4B005D1DEE /* ThinkGamingStoreUI.h */; };
-		8637707B1782EE4B005D1DEE /* ThinkGamingStoreUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 8637707A1782EE4B005D1DEE /* ThinkGamingStoreUI.m */; };
-		863770831782EE4B005D1DEE /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 863770821782EE4B005D1DEE /* SenTestingKit.framework */; };
-		863770851782EE4B005D1DEE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 863770841782EE4B005D1DEE /* UIKit.framework */; };
-		863770861782EE4B005D1DEE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 863770731782EE4B005D1DEE /* Foundation.framework */; };
-		863770891782EE4B005D1DEE /* libThinkGamingStoreUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 863770701782EE4B005D1DEE /* libThinkGamingStoreUI.a */; };
-		8637708F1782EE4B005D1DEE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8637708D1782EE4B005D1DEE /* InfoPlist.strings */; };
-		863770921782EE4B005D1DEE /* ThinkGamingStoreUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 863770911782EE4B005D1DEE /* ThinkGamingStoreUITests.m */; };
+		8690AAA6178319620082FE3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8690AAA5178319620082FE3B /* UIKit.framework */; };
+		8690AAA8178319620082FE3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8690AAA7178319620082FE3B /* Foundation.framework */; };
+		8690AAAA178319620082FE3B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8690AAA9178319620082FE3B /* CoreGraphics.framework */; };
+		8690AAB0178319620082FE3B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8690AAAE178319620082FE3B /* InfoPlist.strings */; };
+		8690AAB2178319620082FE3B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8690AAB1178319620082FE3B /* main.m */; };
+		8690AAB6178319620082FE3B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8690AAB5178319620082FE3B /* AppDelegate.m */; };
+		8690AAB8178319620082FE3B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8690AAB7178319620082FE3B /* Default.png */; };
+		8690AABA178319620082FE3B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8690AAB9178319620082FE3B /* Default@2x.png */; };
+		8690AABC178319620082FE3B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8690AABB178319620082FE3B /* Default-568h@2x.png */; };
+		8690AABF178319620082FE3B /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8690AABD178319620082FE3B /* MainStoryboard_iPhone.storyboard */; };
+		8690AAC2178319620082FE3B /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8690AAC0178319620082FE3B /* MainStoryboard_iPad.storyboard */; };
+		8690AAC5178319630082FE3B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8690AAC4178319630082FE3B /* ViewController.m */; };
+		8690AACD178319630082FE3B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8690AACC178319630082FE3B /* SenTestingKit.framework */; };
+		8690AACE178319630082FE3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8690AAA5178319620082FE3B /* UIKit.framework */; };
+		8690AACF178319630082FE3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8690AAA7178319620082FE3B /* Foundation.framework */; };
+		8690AAD7178319630082FE3B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8690AAD5178319630082FE3B /* InfoPlist.strings */; };
+		8690AADA178319630082FE3B /* ThinkGamingStoreUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8690AAD9178319630082FE3B /* ThinkGamingStoreUITests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		863770871782EE4B005D1DEE /* PBXContainerItemProxy */ = {
+		8690AAD0178319630082FE3B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 863770681782EE4B005D1DEE /* Project object */;
+			containerPortal = 8690AA9A178319620082FE3B /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8637706F1782EE4B005D1DEE;
+			remoteGlobalIDString = 8690AAA1178319620082FE3B;
 			remoteInfo = ThinkGamingStoreUI;
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		8637706E1782EE4B005D1DEE /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/${PRODUCT_NAME}";
-			dstSubfolderSpec = 16;
-			files = (
-				863770791782EE4B005D1DEE /* ThinkGamingStoreUI.h in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		863770701782EE4B005D1DEE /* libThinkGamingStoreUI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libThinkGamingStoreUI.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		863770731782EE4B005D1DEE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		863770771782EE4B005D1DEE /* ThinkGamingStoreUI-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ThinkGamingStoreUI-Prefix.pch"; sourceTree = "<group>"; };
-		863770781782EE4B005D1DEE /* ThinkGamingStoreUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThinkGamingStoreUI.h; sourceTree = "<group>"; };
-		8637707A1782EE4B005D1DEE /* ThinkGamingStoreUI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThinkGamingStoreUI.m; sourceTree = "<group>"; };
-		863770811782EE4B005D1DEE /* ThinkGamingStoreUITests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThinkGamingStoreUITests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		863770821782EE4B005D1DEE /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		863770841782EE4B005D1DEE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		8637708C1782EE4B005D1DEE /* ThinkGamingStoreUITests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ThinkGamingStoreUITests-Info.plist"; sourceTree = "<group>"; };
-		8637708E1782EE4B005D1DEE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		863770901782EE4B005D1DEE /* ThinkGamingStoreUITests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThinkGamingStoreUITests.h; sourceTree = "<group>"; };
-		863770911782EE4B005D1DEE /* ThinkGamingStoreUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThinkGamingStoreUITests.m; sourceTree = "<group>"; };
+		8690AAA2178319620082FE3B /* ThinkGamingStoreUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThinkGamingStoreUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8690AAA5178319620082FE3B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8690AAA7178319620082FE3B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8690AAA9178319620082FE3B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8690AAAD178319620082FE3B /* ThinkGamingStoreUI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ThinkGamingStoreUI-Info.plist"; sourceTree = "<group>"; };
+		8690AAAF178319620082FE3B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8690AAB1178319620082FE3B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8690AAB3178319620082FE3B /* ThinkGamingStoreUI-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ThinkGamingStoreUI-Prefix.pch"; sourceTree = "<group>"; };
+		8690AAB4178319620082FE3B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8690AAB5178319620082FE3B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8690AAB7178319620082FE3B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		8690AAB9178319620082FE3B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		8690AABB178319620082FE3B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		8690AABE178319620082FE3B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		8690AAC1178319620082FE3B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		8690AAC3178319620082FE3B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		8690AAC4178319630082FE3B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8690AACB178319630082FE3B /* ThinkGamingStoreUITests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThinkGamingStoreUITests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8690AACC178319630082FE3B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		8690AAD4178319630082FE3B /* ThinkGamingStoreUITests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ThinkGamingStoreUITests-Info.plist"; sourceTree = "<group>"; };
+		8690AAD6178319630082FE3B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8690AAD8178319630082FE3B /* ThinkGamingStoreUITests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThinkGamingStoreUITests.h; sourceTree = "<group>"; };
+		8690AAD9178319630082FE3B /* ThinkGamingStoreUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThinkGamingStoreUITests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8637706D1782EE4B005D1DEE /* Frameworks */ = {
+		8690AA9F178319620082FE3B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				863770741782EE4B005D1DEE /* Foundation.framework in Frameworks */,
+				8690AAA6178319620082FE3B /* UIKit.framework in Frameworks */,
+				8690AAA8178319620082FE3B /* Foundation.framework in Frameworks */,
+				8690AAAA178319620082FE3B /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8637707D1782EE4B005D1DEE /* Frameworks */ = {
+		8690AAC7178319630082FE3B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				863770831782EE4B005D1DEE /* SenTestingKit.framework in Frameworks */,
-				863770851782EE4B005D1DEE /* UIKit.framework in Frameworks */,
-				863770861782EE4B005D1DEE /* Foundation.framework in Frameworks */,
-				863770891782EE4B005D1DEE /* libThinkGamingStoreUI.a in Frameworks */,
+				8690AACD178319630082FE3B /* SenTestingKit.framework in Frameworks */,
+				8690AACE178319630082FE3B /* UIKit.framework in Frameworks */,
+				8690AACF178319630082FE3B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		863770671782EE4B005D1DEE = {
+		8690AA99178319620082FE3B = {
 			isa = PBXGroup;
 			children = (
-				863770751782EE4B005D1DEE /* ThinkGamingStoreUI */,
-				8637708A1782EE4B005D1DEE /* ThinkGamingStoreUITests */,
-				863770721782EE4B005D1DEE /* Frameworks */,
-				863770711782EE4B005D1DEE /* Products */,
+				8690AAAB178319620082FE3B /* ThinkGamingStoreUI */,
+				8690AAD2178319630082FE3B /* ThinkGamingStoreUITests */,
+				8690AAA4178319620082FE3B /* Frameworks */,
+				8690AAA3178319620082FE3B /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		863770711782EE4B005D1DEE /* Products */ = {
+		8690AAA3178319620082FE3B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				863770701782EE4B005D1DEE /* libThinkGamingStoreUI.a */,
-				863770811782EE4B005D1DEE /* ThinkGamingStoreUITests.octest */,
+				8690AAA2178319620082FE3B /* ThinkGamingStoreUI.app */,
+				8690AACB178319630082FE3B /* ThinkGamingStoreUITests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		863770721782EE4B005D1DEE /* Frameworks */ = {
+		8690AAA4178319620082FE3B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				863770731782EE4B005D1DEE /* Foundation.framework */,
-				863770821782EE4B005D1DEE /* SenTestingKit.framework */,
-				863770841782EE4B005D1DEE /* UIKit.framework */,
+				8690AAA5178319620082FE3B /* UIKit.framework */,
+				8690AAA7178319620082FE3B /* Foundation.framework */,
+				8690AAA9178319620082FE3B /* CoreGraphics.framework */,
+				8690AACC178319630082FE3B /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		863770751782EE4B005D1DEE /* ThinkGamingStoreUI */ = {
+		8690AAAB178319620082FE3B /* ThinkGamingStoreUI */ = {
 			isa = PBXGroup;
 			children = (
-				863770781782EE4B005D1DEE /* ThinkGamingStoreUI.h */,
-				8637707A1782EE4B005D1DEE /* ThinkGamingStoreUI.m */,
-				863770761782EE4B005D1DEE /* Supporting Files */,
+				8690AAB4178319620082FE3B /* AppDelegate.h */,
+				8690AAB5178319620082FE3B /* AppDelegate.m */,
+				8690AABD178319620082FE3B /* MainStoryboard_iPhone.storyboard */,
+				8690AAC0178319620082FE3B /* MainStoryboard_iPad.storyboard */,
+				8690AAC3178319620082FE3B /* ViewController.h */,
+				8690AAC4178319630082FE3B /* ViewController.m */,
+				8690AAAC178319620082FE3B /* Supporting Files */,
 			);
 			path = ThinkGamingStoreUI;
 			sourceTree = "<group>";
 		};
-		863770761782EE4B005D1DEE /* Supporting Files */ = {
+		8690AAAC178319620082FE3B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				863770771782EE4B005D1DEE /* ThinkGamingStoreUI-Prefix.pch */,
+				8690AAAD178319620082FE3B /* ThinkGamingStoreUI-Info.plist */,
+				8690AAAE178319620082FE3B /* InfoPlist.strings */,
+				8690AAB1178319620082FE3B /* main.m */,
+				8690AAB3178319620082FE3B /* ThinkGamingStoreUI-Prefix.pch */,
+				8690AAB7178319620082FE3B /* Default.png */,
+				8690AAB9178319620082FE3B /* Default@2x.png */,
+				8690AABB178319620082FE3B /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		8637708A1782EE4B005D1DEE /* ThinkGamingStoreUITests */ = {
+		8690AAD2178319630082FE3B /* ThinkGamingStoreUITests */ = {
 			isa = PBXGroup;
 			children = (
-				863770901782EE4B005D1DEE /* ThinkGamingStoreUITests.h */,
-				863770911782EE4B005D1DEE /* ThinkGamingStoreUITests.m */,
-				8637708B1782EE4B005D1DEE /* Supporting Files */,
+				8690AAD8178319630082FE3B /* ThinkGamingStoreUITests.h */,
+				8690AAD9178319630082FE3B /* ThinkGamingStoreUITests.m */,
+				8690AAD3178319630082FE3B /* Supporting Files */,
 			);
 			path = ThinkGamingStoreUITests;
 			sourceTree = "<group>";
 		};
-		8637708B1782EE4B005D1DEE /* Supporting Files */ = {
+		8690AAD3178319630082FE3B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				8637708C1782EE4B005D1DEE /* ThinkGamingStoreUITests-Info.plist */,
-				8637708D1782EE4B005D1DEE /* InfoPlist.strings */,
+				8690AAD4178319630082FE3B /* ThinkGamingStoreUITests-Info.plist */,
+				8690AAD5178319630082FE3B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -148,13 +166,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8637706F1782EE4B005D1DEE /* ThinkGamingStoreUI */ = {
+		8690AAA1178319620082FE3B /* ThinkGamingStoreUI */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 863770951782EE4B005D1DEE /* Build configuration list for PBXNativeTarget "ThinkGamingStoreUI" */;
+			buildConfigurationList = 8690AADD178319630082FE3B /* Build configuration list for PBXNativeTarget "ThinkGamingStoreUI" */;
 			buildPhases = (
-				8637706C1782EE4B005D1DEE /* Sources */,
-				8637706D1782EE4B005D1DEE /* Frameworks */,
-				8637706E1782EE4B005D1DEE /* CopyFiles */,
+				8690AA9E178319620082FE3B /* Sources */,
+				8690AA9F178319620082FE3B /* Frameworks */,
+				8690AAA0178319620082FE3B /* Resources */,
 			);
 			buildRules = (
 			);
@@ -162,68 +180,81 @@
 			);
 			name = ThinkGamingStoreUI;
 			productName = ThinkGamingStoreUI;
-			productReference = 863770701782EE4B005D1DEE /* libThinkGamingStoreUI.a */;
-			productType = "com.apple.product-type.library.static";
+			productReference = 8690AAA2178319620082FE3B /* ThinkGamingStoreUI.app */;
+			productType = "com.apple.product-type.application";
 		};
-		863770801782EE4B005D1DEE /* ThinkGamingStoreUITests */ = {
+		8690AACA178319630082FE3B /* ThinkGamingStoreUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 863770981782EE4B005D1DEE /* Build configuration list for PBXNativeTarget "ThinkGamingStoreUITests" */;
+			buildConfigurationList = 8690AAE0178319630082FE3B /* Build configuration list for PBXNativeTarget "ThinkGamingStoreUITests" */;
 			buildPhases = (
-				8637707C1782EE4B005D1DEE /* Sources */,
-				8637707D1782EE4B005D1DEE /* Frameworks */,
-				8637707E1782EE4B005D1DEE /* Resources */,
-				8637707F1782EE4B005D1DEE /* ShellScript */,
+				8690AAC6178319630082FE3B /* Sources */,
+				8690AAC7178319630082FE3B /* Frameworks */,
+				8690AAC8178319630082FE3B /* Resources */,
+				8690AAC9178319630082FE3B /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				863770881782EE4B005D1DEE /* PBXTargetDependency */,
+				8690AAD1178319630082FE3B /* PBXTargetDependency */,
 			);
 			name = ThinkGamingStoreUITests;
 			productName = ThinkGamingStoreUITests;
-			productReference = 863770811782EE4B005D1DEE /* ThinkGamingStoreUITests.octest */;
+			productReference = 8690AACB178319630082FE3B /* ThinkGamingStoreUITests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		863770681782EE4B005D1DEE /* Project object */ = {
+		8690AA9A178319620082FE3B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = ThinkGaming;
 			};
-			buildConfigurationList = 8637706B1782EE4B005D1DEE /* Build configuration list for PBXProject "ThinkGamingStoreUI" */;
+			buildConfigurationList = 8690AA9D178319620082FE3B /* Build configuration list for PBXProject "ThinkGamingStoreUI" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 863770671782EE4B005D1DEE;
-			productRefGroup = 863770711782EE4B005D1DEE /* Products */;
+			mainGroup = 8690AA99178319620082FE3B;
+			productRefGroup = 8690AAA3178319620082FE3B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8637706F1782EE4B005D1DEE /* ThinkGamingStoreUI */,
-				863770801782EE4B005D1DEE /* ThinkGamingStoreUITests */,
+				8690AAA1178319620082FE3B /* ThinkGamingStoreUI */,
+				8690AACA178319630082FE3B /* ThinkGamingStoreUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		8637707E1782EE4B005D1DEE /* Resources */ = {
+		8690AAA0178319620082FE3B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8637708F1782EE4B005D1DEE /* InfoPlist.strings in Resources */,
+				8690AAB0178319620082FE3B /* InfoPlist.strings in Resources */,
+				8690AAB8178319620082FE3B /* Default.png in Resources */,
+				8690AABA178319620082FE3B /* Default@2x.png in Resources */,
+				8690AABC178319620082FE3B /* Default-568h@2x.png in Resources */,
+				8690AABF178319620082FE3B /* MainStoryboard_iPhone.storyboard in Resources */,
+				8690AAC2178319620082FE3B /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8690AAC8178319630082FE3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8690AAD7178319630082FE3B /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		8637707F1782EE4B005D1DEE /* ShellScript */ = {
+		8690AAC9178319630082FE3B /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -239,37 +270,63 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		8637706C1782EE4B005D1DEE /* Sources */ = {
+		8690AA9E178319620082FE3B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8637707B1782EE4B005D1DEE /* ThinkGamingStoreUI.m in Sources */,
+				8690AAB2178319620082FE3B /* main.m in Sources */,
+				8690AAB6178319620082FE3B /* AppDelegate.m in Sources */,
+				8690AAC5178319630082FE3B /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8637707C1782EE4B005D1DEE /* Sources */ = {
+		8690AAC6178319630082FE3B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				863770921782EE4B005D1DEE /* ThinkGamingStoreUITests.m in Sources */,
+				8690AADA178319630082FE3B /* ThinkGamingStoreUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		863770881782EE4B005D1DEE /* PBXTargetDependency */ = {
+		8690AAD1178319630082FE3B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8637706F1782EE4B005D1DEE /* ThinkGamingStoreUI */;
-			targetProxy = 863770871782EE4B005D1DEE /* PBXContainerItemProxy */;
+			target = 8690AAA1178319620082FE3B /* ThinkGamingStoreUI */;
+			targetProxy = 8690AAD0178319630082FE3B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8637708D1782EE4B005D1DEE /* InfoPlist.strings */ = {
+		8690AAAE178319620082FE3B /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8637708E1782EE4B005D1DEE /* en */,
+				8690AAAF178319620082FE3B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8690AABD178319620082FE3B /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8690AABE178319620082FE3B /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		8690AAC0178319620082FE3B /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8690AAC1178319620082FE3B /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		8690AAD5178319630082FE3B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8690AAD6178319630082FE3B /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -277,7 +334,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		863770931782EE4B005D1DEE /* Debug */ = {
+		8690AADB178319630082FE3B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -289,6 +346,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -304,10 +362,11 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		863770941782EE4B005D1DEE /* Release */ = {
+		8690AADC178319630082FE3B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -319,44 +378,46 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		863770961782EE4B005D1DEE /* Debug */ = {
+		8690AADE178319630082FE3B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DSTROOT = /tmp/ThinkGamingStoreUI.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ThinkGamingStoreUI/ThinkGamingStoreUI-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
+				INFOPLIST_FILE = "ThinkGamingStoreUI/ThinkGamingStoreUI-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
-		863770971782EE4B005D1DEE /* Release */ = {
+		8690AADF178319630082FE3B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DSTROOT = /tmp/ThinkGamingStoreUI.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ThinkGamingStoreUI/ThinkGamingStoreUI-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
+				INFOPLIST_FILE = "ThinkGamingStoreUI/ThinkGamingStoreUI-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
-		863770991782EE4B005D1DEE /* Debug */ = {
+		8690AAE1178319630082FE3B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ThinkGamingStoreUI.app/ThinkGamingStoreUI";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
@@ -365,13 +426,15 @@
 				GCC_PREFIX_HEADER = "ThinkGamingStoreUI/ThinkGamingStoreUI-Prefix.pch";
 				INFOPLIST_FILE = "ThinkGamingStoreUITests/ThinkGamingStoreUITests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
-		8637709A1782EE4B005D1DEE /* Release */ = {
+		8690AAE2178319630082FE3B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ThinkGamingStoreUI.app/ThinkGamingStoreUI";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
@@ -380,6 +443,7 @@
 				GCC_PREFIX_HEADER = "ThinkGamingStoreUI/ThinkGamingStoreUI-Prefix.pch";
 				INFOPLIST_FILE = "ThinkGamingStoreUITests/ThinkGamingStoreUITests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
@@ -387,32 +451,32 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8637706B1782EE4B005D1DEE /* Build configuration list for PBXProject "ThinkGamingStoreUI" */ = {
+		8690AA9D178319620082FE3B /* Build configuration list for PBXProject "ThinkGamingStoreUI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				863770931782EE4B005D1DEE /* Debug */,
-				863770941782EE4B005D1DEE /* Release */,
+				8690AADB178319630082FE3B /* Debug */,
+				8690AADC178319630082FE3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		863770951782EE4B005D1DEE /* Build configuration list for PBXNativeTarget "ThinkGamingStoreUI" */ = {
+		8690AADD178319630082FE3B /* Build configuration list for PBXNativeTarget "ThinkGamingStoreUI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				863770961782EE4B005D1DEE /* Debug */,
-				863770971782EE4B005D1DEE /* Release */,
+				8690AADE178319630082FE3B /* Debug */,
+				8690AADF178319630082FE3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		863770981782EE4B005D1DEE /* Build configuration list for PBXNativeTarget "ThinkGamingStoreUITests" */ = {
+		8690AAE0178319630082FE3B /* Build configuration list for PBXNativeTarget "ThinkGamingStoreUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				863770991782EE4B005D1DEE /* Debug */,
-				8637709A1782EE4B005D1DEE /* Release */,
+				8690AAE1178319630082FE3B /* Debug */,
+				8690AAE2178319630082FE3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 863770681782EE4B005D1DEE /* Project object */;
+	rootObject = 8690AA9A178319620082FE3B /* Project object */;
 }

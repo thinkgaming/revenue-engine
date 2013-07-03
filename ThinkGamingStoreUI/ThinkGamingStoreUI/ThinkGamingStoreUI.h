@@ -10,4 +10,7 @@
 
 @interface ThinkGamingStoreUI : NSObject
 
++ (void) showStore;
++ (void) hideStore;
+
 @end
