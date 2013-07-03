@@ -9,8 +9,13 @@
 #import "ThinkGamingStoreItemsCollectionView.h"
 #import "ThinkGamingSingleStoreItemCell.h"
 #import "ThinkGamingStoreUIStyleAppearance.h"
+#import "ThinkGamingStoreSDK.h"
+
 
 @interface ThinkGamingStoreItemsCollectionView ()
+
+@property (strong) NSArray *storeItems;
+@property (strong) ThinkGamingStoreSDK *sdk;
 
 @end
 
@@ -19,6 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.sdk = [[ThinkGamingStoreSDK alloc] init];
+    self.storeItems = [self.sdk getStoreItems:@"bank"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,13 +34,20 @@
 
 #pragma mark - UICollectionView Delegates
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 5;
+    return self.storeItems.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     ThinkGamingSingleStoreItemCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([ThinkGamingSingleStoreItemCell class]) forIndexPath:indexPath];
     [ThinkGamingStoreUIStyleAppearance applyToStoreItemCell:cell];
-    cell.itemImageView.image = [UIImage imageNamed:@"sack_of_gold"];
+    
+    ThinkGamingItem *item = self.storeItems[indexPath.row];
+    
+    cell.itemImageView.image = [UIImage imageNamed:item.itemImageName];
+    cell.itemDescription.text = item.itemName;
+    cell.itemPrice.text = [item.currencyCost stringValue];
+    cell.itemPromoText.text = item.promoCaption;
+    
     return cell;
 }
 

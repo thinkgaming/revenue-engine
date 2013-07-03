@@ -36,6 +36,7 @@
 @property (strong) NSString *currencyIdentifierRequired;
 @property (strong) NSDecimalNumber *currencyCost;
 @property (strong) NSNumber *totalOwned;
+@property (strong) NSString *itemImageName;
 
 @end
 

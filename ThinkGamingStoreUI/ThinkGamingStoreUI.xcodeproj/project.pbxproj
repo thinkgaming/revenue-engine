@@ -22,6 +22,10 @@
 		8614572A1784A75A00B59BC9 /* libThinkGaming.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 861457291784A75A00B59BC9 /* libThinkGaming.a */; };
 		861457301784A7DC00B59BC9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8614572F1784A7DC00B59BC9 /* SystemConfiguration.framework */; };
 		861457321784A7EA00B59BC9 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 861457311784A7EA00B59BC9 /* AdSupport.framework */; };
+		861457381784B43200B59BC9 /* chest_of_gold.png in Resources */ = {isa = PBXBuildFile; fileRef = 861457341784B43200B59BC9 /* chest_of_gold.png */; };
+		861457391784B43200B59BC9 /* chest_of_gold@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 861457351784B43200B59BC9 /* chest_of_gold@2x.png */; };
+		8614573A1784B43200B59BC9 /* pile_of_gold.png in Resources */ = {isa = PBXBuildFile; fileRef = 861457361784B43200B59BC9 /* pile_of_gold.png */; };
+		8614573B1784B43200B59BC9 /* pile_of_gold@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 861457371784B43200B59BC9 /* pile_of_gold@2x.png */; };
 		8690AAA6178319620082FE3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8690AAA5178319620082FE3B /* UIKit.framework */; };
 		8690AAA8178319620082FE3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8690AAA7178319620082FE3B /* Foundation.framework */; };
 		8690AAAA178319620082FE3B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8690AAA9178319620082FE3B /* CoreGraphics.framework */; };
@@ -79,6 +83,10 @@
 		8614572F1784A7DC00B59BC9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		861457311784A7EA00B59BC9 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		861457331784AB1B00B59BC9 /* ThinkGamingStoreSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = ThinkGamingStoreSDK.h; path = ../ThinkGaming/ThinkGaming/ThinkGamingStoreSDK.h; sourceTree = "<group>"; };
+		861457341784B43200B59BC9 /* chest_of_gold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = chest_of_gold.png; path = ThinkGamingStoreUIStyle/chest_of_gold.png; sourceTree = "<group>"; };
+		861457351784B43200B59BC9 /* chest_of_gold@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "chest_of_gold@2x.png"; path = "ThinkGamingStoreUIStyle/chest_of_gold@2x.png"; sourceTree = "<group>"; };
+		861457361784B43200B59BC9 /* pile_of_gold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pile_of_gold.png; path = ThinkGamingStoreUIStyle/pile_of_gold.png; sourceTree = "<group>"; };
+		861457371784B43200B59BC9 /* pile_of_gold@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pile_of_gold@2x.png"; path = "ThinkGamingStoreUIStyle/pile_of_gold@2x.png"; sourceTree = "<group>"; };
 		8690AAA2178319620082FE3B /* ThinkGamingStoreUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThinkGamingStoreUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8690AAA5178319620082FE3B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8690AAA7178319620082FE3B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -145,6 +153,10 @@
 		8614570A17845D0600B59BC9 /* ThinkGamingStoreUIStyle */ = {
 			isa = PBXGroup;
 			children = (
+				861457341784B43200B59BC9 /* chest_of_gold.png */,
+				861457351784B43200B59BC9 /* chest_of_gold@2x.png */,
+				861457361784B43200B59BC9 /* pile_of_gold.png */,
+				861457371784B43200B59BC9 /* pile_of_gold@2x.png */,
 				861457251784A5DE00B59BC9 /* sack_of_gold.png */,
 				861457261784A5DE00B59BC9 /* sack_of_gold@2x.png */,
 				8614571B1784993400B59BC9 /* single_button.png */,
@@ -351,6 +363,10 @@
 				8614571E1784993400B59BC9 /* single_button@2x.png in Resources */,
 				861457271784A5DE00B59BC9 /* sack_of_gold.png in Resources */,
 				861457281784A5DE00B59BC9 /* sack_of_gold@2x.png in Resources */,
+				861457381784B43200B59BC9 /* chest_of_gold.png in Resources */,
+				861457391784B43200B59BC9 /* chest_of_gold@2x.png in Resources */,
+				8614573A1784B43200B59BC9 /* pile_of_gold.png in Resources */,
+				8614573B1784B43200B59BC9 /* pile_of_gold@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
