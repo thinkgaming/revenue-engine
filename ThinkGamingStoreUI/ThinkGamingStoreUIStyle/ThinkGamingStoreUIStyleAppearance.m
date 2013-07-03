@@ -14,9 +14,14 @@
 + (NSDictionary *) getStyles {
     return @{
              /* UIColor
-                Tint color for navigation bar.
+                Tint color for navigation bar. Return nil and return a color below for solid colors.
               */
-             tgStoreStyleNavigationBarTintColor : [UIColor blackColor],
+//             tgStoreStyleNavigationBarTintColor : [UIColor blackColor],
+
+             /* UIColor
+                Solid color for navigation bar. To use return nil for tint color as well.
+              */
+             tgStoreStyleNavigationBarSolidColor : [self colorWithHexString:@"#2466ad"],
 
              /* UIColor
               Font color for navigation bar.
@@ -38,11 +43,17 @@
 
 + (void) apply {
     NSDictionary *styles = [self getStyles];
-    [[UINavigationBar appearanceWhenContainedIn:[ThinkGamingStoreUINavigationController class], nil] setTintColor:styles[tgStoreStyleNavigationBarTintColor]];
+    
+    if (styles[tgStoreStyleNavigationBarTintColor]) {
+        [[UINavigationBar appearanceWhenContainedIn:[ThinkGamingStoreUINavigationController class], nil] setTintColor:styles[tgStoreStyleNavigationBarTintColor]];
+    } else {
+        [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+        [[UINavigationBar appearanceWhenContainedIn:[ThinkGamingStoreUINavigationController class], nil] setBackgroundColor:styles[tgStoreStyleNavigationBarSolidColor]];
+    }
     
     [[UINavigationBar appearanceWhenContainedIn:[ThinkGamingStoreUINavigationController class], nil] setTitleTextAttributes:
      [NSDictionary dictionaryWithObjectsAndKeys:
-      [UIColor blackColor], UITextAttributeTextColor,
+      styles[tgStoreStyleNavigationBarFontColor], UITextAttributeTextColor,
       [UIFont fontWithName:styles[tgStoreStyleFontName] size:16.0], UITextAttributeFont,nil]];
 }
 
@@ -50,6 +61,21 @@
     NSDictionary *styles = [self getStyles];
     store.backgroundImage.image = styles[tgStoreStyleBackgroundImage];
 }
+
++ (UIColor *)colorWithHexString:(NSString *)stringToConvert {
+    NSString *noHashString = [stringToConvert stringByReplacingOccurrencesOfString:@"#" withString:@""]; // remove the #
+    NSScanner *scanner = [NSScanner scannerWithString:noHashString];
+    [scanner setCharactersToBeSkipped:[NSCharacterSet symbolCharacterSet]]; // remove + and $
+    
+    unsigned hex;
+    if (![scanner scanHexInt:&hex]) return nil;
+    int r = (hex >> 16) & 0xFF;
+    int g = (hex >> 8) & 0xFF;
+    int b = (hex) & 0xFF;
+    
+    return [UIColor colorWithRed:r / 255.0f green:g / 255.0f blue:b / 255.0f alpha:1.0f];
+}
+
 
 
 

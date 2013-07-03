@@ -15,6 +15,7 @@
 + (void) applyToStore:(ThinkGamingStoreUIViewController *)store;
 
 #define tgStoreStyleNavigationBarTintColor @"tgStoreStyleNavigationBarTintColor"
+#define tgStoreStyleNavigationBarSolidColor @"tgStoreStyleNavigationBarSolidColor"
 #define tgStoreStyleNavigationBarFontColor @"tgStoreStyleNavigationBarFontColor"
 #define tgStoreStyleFontName @"tgStoreStyleFontName"
 #define tgStoreStyleBackgroundImage @"tgStoreStyleBackgroundImage"
