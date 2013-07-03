@@ -69,13 +69,18 @@
     ThinkGamingCurrency *purchased = [[ThinkGamingCurrency alloc] init];
     purchased.currencyIdentifier = currencyIdentifier;
     purchased.bankTotal = amount;
-
-    successBlock(purchased);
-    if (self.delegate) {
-        [self.delegate thinkGamingStore:self didPurchaseCurrency:purchased];
-    }
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:kDidPurchaseCurrencyNotification object:purchased];
+    double delayInSeconds = 1.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        successBlock(purchased);
+        if (self.delegate) {
+            [self.delegate thinkGamingStore:self didPurchaseCurrency:purchased];
+        }
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:kDidPurchaseCurrencyNotification object:purchased];
+    });
+
 }
 
 - (void) purchaseItem:(NSString *)itemIdentifier
@@ -87,12 +92,16 @@
     item.itemIdentifier = itemIdentifier;
     item.totalOwned = amount;
     
-    successBlock(item);
-    if (self.delegate) {
-        [self.delegate thinkGamingStore:self didPurchaseItem:item];
-    }
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:kDidPurchaseItemNotification object:item];
+    double delayInSeconds = 1.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        successBlock(item);
+        if (self.delegate) {
+            [self.delegate thinkGamingStore:self didPurchaseItem:item];
+        }
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:kDidPurchaseItemNotification object:item];
+    });
     
 }
 
