@@ -26,6 +26,8 @@
 		861457391784B43200B59BC9 /* chest_of_gold@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 861457351784B43200B59BC9 /* chest_of_gold@2x.png */; };
 		8614573A1784B43200B59BC9 /* pile_of_gold.png in Resources */ = {isa = PBXBuildFile; fileRef = 861457361784B43200B59BC9 /* pile_of_gold.png */; };
 		8614573B1784B43200B59BC9 /* pile_of_gold@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 861457371784B43200B59BC9 /* pile_of_gold@2x.png */; };
+		8614573D1784B72500B59BC9 /* store_list.png in Resources */ = {isa = PBXBuildFile; fileRef = 8614573C1784B72500B59BC9 /* store_list.png */; };
+		861457401784B7C900B59BC9 /* ThinkGamingStoreListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8614573F1784B7C900B59BC9 /* ThinkGamingStoreListViewController.m */; };
 		8690AAA6178319620082FE3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8690AAA5178319620082FE3B /* UIKit.framework */; };
 		8690AAA8178319620082FE3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8690AAA7178319620082FE3B /* Foundation.framework */; };
 		8690AAAA178319620082FE3B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8690AAA9178319620082FE3B /* CoreGraphics.framework */; };
@@ -87,6 +89,9 @@
 		861457351784B43200B59BC9 /* chest_of_gold@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "chest_of_gold@2x.png"; path = "ThinkGamingStoreUIStyle/chest_of_gold@2x.png"; sourceTree = "<group>"; };
 		861457361784B43200B59BC9 /* pile_of_gold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pile_of_gold.png; path = ThinkGamingStoreUIStyle/pile_of_gold.png; sourceTree = "<group>"; };
 		861457371784B43200B59BC9 /* pile_of_gold@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pile_of_gold@2x.png"; path = "ThinkGamingStoreUIStyle/pile_of_gold@2x.png"; sourceTree = "<group>"; };
+		8614573C1784B72500B59BC9 /* store_list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = store_list.png; path = ThinkGamingStoreUIStyle/store_list.png; sourceTree = "<group>"; };
+		8614573E1784B7C900B59BC9 /* ThinkGamingStoreListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThinkGamingStoreListViewController.h; sourceTree = "<group>"; };
+		8614573F1784B7C900B59BC9 /* ThinkGamingStoreListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThinkGamingStoreListViewController.m; sourceTree = "<group>"; };
 		8690AAA2178319620082FE3B /* ThinkGamingStoreUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThinkGamingStoreUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8690AAA5178319620082FE3B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8690AAA7178319620082FE3B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -153,6 +158,7 @@
 		8614570A17845D0600B59BC9 /* ThinkGamingStoreUIStyle */ = {
 			isa = PBXGroup;
 			children = (
+				8614573C1784B72500B59BC9 /* store_list.png */,
 				861457341784B43200B59BC9 /* chest_of_gold.png */,
 				861457351784B43200B59BC9 /* chest_of_gold@2x.png */,
 				861457361784B43200B59BC9 /* pile_of_gold.png */,
@@ -225,6 +231,8 @@
 				86145720178499DB00B59BC9 /* ThinkGamingStoreItemsCollectionView.m */,
 				8614572217849A4200B59BC9 /* ThinkGamingSingleStoreItemCell.h */,
 				8614572317849A4200B59BC9 /* ThinkGamingSingleStoreItemCell.m */,
+				8614573E1784B7C900B59BC9 /* ThinkGamingStoreListViewController.h */,
+				8614573F1784B7C900B59BC9 /* ThinkGamingStoreListViewController.m */,
 			);
 			path = ThinkGamingStoreUI;
 			sourceTree = "<group>";
@@ -367,6 +375,7 @@
 				861457391784B43200B59BC9 /* chest_of_gold@2x.png in Resources */,
 				8614573A1784B43200B59BC9 /* pile_of_gold.png in Resources */,
 				8614573B1784B43200B59BC9 /* pile_of_gold@2x.png in Resources */,
+				8614573D1784B72500B59BC9 /* store_list.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +419,7 @@
 				8614571017845EEF00B59BC9 /* ThinkGamingStoreUINavigationController.m in Sources */,
 				86145721178499DB00B59BC9 /* ThinkGamingStoreItemsCollectionView.m in Sources */,
 				8614572417849A4300B59BC9 /* ThinkGamingSingleStoreItemCell.m in Sources */,
+				861457401784B7C900B59BC9 /* ThinkGamingStoreListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

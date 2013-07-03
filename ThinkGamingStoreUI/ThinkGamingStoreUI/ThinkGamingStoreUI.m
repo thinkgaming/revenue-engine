@@ -14,7 +14,7 @@ static ThinkGamingStoreUI *thinkGamingStoreUI;
 
 @interface ThinkGamingStoreUI()
 
-@property (strong) ThinkGamingStoreUIViewController *storeController;
+@property (strong) UIViewController *storeController;
 
 + (ThinkGamingStoreUI *) shared;
 
