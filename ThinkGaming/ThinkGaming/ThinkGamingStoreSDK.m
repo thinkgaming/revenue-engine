@@ -105,5 +105,14 @@
     
 }
 
+@end
 
+
+@implementation ThinkGamingCurrency
+@end
+
+@implementation ThinkGamingItem
+@end
+
+@implementation ThinkGamingStore
 @end

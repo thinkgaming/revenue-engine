@@ -19,6 +19,9 @@
 		8614572417849A4300B59BC9 /* ThinkGamingSingleStoreItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8614572317849A4200B59BC9 /* ThinkGamingSingleStoreItemCell.m */; };
 		861457271784A5DE00B59BC9 /* sack_of_gold.png in Resources */ = {isa = PBXBuildFile; fileRef = 861457251784A5DE00B59BC9 /* sack_of_gold.png */; };
 		861457281784A5DE00B59BC9 /* sack_of_gold@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 861457261784A5DE00B59BC9 /* sack_of_gold@2x.png */; };
+		8614572A1784A75A00B59BC9 /* libThinkGaming.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 861457291784A75A00B59BC9 /* libThinkGaming.a */; };
+		861457301784A7DC00B59BC9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8614572F1784A7DC00B59BC9 /* SystemConfiguration.framework */; };
+		861457321784A7EA00B59BC9 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 861457311784A7EA00B59BC9 /* AdSupport.framework */; };
 		8690AAA6178319620082FE3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8690AAA5178319620082FE3B /* UIKit.framework */; };
 		8690AAA8178319620082FE3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8690AAA7178319620082FE3B /* Foundation.framework */; };
 		8690AAAA178319620082FE3B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8690AAA9178319620082FE3B /* CoreGraphics.framework */; };
@@ -71,6 +74,11 @@
 		8614572317849A4200B59BC9 /* ThinkGamingSingleStoreItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThinkGamingSingleStoreItemCell.m; sourceTree = "<group>"; };
 		861457251784A5DE00B59BC9 /* sack_of_gold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sack_of_gold.png; path = ThinkGamingStoreUIStyle/sack_of_gold.png; sourceTree = "<group>"; };
 		861457261784A5DE00B59BC9 /* sack_of_gold@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sack_of_gold@2x.png"; path = "ThinkGamingStoreUIStyle/sack_of_gold@2x.png"; sourceTree = "<group>"; };
+		861457291784A75A00B59BC9 /* libThinkGaming.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libThinkGaming.a; path = "../ThinkGaming/build/Release-iphoneos/libThinkGaming.a"; sourceTree = "<group>"; };
+		8614572B1784A76A00B59BC9 /* ThinkGamingLogger.h */ = {isa = PBXFileReference; lastKnownFileType = file; name = ThinkGamingLogger.h; path = ../ThinkGaming/ThinkGaming/ThinkGamingLogger.h; sourceTree = "<group>"; };
+		8614572F1784A7DC00B59BC9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		861457311784A7EA00B59BC9 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		861457331784AB1B00B59BC9 /* ThinkGamingStoreSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = ThinkGamingStoreSDK.h; path = ../ThinkGaming/ThinkGaming/ThinkGamingStoreSDK.h; sourceTree = "<group>"; };
 		8690AAA2178319620082FE3B /* ThinkGamingStoreUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThinkGamingStoreUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8690AAA5178319620082FE3B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8690AAA7178319620082FE3B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -109,6 +117,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8614572A1784A75A00B59BC9 /* libThinkGaming.a in Frameworks */,
+				861457321784A7EA00B59BC9 /* AdSupport.framework in Frameworks */,
+				861457301784A7DC00B59BC9 /* SystemConfiguration.framework in Frameworks */,
 				8690AAF1178351F10082FE3B /* CFNetwork.framework in Frameworks */,
 				8690AAEF178351EA0082FE3B /* QuartzCore.framework in Frameworks */,
 				8690AAA6178319620082FE3B /* UIKit.framework in Frameworks */,
@@ -151,6 +162,11 @@
 		8690AA99178319620082FE3B = {
 			isa = PBXGroup;
 			children = (
+				861457311784A7EA00B59BC9 /* AdSupport.framework */,
+				8614572F1784A7DC00B59BC9 /* SystemConfiguration.framework */,
+				8614572B1784A76A00B59BC9 /* ThinkGamingLogger.h */,
+				861457331784AB1B00B59BC9 /* ThinkGamingStoreSDK.h */,
+				861457291784A75A00B59BC9 /* libThinkGaming.a */,
 				8614570A17845D0600B59BC9 /* ThinkGamingStoreUIStyle */,
 				8690AAE317831A3B0082FE3B /* ThinkGamingStoreDemo */,
 				8690AAAB178319620082FE3B /* ThinkGamingStoreUI */,

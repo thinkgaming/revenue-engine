@@ -9,6 +9,7 @@
 #import "ThinkGamingStoreUIViewController.h"
 #import "ThinkGamingStoreUIStyleAppearance.h"
 #import "ThinkGamingStoreUI.h"
+#import "ThinkGamingStoreSDK.h"
 
 #define DegreesToRadians(degrees) (degrees *M_PI /180)
 
@@ -26,6 +27,7 @@ static CGRect screenRect() {
 @interface ThinkGamingStoreUIViewController ()
 
 @property (weak) IBOutlet UIView *storeView;
+@property (strong) ThinkGamingStoreSDK *sdk;
 
 - (IBAction)didTapClose:(id)sender;
 
@@ -69,6 +71,18 @@ static CGRect screenRect() {
                                                  name:UIApplicationWillChangeStatusBarOrientationNotification
                                                object:nil];
     [self applyStyles];
+    
+    self.sdk = [[ThinkGamingStoreSDK alloc] init];
+    NSArray *balances = [self.sdk getCurrencyBalances];
+    
+    [balances enumerateObjectsUsingBlock:^(ThinkGamingCurrency *currency, NSUInteger idx, BOOL *stop) {
+        if ([currency.currencyIdentifier rangeOfString:@"coins"].location == NSNotFound) {
+            self.dollarsLabel.text = [NSString stringWithFormat:@"$ %@", currency.bankTotal];
+        } else {
+            self.coinsLabel.text = [NSString stringWithFormat:@"$ %@", currency.bankTotal];
+        }
+    }];
+    
 }
 
 
