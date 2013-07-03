@@ -19,6 +19,7 @@
 - (IBAction)didTapLog:(id)sender;
 - (IBAction)didTapStartTimed:(id)sender;
 - (IBAction)didTapEndTimed:(id)sender;
+- (IBAction)didTapShowStore:(id)sender;
 
 @end
 
@@ -38,6 +39,10 @@
 
 - (IBAction)didTapEndTimed:(id)sender {
     [ThinkGamingLogger endTimedEvent:self.eventField.text];
+}
+
+- (IBAction)didTapShowStore:(id)sender {
+//    [ThinkGamingStoreUI showStore];
 }
 
 

@@ -8,31 +8,47 @@
 
 #import "ThinkGamingStoreUIViewController.h"
 
+static CGRect screenRect() {
+    
+    CGSize screenSize = [UIScreen mainScreen].applicationFrame.size;
+    
+    if (UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])) {
+        return CGRectMake(0.0f, 0.0f, screenSize.height, screenSize.width);
+    }
+    
+    return CGRectMake(0.0f, 0.0f, screenSize.width, screenSize.height);
+}
+
 @interface ThinkGamingStoreUIViewController ()
+
+@property (weak) IBOutlet UIView *storeView;
 
 @end
 
 @implementation ThinkGamingStoreUIViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+#pragma mark - Orientation handlers
+
+- (void) rotateStore {
+    CGAffineTransform rotate = CGAffineTransformMakeRotation(M_PI/2.0);
+    [self.view setTransform:rotate];
+    [self.view setCenter:[UIApplication sharedApplication].keyWindow.rootViewController.view.center];
+    self.storeView.center = [UIApplication sharedApplication].keyWindow.rootViewController.view.center;
+}
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

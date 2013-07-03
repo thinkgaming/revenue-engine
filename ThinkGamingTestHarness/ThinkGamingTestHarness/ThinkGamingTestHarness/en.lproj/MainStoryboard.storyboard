@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="efG-N5-alm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="efG-N5-alm">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -233,14 +233,29 @@
                                     <action selector="didTapStartTimed:" destination="2" eventType="touchUpInside" id="VGe-Qt-CY0"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7SW-CS-arO">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Show Store">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapShowStore:" destination="2" eventType="touchUpInside" id="wHP-KM-mo5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="d7M-dw-2eV" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="426-Md-knW"/>
+                            <constraint firstItem="7SW-CS-arO" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="4vR-nT-LvE"/>
                             <constraint firstItem="flX-sf-QvF" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="551-ug-7aT"/>
                             <constraint firstItem="dln-Zj-xz0" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="5qv-GK-NVH"/>
                             <constraint firstAttribute="trailing" secondItem="CUZ-R1-XjB" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="6BB-Oe-0Wf"/>
                             <constraint firstItem="CUZ-R1-XjB" firstAttribute="top" secondItem="flX-sf-QvF" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="86R-ut-8ZJ"/>
+                            <constraint firstAttribute="bottom" secondItem="7SW-CS-arO" secondAttribute="bottom" constant="79" id="Kyj-jl-i8t"/>
                             <constraint firstItem="flX-sf-QvF" firstAttribute="top" secondItem="3" secondAttribute="top" constant="154" id="LHr-Zr-8el"/>
                             <constraint firstAttribute="trailing" secondItem="022-ut-lUP" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="P1k-bY-XEp"/>
                             <constraint firstItem="dln-Zj-xz0" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="PQX-YF-8Hr"/>
@@ -248,6 +263,7 @@
                             <constraint firstAttribute="trailing" secondItem="d7M-dw-2eV" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="cA6-01-qZy"/>
                             <constraint firstItem="022-ut-lUP" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="e9O-od-pcn"/>
                             <constraint firstAttribute="trailing" secondItem="dln-Zj-xz0" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="hMl-3L-ifg"/>
+                            <constraint firstAttribute="trailing" secondItem="7SW-CS-arO" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="hhh-Di-x0K"/>
                             <constraint firstItem="022-ut-lUP" firstAttribute="top" secondItem="dln-Zj-xz0" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="iIi-rO-Jh6"/>
                             <constraint firstItem="CUZ-R1-XjB" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="sFG-sE-y1g"/>
                             <constraint firstItem="MdF-3t-O8k" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="t7C-Re-8ff"/>
@@ -318,6 +334,7 @@
                 <relationship kind="action" name="didTapEndTimed:"/>
                 <relationship kind="action" name="didTapInit:"/>
                 <relationship kind="action" name="didTapLog:"/>
+                <relationship kind="action" name="didTapShowStore:"/>
                 <relationship kind="action" name="didTapStartTimed:"/>
                 <relationship kind="outlet" name="apiKeyField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="eventField" candidateClass="UITextField"/>

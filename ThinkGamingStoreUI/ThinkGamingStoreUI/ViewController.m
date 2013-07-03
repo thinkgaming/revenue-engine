@@ -7,12 +7,19 @@
 //
 
 #import "ViewController.h"
+#import "ThinkGamingStoreUI.h"
 
 @interface ViewController ()
+
+- (IBAction)didTapShowStore:(id)sender;
 
 @end
 
 @implementation ViewController
+
+- (IBAction)didTapShowStore:(id)sender {
+    [ThinkGamingStoreUI showStore];
+}
 
 - (void)viewDidLoad
 {

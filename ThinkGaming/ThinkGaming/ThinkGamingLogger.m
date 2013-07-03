@@ -40,7 +40,6 @@ static ThinkGamingLogger* sharedSingleton;
 	{
 		if (!sharedSingleton)
         {
-            //NSLog(@"Creating singleton");
 			sharedSingleton = [[ThinkGamingLogger alloc] init];
         }
 	}

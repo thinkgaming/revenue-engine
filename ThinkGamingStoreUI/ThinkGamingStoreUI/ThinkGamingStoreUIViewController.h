@@ -10,4 +10,7 @@
 
 @interface ThinkGamingStoreUIViewController : UIViewController
 
+- (void) rotateStore;
+
+
 @end
