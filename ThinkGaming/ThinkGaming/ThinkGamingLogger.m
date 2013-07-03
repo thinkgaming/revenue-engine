@@ -86,6 +86,8 @@ static ThinkGamingLogger* sharedSingleton;
     
     cohort = [[NSNumber numberWithInt:arc4random() %(100)-1] stringValue];
     [[NSUserDefaults standardUserDefaults] setValue:cohort forKey:@"cohortId"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    return cohort;
 }
 
 #pragma mark - Application Lifecycle
@@ -194,7 +196,7 @@ static ThinkGamingLogger* sharedSingleton;
     
     NSLog(@"ThinkGaming - starting session.");
     [ThinkGamingLogger shared]; // Init if not already started
-    sharedSingleton.apiKey = key;
+    sharedSingleton.apiKey = apiKey;
     sharedSingleton.mediaSourceID = mediaSourceId;
     
     

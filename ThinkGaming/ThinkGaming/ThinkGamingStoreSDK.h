@@ -19,7 +19,6 @@
 
 @property (strong) NSString *currencyName;
 @property (strong) NSString *currencyIdentifier;
-@property (strong) NSNumber *currencyAmount;
 @property (strong) NSNumber *bankTotal;
 
 @end
@@ -28,8 +27,11 @@
 
 @property (strong) NSString *itemName;
 @property (strong) NSString *itemIdentifier;
-@property (strong) NSNumber *currentAmount;
-@property (strong) NSNumber *totalAmount;
+@property (strong) NSString *itemDescription;
+@property (strong) NSString *promoCaption;
+@property (strong) NSString *currencyIdentifierRequired;
+@property (strong) NSDecimalNumber *currencyCost;
+@property (strong) NSNumber *totalOwned;
 
 @end
 
