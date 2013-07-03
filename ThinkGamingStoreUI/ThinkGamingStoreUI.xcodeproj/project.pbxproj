@@ -11,6 +11,8 @@
 		8614570D17845E6600B59BC9 /* ThinkGamingStoreUIStyleAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 8614570C17845E6600B59BC9 /* ThinkGamingStoreUIStyleAppearance.m */; };
 		8614571017845EEF00B59BC9 /* ThinkGamingStoreUINavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8614570F17845EEF00B59BC9 /* ThinkGamingStoreUINavigationController.m */; };
 		861457121784627600B59BC9 /* GROBOLD.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 861457111784627600B59BC9 /* GROBOLD.ttf */; };
+		86145718178478E100B59BC9 /* redx.png in Resources */ = {isa = PBXBuildFile; fileRef = 86145717178478E100B59BC9 /* redx.png */; };
+		8614571A1784797000B59BC9 /* redx@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 861457191784797000B59BC9 /* redx@2x.png */; };
 		8690AAA6178319620082FE3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8690AAA5178319620082FE3B /* UIKit.framework */; };
 		8690AAA8178319620082FE3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8690AAA7178319620082FE3B /* Foundation.framework */; };
 		8690AAAA178319620082FE3B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8690AAA9178319620082FE3B /* CoreGraphics.framework */; };
@@ -53,6 +55,8 @@
 		8614570E17845EEF00B59BC9 /* ThinkGamingStoreUINavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThinkGamingStoreUINavigationController.h; sourceTree = "<group>"; };
 		8614570F17845EEF00B59BC9 /* ThinkGamingStoreUINavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThinkGamingStoreUINavigationController.m; sourceTree = "<group>"; };
 		861457111784627600B59BC9 /* GROBOLD.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = GROBOLD.ttf; path = ThinkGamingStoreUIStyle/GROBOLD.ttf; sourceTree = "<group>"; };
+		86145717178478E100B59BC9 /* redx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = redx.png; path = ThinkGamingStoreUIStyle/redx.png; sourceTree = "<group>"; };
+		861457191784797000B59BC9 /* redx@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "redx@2x.png"; path = "ThinkGamingStoreUIStyle/redx@2x.png"; sourceTree = "<group>"; };
 		8690AAA2178319620082FE3B /* ThinkGamingStoreUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThinkGamingStoreUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8690AAA5178319620082FE3B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8690AAA7178319620082FE3B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -116,6 +120,8 @@
 		8614570A17845D0600B59BC9 /* ThinkGamingStoreUIStyle */ = {
 			isa = PBXGroup;
 			children = (
+				861457191784797000B59BC9 /* redx@2x.png */,
+				86145717178478E100B59BC9 /* redx.png */,
 				861457111784627600B59BC9 /* GROBOLD.ttf */,
 				8614570817845CFE00B59BC9 /* background.png */,
 				8614570B17845E6600B59BC9 /* ThinkGamingStoreUIStyleAppearance.h */,
@@ -301,6 +307,8 @@
 				8690AAEA17831A660082FE3B /* ThinkGamingStoreUIStoryBoard.storyboard in Resources */,
 				8614570917845CFE00B59BC9 /* background.png in Resources */,
 				861457121784627600B59BC9 /* GROBOLD.ttf in Resources */,
+				86145718178478E100B59BC9 /* redx.png in Resources */,
+				8614571A1784797000B59BC9 /* redx@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,6 +17,7 @@
 #define tgStoreStyleNavigationBarTintColor @"tgStoreStyleNavigationBarTintColor"
 #define tgStoreStyleNavigationBarSolidColor @"tgStoreStyleNavigationBarSolidColor"
 #define tgStoreStyleNavigationBarFontColor @"tgStoreStyleNavigationBarFontColor"
+#define tgStoreStyleNavigationBarCloseImage @"tgStoreStyleNavigationBarCloseImage"
 #define tgStoreStyleFontName @"tgStoreStyleFontName"
 #define tgStoreStyleBackgroundImage @"tgStoreStyleBackgroundImage"
 #define tgStoreStyle @""

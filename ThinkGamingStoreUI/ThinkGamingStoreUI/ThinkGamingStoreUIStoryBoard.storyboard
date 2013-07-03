@@ -62,7 +62,9 @@
         <class className="ThinkGamingStoreUIViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ThinkGamingStoreUIViewController.h"/>
             <relationships>
+                <relationship kind="action" name="didTapClose:"/>
                 <relationship kind="outlet" name="backgroundImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="closeButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="storeView" candidateClass="UIView"/>
             </relationships>
         </class>

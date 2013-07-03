@@ -8,6 +8,7 @@
 
 #import "ThinkGamingStoreUIViewController.h"
 #import "ThinkGamingStoreUIStyleAppearance.h"
+#import "ThinkGamingStoreUI.h"
 
 #define DegreesToRadians(degrees) (degrees *M_PI /180)
 
@@ -25,6 +26,8 @@ static CGRect screenRect() {
 @interface ThinkGamingStoreUIViewController ()
 
 @property (weak) IBOutlet UIView *storeView;
+
+- (IBAction)didTapClose:(id)sender;
 
 @end
 
@@ -53,6 +56,10 @@ static CGRect screenRect() {
     }
     self.view.frame = screenRect();
     [self.view setTransform:rotate];
+}
+
+- (void) didTapClose:(id)sender {
+    [ThinkGamingStoreUI hideStore];
 }
 
 - (void)viewDidLoad {

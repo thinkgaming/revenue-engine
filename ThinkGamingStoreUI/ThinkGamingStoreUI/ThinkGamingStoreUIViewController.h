@@ -10,6 +10,7 @@
 
 @interface ThinkGamingStoreUIViewController : UIViewController
 @property (weak) IBOutlet UIImageView *backgroundImage;
+@property (weak) IBOutlet UIBarButtonItem *closeButton;
 
 - (void) rotateStore;
 

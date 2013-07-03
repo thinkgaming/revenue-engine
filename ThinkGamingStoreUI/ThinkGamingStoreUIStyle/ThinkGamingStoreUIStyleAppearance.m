@@ -27,6 +27,11 @@
               Font color for navigation bar.
               */
              tgStoreStyleNavigationBarFontColor : [UIColor whiteColor],
+             
+             /* UIImage
+              Background image for store.
+              */
+             tgStoreStyleNavigationBarCloseImage : [UIImage imageNamed:@"redx"],
 
              /* NSString
                 Font name. Ensure the font is added to the bundle, and the Font keys are added to your *-Info.plist.
@@ -55,11 +60,22 @@
      [NSDictionary dictionaryWithObjectsAndKeys:
       styles[tgStoreStyleNavigationBarFontColor], UITextAttributeTextColor,
       [UIFont fontWithName:styles[tgStoreStyleFontName] size:16.0], UITextAttributeFont,nil]];
+    
 }
 
 + (void) applyToStore:(ThinkGamingStoreUIViewController *)store {
     NSDictionary *styles = [self getStyles];
     store.backgroundImage.image = styles[tgStoreStyleBackgroundImage];
+    
+    if (styles[tgStoreStyleNavigationBarCloseImage]) {
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [button addTarget:store action:@selector(didTapClose:) forControlEvents:UIControlEventTouchUpInside];
+        UIImage *buttonImage = styles[tgStoreStyleNavigationBarCloseImage];
+        [button setImage:buttonImage forState:UIControlStateNormal];
+        [button setFrame:CGRectMake(0, 0, buttonImage.size.width, buttonImage.size.height)];
+        UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:button];
+        store.navigationItem.rightBarButtonItem = barButton;
+    }
 }
 
 + (UIColor *)colorWithHexString:(NSString *)stringToConvert {
