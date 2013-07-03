@@ -24,6 +24,7 @@
 @property (nonatomic, retain) EventQueue *eventQueue;
 @property (nonatomic, retain) NSTimer *dispatchTimer;
 @property (nonatomic, retain) NSString *apiKey;
+@property (nonatomic, retain) NSString *mediaSourceID;
 @end
 
 @implementation ThinkGamingLogger
@@ -79,6 +80,14 @@ static ThinkGamingLogger* sharedSingleton;
     self.dispatchTimer = nil;
 }
 
+- (NSString *)cohortId {
+    NSString *cohort = [[NSUserDefaults standardUserDefaults] valueForKey:@"cohortId"];
+    if (cohort) return cohort;
+    
+    cohort = [[NSNumber numberWithInt:arc4random() %(100)-1] stringValue];
+    [[NSUserDefaults standardUserDefaults] setValue:cohort forKey:@"cohortId"];
+}
+
 #pragma mark - Application Lifecycle
 - (void) applicationDidEnterBackground:(NSNotification *)notification {
     [self destroyTimer];
@@ -116,6 +125,8 @@ static ThinkGamingLogger* sharedSingleton;
     [dict setValue:eventName forKey:@"__TG__eventName"];
     [dict setValue:[NSNumber numberWithBool:timed] forKey:@"__TG__timed"];
     [dict setValue:[NSNumber numberWithBool:stopTimer] forKey:@"__TG__stopTimer"];
+    [dict setValue:[self cohortId] forKey:@"__TG__cohortID"];
+    
     NSString *ipAddress = [self getIPAddress];
     if(ipAddress)
     {
@@ -132,6 +143,10 @@ static ThinkGamingLogger* sharedSingleton;
     if(deviceID)
     {
         [dict setValue:deviceID forKey:@"__TG__userID"];
+    }
+    
+    if (self.mediaSourceID) {
+        [dict setValue:self.mediaSourceID forKey:@"__TG__mediaSourceID"];
     }
     
     // Might want to do some size checking for user data or check validity (non-binary items)?
@@ -174,12 +189,13 @@ static ThinkGamingLogger* sharedSingleton;
 
 #pragma mark - Public Methods
 
-+ (ThinkGamingLogger *)startSession:(NSString *)key {
++ (ThinkGamingLogger *)startSession:(NSString *)apiKey andMediaSourceId:(NSString *)mediaSourceId {
     //if (![sharedSingleton isConnected]) return;
     
     NSLog(@"ThinkGaming - starting session.");
     [ThinkGamingLogger shared]; // Init if not already started
     sharedSingleton.apiKey = key;
+    sharedSingleton.mediaSourceID = mediaSourceId;
     
     
     // Check to see if we have ever run with the lib
@@ -215,6 +231,10 @@ static ThinkGamingLogger* sharedSingleton;
         [ThinkGamingLogger logEvent:@"__TG__sessionStart"];
     }
     return sharedSingleton;
+}
+
++ (ThinkGamingLogger *)startSession:(NSString *)key {
+    return [ThinkGamingLogger startSession:key andMediaSourceId:nil];
 }
 
 + (void)logEvent:(NSString *)eventName {
