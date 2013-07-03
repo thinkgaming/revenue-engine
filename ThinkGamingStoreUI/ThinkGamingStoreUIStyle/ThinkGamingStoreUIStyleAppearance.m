@@ -51,8 +51,18 @@
              /* UIColor
               Font color for store item description
               */
-             tgStoreStyleStoreItemDescriptionFontColor : [self colorWithHexString:@"#247287"]
-             
+             tgStoreStyleStoreItemDescriptionFontColor : [self colorWithHexString:@"#247287"],
+
+             /* UIColor
+              Font color for store item description
+              */
+             tgStoreStyleStoreItemPriceFontColor : [UIColor whiteColor],
+
+             /* NSString
+              Font name. Ensure the font is added to the bundle, and the Font keys are added to your *-Info.plist.
+              */
+             tgStoreStyleStoreItemPromoFontName : @"ChalkDuster",
+
 
              };
 }
@@ -100,6 +110,12 @@
     
     cell.itemDescription.font = [UIFont fontWithName:styles[tgStoreStyleFontName] size:11.0];
     cell.itemDescription.textColor = styles[tgStoreStyleStoreItemDescriptionFontColor];
+    
+    cell.itemPrice.font = [UIFont fontWithName:styles[tgStoreStyleFontName] size:12.0];
+    cell.itemPrice.textColor = styles[tgStoreStyleStoreItemPriceFontColor];
+    
+    cell.itemPromoText.font = [UIFont fontWithName:styles[tgStoreStyleStoreItemPromoFontName] size:9.0];
+    
     
 }
 

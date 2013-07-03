@@ -25,6 +25,9 @@
 #define tgStoreStyleBackgroundImage @"tgStoreStyleBackgroundImage"
 #define tgStoreStyleCurrencyLabelFontColor @"tgStoreStyleCurrencyLabelFontColor"
 #define tgStoreStyleStoreItemDescriptionFontColor @"tgStoreStyleStoreItemDescriptionFontColor"
+#define tgStoreStyleStoreItemPriceFontColor @"tgStoreStyleStoreItemPriceFontColor"
+#define tgStoreStyleStoreItemPromoFontName @"tgStoreStyleStoreItemPromoFontName"
+#define tgStoreStyleStoreItemPromoFontColor @"tgStoreStyleStoreItemPromoFontColor"
 #define tgStoreStyle @""
 
 @end
