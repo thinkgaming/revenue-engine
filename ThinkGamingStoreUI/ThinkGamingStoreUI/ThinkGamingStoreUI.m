@@ -9,16 +9,51 @@
 #import "ThinkGamingStoreUI.h"
 #import "ThinkGamingStoreUIViewController.h"
 
+static ThinkGamingStoreUI *thinkGamingStoreUI;
+
+@interface ThinkGamingStoreUI()
+
+@property (strong) ThinkGamingStoreUIViewController *storeController;
+
++ (ThinkGamingStoreUI *) shared;
+
+- (void) showStore;
+- (void) hideStore;
+
+@end
+
 @implementation ThinkGamingStoreUI
 
++ (ThinkGamingStoreUI *) shared {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        thinkGamingStoreUI = [[ThinkGamingStoreUI alloc] init];
+    });
+    return thinkGamingStoreUI;
+}
+
 + (void) showStore {
+    [[ThinkGamingStoreUI shared] showStore];
+}
+
+- (void) showStore {
     UIWindow *rootWindow = [UIApplication sharedApplication].windows[0];
     
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"ThinkGamingStoreUIStoryBoard" bundle:nil];
-    ThinkGamingStoreUIViewController *storeUI = [storyBoard instantiateInitialViewController];
-    
-    [rootWindow addSubview:storeUI.view];
-    
+    self.storeController = [storyBoard instantiateInitialViewController];
+    UIViewController *rootViewController = rootWindow.rootViewController;
+    rootViewController.modalTransitionStyle = UIModalTransitionStylePartialCurl;
+    [rootViewController presentViewController:self.storeController animated:YES completion:nil];
+}
+
++ (void) hideStore {
+    [[ThinkGamingStoreUI shared] hideStore];
+}
+
+- (void) hideStore {
+    if (self.storeController) {
+        [self.storeController dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 @end

@@ -8,6 +8,8 @@
 
 #import "ThinkGamingStoreUIViewController.h"
 
+#define DegreesToRadians(degrees) (degrees *M_PI /180)
+
 static CGRect screenRect() {
     
     CGSize screenSize = [UIScreen mainScreen].applicationFrame.size;
@@ -30,21 +32,34 @@ static CGRect screenRect() {
 #pragma mark - Orientation handlers
 
 - (void) rotateStore {
-    CGAffineTransform rotate = CGAffineTransformMakeRotation(M_PI/2.0);
-    [self.view setTransform:rotate];
-    [self.view setCenter:[UIApplication sharedApplication].keyWindow.rootViewController.view.center];
-    self.storeView.center = [UIApplication sharedApplication].keyWindow.rootViewController.view.center;
-}
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
+    
+    CGAffineTransform rotate;
+    UIDeviceOrientation orientation = [UIDevice currentDevice].orientation;
+    switch (orientation)
+    {
+        case UIInterfaceOrientationPortraitUpsideDown:
+            rotate = CGAffineTransformMakeRotation(-DegreesToRadians(180));
+            break;
+        case UIInterfaceOrientationLandscapeLeft:
+            rotate = CGAffineTransformMakeRotation(DegreesToRadians(-90));
+            break;
+        case UIInterfaceOrientationLandscapeRight:
+            rotate = CGAffineTransformMakeRotation(DegreesToRadians(90));
+            break;
+        default:
+            rotate = CGAffineTransformMakeRotation(-DegreesToRadians(0));
+            break;                             
     }
-    return self;
+    self.view.frame = screenRect();
+    [self.view setTransform:rotate];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(rotateStore)
+                                                 name:UIApplicationWillChangeStatusBarOrientationNotification
+                                               object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
