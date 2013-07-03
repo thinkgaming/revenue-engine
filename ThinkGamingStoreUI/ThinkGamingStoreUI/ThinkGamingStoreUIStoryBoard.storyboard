@@ -12,14 +12,39 @@
                         <rect key="frame" x="0.0" y="64" width="568" height="256"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="OQ9-cJ-QMi"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="background.png" translatesAutoresizingMaskIntoConstraints="NO" id="OQ9-cJ-QMi">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="301" id="tUF-x1-qh6"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GMy-tu-H6N">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="CYB-cK-JfN"/>
+                                    <constraint firstAttribute="height" constant="21" id="Med-Aa-ep2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wv5-Qj-fPa">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="IXH-kI-9rI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="OQ9-cJ-QMi" firstAttribute="top" secondItem="mtZ-u7-967" secondAttribute="top" type="default" id="5a5-9R-I8Q"/>
+                            <constraint firstItem="OQ9-cJ-QMi" firstAttribute="bottom" secondItem="mtZ-u7-967" secondAttribute="bottom" type="default" id="1GY-9e-lUg"/>
                             <constraint firstItem="OQ9-cJ-QMi" firstAttribute="leading" secondItem="mtZ-u7-967" secondAttribute="leading" type="default" id="6W6-F9-vQX"/>
+                            <constraint firstAttribute="bottom" secondItem="GMy-tu-H6N" secondAttribute="bottom" constant="37" id="PpG-rX-Ou0"/>
                             <constraint firstItem="OQ9-cJ-QMi" firstAttribute="trailing" secondItem="mtZ-u7-967" secondAttribute="trailing" type="default" id="a6F-xI-Q4a"/>
-                            <constraint firstItem="OQ9-cJ-QMi" firstAttribute="bottom" secondItem="mtZ-u7-967" secondAttribute="bottom" type="default" id="xgh-lK-sX9"/>
+                            <constraint firstItem="Wv5-Qj-fPa" firstAttribute="top" secondItem="GMy-tu-H6N" secondAttribute="top" type="default" id="ggT-K5-J4Z"/>
+                            <constraint firstItem="GMy-tu-H6N" firstAttribute="leading" secondItem="mtZ-u7-967" secondAttribute="leading" constant="166" id="h2Q-A5-wqD"/>
+                            <constraint firstAttribute="trailing" secondItem="Wv5-Qj-fPa" secondAttribute="trailing" constant="137" id="kvC-jf-9EJ"/>
+                            <constraint firstItem="Wv5-Qj-fPa" firstAttribute="baseline" secondItem="GMy-tu-H6N" secondAttribute="baseline" type="default" id="u2Y-sP-dqV"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
@@ -27,6 +52,8 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="backgroundImage" destination="OQ9-cJ-QMi" id="Vpa-px-dzY"/>
+                        <outlet property="coinsLabel" destination="Wv5-Qj-fPa" id="sBC-xG-Nlx"/>
+                        <outlet property="dollarsLabel" destination="GMy-tu-H6N" id="eq5-M6-4sY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zKL-0S-u4Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -52,6 +79,9 @@
             <point key="canvasLocation" x="131" y="55"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background.png" width="1130" height="874"/>
+    </resources>
     <classes>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
@@ -65,6 +95,8 @@
                 <relationship kind="action" name="didTapClose:"/>
                 <relationship kind="outlet" name="backgroundImage" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="closeButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="coinsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="dollarsLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="storeView" candidateClass="UIView"/>
             </relationships>
         </class>

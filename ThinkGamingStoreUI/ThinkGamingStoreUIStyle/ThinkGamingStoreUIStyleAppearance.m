@@ -41,7 +41,13 @@
              /* UIImage
                 Background image for store.
               */
-             tgStoreStyleBackgroundImage : [UIImage imageNamed:@"background"]
+             tgStoreStyleBackgroundImage : [UIImage imageNamed:@"background"],
+             
+             /* UIColor
+              Font color for currency.
+              */
+             tgStoreStyleCurrencyLabelFontColor : [UIColor whiteColor]
+
              };
 }
 
@@ -76,6 +82,11 @@
         UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:button];
         store.navigationItem.rightBarButtonItem = barButton;
     }
+    
+    [@[store.coinsLabel, store.dollarsLabel] enumerateObjectsUsingBlock:^(UILabel *label, NSUInteger idx, BOOL *stop) {
+        label.font = [UIFont fontWithName:styles[tgStoreStyleFontName] size:14.0];
+        label.textColor = styles[tgStoreStyleCurrencyLabelFontColor];
+    }];
 }
 
 + (UIColor *)colorWithHexString:(NSString *)stringToConvert {

@@ -20,6 +20,7 @@
 #define tgStoreStyleNavigationBarCloseImage @"tgStoreStyleNavigationBarCloseImage"
 #define tgStoreStyleFontName @"tgStoreStyleFontName"
 #define tgStoreStyleBackgroundImage @"tgStoreStyleBackgroundImage"
+#define tgStoreStyleCurrencyLabelFontColor @"tgStoreStyleCurrencyLabelFontColor"
 #define tgStoreStyle @""
 
 @end
