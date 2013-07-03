@@ -15,6 +15,7 @@
 @property (weak) IBOutlet UILabel *coinsLabel;
 @property (weak) IBOutlet UILabel *dollarsLabel;
 
+
 - (void) rotateStore;
 
 

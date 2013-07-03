@@ -46,7 +46,13 @@
              /* UIColor
               Font color for currency.
               */
-             tgStoreStyleCurrencyLabelFontColor : [UIColor whiteColor]
+             tgStoreStyleCurrencyLabelFontColor : [UIColor whiteColor],
+             
+             /* UIColor
+              Font color for store item description
+              */
+             tgStoreStyleStoreItemDescriptionFontColor : [self colorWithHexString:@"#247287"]
+             
 
              };
 }
@@ -88,6 +94,16 @@
         label.textColor = styles[tgStoreStyleCurrencyLabelFontColor];
     }];
 }
+
++ (void) applyToStoreItemCell:(ThinkGamingSingleStoreItemCell *)cell {
+    NSDictionary *styles = [self getStyles];
+    
+    cell.itemDescription.font = [UIFont fontWithName:styles[tgStoreStyleFontName] size:11.0];
+    cell.itemDescription.textColor = styles[tgStoreStyleStoreItemDescriptionFontColor];
+    
+}
+
+
 
 + (UIColor *)colorWithHexString:(NSString *)stringToConvert {
     NSString *noHashString = [stringToConvert stringByReplacingOccurrencesOfString:@"#" withString:@""]; // remove the #

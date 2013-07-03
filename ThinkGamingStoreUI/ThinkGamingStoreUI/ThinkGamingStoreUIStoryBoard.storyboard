@@ -34,17 +34,27 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tBn-Ci-aRc">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="2Mh-Dh-Aru" kind="embed" id="RGc-qP-BUl"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="OQ9-cJ-QMi" firstAttribute="bottom" secondItem="mtZ-u7-967" secondAttribute="bottom" type="default" id="1GY-9e-lUg"/>
                             <constraint firstItem="OQ9-cJ-QMi" firstAttribute="leading" secondItem="mtZ-u7-967" secondAttribute="leading" type="default" id="6W6-F9-vQX"/>
                             <constraint firstAttribute="bottom" secondItem="GMy-tu-H6N" secondAttribute="bottom" constant="37" id="PpG-rX-Ou0"/>
+                            <constraint firstItem="tBn-Ci-aRc" firstAttribute="centerX" secondItem="OQ9-cJ-QMi" secondAttribute="centerX" type="default" id="Q4w-c8-RxR"/>
+                            <constraint firstItem="tBn-Ci-aRc" firstAttribute="leading" secondItem="mtZ-u7-967" secondAttribute="leading" constant="89" id="SSd-cm-DqV"/>
                             <constraint firstItem="OQ9-cJ-QMi" firstAttribute="trailing" secondItem="mtZ-u7-967" secondAttribute="trailing" type="default" id="a6F-xI-Q4a"/>
                             <constraint firstItem="Wv5-Qj-fPa" firstAttribute="top" secondItem="GMy-tu-H6N" secondAttribute="top" type="default" id="ggT-K5-J4Z"/>
+                            <constraint firstAttribute="bottom" secondItem="tBn-Ci-aRc" secondAttribute="bottom" constant="86" id="gpz-1p-mKf"/>
                             <constraint firstItem="GMy-tu-H6N" firstAttribute="leading" secondItem="mtZ-u7-967" secondAttribute="leading" constant="166" id="h2Q-A5-wqD"/>
                             <constraint firstAttribute="trailing" secondItem="Wv5-Qj-fPa" secondAttribute="trailing" constant="137" id="kvC-jf-9EJ"/>
                             <constraint firstItem="Wv5-Qj-fPa" firstAttribute="baseline" secondItem="GMy-tu-H6N" secondAttribute="baseline" type="default" id="u2Y-sP-dqV"/>
+                            <constraint firstItem="tBn-Ci-aRc" firstAttribute="top" secondItem="mtZ-u7-967" secondAttribute="top" constant="20" symbolic="YES" type="default" id="u8K-N0-Vsd"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
@@ -59,6 +69,101 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zKL-0S-u4Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="657" y="55"/>
+        </scene>
+        <!--Think Gaming Store Items Collection View-->
+        <scene sceneID="amI-NI-Y94">
+            <objects>
+                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="2Mh-Dh-Aru" customClass="ThinkGamingStoreItemsCollectionView" sceneMemberID="viewController">
+                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="BkG-ig-wfp">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="150"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CEw-QE-UDe">
+                            <size key="itemSize" width="95" height="150"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ThinkGamingSingleStoreItemCell" id="4Af-Lc-6Nc" customClass="ThinkGamingSingleStoreItemCell">
+                                <rect key="frame" x="0.0" y="0.0" width="95" height="150"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="95" height="150"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="single_button.png" translatesAutoresizingMaskIntoConstraints="NO" id="4vZ-hq-Z4T">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="149" id="SYj-l5-tF7"/>
+                                            </constraints>
+                                        </imageView>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Chest of Coins" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2Td-hm-8lI">
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="67" id="abn-Qr-DCG"/>
+                                                <constraint firstAttribute="height" constant="39" id="jlC-ne-4fn"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="11"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pfe-7T-1fy">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="44" id="PWq-kX-8ru"/>
+                                                <constraint firstAttribute="height" constant="44" id="zmf-oq-6z6"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="$ 99.99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tyV-Nf-4BD">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="A1h-C2-tb5"/>
+                                                <constraint firstAttribute="width" constant="60" id="j0Q-Bl-g4F"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gl3-Wr-KMV">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="IGC-Cu-ZLC"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="Gl3-Wr-KMV" firstAttribute="leading" secondItem="tyV-Nf-4BD" secondAttribute="leading" type="default" id="9IW-DC-iyh"/>
+                                    <constraint firstItem="tyV-Nf-4BD" firstAttribute="leading" secondItem="2Td-hm-8lI" secondAttribute="leading" type="default" id="Bxs-mO-GH5"/>
+                                    <constraint firstAttribute="trailing" secondItem="tyV-Nf-4BD" secondAttribute="trailing" constant="20" type="default" id="GDj-h5-AwG"/>
+                                    <constraint firstItem="pfe-7T-1fy" firstAttribute="top" secondItem="4Af-Lc-6Nc" secondAttribute="top" constant="48" id="LjV-mx-YP4"/>
+                                    <constraint firstItem="pfe-7T-1fy" firstAttribute="centerX" secondItem="2Td-hm-8lI" secondAttribute="centerX" type="default" id="V4H-xJ-3sW"/>
+                                    <constraint firstItem="4vZ-hq-Z4T" firstAttribute="leading" secondItem="4Af-Lc-6Nc" secondAttribute="leading" type="default" id="bgm-7p-Nox"/>
+                                    <constraint firstItem="4vZ-hq-Z4T" firstAttribute="top" secondItem="4Af-Lc-6Nc" secondAttribute="top" type="default" id="e7x-KU-c3d"/>
+                                    <constraint firstItem="2Td-hm-8lI" firstAttribute="top" secondItem="4Af-Lc-6Nc" secondAttribute="top" constant="7" id="fWT-oP-w6u"/>
+                                    <constraint firstAttribute="bottom" secondItem="Gl3-Wr-KMV" secondAttribute="bottom" constant="8" id="iDc-FU-Sff"/>
+                                    <constraint firstAttribute="bottom" secondItem="tyV-Nf-4BD" secondAttribute="bottom" constant="28" id="jk0-d3-6lm"/>
+                                    <constraint firstAttribute="trailing" secondItem="Gl3-Wr-KMV" secondAttribute="trailing" constant="20" type="default" id="kuk-O3-Ixb"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="backgroundImageView" destination="4vZ-hq-Z4T" id="Y5B-J1-swO"/>
+                                    <outlet property="itemDescription" destination="2Td-hm-8lI" id="vjL-Rn-LfT"/>
+                                    <outlet property="itemImageView" destination="pfe-7T-1fy" id="ajM-Uu-F4k"/>
+                                    <outlet property="itemPrice" destination="tyV-Nf-4BD" id="wqU-X1-vnu"/>
+                                    <outlet property="itemPromoText" destination="Gl3-Wr-KMV" id="l40-Ej-jk4"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="2Mh-Dh-Aru" id="Rft-nq-Rc5"/>
+                            <outlet property="delegate" destination="2Mh-Dh-Aru" id="YPK-C4-X6K"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ol3-N1-1UE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1434" y="140"/>
         </scene>
         <!--Think Gaming StoreUI Navigation Controller-->
         <scene sceneID="d11-F5-avr">
@@ -81,10 +186,24 @@
     </scenes>
     <resources>
         <image name="background.png" width="1130" height="874"/>
+        <image name="single_button.png" width="95" height="150"/>
     </resources>
     <classes>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ThinkGamingSingleStoreItemCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ThinkGamingSingleStoreItemCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="backgroundImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="itemDescription" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="itemImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="itemPrice" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="itemPromoText" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ThinkGamingStoreItemsCollectionView" superclassName="UICollectionViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ThinkGamingStoreItemsCollectionView.h"/>
         </class>
         <class className="ThinkGamingStoreUINavigationController" superclassName="UINavigationController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ThinkGamingStoreUINavigationController.h"/>
@@ -99,6 +218,21 @@
                 <relationship kind="outlet" name="dollarsLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="storeView" candidateClass="UIView"/>
             </relationships>
+        </class>
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewController.h"/>
+        </class>
+        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
