@@ -7,6 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+
+#define kDidPurchaseCurrencyNotification @"kdidPurchaseCurrencyNotification"
+#define kDidPurchaseItemNotification @"kDidPurchaseItemNotification"
+
 @class ThinkGamingStoreSDK;
 
 @interface ThinkGamingStore : NSObject

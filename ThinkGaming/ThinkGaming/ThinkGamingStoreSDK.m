@@ -75,6 +75,7 @@
         [self.delegate thinkGamingStore:self didPurchaseCurrency:purchased];
     }
     
+    [[NSNotificationCenter defaultCenter] postNotificationName:kDidPurchaseCurrencyNotification object:purchased];
 }
 
 - (void) purchaseItem:(NSString *)itemIdentifier
@@ -90,6 +91,8 @@
     if (self.delegate) {
         [self.delegate thinkGamingStore:self didPurchaseItem:item];
     }
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kDidPurchaseItemNotification object:item];
     
 }
 
