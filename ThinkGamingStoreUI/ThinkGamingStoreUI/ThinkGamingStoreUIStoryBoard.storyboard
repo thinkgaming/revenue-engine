@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--Think Gaming StoreUI View Controller-->
+        <!--Think Gaming StoreUI View Controller - Bank-->
         <scene sceneID="2My-j5-FXG">
             <objects>
                 <viewController id="Jfs-PW-vGO" customClass="ThinkGamingStoreUIViewController" sceneMemberID="viewController">
@@ -23,7 +23,7 @@
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <navigationItem key="navigationItem" id="lij-L7-Or4"/>
+                    <navigationItem key="navigationItem" title="Bank" id="lij-L7-Or4"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="backgroundImage" destination="OQ9-cJ-QMi" id="Vpa-px-dzY"/>

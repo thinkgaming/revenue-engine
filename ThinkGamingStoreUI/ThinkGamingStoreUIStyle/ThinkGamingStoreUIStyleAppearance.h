@@ -7,10 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ThinkGamingStoreUIViewController.h"
 
 @interface ThinkGamingStoreUIStyleAppearance : NSObject
 
 + (void) apply;
-+ (UIImage *) backgroundImage;
++ (void) applyToStore:(ThinkGamingStoreUIViewController *)store;
+
+#define tgStoreStyleNavigationBarTintColor @"tgStoreStyleNavigationBarTintColor"
+#define tgStoreStyleNavigationBarFontColor @"tgStoreStyleNavigationBarFontColor"
+#define tgStoreStyleFontName @"tgStoreStyleFontName"
+#define tgStoreStyleBackgroundImage @"tgStoreStyleBackgroundImage"
+#define tgStoreStyle @""
 
 @end

@@ -25,7 +25,6 @@ static CGRect screenRect() {
 @interface ThinkGamingStoreUIViewController ()
 
 @property (weak) IBOutlet UIView *storeView;
-@property (weak) IBOutlet UIImageView *backgroundImage;
 
 @end
 
@@ -67,7 +66,7 @@ static CGRect screenRect() {
 
 
 - (void) applyStyles {
-    self.backgroundImage.image = [ThinkGamingStoreUIStyleAppearance backgroundImage];
+    [ThinkGamingStoreUIStyleAppearance applyToStore:self];
 }
 
 - (void)didReceiveMemoryWarning {

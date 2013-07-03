@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ThinkGamingStoreUIViewController : UIViewController
+@property (weak) IBOutlet UIImageView *backgroundImage;
 
 - (void) rotateStore;
 

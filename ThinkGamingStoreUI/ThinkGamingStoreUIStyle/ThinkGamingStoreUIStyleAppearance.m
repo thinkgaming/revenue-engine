@@ -11,12 +11,46 @@
 
 @implementation ThinkGamingStoreUIStyleAppearance
 
-+ (void) apply {
-    [[UINavigationBar appearanceWhenContainedIn:[ThinkGamingStoreUINavigationController class], nil] setTintColor:[UIColor blackColor]];
++ (NSDictionary *) getStyles {
+    return @{
+             /* UIColor
+                Tint color for navigation bar.
+              */
+             tgStoreStyleNavigationBarTintColor : [UIColor blackColor],
+
+             /* UIColor
+              Font color for navigation bar.
+              */
+             tgStoreStyleNavigationBarFontColor : [UIColor whiteColor],
+
+             /* NSString
+                Font name. Ensure the font is added to the bundle, and the Font keys are added to your *-Info.plist.
+              */
+             tgStoreStyleFontName : @"GROBOLD",
+             
+             /* UIImage
+                Background image for store.
+              */
+             tgStoreStyleBackgroundImage : [UIImage imageNamed:@"background"]
+             };
 }
 
-+ (UIImage *) backgroundImage {
-    return [UIImage imageNamed:@"background"];
+
++ (void) apply {
+    NSDictionary *styles = [self getStyles];
+    [[UINavigationBar appearanceWhenContainedIn:[ThinkGamingStoreUINavigationController class], nil] setTintColor:styles[tgStoreStyleNavigationBarTintColor]];
+    
+    [[UINavigationBar appearanceWhenContainedIn:[ThinkGamingStoreUINavigationController class], nil] setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIColor blackColor], UITextAttributeTextColor,
+      [UIFont fontWithName:styles[tgStoreStyleFontName] size:16.0], UITextAttributeFont,nil]];
 }
+
++ (void) applyToStore:(ThinkGamingStoreUIViewController *)store {
+    NSDictionary *styles = [self getStyles];
+    store.backgroundImage.image = styles[tgStoreStyleBackgroundImage];
+}
+
+
 
 @end
