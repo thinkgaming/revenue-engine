@@ -33,6 +33,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     ThinkGamingSingleStoreItemCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([ThinkGamingSingleStoreItemCell class]) forIndexPath:indexPath];
     [ThinkGamingStoreUIStyleAppearance applyToStoreItemCell:cell];
+    cell.itemImageView.image = [UIImage imageNamed:@"sack_of_gold"];
     return cell;
 }
 

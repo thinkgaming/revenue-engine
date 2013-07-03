@@ -63,6 +63,11 @@
               */
              tgStoreStyleStoreItemPromoFontName : @"ChalkDuster",
 
+             /* UIImage
+              Background image for item.
+              */
+             tgStoreStyleStoreItemBackgroundImage : [UIImage imageNamed:@"single_button"]
+
 
              };
 }
@@ -116,7 +121,7 @@
     
     cell.itemPromoText.font = [UIFont fontWithName:styles[tgStoreStyleStoreItemPromoFontName] size:9.0];
     
-    
+    cell.backgroundImageView.image = styles[tgStoreStyleStoreItemBackgroundImage];
 }
 
 

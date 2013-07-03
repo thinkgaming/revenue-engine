@@ -28,6 +28,7 @@
 #define tgStoreStyleStoreItemPriceFontColor @"tgStoreStyleStoreItemPriceFontColor"
 #define tgStoreStyleStoreItemPromoFontName @"tgStoreStyleStoreItemPromoFontName"
 #define tgStoreStyleStoreItemPromoFontColor @"tgStoreStyleStoreItemPromoFontColor"
+#define tgStoreStyleStoreItemBackgroundImage @"tgStoreStyleStoreItemBackgroundImage"
 #define tgStoreStyle @""
 
 @end

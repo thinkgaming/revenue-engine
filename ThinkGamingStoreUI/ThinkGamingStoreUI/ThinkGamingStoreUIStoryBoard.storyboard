@@ -93,9 +93,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="95" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="single_button.png" translatesAutoresizingMaskIntoConstraints="NO" id="4vZ-hq-Z4T">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4vZ-hq-Z4T">
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="149" id="SYj-l5-tF7"/>
+                                                <constraint firstAttribute="height" constant="149" id="mWw-AF-d8L"/>
                                             </constraints>
                                         </imageView>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Chest of Coins" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2Td-hm-8lI">
@@ -109,14 +109,13 @@
                                         </textView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pfe-7T-1fy">
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="44" id="PWq-kX-8ru"/>
-                                                <constraint firstAttribute="height" constant="44" id="zmf-oq-6z6"/>
+                                                <constraint firstAttribute="height" constant="52" id="3vT-Tm-TTy"/>
+                                                <constraint firstAttribute="width" constant="40" id="5RT-WV-sAT"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="$ 99.99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tyV-Nf-4BD">
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="A1h-C2-tb5"/>
-                                                <constraint firstAttribute="width" constant="60" id="j0Q-Bl-g4F"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -125,6 +124,7 @@
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gl3-Wr-KMV">
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="IGC-Cu-ZLC"/>
+                                                <constraint firstAttribute="width" constant="60" id="W0P-c7-r2Q"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -134,17 +134,18 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
+                                    <constraint firstItem="4vZ-hq-Z4T" firstAttribute="trailing" secondItem="4Af-Lc-6Nc" secondAttribute="trailing" type="default" id="4Os-HX-qkj"/>
                                     <constraint firstItem="Gl3-Wr-KMV" firstAttribute="leading" secondItem="tyV-Nf-4BD" secondAttribute="leading" type="default" id="9IW-DC-iyh"/>
+                                    <constraint firstItem="pfe-7T-1fy" firstAttribute="top" secondItem="4Af-Lc-6Nc" secondAttribute="top" constant="45" id="AbB-JD-6fs"/>
                                     <constraint firstItem="tyV-Nf-4BD" firstAttribute="leading" secondItem="2Td-hm-8lI" secondAttribute="leading" type="default" id="Bxs-mO-GH5"/>
                                     <constraint firstAttribute="trailing" secondItem="tyV-Nf-4BD" secondAttribute="trailing" constant="20" type="default" id="GDj-h5-AwG"/>
-                                    <constraint firstItem="pfe-7T-1fy" firstAttribute="top" secondItem="4Af-Lc-6Nc" secondAttribute="top" constant="48" id="LjV-mx-YP4"/>
-                                    <constraint firstItem="pfe-7T-1fy" firstAttribute="centerX" secondItem="2Td-hm-8lI" secondAttribute="centerX" type="default" id="V4H-xJ-3sW"/>
                                     <constraint firstAttribute="bottom" secondItem="tyV-Nf-4BD" secondAttribute="bottom" constant="27" id="XTH-Uc-12M"/>
+                                    <constraint firstItem="pfe-7T-1fy" firstAttribute="centerX" secondItem="4vZ-hq-Z4T" secondAttribute="centerX" type="default" id="bJg-PO-Pj8"/>
                                     <constraint firstItem="4vZ-hq-Z4T" firstAttribute="leading" secondItem="4Af-Lc-6Nc" secondAttribute="leading" type="default" id="bgm-7p-Nox"/>
                                     <constraint firstItem="4vZ-hq-Z4T" firstAttribute="top" secondItem="4Af-Lc-6Nc" secondAttribute="top" type="default" id="e7x-KU-c3d"/>
                                     <constraint firstItem="2Td-hm-8lI" firstAttribute="top" secondItem="4Af-Lc-6Nc" secondAttribute="top" constant="7" id="fWT-oP-w6u"/>
-                                    <constraint firstAttribute="bottom" secondItem="Gl3-Wr-KMV" secondAttribute="bottom" constant="8" id="iDc-FU-Sff"/>
                                     <constraint firstAttribute="trailing" secondItem="Gl3-Wr-KMV" secondAttribute="trailing" constant="20" type="default" id="kuk-O3-Ixb"/>
+                                    <constraint firstAttribute="bottom" secondItem="Gl3-Wr-KMV" secondAttribute="bottom" constant="8" id="o2Q-wm-0d0"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="backgroundImageView" destination="4vZ-hq-Z4T" id="Y5B-J1-swO"/>
@@ -186,7 +187,6 @@
     </scenes>
     <resources>
         <image name="background.png" width="1130" height="874"/>
-        <image name="single_button.png" width="95" height="150"/>
     </resources>
     <classes>
         <class className="NSLayoutConstraint" superclassName="NSObject">

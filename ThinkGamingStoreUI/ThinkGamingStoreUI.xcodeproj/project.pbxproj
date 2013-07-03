@@ -17,6 +17,8 @@
 		8614571E1784993400B59BC9 /* single_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8614571C1784993400B59BC9 /* single_button@2x.png */; };
 		86145721178499DB00B59BC9 /* ThinkGamingStoreItemsCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86145720178499DB00B59BC9 /* ThinkGamingStoreItemsCollectionView.m */; };
 		8614572417849A4300B59BC9 /* ThinkGamingSingleStoreItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8614572317849A4200B59BC9 /* ThinkGamingSingleStoreItemCell.m */; };
+		861457271784A5DE00B59BC9 /* sack_of_gold.png in Resources */ = {isa = PBXBuildFile; fileRef = 861457251784A5DE00B59BC9 /* sack_of_gold.png */; };
+		861457281784A5DE00B59BC9 /* sack_of_gold@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 861457261784A5DE00B59BC9 /* sack_of_gold@2x.png */; };
 		8690AAA6178319620082FE3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8690AAA5178319620082FE3B /* UIKit.framework */; };
 		8690AAA8178319620082FE3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8690AAA7178319620082FE3B /* Foundation.framework */; };
 		8690AAAA178319620082FE3B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8690AAA9178319620082FE3B /* CoreGraphics.framework */; };
@@ -67,6 +69,8 @@
 		86145720178499DB00B59BC9 /* ThinkGamingStoreItemsCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThinkGamingStoreItemsCollectionView.m; sourceTree = "<group>"; };
 		8614572217849A4200B59BC9 /* ThinkGamingSingleStoreItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThinkGamingSingleStoreItemCell.h; sourceTree = "<group>"; };
 		8614572317849A4200B59BC9 /* ThinkGamingSingleStoreItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThinkGamingSingleStoreItemCell.m; sourceTree = "<group>"; };
+		861457251784A5DE00B59BC9 /* sack_of_gold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sack_of_gold.png; path = ThinkGamingStoreUIStyle/sack_of_gold.png; sourceTree = "<group>"; };
+		861457261784A5DE00B59BC9 /* sack_of_gold@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sack_of_gold@2x.png"; path = "ThinkGamingStoreUIStyle/sack_of_gold@2x.png"; sourceTree = "<group>"; };
 		8690AAA2178319620082FE3B /* ThinkGamingStoreUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThinkGamingStoreUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8690AAA5178319620082FE3B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8690AAA7178319620082FE3B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -130,6 +134,8 @@
 		8614570A17845D0600B59BC9 /* ThinkGamingStoreUIStyle */ = {
 			isa = PBXGroup;
 			children = (
+				861457251784A5DE00B59BC9 /* sack_of_gold.png */,
+				861457261784A5DE00B59BC9 /* sack_of_gold@2x.png */,
 				8614571B1784993400B59BC9 /* single_button.png */,
 				8614571C1784993400B59BC9 /* single_button@2x.png */,
 				861457191784797000B59BC9 /* redx@2x.png */,
@@ -327,6 +333,8 @@
 				8614571A1784797000B59BC9 /* redx@2x.png in Resources */,
 				8614571D1784993400B59BC9 /* single_button.png in Resources */,
 				8614571E1784993400B59BC9 /* single_button@2x.png in Resources */,
+				861457271784A5DE00B59BC9 /* sack_of_gold.png in Resources */,
+				861457281784A5DE00B59BC9 /* sack_of_gold@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
