@@ -15,4 +15,8 @@
     [[UINavigationBar appearanceWhenContainedIn:[ThinkGamingStoreUINavigationController class], nil] setTintColor:[UIColor blackColor]];
 }
 
++ (UIImage *) backgroundImage {
+    return [UIImage imageNamed:@"background"];
+}
+
 @end

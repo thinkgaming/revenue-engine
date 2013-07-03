@@ -11,5 +11,6 @@
 @interface ThinkGamingStoreUIStyleAppearance : NSObject
 
 + (void) apply;
++ (UIImage *) backgroundImage;
 
 @end

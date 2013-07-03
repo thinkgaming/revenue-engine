@@ -8,6 +8,7 @@
 
 #import "ThinkGamingStoreUI.h"
 #import "ThinkGamingStoreUIViewController.h"
+#import "ThinkGamingStoreUIStyleAppearance.h"
 
 static ThinkGamingStoreUI *thinkGamingStoreUI;
 
@@ -28,6 +29,7 @@ static ThinkGamingStoreUI *thinkGamingStoreUI;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         thinkGamingStoreUI = [[ThinkGamingStoreUI alloc] init];
+        [ThinkGamingStoreUIStyleAppearance apply];
     });
     return thinkGamingStoreUI;
 }

@@ -7,6 +7,7 @@
 //
 
 #import "ThinkGamingStoreUIViewController.h"
+#import "ThinkGamingStoreUIStyleAppearance.h"
 
 #define DegreesToRadians(degrees) (degrees *M_PI /180)
 
@@ -24,6 +25,7 @@ static CGRect screenRect() {
 @interface ThinkGamingStoreUIViewController ()
 
 @property (weak) IBOutlet UIView *storeView;
+@property (weak) IBOutlet UIImageView *backgroundImage;
 
 @end
 
@@ -60,6 +62,12 @@ static CGRect screenRect() {
                                              selector:@selector(rotateStore)
                                                  name:UIApplicationWillChangeStatusBarOrientationNotification
                                                object:nil];
+    [self applyStyles];
+}
+
+
+- (void) applyStyles {
+    self.backgroundImage.image = [ThinkGamingStoreUIStyleAppearance backgroundImage];
 }
 
 - (void)didReceiveMemoryWarning {
