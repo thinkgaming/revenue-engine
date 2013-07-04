@@ -64,6 +64,10 @@ static CGRect screenRect() {
     [ThinkGamingStoreUI hideStore];
 }
 
+- (void) didTapBack:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter] addObserver:self

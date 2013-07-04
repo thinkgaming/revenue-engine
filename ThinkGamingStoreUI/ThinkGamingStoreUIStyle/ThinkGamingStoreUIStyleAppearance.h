@@ -9,12 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "ThinkGamingStoreUIViewController.h"
 #import "ThinkGamingSingleStoreItemCell.h"
+#import "ThinkGamingStoreListViewController.h"
 
 
 @interface ThinkGamingStoreUIStyleAppearance : NSObject
 
 + (void) apply;
 + (void) applyToStore:(ThinkGamingStoreUIViewController *)store;
++ (void) applyToStoreList:(ThinkGamingStoreListViewController *)storeList;
 + (void) applyToStoreItemCell:(ThinkGamingSingleStoreItemCell *)cell;
 
 #define tgStoreStyleNavigationBarTintColor @"tgStoreStyleNavigationBarTintColor"
@@ -29,6 +31,7 @@
 #define tgStoreStyleStoreItemPromoFontName @"tgStoreStyleStoreItemPromoFontName"
 #define tgStoreStyleStoreItemPromoFontColor @"tgStoreStyleStoreItemPromoFontColor"
 #define tgStoreStyleStoreItemBackgroundImage @"tgStoreStyleStoreItemBackgroundImage"
+#define tgStoreStyleBackButtonImage @"tgStoreStyleBackButtonImage"
 #define tgStoreStyle @""
 
 @end

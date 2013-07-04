@@ -28,6 +28,8 @@
 		8614573B1784B43200B59BC9 /* pile_of_gold@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 861457371784B43200B59BC9 /* pile_of_gold@2x.png */; };
 		8614573D1784B72500B59BC9 /* store_list.png in Resources */ = {isa = PBXBuildFile; fileRef = 8614573C1784B72500B59BC9 /* store_list.png */; };
 		861457401784B7C900B59BC9 /* ThinkGamingStoreListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8614573F1784B7C900B59BC9 /* ThinkGamingStoreListViewController.m */; };
+		8614574317858E5E00B59BC9 /* back_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 8614574117858E5E00B59BC9 /* back_button.png */; };
+		8614574417858E5E00B59BC9 /* back_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8614574217858E5E00B59BC9 /* back_button@2x.png */; };
 		8690AAA6178319620082FE3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8690AAA5178319620082FE3B /* UIKit.framework */; };
 		8690AAA8178319620082FE3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8690AAA7178319620082FE3B /* Foundation.framework */; };
 		8690AAAA178319620082FE3B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8690AAA9178319620082FE3B /* CoreGraphics.framework */; };
@@ -92,6 +94,8 @@
 		8614573C1784B72500B59BC9 /* store_list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = store_list.png; path = ThinkGamingStoreUIStyle/store_list.png; sourceTree = "<group>"; };
 		8614573E1784B7C900B59BC9 /* ThinkGamingStoreListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThinkGamingStoreListViewController.h; sourceTree = "<group>"; };
 		8614573F1784B7C900B59BC9 /* ThinkGamingStoreListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThinkGamingStoreListViewController.m; sourceTree = "<group>"; };
+		8614574117858E5E00B59BC9 /* back_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back_button.png; path = ThinkGamingStoreUIStyle/back_button.png; sourceTree = "<group>"; };
+		8614574217858E5E00B59BC9 /* back_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "back_button@2x.png"; path = "ThinkGamingStoreUIStyle/back_button@2x.png"; sourceTree = "<group>"; };
 		8690AAA2178319620082FE3B /* ThinkGamingStoreUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThinkGamingStoreUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8690AAA5178319620082FE3B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8690AAA7178319620082FE3B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -158,6 +162,8 @@
 		8614570A17845D0600B59BC9 /* ThinkGamingStoreUIStyle */ = {
 			isa = PBXGroup;
 			children = (
+				8614574117858E5E00B59BC9 /* back_button.png */,
+				8614574217858E5E00B59BC9 /* back_button@2x.png */,
 				8614573C1784B72500B59BC9 /* store_list.png */,
 				861457341784B43200B59BC9 /* chest_of_gold.png */,
 				861457351784B43200B59BC9 /* chest_of_gold@2x.png */,
@@ -376,6 +382,8 @@
 				8614573A1784B43200B59BC9 /* pile_of_gold.png in Resources */,
 				8614573B1784B43200B59BC9 /* pile_of_gold@2x.png in Resources */,
 				8614573D1784B72500B59BC9 /* store_list.png in Resources */,
+				8614574317858E5E00B59BC9 /* back_button.png in Resources */,
+				8614574417858E5E00B59BC9 /* back_button@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,6 +548,7 @@
 		8690AADE178319630082FE3B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Think Gaming LLC (A52MVTZYUR)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -549,6 +558,7 @@
 				INFOPLIST_FILE = "ThinkGamingStoreUI/ThinkGamingStoreUI-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "9D0F588E-4AE6-4B60-8FDA-D94AF84A3645";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -556,6 +566,7 @@
 		8690AADF178319630082FE3B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Think Gaming LLC (A52MVTZYUR)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -565,6 +576,7 @@
 				INFOPLIST_FILE = "ThinkGamingStoreUI/ThinkGamingStoreUI-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "9D0F588E-4AE6-4B60-8FDA-D94AF84A3645";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

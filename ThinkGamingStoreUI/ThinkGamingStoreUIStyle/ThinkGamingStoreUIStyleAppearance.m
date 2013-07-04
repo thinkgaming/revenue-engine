@@ -66,9 +66,12 @@
              /* UIImage
               Background image for item.
               */
-             tgStoreStyleStoreItemBackgroundImage : [UIImage imageNamed:@"single_button"]
+             tgStoreStyleStoreItemBackgroundImage : [UIImage imageNamed:@"single_button"],
 
-
+             /* UIImage
+              Background image for item.
+              */
+             tgStoreStyleBackButtonImage : [UIImage imageNamed:@"back_button"]
              };
 }
 
@@ -104,10 +107,37 @@
         store.navigationItem.rightBarButtonItem = barButton;
     }
     
+    if (styles[tgStoreStyleBackButtonImage]) {
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        store.navigationItem.hidesBackButton = YES;
+        [button addTarget:store action:@selector(didTapBack:) forControlEvents:UIControlEventTouchUpInside];
+        UIImage *buttonImage = styles[tgStoreStyleBackButtonImage];
+        [button setImage:buttonImage forState:UIControlStateNormal];
+        [button setFrame:CGRectMake(0, 0, buttonImage.size.width, buttonImage.size.height)];
+        UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:button];
+        store.navigationItem.leftBarButtonItem = barButton;
+    }
+
+    
     [@[store.coinsLabel, store.dollarsLabel] enumerateObjectsUsingBlock:^(UILabel *label, NSUInteger idx, BOOL *stop) {
         label.font = [UIFont fontWithName:styles[tgStoreStyleFontName] size:14.0];
         label.textColor = styles[tgStoreStyleCurrencyLabelFontColor];
     }];
+}
+
++ (void) applyToStoreList:(ThinkGamingStoreListViewController *)storeList {
+    NSDictionary *styles = [self getStyles];
+
+    if (styles[tgStoreStyleNavigationBarCloseImage]) {
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [button addTarget:storeList action:@selector(didTapClose:) forControlEvents:UIControlEventTouchUpInside];
+        UIImage *buttonImage = styles[tgStoreStyleNavigationBarCloseImage];
+        [button setImage:buttonImage forState:UIControlStateNormal];
+        [button setFrame:CGRectMake(0, 0, buttonImage.size.width, buttonImage.size.height)];
+        UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:button];
+        storeList.navigationItem.rightBarButtonItem = barButton;
+    }
+
 }
 
 + (void) applyToStoreItemCell:(ThinkGamingSingleStoreItemCell *)cell {
