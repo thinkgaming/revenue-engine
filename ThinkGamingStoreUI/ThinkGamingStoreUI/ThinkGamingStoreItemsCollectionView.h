@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 
-@interface ThinkGamingStoreItemsCollectionView : UICollectionViewController
+@interface ThinkGamingStoreItemsCollectionView : UICollectionViewController <UIAlertViewDelegate>
 
 @end

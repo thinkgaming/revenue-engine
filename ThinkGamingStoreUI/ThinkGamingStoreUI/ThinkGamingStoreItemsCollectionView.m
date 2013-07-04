@@ -10,6 +10,7 @@
 #import "ThinkGamingSingleStoreItemCell.h"
 #import "ThinkGamingStoreUIStyleAppearance.h"
 #import "ThinkGamingStoreSDK.h"
+#import "ThinkGamingStoreUI.h"
 
 
 @interface ThinkGamingStoreItemsCollectionView ()
@@ -50,6 +51,38 @@
     
     return cell;
 }
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    ThinkGamingItem *item = self.storeItems[indexPath.row];
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:item.itemName message:item.itemDescription delegate:self cancelButtonTitle:@"cancel" otherButtonTitles:@"buy", nil];
+    alert.tag = indexPath.row;
+    [alert show];
+}
+
+#pragma mark - UIAlertView delegates
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (alertView.tag > 0) {
+        ThinkGamingItem *item = self.storeItems[alertView.tag];
+        if (buttonIndex == 1) {
+            ThinkGamingStoreSDK *sdk = [[ThinkGamingStoreSDK alloc] init];
+            [sdk purchaseCurrency:item.itemIdentifier amountOfCurrency:@1
+                     successBlock:^(ThinkGamingCurrency *currency)  {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Thanks!" message:@"purchase complete" delegate:self cancelButtonTitle:nil otherButtonTitles:@"ok", nil];
+                         alert.tag = -1;
+                [alert show];
+            } erroBlock:^(NSError *err) {
+                nil;
+            }];
+        }
+    }
+    
+    if (alertView.tag < 0) {
+        [ThinkGamingStoreUI hideStore];
+    }
+}
+
+
 
 
 @end
