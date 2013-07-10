@@ -33,6 +33,7 @@
     item1.currencyIdentifierRequired = @"com.thinkgaming.realCurrency";
     item1.currencyCost = [NSDecimalNumber decimalNumberWithString:@"2.99"];
     item1.itemImageName = @"pile_of_gold";
+    
     item1.totalOwned = @126;
     
     ThinkGamingItem *item2 = [[ThinkGamingItem alloc] init];
@@ -75,8 +76,8 @@
     item5.currencyCost = [NSDecimalNumber decimalNumberWithString:@"10.99"];
     item5.totalOwned = @5;
 
-    return @[item1, item2, item3, item4, item5];
-//    return @[item1, item2, item3];
+//    return @[item1, item2, item3, item4, item5];
+    return @[item1, item2, item3];
     
 }
 
