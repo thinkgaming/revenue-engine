@@ -26,9 +26,11 @@
 		52205435173D49A800A9D253 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52205434173D49A800A9D253 /* Foundation.framework */; };
 		5220543A173D49A800A9D253 /* ThinkGamingLogger.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 52205439173D49A800A9D253 /* ThinkGamingLogger.h */; };
 		5220543C173D49A800A9D253 /* ThinkGamingLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5220543B173D49A800A9D253 /* ThinkGamingLogger.m */; };
+		867BCCC11795D3260085549C /* ThinkGamingStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 867BCCC01795D3260085549C /* ThinkGamingStore.m */; };
+		867BCCC31795D3980085549C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 867BCCC21795D3980085549C /* StoreKit.framework */; };
 		8690AAF4178432990082FE3B /* ThinkGamingCurrencyStoreSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 8690AAF3178432990082FE3B /* ThinkGamingCurrencyStoreSDK.m */; };
 		86B184B1175E6C1A00D41466 /* EventQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B184B0175E6C1A00D41466 /* EventQueue.m */; };
-		86B184B5175E6F2400D41466 /* ThinkGamingApiAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B184B4175E6F2400D41466 /* ThinkGamingApiAdapter.m */; };
+		86B184B5175E6F2400D41466 /* ThinkGamingLoggingApiAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B184B4175E6F2400D41466 /* ThinkGamingLoggingApiAdapter.m */; };
 		86B184B9175E7C9600D41466 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 52205462173D656300A9D253 /* Reachability.m */; };
 /* End PBXBuildFile section */
 
@@ -55,12 +57,15 @@
 		5220543B173D49A800A9D253 /* ThinkGamingLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThinkGamingLogger.m; sourceTree = "<group>"; };
 		52205461173D656300A9D253 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		52205462173D656300A9D253 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		867BCCBF1795D3260085549C /* ThinkGamingStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThinkGamingStore.h; sourceTree = "<group>"; };
+		867BCCC01795D3260085549C /* ThinkGamingStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThinkGamingStore.m; sourceTree = "<group>"; };
+		867BCCC21795D3980085549C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		8690AAF2178432990082FE3B /* ThinkGamingCurrencyStoreSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThinkGamingCurrencyStoreSDK.h; sourceTree = "<group>"; };
 		8690AAF3178432990082FE3B /* ThinkGamingCurrencyStoreSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThinkGamingCurrencyStoreSDK.m; sourceTree = "<group>"; };
 		86B184AF175E6C1A00D41466 /* EventQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventQueue.h; sourceTree = "<group>"; };
 		86B184B0175E6C1A00D41466 /* EventQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventQueue.m; sourceTree = "<group>"; };
-		86B184B3175E6F2400D41466 /* ThinkGamingApiAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThinkGamingApiAdapter.h; sourceTree = "<group>"; };
-		86B184B4175E6F2400D41466 /* ThinkGamingApiAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThinkGamingApiAdapter.m; sourceTree = "<group>"; };
+		86B184B3175E6F2400D41466 /* ThinkGamingLoggingApiAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThinkGamingLoggingApiAdapter.h; sourceTree = "<group>"; };
+		86B184B4175E6F2400D41466 /* ThinkGamingLoggingApiAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThinkGamingLoggingApiAdapter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				867BCCC31795D3980085549C /* StoreKit.framework in Frameworks */,
 				3738D3BC174A57BD0088D46B /* AdSupport.framework in Frameworks */,
 				3738D3BA174A57A50088D46B /* UIKit.framework in Frameworks */,
 				52205435173D49A800A9D253 /* Foundation.framework in Frameworks */,
@@ -80,6 +86,7 @@
 		52205428173D49A700A9D253 = {
 			isa = PBXGroup;
 			children = (
+				867BCCC21795D3980085549C /* StoreKit.framework */,
 				52205460173D656300A9D253 /* Reachabilty */,
 				52205436173D49A800A9D253 /* ThinkGaming */,
 				52205433173D49A800A9D253 /* Frameworks */,
@@ -112,8 +119,10 @@
 				86B184B0175E6C1A00D41466 /* EventQueue.m */,
 				52205439173D49A800A9D253 /* ThinkGamingLogger.h */,
 				5220543B173D49A800A9D253 /* ThinkGamingLogger.m */,
-				86B184B3175E6F2400D41466 /* ThinkGamingApiAdapter.h */,
-				86B184B4175E6F2400D41466 /* ThinkGamingApiAdapter.m */,
+				867BCCBF1795D3260085549C /* ThinkGamingStore.h */,
+				867BCCC01795D3260085549C /* ThinkGamingStore.m */,
+				86B184B3175E6F2400D41466 /* ThinkGamingLoggingApiAdapter.h */,
+				86B184B4175E6F2400D41466 /* ThinkGamingLoggingApiAdapter.m */,
 				52205437173D49A800A9D253 /* Supporting Files */,
 				8690AAF2178432990082FE3B /* ThinkGamingCurrencyStoreSDK.h */,
 				8690AAF3178432990082FE3B /* ThinkGamingCurrencyStoreSDK.m */,
@@ -209,9 +218,10 @@
 			files = (
 				5220543C173D49A800A9D253 /* ThinkGamingLogger.m in Sources */,
 				86B184B1175E6C1A00D41466 /* EventQueue.m in Sources */,
-				86B184B5175E6F2400D41466 /* ThinkGamingApiAdapter.m in Sources */,
+				86B184B5175E6F2400D41466 /* ThinkGamingLoggingApiAdapter.m in Sources */,
 				86B184B9175E7C9600D41466 /* Reachability.m in Sources */,
 				8690AAF4178432990082FE3B /* ThinkGamingCurrencyStoreSDK.m in Sources */,
+				867BCCC11795D3260085549C /* ThinkGamingStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

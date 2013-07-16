@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ThinkGamingApiAdapter : NSObject <NSURLConnectionDataDelegate, NSURLConnectionDelegate>
+@interface ThinkGamingLoggingApiAdapter : NSObject <NSURLConnectionDataDelegate, NSURLConnectionDelegate>
 
 + (void) dispatchEvents:(NSDictionary *)events
              success:(void(^)(NSData *))success
                   error:(void(^)(NSError*))error;
+
 
 @end

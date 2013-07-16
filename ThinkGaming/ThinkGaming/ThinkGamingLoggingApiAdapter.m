@@ -6,12 +6,12 @@
 //  Copyright (c) 2013 ThinkGaming. All rights reserved.
 //
 
-#import "ThinkGamingApiAdapter.h"
+#import "ThinkGamingLoggingApiAdapter.h"
 
 static NSString * const kThinkGamingAPIBaseURLString = @"http://api.thinkgaming.com:8080/";
 static NSString * const kLoggingPath = @"/log_activity2/";
 
-@interface ThinkGamingApiAdapter()
+@interface ThinkGamingLoggingApiAdapter()
 @property (strong) NSURLConnection *connection;
 @property (strong) NSMutableData *response;
 @property (nonatomic, copy) void(^success)(NSData *);
@@ -25,7 +25,7 @@ static NSString * const kLoggingPath = @"/log_activity2/";
 
 @end
 
-@implementation ThinkGamingApiAdapter
+@implementation ThinkGamingLoggingApiAdapter
 
 - (NSMutableURLRequest *) makeRequest {
     self.response = [NSMutableData data];
@@ -89,7 +89,7 @@ static NSString * const kLoggingPath = @"/log_activity2/";
 + (void) dispatchEvents:(NSDictionary *)events
                 success:(void(^)(NSData *))success
                   error:(void(^)(NSError*))error {
-    ThinkGamingApiAdapter *adapter = [[ThinkGamingApiAdapter alloc] init];
+    ThinkGamingLoggingApiAdapter *adapter = [[ThinkGamingLoggingApiAdapter alloc] init];
     [adapter dispatchEvents:events success:success error:error];
 }
 
