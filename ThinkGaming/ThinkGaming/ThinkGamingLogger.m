@@ -11,7 +11,7 @@
 #import <ifaddrs.h>
 #import <arpa/inet.h>
 #import "EventQueue.h"
-#import "ThinkGamingApiAdapter.h"
+#import "ThinkGamingLoggingApiAdapter.h"
 
 
 #define QUEUE_FLUSH_TIME 30 // In seconds
@@ -174,7 +174,7 @@ static ThinkGamingLogger* sharedSingleton;
     
     NSMutableArray *events = [self.eventQueue drainEvents];
     if (events) {
-        [ThinkGamingApiAdapter dispatchEvents:[NSDictionary dictionaryWithObject:events forKey:@"__TG__payload"] success:^(NSData *result) {
+        [ThinkGamingLoggingApiAdapter dispatchEvents:[NSDictionary dictionaryWithObject:events forKey:@"__TG__payload"] success:^(NSData *result) {
             
         } error:^(NSError *err) {
             
