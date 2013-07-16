@@ -9,7 +9,7 @@
 #import "ThinkGamingStoreUIViewController.h"
 #import "ThinkGamingStoreUIStyleAppearance.h"
 #import "ThinkGamingStoreUI.h"
-#import "ThinkGamingStoreSDK.h"
+#import "ThinkGamingCurrencyStoreSDK.h"
 
 #define DegreesToRadians(degrees) (degrees *M_PI /180)
 
@@ -27,7 +27,7 @@ static CGRect screenRect() {
 @interface ThinkGamingStoreUIViewController ()
 
 @property (weak) IBOutlet UIView *storeView;
-@property (strong) ThinkGamingStoreSDK *sdk;
+@property (strong) ThinkGamingCurrencyStoreSDK *sdk;
 
 - (IBAction)didTapClose:(id)sender;
 
@@ -76,7 +76,7 @@ static CGRect screenRect() {
                                                object:nil];
     [self applyStyles];
     
-    self.sdk = [[ThinkGamingStoreSDK alloc] init];
+    self.sdk = [[ThinkGamingCurrencyStoreSDK alloc] init];
     NSArray *balances = [self.sdk getCurrencyBalances];
     
     [balances enumerateObjectsUsingBlock:^(ThinkGamingCurrency *currency, NSUInteger idx, BOOL *stop) {

@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 ThinkGaming. All rights reserved.
 //
 
-#import "ThinkGamingStoreSDK.h"
+#import "ThinkGamingCurrencyStoreSDK.h"
 
-@implementation ThinkGamingStoreSDK
+@implementation ThinkGamingCurrencyStoreSDK
 
 - (NSArray *) getStoreList {
     ThinkGamingStore *store1 = [[ThinkGamingStore alloc] init];

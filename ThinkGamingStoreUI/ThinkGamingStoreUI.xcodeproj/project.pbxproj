@@ -82,11 +82,11 @@
 		8614572317849A4200B59BC9 /* ThinkGamingSingleStoreItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThinkGamingSingleStoreItemCell.m; sourceTree = "<group>"; };
 		861457251784A5DE00B59BC9 /* sack_of_gold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sack_of_gold.png; path = ThinkGamingStoreUIStyle/sack_of_gold.png; sourceTree = "<group>"; };
 		861457261784A5DE00B59BC9 /* sack_of_gold@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sack_of_gold@2x.png"; path = "ThinkGamingStoreUIStyle/sack_of_gold@2x.png"; sourceTree = "<group>"; };
-		861457291784A75A00B59BC9 /* libThinkGaming.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libThinkGaming.a; path = "../ThinkGaming/build/Release-iphoneos/libThinkGaming.a"; sourceTree = "<group>"; };
-		8614572B1784A76A00B59BC9 /* ThinkGamingLogger.h */ = {isa = PBXFileReference; lastKnownFileType = file; name = ThinkGamingLogger.h; path = ../ThinkGaming/ThinkGaming/ThinkGamingLogger.h; sourceTree = "<group>"; };
+		861457291784A75A00B59BC9 /* libThinkGaming.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libThinkGaming.a; path = "../ThinkGaming/build/Release-iphoneos/libThinkGaming.a"; sourceTree = "<group>"; };
+		8614572B1784A76A00B59BC9 /* ThinkGamingLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ThinkGamingLogger.h; path = ../ThinkGaming/ThinkGaming/ThinkGamingLogger.h; sourceTree = "<group>"; };
 		8614572F1784A7DC00B59BC9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		861457311784A7EA00B59BC9 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
-		861457331784AB1B00B59BC9 /* ThinkGamingStoreSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = ThinkGamingStoreSDK.h; path = ../ThinkGaming/ThinkGaming/ThinkGamingStoreSDK.h; sourceTree = "<group>"; };
+		861457331784AB1B00B59BC9 /* ThinkGamingCurrencyStoreSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThinkGamingCurrencyStoreSDK.h; path = ../ThinkGaming/ThinkGaming/ThinkGamingCurrencyStoreSDK.h; sourceTree = "<group>"; };
 		861457341784B43200B59BC9 /* chest_of_gold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = chest_of_gold.png; path = ThinkGamingStoreUIStyle/chest_of_gold.png; sourceTree = "<group>"; };
 		861457351784B43200B59BC9 /* chest_of_gold@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "chest_of_gold@2x.png"; path = "ThinkGamingStoreUIStyle/chest_of_gold@2x.png"; sourceTree = "<group>"; };
 		861457361784B43200B59BC9 /* pile_of_gold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pile_of_gold.png; path = ThinkGamingStoreUIStyle/pile_of_gold.png; sourceTree = "<group>"; };
@@ -189,7 +189,7 @@
 				861457311784A7EA00B59BC9 /* AdSupport.framework */,
 				8614572F1784A7DC00B59BC9 /* SystemConfiguration.framework */,
 				8614572B1784A76A00B59BC9 /* ThinkGamingLogger.h */,
-				861457331784AB1B00B59BC9 /* ThinkGamingStoreSDK.h */,
+				861457331784AB1B00B59BC9 /* ThinkGamingCurrencyStoreSDK.h */,
 				861457291784A75A00B59BC9 /* libThinkGaming.a */,
 				8614570A17845D0600B59BC9 /* ThinkGamingStoreUIStyle */,
 				8690AAE317831A3B0082FE3B /* ThinkGamingStoreDemo */,

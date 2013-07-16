@@ -9,14 +9,14 @@
 #import "ThinkGamingStoreItemsCollectionView.h"
 #import "ThinkGamingSingleStoreItemCell.h"
 #import "ThinkGamingStoreUIStyleAppearance.h"
-#import "ThinkGamingStoreSDK.h"
+#import "ThinkGamingCurrencyStoreSDK.h"
 #import "ThinkGamingStoreUI.h"
 
 
 @interface ThinkGamingStoreItemsCollectionView ()
 
 @property (strong) NSArray *storeItems;
-@property (strong) ThinkGamingStoreSDK *sdk;
+@property (strong) ThinkGamingCurrencyStoreSDK *sdk;
 
 @end
 
@@ -25,7 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.sdk = [[ThinkGamingStoreSDK alloc] init];
+    self.sdk = [[ThinkGamingCurrencyStoreSDK alloc] init];
     self.storeItems = [self.sdk getStoreItems:@"bank"];
 }
 
@@ -65,7 +65,7 @@
     if (alertView.tag > 0) {
         ThinkGamingItem *item = self.storeItems[alertView.tag];
         if (buttonIndex == 1) {
-            ThinkGamingStoreSDK *sdk = [[ThinkGamingStoreSDK alloc] init];
+            ThinkGamingCurrencyStoreSDK *sdk = [[ThinkGamingCurrencyStoreSDK alloc] init];
             [sdk purchaseCurrency:item.itemIdentifier amountOfCurrency:@1
                      successBlock:^(ThinkGamingCurrency *currency)  {
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Thanks!" message:@"purchase complete" delegate:self cancelButtonTitle:nil otherButtonTitles:@"ok", nil];

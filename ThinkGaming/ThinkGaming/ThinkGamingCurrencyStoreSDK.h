@@ -11,7 +11,7 @@
 #define kDidPurchaseCurrencyNotification @"kdidPurchaseCurrencyNotification"
 #define kDidPurchaseItemNotification @"kDidPurchaseItemNotification"
 
-@class ThinkGamingStoreSDK;
+@class ThinkGamingCurrencyStoreSDK;
 
 @interface ThinkGamingStore : NSObject
 @property (strong) NSString *storeName;
@@ -42,12 +42,12 @@
 
 @protocol ThinkGamingStoreDelegate <NSObject>
 
-- (void) thinkGamingStore:(ThinkGamingStoreSDK *)store didPurchaseCurrency:(ThinkGamingCurrency *)currency;
-- (void) thinkGamingStore:(ThinkGamingStoreSDK *)store didPurchaseItem:(ThinkGamingItem *)item;
+- (void) thinkGamingStore:(ThinkGamingCurrencyStoreSDK *)store didPurchaseCurrency:(ThinkGamingCurrency *)currency;
+- (void) thinkGamingStore:(ThinkGamingCurrencyStoreSDK *)store didPurchaseItem:(ThinkGamingItem *)item;
 
 @end
 
-@interface ThinkGamingStoreSDK : NSObject
+@interface ThinkGamingCurrencyStoreSDK : NSObject
 
 @property id <ThinkGamingStoreDelegate> delegate;
 
