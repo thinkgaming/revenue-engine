@@ -8,8 +8,8 @@
 
 #import "ThinkGamingLoggingApiAdapter.h"
 
-static NSString * const kThinkGamingAPIBaseURLString = @"http://api.thinkgaming.com:8080/";
-static NSString * const kLoggingPath = @"/log_activity2/";
+static NSString * const kThinkGamingAPIBaseURLString = @"http://api.thinkgaming.com:8080/api/v2/";
+static NSString * const kLoggingPath = @"log_activity/";
 
 @interface ThinkGamingLoggingApiAdapter()
 @property (strong) NSURLConnection *connection;
@@ -68,9 +68,6 @@ static NSString * const kLoggingPath = @"/log_activity2/";
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     self.connection = nil;
-    
-    NSLog(@"connectionDidFinishLoading : %@", self.response);
-    
     
     if (self.success != nil) {
         self.success(self.response);

@@ -69,12 +69,16 @@
     switch (state) {
         case SKPaymentTransactionStateFailed:
             [self.currentProductEvent endTimedEventWithParameters:@{@"result":@"didNotPurchase"}];
+            self.currentProductEvent = nil;
+            break;
+        case SKPaymentTransactionStatePurchased:
+            [self.currentProductEvent endTimedEventWithParameters:@{@"result":@"didPurchase"}];
+            self.currentProductEvent = nil;
             break;
         default:
-            [self.currentProductEvent endTimedEventWithParameters:@{@"result":@"didPurchase"}];
             break;
     }
-     self.currentProductEvent = nil;
+     
 }
 
 
@@ -126,6 +130,7 @@
         self.productRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:[NSSet setWithArray:self.productIdentifiers]];
         self.productRequest.delegate = self;
         [self.productRequest start];
+        [self startLoggingViewedStore:storeIdentifier];
     } error:^(NSError *err) {
         self.didDownloadProductsBlock(NO, nil);
     }];
@@ -211,7 +216,9 @@
 # pragma mark - SKPaymentTransactionObserver methods
 
 - (void)paymentQueue:(SKPaymentQueue *)queue removedTransactions:(NSArray *)transactions {
-    
+    [transactions enumerateObjectsUsingBlock:^(SKPaymentTransaction *transaction, NSUInteger idx, BOOL *stop) {
+        [self endLoggingBuyingProduct:transaction.payment.productIdentifier withTransactionState:transaction.transactionState];
+    }];
 }
 
 - (void) completeTransaction:(SKPaymentTransaction *)transaction {

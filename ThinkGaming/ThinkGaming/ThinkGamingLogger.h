@@ -18,6 +18,11 @@ Return the current ApiKey
 + (NSString *) currentApiKey;
 
 /*
+Force flushing the current logging data to the server
+*/
++ (void) forceFlush;
+
+/*
 Start session with given API key (get your API key from your dashboard)
 */
 + (ThinkGamingLogger *)startSession:(NSString *)apiKey;

@@ -191,6 +191,11 @@ static ThinkGamingLogger* sharedSingleton;
 
 #pragma mark - Public Methods
 
++ (void) forceFlush {
+    if (sharedSingleton == nil) return;
+    [sharedSingleton dispatchEvents];
+}
+
 + (NSString *) currentApiKey {
     if (sharedSingleton == nil) return nil;
     return sharedSingleton.apiKey;

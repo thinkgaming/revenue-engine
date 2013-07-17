@@ -20,6 +20,7 @@
 - (IBAction)didTapStartTimed:(id)sender;
 - (IBAction)didTapEndTimed:(id)sender;
 - (IBAction)didTapShowStore:(id)sender;
+- (IBAction)didTapForceFlush:(id)sender;
 
 @end
 
@@ -43,6 +44,10 @@
 
 - (IBAction)didTapShowStore:(id)sender {
 //    [ThinkGamingStoreUI showStore];
+}
+
+-(IBAction)didTapForceFlush:(id)sender {
+    [ThinkGamingLogger forceFlush];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
