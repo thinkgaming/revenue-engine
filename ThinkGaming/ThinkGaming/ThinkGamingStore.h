@@ -24,9 +24,9 @@ typedef void (^DidPurchaseProductBlock)(BOOL success);
 
 @end
 
-@interface ThinkGamingStore : NSObject
+@interface ThinkGamingStore : NSObject <SKProductsRequestDelegate, SKPaymentTransactionObserver>
 
-- (void) getProductList:(NSArray *)arrayOfItunesProductIdentifiers;
+@property (weak) id<ThinkGamingStoreDelegate> delegate;
 
 - (void) getListOfStoresThenCall:(DidDownloadStoresBlock)didDownloadStoresBlock;
 
