@@ -103,7 +103,6 @@ static NSString * const kThinkGamingAPIItemsPath = @"/stores/";
     
     if (self.success != nil) {
         NSError *err;
-        NSString *stringResponse = [[NSString alloc] initWithData:self.response encoding:NSUTF8StringEncoding];
         NSDictionary *results = [NSJSONSerialization JSONObjectWithData:self.response options:0 error:&err];
         if (err) {
             self.error(err);

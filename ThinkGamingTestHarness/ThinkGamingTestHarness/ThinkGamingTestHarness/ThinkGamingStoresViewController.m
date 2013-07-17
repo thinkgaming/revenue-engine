@@ -9,6 +9,7 @@
 #import "ThinkGamingStoresViewController.h"
 #import "ThinkGamingStoreCell.h"
 #import "ThinkGamingStoreSDK.h"
+#import "ThinkGamingProductsViewController.h"
 
 @interface ThinkGamingStoresViewController ()
 @property (strong) NSArray *thinkGamingStores;
@@ -53,11 +54,13 @@
     return cell;
 }
 
-
-
-#pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"pushProducts"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        ThinkGamingProductsViewController *vc = [segue destinationViewController];
+        vc.thinkGamingStore = self.thinkGamingStores[indexPath.row];
+    }
 }
+
 
 @end
