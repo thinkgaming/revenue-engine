@@ -12,7 +12,7 @@
 
 typedef void (^DidDownloadStoresBlock)(BOOL success, NSArray *stores);
 typedef void (^DidDownloadProductsBlock)(BOOL success, NSArray *products);
-typedef void (^DidPurchaseProductBlock)(BOOL success);
+typedef void (^DidPurchaseProductBlock)(BOOL success, SKPaymentTransaction *transaction);
 
 @interface ThinkGamingStore : NSObject
 

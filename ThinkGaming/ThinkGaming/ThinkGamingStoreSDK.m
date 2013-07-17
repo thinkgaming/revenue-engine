@@ -117,7 +117,12 @@
 }
 
 - (void) didCompletePurchaseOfProduct:(NSString *)productIdentifier withTransaction:(SKPaymentTransaction *) transaction{
-    [self.purchasedProductIdentifiers addObject:productIdentifier];
+    [self persistProductIdentifierAsPurchased:productIdentifier];
+    
+    if (self.didPurchaseProductBlock) {
+        self.didPurchaseProductBlock(YES, transaction);
+    }
+    
     if (self.delegate && [self.delegate respondsToSelector:@selector(thinkGamingStore:didPurchaseProduct:withTransaction:)]) {
         [self.delegate thinkGamingStore:self didPurchaseProduct:productIdentifier withTransaction:transaction];
     }

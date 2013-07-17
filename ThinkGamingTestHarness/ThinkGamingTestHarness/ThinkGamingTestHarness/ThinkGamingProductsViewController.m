@@ -57,4 +57,11 @@
     return cell;
 }
 
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    ThinkGamingProduct *product = self.thinkGamingProducts[indexPath.row];
+    [self.thinkGamingStoreSDK purchaseProduct:product.iTunesProduct thenCall:^(BOOL success, SKPaymentTransaction *transaction) {
+        // YAY DONE!
+    }];
+}
+
 @end
