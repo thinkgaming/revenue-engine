@@ -9,8 +9,12 @@
 
 #import "ThinkGamingStoreSDK.h"
 #import "ThinkGamingStoreApiAdapter.h"
+#import "ThinkGamingLogger.h"
 
 #define kThinkGamingPersistedPurchasedProducts @"kThinkGamingPersistedPurchasedProducts"
+#define kThinkGamingViewStoreLogId @"viewed_store"
+#define kThinkGamingTappedItemLogIf @"tapped_purchase";
+
 
 @interface ThinkGamingStoreSDK()
 @property (strong) NSMutableArray *productIdentifiers;
@@ -20,7 +24,8 @@
 @property (strong) DidDownloadProductsBlock didDownloadProductsBlock;
 @property (strong) DidDownloadStoresBlock didDownloadStoresBlock;
 @property (strong) DidPurchaseProductBlock didPurchaseProductBlock;
-
+@property (strong) NSMutableArray *startedEvents;
+@property (strong) ThinkGamingEvent *currentProductEvent;
 
 @end
 
@@ -42,7 +47,36 @@
 
 - (void) dealloc {
     [[SKPaymentQueue defaultQueue] removeTransactionObserver:self];
+    [self.startedEvents enumerateObjectsUsingBlock:^(ThinkGamingEvent *event, NSUInteger idx, BOOL *stop) {
+        [event endTimedEvent];
+    }];
 }
+
+#pragma mark - Logging Methods
+
+- (void) startLoggingViewedStore:(NSString *)storeIdentifier {
+    [self.startedEvents addObject:[ThinkGamingLogger startTimedEvent:kThinkGamingViewStoreLogId withParameters:@{@"store_id":storeIdentifier}]];
+}
+
+- (void) startLoggingBuyingProduct:(NSString *)productIdentifier {
+    self.currentProductEvent = [ThinkGamingLogger startTimedEvent:kThinkGamingViewStoreLogId withParameters:@{@"itunes_id":productIdentifier}];
+    [self.startedEvents addObject:self.currentProductEvent];
+}
+
+ - (void) endLoggingBuyingProduct:(NSString *)productIdentifier withTransactionState:(SKPaymentTransactionState)state {
+    if (self.currentProductEvent == nil) return;
+     
+    switch (state) {
+        case SKPaymentTransactionStateFailed:
+            [self.currentProductEvent endTimedEventWithParameters:@{@"result":@"didNotPurchase"}];
+            break;
+        default:
+            [self.currentProductEvent endTimedEventWithParameters:@{@"result":@"didPurchase"}];
+            break;
+    }
+     self.currentProductEvent = nil;
+}
+
 
 #pragma mark - Public methods
 
@@ -98,6 +132,8 @@
 }
 
 - (void) purchaseProduct:(SKProduct *)product thenCall:(DidPurchaseProductBlock)didPurchaseProductBlock {
+    [self startLoggingBuyingProduct:product.productIdentifier];
+    
     self.didPurchaseProductBlock = didPurchaseProductBlock;
     
     SKPayment *payment = [SKPayment paymentWithProduct:product];
@@ -173,6 +209,10 @@
 
 
 # pragma mark - SKPaymentTransactionObserver methods
+
+- (void)paymentQueue:(SKPaymentQueue *)queue removedTransactions:(NSArray *)transactions {
+    
+}
 
 - (void) completeTransaction:(SKPaymentTransaction *)transaction {
     [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
