@@ -10,4 +10,11 @@
 
 @interface ThinkGamingStoreApiAdapter : NSObject
 
++ (void) getStoresWithSuccess:(void(^)(NSDictionary *))success
+                  error:(void(^)(NSError*))error;
+
++ (void) getProductsForStore:(NSString *)storeIdentifier
+                success:(void(^)(NSDictionary *))success
+                  error:(void(^)(NSError*))error;
+
 @end
