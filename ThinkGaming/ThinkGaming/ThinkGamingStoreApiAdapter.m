@@ -9,9 +9,9 @@
 #import "ThinkGamingStoreApiAdapter.h"
 #import "ThinkGamingLogger.h"
 
-static NSString * const kThinkGamingAPIBaseURLString = @"http://api.thinkgaming.com:8080/";
-static NSString * const kThinkGamingAPIStorePath = @"/log_activity2/";
-static NSString * const kThinkGamingAPIItemsPath = @"/items/";
+static NSString * const kThinkGamingAPIBaseURLString = @"http://api.thinkgaming.com:8080/v2";
+static NSString * const kThinkGamingAPIStorePath = @"/stores";
+static NSString * const kThinkGamingAPIItemsPath = @"/stores/";
 
 @interface ThinkGamingStoreApiAdapter()
 
