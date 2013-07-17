@@ -12,8 +12,6 @@
 #import "ThinkGamingLogger.h"
 
 #define kThinkGamingPersistedPurchasedProducts @"kThinkGamingPersistedPurchasedProducts"
-#define kThinkGamingViewStoreLogId @"viewed_store"
-#define kThinkGamingTappedItemLogIf @"tapped_purchase";
 
 
 @interface ThinkGamingStoreSDK()
@@ -55,11 +53,11 @@
 #pragma mark - Logging Methods
 
 - (void) startLoggingViewedStore:(NSString *)storeIdentifier {
-    [self.startedEvents addObject:[ThinkGamingLogger startTimedEvent:kThinkGamingViewStoreLogId withParameters:@{@"store_id":storeIdentifier}]];
+    [self.startedEvents addObject:[ThinkGamingLogger startLoggingViewedStore:storeIdentifier]];
 }
 
 - (void) startLoggingBuyingProduct:(NSString *)productIdentifier {
-    self.currentProductEvent = [ThinkGamingLogger startTimedEvent:kThinkGamingViewStoreLogId withParameters:@{@"itunes_id":productIdentifier}];
+    self.currentProductEvent = [ThinkGamingLogger startLoggingBuyingProduct:productIdentifier];
     [self.startedEvents addObject:self.currentProductEvent];
 }
 
@@ -68,11 +66,11 @@
      
     switch (state) {
         case SKPaymentTransactionStateFailed:
-            [self.currentProductEvent endTimedEventWithParameters:@{@"result":@"didNotPurchase"}];
+            [self.currentProductEvent endViewProductWithOutPurchase];
             self.currentProductEvent = nil;
             break;
         case SKPaymentTransactionStatePurchased:
-            [self.currentProductEvent endTimedEventWithParameters:@{@"result":@"didPurchase"}];
+            [self.currentProductEvent endViewProductWithPurchase];
             self.currentProductEvent = nil;
             break;
         default:

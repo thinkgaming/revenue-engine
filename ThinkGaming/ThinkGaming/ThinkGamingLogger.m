@@ -17,6 +17,10 @@
 #define QUEUE_FLUSH_TIME 30 // In seconds
 #define MAX_NUM_BYTES   (64 * 1024) // Max number of bytes to send per event
 
+#define kThinkGamingViewStoreLogId @"viewed_store"
+#define kThinkGamingTappedItemLogIf @"tapped_purchase";
+
+
 @interface ThinkGamingLogger ()
 - (void) dispatchEvents;
 - (BOOL) isConnected;
@@ -283,6 +287,15 @@ static ThinkGamingLogger* sharedSingleton;
     return [self endTimedEvent:eventName withParameters:nil];
 }
 
++ (ThinkGamingEvent *) startLoggingViewedStore:(NSString *)storeIdentifier {
+    return [ThinkGamingLogger startTimedEvent:kThinkGamingViewStoreLogId withParameters:@{@"store_id":storeIdentifier}];
+}
+
++ (ThinkGamingEvent *) startLoggingBuyingProduct:(NSString *)productIdentifier {
+    return [ThinkGamingLogger startTimedEvent:kThinkGamingViewStoreLogId withParameters:@{@"itunes_id":productIdentifier}];
+}
+
+
 
 
 #pragma mark - Device helpers
@@ -375,5 +388,14 @@ static ThinkGamingLogger* sharedSingleton;
     return self;
 }
 
+- (ThinkGamingEvent *)endViewProductWithPurchase {
+    [ThinkGamingLogger endTimedEvent:self.eventName withParameters:@{@"result":@"didPurchase"}];
+    return self;
+}
+
+- (ThinkGamingEvent *)endViewProductWithOutPurchase {
+    [ThinkGamingLogger endTimedEvent:self.eventName withParameters:@{@"result":@"didNotPurchase"}];
+    return self;
+}
 
 @end
