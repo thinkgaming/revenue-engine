@@ -28,15 +28,28 @@
 
 - (id) init {
     if (self = [super init]) {
-        self.purchasedProductIdentifiers = [[NSUserDefaults standardUserDefaults] objectForKey:kThinkGamingPersistedPurchasedProducts];
-        if (self.purchasedProductIdentifiers == nil) {
+        NSArray *products = [[NSUserDefaults standardUserDefaults] objectForKey:kThinkGamingPersistedPurchasedProducts];
+        if (products) {
+            self.purchasedProductIdentifiers = [products mutableCopy];
+        } else {
             self.purchasedProductIdentifiers = [NSMutableArray array];
         }
+        
+        [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
     }
     return self;
 }
 
+- (void) dealloc {
+    [[SKPaymentQueue defaultQueue] removeTransactionObserver:self];
+}
+
 #pragma mark - Public methods
+
+- (NSArray *) getListOfPreviouslyPurchasedProductIdentifiers {
+    return self.purchasedProductIdentifiers;
+}
+
 - (void) getListOfStoresThenCall:(DidDownloadStoresBlock)didDownloadStoresBlock {
     self.didDownloadStoresBlock = didDownloadStoresBlock;
     [ThinkGamingStoreApiAdapter getStoresWithSuccess:^(NSDictionary *results) {
@@ -114,10 +127,8 @@
     if ([self hasPreviouslyPurchasedProductWithIdentifider:productIdentifier]) return;
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSMutableArray *storedProducts = [[defaults objectForKey:kThinkGamingPersistedPurchasedProducts] mutableCopy];
-    [storedProducts addObject:productIdentifier];
-    self.purchasedProductIdentifiers = storedProducts;
-    [defaults setObject:storedProducts forKey:kThinkGamingPersistedPurchasedProducts];
+    [self.purchasedProductIdentifiers addObject:productIdentifier];
+    [defaults setObject:self.purchasedProductIdentifiers forKey:kThinkGamingPersistedPurchasedProducts];
     [defaults synchronize];
 }
 

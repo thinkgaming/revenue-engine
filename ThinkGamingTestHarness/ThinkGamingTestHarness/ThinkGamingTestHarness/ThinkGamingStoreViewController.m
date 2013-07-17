@@ -11,6 +11,7 @@
 
 @interface ThinkGamingStoreViewController ()
 
+@property (strong) ThinkGamingStoreSDK *storeSDK;
 - (IBAction)didTapRestore:(id)sender;
 
 @end
@@ -18,12 +19,12 @@
 @implementation ThinkGamingStoreViewController
 
 - (void)viewDidLoad {
+    self.storeSDK = [[ThinkGamingStoreSDK alloc] init];
     [super viewDidLoad];
 }
 
 - (IBAction)didTapRestore:(id)sender {
-    ThinkGamingStoreSDK *thinkGamingStoreSDK = [[ThinkGamingStoreSDK alloc] init];
-    [thinkGamingStoreSDK restorePreviouslyPurchasedProducts];
+    [self.storeSDK restorePreviouslyPurchasedProducts];
 }
 
 @end

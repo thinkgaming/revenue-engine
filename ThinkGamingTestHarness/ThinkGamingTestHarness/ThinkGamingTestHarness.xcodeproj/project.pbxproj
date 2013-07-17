@@ -17,6 +17,7 @@
 		867BCCD01796EB840085549C /* ThinkGamingProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 867BCCCF1796EB840085549C /* ThinkGamingProductsViewController.m */; };
 		867BCCD31796F11C0085549C /* ThinkGamingProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 867BCCD21796F11C0085549C /* ThinkGamingProductCell.m */; };
 		867BCCD617970F250085549C /* ThinkGamingStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 867BCCD517970F250085549C /* ThinkGamingStoreViewController.m */; };
+		867BCCD91797116A0085549C /* ThinkGamingPreviousPurchasesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 867BCCD81797116A0085549C /* ThinkGamingPreviousPurchasesViewController.m */; };
 		8690AA4F178317D90082FE3B /* libThinkGaming.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8690AA4E178317D90082FE3B /* libThinkGaming.a */; };
 		86AB6D1E1768DE2E00152BD9 /* IAPProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 86AB6D1D1768DE2E00152BD9 /* IAPProductCell.m */; };
 		86B1847D175CC12800D41466 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B1847C175CC12800D41466 /* UIKit.framework */; };
@@ -56,6 +57,8 @@
 		867BCCD21796F11C0085549C /* ThinkGamingProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThinkGamingProductCell.m; sourceTree = "<group>"; };
 		867BCCD417970F250085549C /* ThinkGamingStoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThinkGamingStoreViewController.h; sourceTree = "<group>"; };
 		867BCCD517970F250085549C /* ThinkGamingStoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThinkGamingStoreViewController.m; sourceTree = "<group>"; };
+		867BCCD71797116A0085549C /* ThinkGamingPreviousPurchasesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThinkGamingPreviousPurchasesViewController.h; sourceTree = "<group>"; };
+		867BCCD81797116A0085549C /* ThinkGamingPreviousPurchasesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThinkGamingPreviousPurchasesViewController.m; sourceTree = "<group>"; };
 		8690AA4E178317D90082FE3B /* libThinkGaming.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libThinkGaming.a; path = "../../ThinkGaming/build/Release-iphoneos/libThinkGaming.a"; sourceTree = "<group>"; };
 		86AB6D1C1768DE2E00152BD9 /* IAPProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPProductCell.h; sourceTree = "<group>"; };
 		86AB6D1D1768DE2E00152BD9 /* IAPProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPProductCell.m; sourceTree = "<group>"; };
@@ -164,6 +167,8 @@
 				867BCCD21796F11C0085549C /* ThinkGamingProductCell.m */,
 				867BCCD417970F250085549C /* ThinkGamingStoreViewController.h */,
 				867BCCD517970F250085549C /* ThinkGamingStoreViewController.m */,
+				867BCCD71797116A0085549C /* ThinkGamingPreviousPurchasesViewController.h */,
+				867BCCD81797116A0085549C /* ThinkGamingPreviousPurchasesViewController.m */,
 			);
 			path = ThinkGamingTestHarness;
 			sourceTree = "<group>";
@@ -272,6 +277,7 @@
 				867BCCD01796EB840085549C /* ThinkGamingProductsViewController.m in Sources */,
 				867BCCD31796F11C0085549C /* ThinkGamingProductCell.m in Sources */,
 				867BCCD617970F250085549C /* ThinkGamingStoreViewController.m in Sources */,
+				867BCCD91797116A0085549C /* ThinkGamingPreviousPurchasesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

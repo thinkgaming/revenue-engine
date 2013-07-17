@@ -58,5 +58,7 @@ typedef void (^DidPurchaseProductBlock)(BOOL success, SKPaymentTransaction *tran
 
 - (void) restorePreviouslyPurchasedProducts;
 
+- (NSArray *) getListOfPreviouslyPurchasedProductIdentifiers;
+
 
 @end

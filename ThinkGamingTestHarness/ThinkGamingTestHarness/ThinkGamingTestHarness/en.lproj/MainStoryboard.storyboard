@@ -272,6 +272,43 @@
             </objects>
             <point key="canvasLocation" x="1450" y="202"/>
         </scene>
+        <!--Think Gaming Previous Purchases View Controller-->
+        <scene sceneID="fbO-9T-eXv">
+            <objects>
+                <tableViewController id="xZP-oe-OzQ" customClass="ThinkGamingPreviousPurchasesViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="pYf-Nf-dO7">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="T94-cj-5Xn" style="IBUITableViewCellStyleDefault" id="qrT-XP-nbM">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T94-cj-5Xn">
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="xZP-oe-OzQ" id="H7c-jf-rqt"/>
+                            <outlet property="delegate" destination="xZP-oe-OzQ" id="hZy-mV-Seg"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="lvW-DL-Hex"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S3N-X4-wPI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1921" y="-1481"/>
+        </scene>
         <!--Think Gaming Stores View Controller-->
         <scene sceneID="cVr-B3-pld">
             <objects>
@@ -458,12 +495,44 @@
                                     <segue destination="2V6-bg-5uV" kind="push" id="p7D-gh-TK0"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LAo-kD-Jha">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Restore Previous">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapRestore:" destination="7Ji-IO-kej" eventType="touchUpInside" id="nl1-cb-SuH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="18Q-iG-mWJ">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Previous Purchases">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="xZP-oe-OzQ" kind="push" id="dce-zW-2Uc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="LAo-kD-Jha" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="6c4-fm-nt6"/>
+                            <constraint firstItem="LAo-kD-Jha" firstAttribute="leading" secondItem="rXK-oD-Bi1" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="DdZ-Ln-jmm"/>
+                            <constraint firstItem="LAo-kD-Jha" firstAttribute="top" secondItem="a08-yJ-JWA" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="EtO-rg-pSm"/>
                             <constraint firstItem="a08-yJ-JWA" firstAttribute="top" secondItem="rXK-oD-Bi1" secondAttribute="top" constant="49" id="Lbp-dG-VMq"/>
+                            <constraint firstItem="18Q-iG-mWJ" firstAttribute="top" secondItem="LAo-kD-Jha" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="acK-LX-xcy"/>
                             <constraint firstAttribute="trailing" secondItem="a08-yJ-JWA" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="hbU-5M-Qw3"/>
+                            <constraint firstAttribute="trailing" secondItem="18Q-iG-mWJ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="jzM-Ki-v70"/>
                             <constraint firstItem="a08-yJ-JWA" firstAttribute="leading" secondItem="rXK-oD-Bi1" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="mtO-Re-nrR"/>
+                            <constraint firstItem="18Q-iG-mWJ" firstAttribute="leading" secondItem="rXK-oD-Bi1" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="pn4-Vl-Bgv"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="JWp-UN-r2a"/>
@@ -511,6 +580,78 @@
             <point key="canvasLocation" x="909" y="-635"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="IAPProductCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/IAPProductCell.h"/>
+            <relationships>
+                <relationship kind="action" name="didTapBuyProduct:"/>
+                <relationship kind="outlet" name="buyButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="descriptionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="priceLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="productIdentifierLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="IAPProductListTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/IAPProductListTableViewController.h"/>
+        </class>
+        <class className="IAPProductListViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/IAPProductListViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="didTapLoadList:"/>
+                <relationship kind="action" name="didTapRefreshPurchases:"/>
+                <relationship kind="outlet" name="loadListButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ThinkGamingPreviousPurchasesViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ThinkGamingPreviousPurchasesViewController.h"/>
+        </class>
+        <class className="ThinkGamingProductCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ThinkGamingProductCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="displayDescription" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="displayName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="iTunesId" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="offerText" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="percentage" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="price" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="productId" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ThinkGamingProductsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ThinkGamingProductsViewController.h"/>
+        </class>
+        <class className="ThinkGamingStoreCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ThinkGamingStoreCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="storeName" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ThinkGamingStoreViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ThinkGamingStoreViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="didTapRestore:"/>
+            </relationships>
+        </class>
+        <class className="ThinkGamingStoresViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ThinkGamingStoresViewController.h"/>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="didTapEndTimed:"/>
+                <relationship kind="action" name="didTapInit:"/>
+                <relationship kind="action" name="didTapLog:"/>
+                <relationship kind="action" name="didTapShowStore:"/>
+                <relationship kind="action" name="didTapStartTimed:"/>
+                <relationship kind="outlet" name="apiKeyField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="eventField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
