@@ -28,6 +28,7 @@
 		5220543C173D49A800A9D253 /* ThinkGamingLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5220543B173D49A800A9D253 /* ThinkGamingLogger.m */; };
 		867BCCC11795D3260085549C /* ThinkGamingStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 867BCCC01795D3260085549C /* ThinkGamingStore.m */; };
 		867BCCC31795D3980085549C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 867BCCC21795D3980085549C /* StoreKit.framework */; };
+		867BCCC61796C74A0085549C /* ThinkGamingStoreApiAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 867BCCC51796C74A0085549C /* ThinkGamingStoreApiAdapter.m */; };
 		8690AAF4178432990082FE3B /* ThinkGamingCurrencyStoreSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 8690AAF3178432990082FE3B /* ThinkGamingCurrencyStoreSDK.m */; };
 		86B184B1175E6C1A00D41466 /* EventQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B184B0175E6C1A00D41466 /* EventQueue.m */; };
 		86B184B5175E6F2400D41466 /* ThinkGamingLoggingApiAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B184B4175E6F2400D41466 /* ThinkGamingLoggingApiAdapter.m */; };
@@ -60,6 +61,8 @@
 		867BCCBF1795D3260085549C /* ThinkGamingStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThinkGamingStore.h; sourceTree = "<group>"; };
 		867BCCC01795D3260085549C /* ThinkGamingStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThinkGamingStore.m; sourceTree = "<group>"; };
 		867BCCC21795D3980085549C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		867BCCC41796C74A0085549C /* ThinkGamingStoreApiAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThinkGamingStoreApiAdapter.h; sourceTree = "<group>"; };
+		867BCCC51796C74A0085549C /* ThinkGamingStoreApiAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThinkGamingStoreApiAdapter.m; sourceTree = "<group>"; };
 		8690AAF2178432990082FE3B /* ThinkGamingCurrencyStoreSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThinkGamingCurrencyStoreSDK.h; sourceTree = "<group>"; };
 		8690AAF3178432990082FE3B /* ThinkGamingCurrencyStoreSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThinkGamingCurrencyStoreSDK.m; sourceTree = "<group>"; };
 		86B184AF175E6C1A00D41466 /* EventQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventQueue.h; sourceTree = "<group>"; };
@@ -123,6 +126,8 @@
 				867BCCC01795D3260085549C /* ThinkGamingStore.m */,
 				86B184B3175E6F2400D41466 /* ThinkGamingLoggingApiAdapter.h */,
 				86B184B4175E6F2400D41466 /* ThinkGamingLoggingApiAdapter.m */,
+				867BCCC41796C74A0085549C /* ThinkGamingStoreApiAdapter.h */,
+				867BCCC51796C74A0085549C /* ThinkGamingStoreApiAdapter.m */,
 				52205437173D49A800A9D253 /* Supporting Files */,
 				8690AAF2178432990082FE3B /* ThinkGamingCurrencyStoreSDK.h */,
 				8690AAF3178432990082FE3B /* ThinkGamingCurrencyStoreSDK.m */,
@@ -222,6 +227,7 @@
 				86B184B9175E7C9600D41466 /* Reachability.m in Sources */,
 				8690AAF4178432990082FE3B /* ThinkGamingCurrencyStoreSDK.m in Sources */,
 				867BCCC11795D3260085549C /* ThinkGamingStore.m in Sources */,
+				867BCCC61796C74A0085549C /* ThinkGamingStoreApiAdapter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

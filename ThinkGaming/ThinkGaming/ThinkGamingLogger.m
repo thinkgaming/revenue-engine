@@ -191,6 +191,11 @@ static ThinkGamingLogger* sharedSingleton;
 
 #pragma mark - Public Methods
 
++ (NSString *) currentApiKey {
+    if (sharedSingleton == nil) return nil;
+    return sharedSingleton.apiKey;
+}
+
 + (ThinkGamingLogger *)startSession:(NSString *)apiKey andMediaSourceId:(NSString *)mediaSourceId {
     //if (![sharedSingleton isConnected]) return;
     
