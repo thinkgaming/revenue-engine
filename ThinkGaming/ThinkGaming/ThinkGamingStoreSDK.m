@@ -8,13 +8,14 @@
 
 
 #import "ThinkGamingStoreSDK.h"
-#import "ThinkGamingCurrencyStoreSDK.h"
+#import "ThinkGamingStoreApiAdapter.h"
 
 #define kThinkGamingPersistedPurchasedProducts @"kThinkGamingPersistedPurchasedProducts"
 
 @interface ThinkGamingStoreSDK()
 @property (strong) NSMutableArray *productIdentifiers;
 @property (strong) NSMutableArray *purchasedProductIdentifiers;
+@property (strong) NSMutableArray *thinkGamingProducts;
 @property (strong) SKProductsRequest *productRequest;
 @property (strong) DidDownloadProductsBlock didDownloadProductsBlock;
 @property (strong) DidDownloadStoresBlock didDownloadStoresBlock;
@@ -38,15 +39,47 @@
 #pragma mark - Public methods
 - (void) getListOfStoresThenCall:(DidDownloadStoresBlock)didDownloadStoresBlock {
     self.didDownloadStoresBlock = didDownloadStoresBlock;
-#warning getStores
+    [ThinkGamingStoreApiAdapter getStoresWithSuccess:^(NSDictionary *results) {
+        NSArray *stores = results[@"stores"];
+        __block NSMutableArray *thinkGamingStores = [NSMutableArray array];
+        [stores enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            ThinkGamingStore *store = [[ThinkGamingStore alloc] init];
+            store.storeIdentifier = obj[@"store_id"];
+            store.displayName = obj[@"display_name"];
+            [thinkGamingStores addObject:store];
+        }];
+        self.didDownloadStoresBlock(YES, thinkGamingStores);
+    } error:^(NSError *err) {
+        self.didDownloadStoresBlock(NO, nil);
+    }];
 }
 
 - (void) getListOfProductsForStoreIdentifier:(NSString *)storeIdentifier thenCall:(DidDownloadProductsBlock)didDownloadProductsBlock; {
     self.didDownloadProductsBlock = didDownloadProductsBlock;
-#warning get products and set to self.productIdentifiers
-    self.productRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:[NSSet setWithArray:self.productIdentifiers]];
-    self.productRequest.delegate = self;
-    [self.productRequest start];
+    
+    [ThinkGamingStoreApiAdapter getProductsForStore:storeIdentifier success:^(NSDictionary *results) {
+        NSArray *products = results[@"products"];
+        __block NSMutableArray *thinkGamingProducts = [NSMutableArray array];
+        __block NSMutableArray *itunesProductIdentifiers = [NSMutableArray array];
+        [products enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            ThinkGamingProduct *product = [[ThinkGamingProduct alloc] init];
+            product.productIdentifier = obj[@"product_id"];
+            product.displayName = obj[@"display_name"];
+            product.displayDescription = obj[@"display_description"];
+            product.price = obj[@"price"];
+            product.buyPercentage = obj[@"p_buy"];
+            product.iTunesProductIdentifier = obj[@"itunes_id"];
+            [thinkGamingProducts addObject:product];
+            [itunesProductIdentifiers addObject:product.iTunesProductIdentifier];
+        }];
+        self.productIdentifiers = itunesProductIdentifiers;
+        self.thinkGamingProducts = thinkGamingProducts;
+        self.productRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:[NSSet setWithArray:self.productIdentifiers]];
+        self.productRequest.delegate = self;
+        [self.productRequest start];
+    } error:^(NSError *err) {
+        self.didDownloadProductsBlock(NO, nil);
+    }];
 }
 
 - (void) purchaseProduct:(SKProduct *)product thenCall:(DidPurchaseProductBlock)didPurchaseProductBlock {
@@ -95,7 +128,17 @@
 - (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response {
     self.productRequest = nil;
     
-    self.didDownloadProductsBlock(YES, response.products);
+    [response.products enumerateObjectsUsingBlock:^(SKProduct *product, NSUInteger idx, BOOL *stop) {
+        [self.thinkGamingProducts enumerateObjectsUsingBlock:^(ThinkGamingProduct *thinkGamingProduct, NSUInteger idx, BOOL *internalStop) {
+            if ([thinkGamingProduct.iTunesProductIdentifier isEqualToString:product.productIdentifier]) {
+                thinkGamingProduct.iTunesProduct = product;
+                *internalStop = YES;
+            }
+            
+        }];
+    }];
+    
+    self.didDownloadProductsBlock(YES, self.thinkGamingProducts);
     self.didDownloadProductsBlock = nil;
 }
 
