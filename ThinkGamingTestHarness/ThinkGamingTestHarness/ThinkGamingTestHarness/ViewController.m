@@ -45,12 +45,19 @@
 //    [ThinkGamingStoreUI showStore];
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
+
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     NSLog(@"connected %i", [self isConnected]);
+    self.apiKeyField.text = @"f234rctqc3t4c";
 }
 
 - (BOOL) isConnected

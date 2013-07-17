@@ -40,7 +40,9 @@
 - (void) getListOfStoresThenCall:(DidDownloadStoresBlock)didDownloadStoresBlock {
     self.didDownloadStoresBlock = didDownloadStoresBlock;
     [ThinkGamingStoreApiAdapter getStoresWithSuccess:^(NSDictionary *results) {
-        NSArray *stores = results[@"stores"];
+//        NSArray *stores = results[@"stores"];
+#warning make this go away;
+        NSArray *stores = (NSArray *)results;
         __block NSMutableArray *thinkGamingStores = [NSMutableArray array];
         [stores enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             ThinkGamingStore *store = [[ThinkGamingStore alloc] init];
@@ -188,4 +190,9 @@
 
 
 
+@end
+
+@implementation ThinkGamingStore
+@end
+@implementation ThinkGamingProduct
 @end

@@ -9,7 +9,7 @@
 #import "ThinkGamingStoreApiAdapter.h"
 #import "ThinkGamingLogger.h"
 
-static NSString * const kThinkGamingAPIBaseURLString = @"http://api.thinkgaming.com:8080/v2";
+static NSString * const kThinkGamingAPIBaseURLString = @"http://api.thinkgaming.com:8080/api/v2";
 static NSString * const kThinkGamingAPIStorePath = @"/stores";
 static NSString * const kThinkGamingAPIItemsPath = @"/stores/";
 
@@ -39,7 +39,6 @@ static NSString * const kThinkGamingAPIItemsPath = @"/stores/";
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     
-    [request addValue:@"application/json" forHTTPHeaderField:@"Accept"];
     [request setHTTPMethod:@"GET"];
     [request addValue:[ThinkGamingLogger currentApiKey] forHTTPHeaderField:@"X-ThinkGaming-API-Key"];
 
@@ -104,6 +103,7 @@ static NSString * const kThinkGamingAPIItemsPath = @"/stores/";
     
     if (self.success != nil) {
         NSError *err;
+        NSString *stringResponse = [[NSString alloc] initWithData:self.response encoding:NSUTF8StringEncoding];
         NSDictionary *results = [NSJSONSerialization JSONObjectWithData:self.response options:0 error:&err];
         if (err) {
             self.error(err);

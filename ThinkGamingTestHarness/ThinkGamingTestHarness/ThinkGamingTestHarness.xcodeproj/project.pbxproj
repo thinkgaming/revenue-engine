@@ -12,6 +12,8 @@
 		860273CF1767459900D08D6C /* ThinkGamingIAPAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 860273CE1767459900D08D6C /* ThinkGamingIAPAdapter.m */; };
 		865E8BC417674CD1007DCE32 /* IAPProductListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 865E8BC317674CD1007DCE32 /* IAPProductListViewController.m */; };
 		865E8BC717674CE9007DCE32 /* IAPProductListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 865E8BC617674CE9007DCE32 /* IAPProductListTableViewController.m */; };
+		867BCCCA1796E52C0085549C /* ThinkGamingStoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 867BCCC91796E52C0085549C /* ThinkGamingStoreCell.m */; };
+		867BCCCD1796E5980085549C /* ThinkGamingStoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 867BCCCC1796E5980085549C /* ThinkGamingStoresViewController.m */; };
 		8690AA4F178317D90082FE3B /* libThinkGaming.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8690AA4E178317D90082FE3B /* libThinkGaming.a */; };
 		86AB6D1E1768DE2E00152BD9 /* IAPProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 86AB6D1D1768DE2E00152BD9 /* IAPProductCell.m */; };
 		86B1847D175CC12800D41466 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B1847C175CC12800D41466 /* UIKit.framework */; };
@@ -41,6 +43,10 @@
 		865E8BC517674CE9007DCE32 /* IAPProductListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPProductListTableViewController.h; sourceTree = "<group>"; };
 		865E8BC617674CE9007DCE32 /* IAPProductListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPProductListTableViewController.m; sourceTree = "<group>"; };
 		867BCCC71796E21C0085549C /* ThinkGamingStoreSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = ThinkGamingStoreSDK.h; path = ../../ThinkGaming/ThinkGaming/ThinkGamingStoreSDK.h; sourceTree = "<group>"; };
+		867BCCC81796E52C0085549C /* ThinkGamingStoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThinkGamingStoreCell.h; sourceTree = "<group>"; };
+		867BCCC91796E52C0085549C /* ThinkGamingStoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThinkGamingStoreCell.m; sourceTree = "<group>"; };
+		867BCCCB1796E5980085549C /* ThinkGamingStoresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThinkGamingStoresViewController.h; sourceTree = "<group>"; };
+		867BCCCC1796E5980085549C /* ThinkGamingStoresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThinkGamingStoresViewController.m; sourceTree = "<group>"; };
 		8690AA4E178317D90082FE3B /* libThinkGaming.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libThinkGaming.a; path = "../../ThinkGaming/build/Release-iphoneos/libThinkGaming.a"; sourceTree = "<group>"; };
 		86AB6D1C1768DE2E00152BD9 /* IAPProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPProductCell.h; sourceTree = "<group>"; };
 		86AB6D1D1768DE2E00152BD9 /* IAPProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPProductCell.m; sourceTree = "<group>"; };
@@ -139,6 +145,10 @@
 				865E8BC617674CE9007DCE32 /* IAPProductListTableViewController.m */,
 				86AB6D1C1768DE2E00152BD9 /* IAPProductCell.h */,
 				86AB6D1D1768DE2E00152BD9 /* IAPProductCell.m */,
+				867BCCC81796E52C0085549C /* ThinkGamingStoreCell.h */,
+				867BCCC91796E52C0085549C /* ThinkGamingStoreCell.m */,
+				867BCCCB1796E5980085549C /* ThinkGamingStoresViewController.h */,
+				867BCCCC1796E5980085549C /* ThinkGamingStoresViewController.m */,
 			);
 			path = ThinkGamingTestHarness;
 			sourceTree = "<group>";
@@ -242,6 +252,8 @@
 				865E8BC417674CD1007DCE32 /* IAPProductListViewController.m in Sources */,
 				865E8BC717674CE9007DCE32 /* IAPProductListTableViewController.m in Sources */,
 				86AB6D1E1768DE2E00152BD9 /* IAPProductCell.m in Sources */,
+				867BCCCA1796E52C0085549C /* ThinkGamingStoreCell.m in Sources */,
+				867BCCCD1796E5980085549C /* ThinkGamingStoresViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
