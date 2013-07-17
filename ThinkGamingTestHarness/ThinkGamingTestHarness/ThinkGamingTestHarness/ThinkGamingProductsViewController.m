@@ -58,6 +58,7 @@
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     ThinkGamingProduct *product = self.thinkGamingProducts[indexPath.row];
     [self.thinkGamingStoreSDK purchaseProduct:product.iTunesProduct thenCall:^(BOOL success, SKPaymentTransaction *transaction) {
         // YAY DONE!

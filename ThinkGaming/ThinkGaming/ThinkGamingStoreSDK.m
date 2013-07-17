@@ -100,6 +100,11 @@
 }
 
 - (void) didErrorWhilePurchasingProduct:(NSString *)productIdentifier withTransaction:(SKPaymentTransaction *)transaction {
+    
+    if (self.didPurchaseProductBlock) {
+        self.didPurchaseProductBlock(NO, transaction);
+    }
+    
     if (self.delegate && [self.delegate respondsToSelector:@selector(thinkGamingStore:didFailPurchasingProduct:withTransaction:)]) {
         [self.delegate thinkGamingStore:self didFailPurchasingProduct:productIdentifier withTransaction:transaction];
     }
@@ -126,8 +131,6 @@
     if (self.delegate && [self.delegate respondsToSelector:@selector(thinkGamingStore:didPurchaseProduct:withTransaction:)]) {
         [self.delegate thinkGamingStore:self didPurchaseProduct:productIdentifier withTransaction:transaction];
     }
-    
-    [self persistProductIdentifierAsPurchased:productIdentifier];
 }
 
 #pragma mark - SKProductsRequestDelegate methods
