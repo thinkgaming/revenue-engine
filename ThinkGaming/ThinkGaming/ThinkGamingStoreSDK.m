@@ -7,11 +7,11 @@
 //
 
 
-#import "ThinkGamingStore.h"
+#import "ThinkGamingStoreSDK.h"
 
 #define kThinkGamingPersistedPurchasedProducts @"kThinkGamingPersistedPurchasedProducts"
 
-@interface ThinkGamingStore()
+@interface ThinkGamingStoreSDK()
 @property (strong) NSMutableArray *productIdentifiers;
 @property (strong) NSMutableArray *purchasedProductIdentifiers;
 @property (strong) SKProductsRequest *productRequest;
@@ -22,7 +22,7 @@
 
 @end
 
-@implementation ThinkGamingStore
+@implementation ThinkGamingStoreSDK
 
 - (id) init {
     if (self = [super init]) {

@@ -13,7 +13,7 @@
 
 @class ThinkGamingCurrencyStoreSDK;
 
-@interface ThinkGamingStore : NSObject
+@interface ThinkGamingStoreSDK : NSObject
 @property (strong) NSString *storeName;
 @property (strong) NSString *storeIdentifier;
 @property (strong) NSString *storeDescription;

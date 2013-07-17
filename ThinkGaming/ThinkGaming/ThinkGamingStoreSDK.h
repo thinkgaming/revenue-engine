@@ -8,23 +8,31 @@
 
 #import <Foundation/Foundation.h>
 #import <StoreKit/StoreKit.h>
-@class ThinkGamingStore;
+@class ThinkGamingStoreSDK;
 
 typedef void (^DidDownloadStoresBlock)(BOOL success, NSArray *stores);
 typedef void (^DidDownloadProductsBlock)(BOOL success, NSArray *products);
 typedef void (^DidPurchaseProductBlock)(BOOL success);
 
 
-@protocol ThinkGamingStoreDelegate <NSObject>
-@optional
+@interface ThinkGamingProduct : NSObject
 
--(void) thinkGamingStore:(ThinkGamingStore *)thinkGamingStore didPurchaseProduct:(NSString *)productIdentifier withTransaction:(SKPaymentTransaction *)transaction;
--(void) thinkGamingStore:(ThinkGamingStore *)thinkGamingStore didRestoreProduct:(NSString *)productIdentifier withTransaction:(SKPaymentTransaction *)transaction;
--(void) thinkGamingStore:(ThinkGamingStore *)thinkGamingStore didFailPurchasingProduct:(NSString *)productIdentifier withTransaction:(SKPaymentTransaction *)transaction;
+
+@property (strong) SKProduct *iTunesProduct;
 
 @end
 
-@interface ThinkGamingStore : NSObject <SKProductsRequestDelegate, SKPaymentTransactionObserver>
+
+@protocol ThinkGamingStoreDelegate <NSObject>
+@optional
+
+-(void) thinkGamingStore:(ThinkGamingStoreSDK *)thinkGamingStore didPurchaseProduct:(NSString *)productIdentifier withTransaction:(SKPaymentTransaction *)transaction;
+-(void) thinkGamingStore:(ThinkGamingStoreSDK *)thinkGamingStore didRestoreProduct:(NSString *)productIdentifier withTransaction:(SKPaymentTransaction *)transaction;
+-(void) thinkGamingStore:(ThinkGamingStoreSDK *)thinkGamingStore didFailPurchasingProduct:(NSString *)productIdentifier withTransaction:(SKPaymentTransaction *)transaction;
+
+@end
+
+@interface ThinkGamingStoreSDK : NSObject <SKProductsRequestDelegate, SKPaymentTransactionObserver>
 
 @property (weak) id<ThinkGamingStoreDelegate> delegate;
 

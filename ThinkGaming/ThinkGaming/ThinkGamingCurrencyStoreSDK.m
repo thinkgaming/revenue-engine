@@ -11,12 +11,12 @@
 @implementation ThinkGamingCurrencyStoreSDK
 
 - (NSArray *) getStoreList {
-    ThinkGamingStore *store1 = [[ThinkGamingStore alloc] init];
+    ThinkGamingStoreSDK *store1 = [[ThinkGamingStoreSDK alloc] init];
     store1.storeIdentifier = @"com.game.bank";
     store1.storeDescription = @"Buy coins and dollars!";
     store1.storeName = @"Bank";
     
-    ThinkGamingStore *store2 = [[ThinkGamingStore alloc] init];
+    ThinkGamingStoreSDK *store2 = [[ThinkGamingStoreSDK alloc] init];
     store2.storeIdentifier = @"com.game.books";
     store2.storeDescription = @"Buy cookbooks to make new foods!";
     store2.storeName = @"Cookbooks";
@@ -148,5 +148,5 @@
 @implementation ThinkGamingItem
 @end
 
-@implementation ThinkGamingStore
+@implementation ThinkGamingStoreSDK
 @end
