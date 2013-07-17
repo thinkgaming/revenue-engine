@@ -7,9 +7,11 @@
 //
 
 #import "ThinkGamingProductsViewController.h"
+#import "ThinkGamingProductCell.h"
 
 @interface ThinkGamingProductsViewController ()
-@property NSArray *thinkGamingProducts;
+@property (strong) NSArray *thinkGamingProducts;
+@property (strong) ThinkGamingStoreSDK *thinkGamingStoreSDK;
 
 @end
 
@@ -19,7 +21,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.thinkGamingStoreSDK = [[ThinkGamingStoreSDK alloc] init];
     self.thinkGamingProducts = [NSArray array];
+    
+    [self.thinkGamingStoreSDK getListOfProductsForStoreIdentifier:self.thinkGamingStore.storeIdentifier thenCall:^(BOOL success, NSArray *products) {
+        self.thinkGamingProducts = products;
+        [self.tableView reloadData];
+    }];
 }
 
 
@@ -34,10 +42,17 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"ThinkGamingProductCell";
+    ThinkGamingProductCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
+    ThinkGamingProduct *product = self.thinkGamingProducts[indexPath.row];
+    cell.displayDescription.text = product.displayDescription;
+    cell.displayName.text = product.displayName;
+    cell.iTunesId.text = product.iTunesProductIdentifier;
+    cell.offerText.text = product.offerText;
+    cell.productId.text = product.productIdentifier;
+    cell.price.text = [product.price stringValue];
+    cell.percentage.text = [product.buyPercentage stringValue];
     
     return cell;
 }

@@ -68,8 +68,8 @@
             product.productIdentifier = obj[@"product_id"];
             product.displayName = obj[@"display_name"];
             product.displayDescription = obj[@"display_description"];
-            product.price = obj[@"price"];
-            product.buyPercentage = obj[@"p_buy"];
+            product.price = [NSDecimalNumber decimalNumberWithString:obj[@"price"]];
+            product.buyPercentage = [NSDecimalNumber decimalNumberWithString:obj[@"p_buy"]];
             product.iTunesProductIdentifier = obj[@"itunes_id"];
             [thinkGamingProducts addObject:product];
             [itunesProductIdentifiers addObject:product.iTunesProductIdentifier];
