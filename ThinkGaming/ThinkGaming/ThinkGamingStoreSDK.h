@@ -14,10 +14,22 @@ typedef void (^DidDownloadStoresBlock)(BOOL success, NSArray *stores);
 typedef void (^DidDownloadProductsBlock)(BOOL success, NSArray *products);
 typedef void (^DidPurchaseProductBlock)(BOOL success);
 
+@interface ThinkGamingStore : NSObject
+
+@property (strong) NSString *displayName;
+@property (strong) NSString *storeIdentifier;
+
+@end
 
 @interface ThinkGamingProduct : NSObject
 
-
+@property (strong) NSString *productIdentifier;
+@property (strong) NSString *displayName;
+@property (strong) NSString *displayDescription;
+@property (strong) NSDecimalNumber *price;
+@property (strong) NSString *offerText;
+@property (strong) NSDecimalNumber *buyPercentage;
+@property (strong) NSString *iTunesProductIdentifier;
 @property (strong) SKProduct *iTunesProduct;
 
 @end

@@ -11,17 +11,18 @@
 @implementation ThinkGamingCurrencyStoreSDK
 
 - (NSArray *) getStoreList {
-    ThinkGamingStoreSDK *store1 = [[ThinkGamingStoreSDK alloc] init];
-    store1.storeIdentifier = @"com.game.bank";
-    store1.storeDescription = @"Buy coins and dollars!";
-    store1.storeName = @"Bank";
-    
-    ThinkGamingStoreSDK *store2 = [[ThinkGamingStoreSDK alloc] init];
-    store2.storeIdentifier = @"com.game.books";
-    store2.storeDescription = @"Buy cookbooks to make new foods!";
-    store2.storeName = @"Cookbooks";
-    
-    return @[store1, store2];
+//    ThinkGamingStoreSDK *store1 = [[ThinkGamingStoreSDK alloc] init];
+//    store1.storeIdentifier = @"com.game.bank";
+//    store1.storeDescription = @"Buy coins and dollars!";
+//    store1.storeName = @"Bank";
+//    
+//    ThinkGamingStoreSDK *store2 = [[ThinkGamingStoreSDK alloc] init];
+//    store2.storeIdentifier = @"com.game.books";
+//    store2.storeDescription = @"Buy cookbooks to make new foods!";
+//    store2.storeName = @"Cookbooks";
+//    
+//    return @[store1, store2];
+    return nil;
 }
 
 - (NSArray *) getStoreItems:(NSString *) storeIdentifier {
@@ -109,7 +110,7 @@
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         successBlock(purchased);
         if (self.delegate) {
-            [self.delegate thinkGamingStore:self didPurchaseCurrency:purchased];
+//            [self.delegate thinkGamingStore:self didPurchaseCurrency:purchased];
         }
         
         [[NSNotificationCenter defaultCenter] postNotificationName:kDidPurchaseCurrencyNotification object:purchased];
@@ -131,7 +132,7 @@
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         successBlock(item);
         if (self.delegate) {
-            [self.delegate thinkGamingStore:self didPurchaseItem:item];
+//            [self.delegate thinkGamingStore:self didPurchaseItem:item];
         }
         
         [[NSNotificationCenter defaultCenter] postNotificationName:kDidPurchaseItemNotification object:item];
@@ -148,5 +149,5 @@
 @implementation ThinkGamingItem
 @end
 
-@implementation ThinkGamingStoreSDK
-@end
+//@implementation ThinkGamingStoreSDK
+//@end

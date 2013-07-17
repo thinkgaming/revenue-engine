@@ -7,17 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ThinkGamingStoreSDK.h"
 
 #define kDidPurchaseCurrencyNotification @"kdidPurchaseCurrencyNotification"
 #define kDidPurchaseItemNotification @"kDidPurchaseItemNotification"
 
 @class ThinkGamingCurrencyStoreSDK;
 
-@interface ThinkGamingStoreSDK : NSObject
-@property (strong) NSString *storeName;
-@property (strong) NSString *storeIdentifier;
-@property (strong) NSString *storeDescription;
-@end
 
 @interface ThinkGamingCurrency : NSObject
 
@@ -40,12 +36,12 @@
 
 @end
 
-@protocol ThinkGamingStoreDelegate <NSObject>
-
-- (void) thinkGamingStore:(ThinkGamingCurrencyStoreSDK *)store didPurchaseCurrency:(ThinkGamingCurrency *)currency;
-- (void) thinkGamingStore:(ThinkGamingCurrencyStoreSDK *)store didPurchaseItem:(ThinkGamingItem *)item;
-
-@end
+//@protocol ThinkGamingStoreDelegate <NSObject>
+//
+//- (void) thinkGamingStore:(ThinkGamingCurrencyStoreSDK *)store didPurchaseCurrency:(ThinkGamingCurrency *)currency;
+//- (void) thinkGamingStore:(ThinkGamingCurrencyStoreSDK *)store didPurchaseItem:(ThinkGamingItem *)item;
+//
+//@end
 
 @interface ThinkGamingCurrencyStoreSDK : NSObject
 

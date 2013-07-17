@@ -8,6 +8,7 @@
 
 
 #import "ThinkGamingStoreSDK.h"
+#import "ThinkGamingCurrencyStoreSDK.h"
 
 #define kThinkGamingPersistedPurchasedProducts @"kThinkGamingPersistedPurchasedProducts"
 
