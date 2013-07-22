@@ -13,6 +13,16 @@
 @interface ThinkGamingLogger : NSObject
 
 /*
+Return the current ApiKey
+*/
++ (NSString *) currentApiKey;
+
+/*
+Force flushing the current logging data to the server
+*/
++ (void) forceFlush;
+
+/*
 Start session with given API key (get your API key from your dashboard)
 */
 + (ThinkGamingLogger *)startSession:(NSString *)apiKey;
@@ -36,6 +46,13 @@ Start session with given API key (get your API key from your dashboard)
 + (ThinkGamingEvent *)endTimedEvent:(NSString *)eventName;
 + (ThinkGamingEvent *)endTimedEvent:(NSString *)eventName withParameters:(NSDictionary *)parameters;
 
+/*
+Store and product logging methods
+*/
++ (ThinkGamingEvent *) startLoggingViewedStore:(NSString *)storeIdentifier;
++ (ThinkGamingEvent *) startLoggingBuyingProduct:(NSString *)productIdentifier;
+
+
 
 @end
 
@@ -48,4 +65,6 @@ Start session with given API key (get your API key from your dashboard)
 
 - (ThinkGamingEvent *)endTimedEvent;
 - (ThinkGamingEvent *)endTimedEventWithParameters:(NSDictionary *)parameters;
+- (ThinkGamingEvent *)endViewProductWithPurchase;
+- (ThinkGamingEvent *)endViewProductWithOutPurchase;
 @end

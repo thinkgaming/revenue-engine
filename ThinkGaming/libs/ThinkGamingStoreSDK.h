@@ -2,67 +2,63 @@
 //  ThinkGamingStore.h
 //  ThinkGaming
 //
-//  Created by Aaron Junod on 7/3/13.
+//  Created by Aaron Junod on 7/16/13.
 //  Copyright (c) 2013 ThinkGaming. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-
-#define kDidPurchaseCurrencyNotification @"kdidPurchaseCurrencyNotification"
-#define kDidPurchaseItemNotification @"kDidPurchaseItemNotification"
-
+#import <StoreKit/StoreKit.h>
 @class ThinkGamingStoreSDK;
 
+typedef void (^DidDownloadStoresBlock)(BOOL success, NSArray *stores);
+typedef void (^DidDownloadProductsBlock)(BOOL success, NSArray *products);
+typedef void (^DidPurchaseProductBlock)(BOOL success, SKPaymentTransaction *transaction);
+
 @interface ThinkGamingStore : NSObject
-@property (strong) NSString *storeName;
+
+@property (strong) NSString *displayName;
 @property (strong) NSString *storeIdentifier;
-@property (strong) NSString *storeDescription;
-@end
-
-@interface ThinkGamingCurrency : NSObject
-
-@property (strong) NSString *currencyName;
-@property (strong) NSString *currencyIdentifier;
-@property (strong) NSNumber *bankTotal;
 
 @end
 
-@interface ThinkGamingItem : NSObject
+@interface ThinkGamingProduct : NSObject
 
-@property (strong) NSString *itemName;
-@property (strong) NSString *itemIdentifier;
-@property (strong) NSString *itemDescription;
-@property (strong) NSString *promoCaption;
-@property (strong) NSString *currencyIdentifierRequired;
-@property (strong) NSDecimalNumber *currencyCost;
-@property (strong) NSNumber *totalOwned;
+@property (strong) NSString *productIdentifier;
+@property (strong) NSString *displayName;
+@property (strong) NSString *displayDescription;
+@property (strong) NSDecimalNumber *price;
+@property (strong) NSString *offerText;
+@property (strong) NSDecimalNumber *buyPercentage;
+@property (strong) NSString *iTunesProductIdentifier;
+@property (strong) SKProduct *iTunesProduct;
 
 @end
+
 
 @protocol ThinkGamingStoreDelegate <NSObject>
+@optional
 
-- (void) thinkGamingStore:(ThinkGamingStoreSDK *)store didPurchaseCurrency:(ThinkGamingCurrency *)currency;
-- (void) thinkGamingStore:(ThinkGamingStoreSDK *)store didPurchaseItem:(ThinkGamingItem *)item;
+-(void) thinkGamingStore:(ThinkGamingStoreSDK *)thinkGamingStore didPurchaseProduct:(NSString *)productIdentifier withTransaction:(SKPaymentTransaction *)transaction;
+-(void) thinkGamingStore:(ThinkGamingStoreSDK *)thinkGamingStore didRestoreProduct:(NSString *)productIdentifier withTransaction:(SKPaymentTransaction *)transaction;
+-(void) thinkGamingStore:(ThinkGamingStoreSDK *)thinkGamingStore didFailPurchasingProduct:(NSString *)productIdentifier withTransaction:(SKPaymentTransaction *)transaction;
 
 @end
 
-@interface ThinkGamingStoreSDK : NSObject
+@interface ThinkGamingStoreSDK : NSObject <SKProductsRequestDelegate, SKPaymentTransactionObserver>
 
-@property id <ThinkGamingStoreDelegate> delegate;
+@property (weak) id<ThinkGamingStoreDelegate> delegate;
 
-- (NSArray *) getStoreList;
-- (NSArray *) getStoreItems:(NSString *) storeIdentifier;
-- (NSArray *) getCurrencyBalances;
+- (void) getListOfStoresThenCall:(DidDownloadStoresBlock)didDownloadStoresBlock;
 
-- (void) purchaseCurrency:(NSString *)currencyIdentifier
-         amountOfCurrency:(NSNumber *)amount
-             successBlock:(void (^)(ThinkGamingCurrency *))successBlock
-                erroBlock:(void (^)(NSError *))errorBlock;
+- (void) getListOfProductsForStoreIdentifier:(NSString *)storeIdentifier thenCall:(DidDownloadProductsBlock)didDownloadProductsBlock;;
 
-- (void) purchaseItem:(NSString *)itemIdentifier
-         amountOfItem:(NSNumber *)amount
-             successBlock:(void (^)(ThinkGamingItem *))successBlock
-                erroBlock:(void (^)(NSError *))errorBlock;
+- (void) purchaseProduct:(SKProduct *)product thenCall:(DidPurchaseProductBlock)didPurchaseProductBlock;
+
+- (BOOL) hasPreviouslyPurchasedProductWithIdentifider:(NSString *) iTunesProductIdentifier;
+
+- (void) restorePreviouslyPurchasedProducts;
+
+- (NSArray *) getListOfPreviouslyPurchasedProductIdentifiers;
 
 
 @end

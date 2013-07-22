@@ -8,8 +8,9 @@
 
 #import "ThinkGamingLoggingApiAdapter.h"
 
+
 static NSString * const kThinkGamingAPIBaseURLString = @"http://api.thinkgaming.com:8080/api/v2/";
-static NSString * const kLoggingPath = @"log_activity/";
+static NSString * const kLoggingPath = @"log_activity";
 
 @interface ThinkGamingLoggingApiAdapter()
 @property (strong) NSURLConnection *connection;
@@ -30,7 +31,7 @@ static NSString * const kLoggingPath = @"log_activity/";
 - (NSMutableURLRequest *) makeRequest {
     self.response = [NSMutableData data];
     NSURL *root = [NSURL URLWithString:kThinkGamingAPIBaseURLString];
-    NSURL *url = [NSURL URLWithString:kLoggingPath relativeToURL:root];
+    NSURL *url = [NSURL URLWithString:@"http://api.thinkgaming.com:8080/api/v2/log_activity"];
     return [NSMutableURLRequest requestWithURL:url];
 }
 
