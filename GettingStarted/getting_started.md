@@ -19,7 +19,7 @@ Download the SDK here, and then extract it.
 	* StoreKit.framework
 ![Add libraries](add_libraries.png "Add libraries")
 
-##Start using the SDK
+##Start using the Store SDK
 
 
 ####Initialize the SDK with your API key. We recommend you do this in your app delegate.
@@ -120,5 +120,50 @@ _Add protocol declaration_
 # Add myself as the delegate
 self.storeSDK = [[ThinkGamingStoreSDK alloc] init];
 self.storeSDK.delegate = self;
+
+```
+
+
+##Start using the logging SDK
+
+
+The Store SDK will log user events. If you'd like to log from your own store or screen you can log directly.
+
+
+_Start the session_
+
+```Objective-c
+#import "ThinkGamingLogger.h"
+
+// Optionally include a mediaSourceId
+[ThinkGamingLogger startSession:@"ThinkGamingApiKey"];
+[ThinkGamingLogger startSession:@"ThinkGamingApiKey" andMediaSourceId:@"MediaSourceId"];
+
+```
+
+_Log the viewing of a store_
+
+```Objective-C
+
+ThinkGamingEvent *event = [ThinkGamingLogger startLoggingViewedStore:@"My Store Name"];
+
+// later 
+
+[event endTimedEvent];
+
+
+```
+
+_Log the viewing of a product_
+
+```Objective-C
+
+ThinkGamingEvent *event = [ThinkGamingLogger startLoggingBuyingProduct:@"iTunesIdentifier"]
+
+// later
+
+[event endViewProductWithPurchase];
+//or
+[event endViewProductWithOutPurchase];
 
 ```
