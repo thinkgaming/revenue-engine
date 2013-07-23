@@ -167,3 +167,34 @@ ThinkGamingEvent *event = [ThinkGamingLogger startLoggingBuyingProduct:@"iTunesI
 [event endViewProductWithOutPurchase];
 
 ```
+
+The logging framework can be used to log other user details as well, such as retention and usage. 
+
+You can create your own keys, and add your own custom payloads. 
+
+_Log user events_
+
+```Objective-C
+
+
+[ThinkGamingLogger logEvent:@"Spent 100 Coins"];
+
+```
+
+_Log an event with more data_
+
+```Objective-C
+[ThinkGamingLogger logEvent:@"SpentCoins" 
+            withParameters:@{@"SpentCoins" : @100, 
+              @"From" : {@"type" : @"banner", @"id": @1 }];
+```
+
+_Log a timed event_
+
+```Objective-C
+
+ThinkGamingEvent *event = [ThinkGamingLogger startTimedEvent:@"Showing Banner"]
+[event endTimedEventWithParameters:@{ @"result" : @"didTap" }];
+
+
+```
