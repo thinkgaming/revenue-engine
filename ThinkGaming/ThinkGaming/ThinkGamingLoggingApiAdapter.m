@@ -30,7 +30,7 @@ static NSString * const kLoggingPath = @"log_activity";
 
 - (NSMutableURLRequest *) makeRequest {
     self.response = [NSMutableData data];
-    NSURL *root = [NSURL URLWithString:kThinkGamingAPIBaseURLString];
+//    NSURL *root = [NSURL URLWithString:kThinkGamingAPIBaseURLString];
     NSURL *url = [NSURL URLWithString:@"http://api.thinkgaming.com:8080/api/v2/log_activity"];
     return [NSMutableURLRequest requestWithURL:url];
 }
