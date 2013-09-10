@@ -24,7 +24,7 @@ static TG_VerificationController *singleton;
     {
         transactionsReceiptStorageDictionary = [[NSMutableDictionary alloc] init];
         _completionHandlers = [[NSMutableDictionary alloc] init];
-        self.serverUrl = ITMS_PROD_VERIFY_RECEIPT_URL;
+        self.serverUrl = TG_ITMS_PROD_VERIFY_RECEIPT_URL;
 	}
 	return self;
 }
@@ -71,7 +71,7 @@ static TG_VerificationController *singleton;
 
 // This method should be called once a transaction gets to the SKPaymentTransactionStatePurchased or SKPaymentTransactionStateRestored state
 // Call it with the SKPaymentTransaction.transactionReceipt
-- (void)verifyPurchase:(SKPaymentTransaction *)transaction completionHandler:(VerifyCompletionHandler)completionHandler
+- (void)verifyPurchase:(SKPaymentTransaction *)transaction completionHandler:(TG_VerifyCompletionHandler)completionHandler
 {    
     BOOL isOk = [self isTransactionAndItsReceiptValid:transaction];
     if (!isOk)
@@ -90,7 +90,7 @@ static TG_VerificationController *singleton;
     
     // Create the POST request payload.
     NSString *payload = [NSString stringWithFormat:@"{\"receipt-data\" : \"%@\", \"password\" : \"%@\"}",
-                         jsonObjectString, ITC_CONTENT_PROVIDER_SHARED_SECRET];
+                         jsonObjectString, TG_ITC_CONTENT_PROVIDER_SHARED_SECRET];
     
     NSData *payloadData = [payload dataUsingEncoding:NSUTF8StringEncoding];
     
@@ -215,7 +215,7 @@ static TG_VerificationController *singleton;
 
 - (BOOL)isTransactionIdUnique:(NSString *)transactionId
 {
-    NSString *transactionDictionary = KNOWN_TRANSACTIONS_KEY;
+    NSString *transactionDictionary = TG_KNOWN_TRANSACTIONS_KEY;
     // Save the transactionId to the standardUserDefaults so we can check against that later
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults synchronize];
@@ -241,7 +241,7 @@ static TG_VerificationController *singleton;
     // If dictionary exists already then retrieve it and add new transactionID
     // Regardless save transactionID to dictionary which gets saved to NSUserDefaults
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *transactionDictionary = KNOWN_TRANSACTIONS_KEY;
+    NSString *transactionDictionary = TG_KNOWN_TRANSACTIONS_KEY;
     NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithDictionary:
                                        [defaults objectForKey:transactionDictionary]];
     if (!dictionary)
@@ -336,7 +336,7 @@ static TG_VerificationController *singleton;
     
     //NSLog(@"Connection failure: %@", error);
 
-    VerifyCompletionHandler completionHandler = _completionHandlers[[NSValue valueWithNonretainedObject:connection]];
+    TG_VerifyCompletionHandler completionHandler = _completionHandlers[[NSValue valueWithNonretainedObject:connection]];
     [_completionHandlers removeObjectForKey:[NSValue valueWithNonretainedObject:connection]];
     completionHandler(FALSE);
     
@@ -349,7 +349,7 @@ static TG_VerificationController *singleton;
     // So we got some receipt data. Now does it all check out?
     BOOL isOk = [self doesTransactionInfoMatchReceipt:responseString];
 
-    VerifyCompletionHandler completionHandler = _completionHandlers[[NSValue valueWithNonretainedObject:connection]];
+    TG_VerifyCompletionHandler completionHandler = _completionHandlers[[NSValue valueWithNonretainedObject:connection]];
     [_completionHandlers removeObjectForKey:[NSValue valueWithNonretainedObject:connection]];
     if (isOk)
     {
@@ -698,12 +698,12 @@ outLabel:
 
 char* base64_encode(const void* buf, size_t size) {
     size_t outputLength;
-    return NewBase64Encode(buf, size, NO, &outputLength);
+    return TG_NewBase64Encode(buf, size, NO, &outputLength);
 }
 
 void * base64_decode(const char* s, size_t * data_len)
 {
-    return NewBase64Decode(s, strlen(s), data_len);
+    return TG_NewBase64Decode(s, strlen(s), data_len);
 }
 
 @end

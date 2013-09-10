@@ -61,6 +61,7 @@ static NSString * const kThinkGamingAPIItemsPath = @"/stores/";
     }
     
     NSMutableURLRequest *request = [self makeRequestForUrl:url];
+    request.timeoutInterval = 10;
     self.connection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
     
     while(!self.isFinished) {

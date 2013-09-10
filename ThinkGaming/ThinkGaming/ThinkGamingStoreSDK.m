@@ -108,7 +108,13 @@
     } error:^(NSError *err) {
         NSArray *stores = [ThinkGamingCache getStoreList];
         if (stores) {
-            self.didDownloadStoresBlock(YES, stores);
+            __block NSMutableArray *thinkGamingStores = [NSMutableArray array];
+            [stores enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                ThinkGamingStore *store = [[ThinkGamingStore alloc] initWithResponse:obj];
+                [thinkGamingStores addObject:store];
+            }];
+
+            self.didDownloadStoresBlock(YES, thinkGamingStores);
             return;
         }
         self.didDownloadStoresBlock(NO, nil);
@@ -212,6 +218,11 @@
 - (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response {
     self.productRequest = nil;
     
+    if (response == nil || response.products == nil) {
+        self.didDownloadProductsBlock(NO, nil);
+        return;
+    }
+    
     [response.products enumerateObjectsUsingBlock:^(SKProduct *product, NSUInteger idx, BOOL *stop) {
         [self.thinkGamingProducts enumerateObjectsUsingBlock:^(ThinkGamingProduct *thinkGamingProduct, NSUInteger idx, BOOL *internalStop) {
             if ([thinkGamingProduct.iTunesProductIdentifier isEqualToString:product.productIdentifier]) {
@@ -278,6 +289,7 @@
     [transactions enumerateObjectsUsingBlock:^(SKPaymentTransaction *transaction, NSUInteger idx, BOOL *stop) {
         switch (transaction.transactionState) {
             case SKPaymentTransactionStatePurchased:
+                if (self.currentProduct == nil) return;
                 [self completeTransaction:transaction];
                 break;
             case SKPaymentTransactionStateFailed:

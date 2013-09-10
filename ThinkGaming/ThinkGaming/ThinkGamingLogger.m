@@ -252,11 +252,11 @@ static ThinkGamingLogger* sharedSingleton;
 }
 
 + (void) setReceiptValidationModeToSandbox {
-    [TG_VerificationController sharedInstance].serverUrl = ITMS_SANDBOX_VERIFY_RECEIPT_URL;
+    [TG_VerificationController sharedInstance].serverUrl = TG_ITMS_SANDBOX_VERIFY_RECEIPT_URL;
 }
 
 + (void) setReceiptValidationModeToProduction {
-    [TG_VerificationController sharedInstance].serverUrl = ITMS_PROD_VERIFY_RECEIPT_URL;
+    [TG_VerificationController sharedInstance].serverUrl = TG_ITMS_PROD_VERIFY_RECEIPT_URL;
 }
 
 + (ThinkGamingLogger *)startSession:(NSString *)key {
