@@ -245,29 +245,30 @@
 - (void) completeTransaction:(SKPaymentTransaction *)transaction {
     TG_VerificationController *verifier = [TG_VerificationController sharedInstance];
     [verifier verifyPurchase:transaction completionHandler:^(BOOL success) {
-        if (success) {
-            [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
-            [self didCompletePurchaseOfProduct:transaction.payment.productIdentifier withTransaction:transaction];
-        }
-    }];
-}
+        [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
 
-- (void) failedTransaction:(SKPaymentTransaction *)transaction {
-    TG_VerificationController *verifier = [TG_VerificationController sharedInstance];
-    [verifier verifyPurchase:transaction completionHandler:^(BOOL success) {
         if (success) {
-            [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+            [self didCompletePurchaseOfProduct:transaction.payment.productIdentifier withTransaction:transaction];
+        } else {
             [self didErrorWhilePurchasingProduct:transaction.payment.productIdentifier withTransaction:transaction];
         }
     }];
 }
 
+- (void) failedTransaction:(SKPaymentTransaction *)transaction {
+        [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+        [self didErrorWhilePurchasingProduct:transaction.payment.productIdentifier withTransaction:transaction];
+}
+
 - (void) restoreTransaction:(SKPaymentTransaction *)transaction {
     TG_VerificationController *verifier = [TG_VerificationController sharedInstance];
     [verifier verifyPurchase:transaction completionHandler:^(BOOL success) {
+        [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+
         if (success) {
-            [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
             [self didCompletePurchaseOfProduct:transaction.originalTransaction.payment.productIdentifier withTransaction:transaction];
+        } else {
+            [self didErrorWhilePurchasingProduct:transaction.originalTransaction.payment.productIdentifier withTransaction:transaction];
         }
     }];
 }
