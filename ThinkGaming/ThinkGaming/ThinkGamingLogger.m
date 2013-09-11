@@ -206,6 +206,7 @@ static ThinkGamingLogger* sharedSingleton;
     return sharedSingleton.apiKey;
 }
 
+
 + (ThinkGamingLogger *)startSession:(NSString *)apiKey andMediaSourceId:(NSString *)mediaSourceId {
     //if (![sharedSingleton isConnected]) return;
     

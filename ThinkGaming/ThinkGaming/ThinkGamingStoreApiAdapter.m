@@ -42,6 +42,11 @@ static NSString * const kThinkGamingAPIItemsPath = @"/stores/";
     
     [request setHTTPMethod:@"GET"];
     [request addValue:[ThinkGamingLogger currentApiKey] forHTTPHeaderField:@"X-ThinkGaming-API-Key"];
+    NSString *deviceId = [ThinkGamingLogger deviceId];
+    if (deviceId) {
+        [request addValue:deviceId forHTTPHeaderField:@"X-ThinkGaming-UserID"];
+    }
+    
 
     return request;
 }

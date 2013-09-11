@@ -16,6 +16,8 @@
 Return the current ApiKey
 */
 + (NSString *) currentApiKey;
++ (NSString *) deviceId;
+;
 
 /*
 Force flushing the current logging data to the server

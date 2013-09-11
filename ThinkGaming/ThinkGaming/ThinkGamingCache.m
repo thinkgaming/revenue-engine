@@ -26,7 +26,7 @@
     if (stores) {
         return [stores mutableCopy];
     }
-    return [NSMutableDictionary dictionary];
+    return [NSArray array];
 }
 
 + (void) persistStore:(NSString *)storeIdentifier withProducts:(NSArray *)products {
@@ -47,12 +47,12 @@
 
 + (NSArray *) getProductsForStore:(NSString *)storeIdentifier {
     NSDictionary *persistedStores = [[NSUserDefaults standardUserDefaults] objectForKey:kThinkGamingProductListPersistanceKey];
-    if (persistedStores == nil) return [NSMutableDictionary dictionary];
+    if (persistedStores == nil) return [NSArray array];
     NSArray *matches = [[persistedStores allKeys] filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"SELF == %@", storeIdentifier]];
     if (matches && matches.count > 0) {
         return [persistedStores[matches[0]] mutableCopy];
     }
-    return [NSMutableDictionary dictionary];
+    return [NSArray array];
 }
 
 
