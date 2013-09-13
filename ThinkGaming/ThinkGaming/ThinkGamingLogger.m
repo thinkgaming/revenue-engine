@@ -210,7 +210,7 @@ static ThinkGamingLogger* sharedSingleton;
 + (ThinkGamingLogger *)startSession:(NSString *)apiKey andMediaSourceId:(NSString *)mediaSourceId {
     //if (![sharedSingleton isConnected]) return;
     
-    NSLog(@"ThinkGaming - starting session.");
+    //NSLog(@"ThinkGaming - starting session.");
     [ThinkGamingLogger shared]; // Init if not already started
     sharedSingleton.apiKey = apiKey;
     sharedSingleton.mediaSourceID = mediaSourceId;

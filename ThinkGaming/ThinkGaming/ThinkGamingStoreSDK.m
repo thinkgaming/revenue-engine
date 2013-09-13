@@ -293,6 +293,7 @@
                 [self completeTransaction:transaction];
                 break;
             case SKPaymentTransactionStateFailed:
+                if (self.currentProduct == nil) return;
                 [self failedTransaction:transaction];
                 break;
             case SKPaymentTransactionStateRestored:

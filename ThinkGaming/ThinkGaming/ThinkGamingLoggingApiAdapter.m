@@ -83,7 +83,7 @@ static NSString * const kLoggingPath = @"log_activity";
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-    NSLog(@"Connection Encountered an Error");
+    //NSLog(@"Connection Encountered an Error");
     self.connection = nil;
     
     self.error(error);
