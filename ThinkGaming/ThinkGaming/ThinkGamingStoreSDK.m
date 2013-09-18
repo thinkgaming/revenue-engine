@@ -74,7 +74,7 @@
             self.currentProductEvent = nil;
             break;
         case SKPaymentTransactionStatePurchased:
-            [self.currentProductEvent endViewProductWithPurchaseWithParameters:@{@"product_id":self.currentProduct.productIdentifier, @"price_id":self.currentProduct.priceId, @"message_id":self.currentProduct.messageId}];
+            [self.currentProductEvent endViewProductWithPurchaseWithParameters:@{@"product_id":self.currentProduct.productIdentifier, @"price_id":self.currentProduct.priceId, @"message_id":self.currentProduct.messageId, @"price":self.currentProduct.price}];
             self.currentProductEvent = nil;
             break;
         default:
