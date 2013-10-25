@@ -323,7 +323,6 @@
         self.productIdentifier = response[@"product_id"];
         self.displayName = response[@"display_name"];
         self.displayDescription = response[@"display_description"];
-        self.price = [NSDecimalNumber decimalNumberWithString:response[@"price"]];
         self.iTunesProductIdentifier = response[@"itunes_id"];
         self.offerText = response[@"offer_text"];
         self.priceId = [NSNumber numberWithInt:[response[@"price_id"] integerValue]];
@@ -333,4 +332,21 @@
     }
     return self;
 }
+
+- (NSDecimalNumber *) price {
+    return self.iTunesProduct.price;
+}
+
+- (NSLocale *) priceLocale {
+    return self.iTunesProduct.priceLocale;
+}
+
+- (NSString *) formattedPrice {
+    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+    [numberFormatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
+    [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    [numberFormatter setLocale:self.priceLocale];
+    return [numberFormatter stringFromNumber:self.price];
+}
+
 @end

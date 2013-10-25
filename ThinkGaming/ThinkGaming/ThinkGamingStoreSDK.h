@@ -28,7 +28,9 @@ typedef void (^DidPurchaseProductBlock)(BOOL success, SKPaymentTransaction *tran
 @property (strong) NSString *productIdentifier;
 @property (strong) NSString *displayName;
 @property (strong) NSString *displayDescription;
-@property (strong) NSDecimalNumber *price;
+- (NSDecimalNumber *) price;
+- (NSLocale *) priceLocale;
+- (NSString *) formattedPrice;
 @property (strong) NSString *offerText;
 @property (strong) NSDecimalNumber *buyPercentage;
 @property (strong) NSString *iTunesProductIdentifier;
