@@ -213,6 +213,19 @@
     }
 }
 
+- (void) didCompleteRestoreOfProduct:(NSString *)productIdentifier withTransaction:(SKPaymentTransaction *) transaction{
+    [self persistProductIdentifierAsPurchased:productIdentifier];
+    
+//    if (self.didPurchaseProductBlock) {
+//        self.didPurchaseProductBlock(YES, transaction);
+//    }
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(thinkGamingStore:didRestoreProduct:withTransaction:)]) {
+        [self.delegate thinkGamingStore:self didRestoreProduct:productIdentifier withTransaction:transaction];
+    }
+}
+
+
 #pragma mark - SKProductsRequestDelegate methods
 
 - (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response {
@@ -272,16 +285,25 @@
 }
 
 - (void) restoreTransaction:(SKPaymentTransaction *)transaction {
-    TG_VerificationController *verifier = [TG_VerificationController sharedInstance];
-    [verifier verifyPurchase:transaction completionHandler:^(BOOL success) {
-        [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+    [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+    
+    [self didCompleteRestoreOfProduct:transaction.originalTransaction.payment.productIdentifier withTransaction:transaction];
+}
 
-        if (success) {
-            [self didCompletePurchaseOfProduct:transaction.originalTransaction.payment.productIdentifier withTransaction:transaction];
-        } else {
-            [self didErrorWhilePurchasingProduct:transaction.originalTransaction.payment.productIdentifier withTransaction:transaction];
+- (void) paymentQueueRestoreCompletedTransactionsFinished:(SKPaymentQueue *)queue {
+    if (self.delegate) {
+        if ([self.delegate respondsToSelector:@selector(thinkGamingStore:didFinishRestoringProducts:)]) {
+            [self.delegate thinkGamingStore:self didFinishRestoringProducts:YES];
         }
-    }];
+    }
+}
+
+- (void) paymentQueue:(SKPaymentQueue *)queue restoreCompletedTransactionsFailedWithError:(NSError *)error {
+    if (self.delegate) {
+        if ([self.delegate respondsToSelector:@selector(thinkGamingStore:didFinishRestoringProducts:)]) {
+            [self.delegate thinkGamingStore:self didFinishRestoringProducts:NO];
+        }
+    }
 }
 
 
