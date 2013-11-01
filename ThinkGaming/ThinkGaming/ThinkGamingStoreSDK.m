@@ -74,7 +74,7 @@
             self.currentProductEvent = nil;
             break;
         case SKPaymentTransactionStatePurchased:
-            [self.currentProductEvent endViewProductWithPurchaseWithParameters:@{@"product_id":self.currentProduct.productIdentifier, @"price_id":self.currentProduct.priceId, @"message_id":self.currentProduct.messageId, @"price":self.currentProduct.price}];
+            [self.currentProductEvent endViewProductWithPurchaseWithParameters:@{@"product_id":self.currentProduct.productIdentifier, @"price_id":self.currentProduct.priceId, @"message_id":self.currentProduct.messageId, @"price":self.currentProduct.thinkGamingPrice}];
             self.currentProductEvent = nil;
             break;
         default:
@@ -346,6 +346,7 @@
         self.displayName = response[@"display_name"];
         self.displayDescription = response[@"display_description"];
         self.iTunesProductIdentifier = response[@"itunes_id"];
+        self.thinkGamingPrice = [NSDecimalNumber decimalNumberWithString:response[@"price"]];
         self.offerText = response[@"offer_text"];
         self.priceId = [NSNumber numberWithInt:[response[@"price_id"] integerValue]];
         self.messageId = [NSNumber numberWithInt:[response[@"message_id"] integerValue]];
