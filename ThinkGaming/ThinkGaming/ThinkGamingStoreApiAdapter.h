@@ -17,4 +17,8 @@
                 success:(void(^)(NSDictionary *))success
                   error:(void(^)(NSError*))error;
 
++ (void) getProductForPriceVariationId:(NSString *)productId
+                               success:(void(^)(NSDictionary *))success
+                                 error:(void(^)(NSError*))error;
+
 @end

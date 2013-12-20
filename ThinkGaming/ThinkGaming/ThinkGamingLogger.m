@@ -13,6 +13,8 @@
 #import "EventQueue.h"
 #import "ThinkGamingLoggingApiAdapter.h"
 #import "VerificationController.h"
+#import "ThinkGamingStoreSDK.h"
+#import "ThinkGamingStoreKitLogger.h"
 
 
 #define QUEUE_FLUSH_TIME 30 // In seconds
@@ -30,6 +32,8 @@
 @property (nonatomic, retain) NSTimer *dispatchTimer;
 @property (nonatomic, retain) NSString *apiKey;
 @property (nonatomic, retain) NSString *mediaSourceID;
+@property (nonatomic, retain) ThinkGamingStoreSDK *storeSDK;
+@property (strong) ThinkGamingStoreKitLogger *storeKitLogger;
 @end
 
 @implementation ThinkGamingLogger
@@ -47,6 +51,7 @@ static ThinkGamingLogger* sharedSingleton;
 		if (!sharedSingleton)
         {
 			sharedSingleton = [[ThinkGamingLogger alloc] init];
+            sharedSingleton.storeSDK = [[ThinkGamingStoreSDK alloc] init];
         }
 	}
 	return sharedSingleton;
@@ -72,6 +77,8 @@ static ThinkGamingLogger* sharedSingleton;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidEnterBackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillEnterForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
+    
+    self.storeKitLogger = [[ThinkGamingStoreKitLogger alloc] init];
         
     return self;
 }
@@ -182,7 +189,6 @@ static ThinkGamingLogger* sharedSingleton;
         [ThinkGamingLoggingApiAdapter dispatchEvents:[NSDictionary dictionaryWithObject:events forKey:@"__TG__payload"] success:^(NSData *result) {
             
         } error:^(NSError *err) {
-            
         }];
     }
 }
@@ -260,6 +266,16 @@ static ThinkGamingLogger* sharedSingleton;
     [TG_VerificationController sharedInstance].serverUrl = TG_ITMS_PROD_VERIFY_RECEIPT_URL;
 }
 
++ (void) setReceiptValidationModeEnabled {
+    [TG_VerificationController sharedInstance].enabled = YES;
+}
+
++ (void) setReceiptValidationModeDisabled {
+    [TG_VerificationController sharedInstance].enabled = NO;
+}
+
+
+
 + (ThinkGamingLogger *)startSession:(NSString *)key {
     return [ThinkGamingLogger startSession:key andMediaSourceId:nil];
 }
@@ -313,6 +329,10 @@ static ThinkGamingLogger* sharedSingleton;
                                     andMessageId:(NSNumber *)messageId
                                      andResult:(NSString*) result {
     return [ThinkGamingLogger startTimedEvent:kThinkGamingTappedItemLogId withParameters:@{@"itunes_id":productIdentifier, @"price_id":priceId, @"message_id":messageId, @"result":result}];
+}
+
++ (void) logProductPurchased:(NSString *)productIdentifier withPrice:(NSDecimalNumber *)price andPriceLocale:(NSString *) priceLocale andTitle:(NSString *)title {
+    [ThinkGamingLogger logEvent:@"completed_purchase" withParameters:@{@"product_id" : productIdentifier, @"price" : price, @"price_locale" : priceLocale, @"title" : title}];
 }
 
 

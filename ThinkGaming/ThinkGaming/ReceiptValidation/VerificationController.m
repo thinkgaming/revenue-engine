@@ -12,6 +12,7 @@ static TG_VerificationController *singleton;
 	if (singleton == nil)
     {
 		singleton = [[TG_VerificationController alloc] init];
+        singleton.enabled = NO;
 	}
 	return singleton;
 }
@@ -72,7 +73,9 @@ static TG_VerificationController *singleton;
 // This method should be called once a transaction gets to the SKPaymentTransactionStatePurchased or SKPaymentTransactionStateRestored state
 // Call it with the SKPaymentTransaction.transactionReceipt
 - (void)verifyPurchase:(SKPaymentTransaction *)transaction completionHandler:(TG_VerifyCompletionHandler)completionHandler
-{    
+{
+    if (! self.enabled) {completionHandler(YES); return;}
+    
     BOOL isOk = [self isTransactionAndItsReceiptValid:transaction];
     if (!isOk)
     {

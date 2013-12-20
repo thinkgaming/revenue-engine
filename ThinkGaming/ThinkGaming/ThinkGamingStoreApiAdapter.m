@@ -10,8 +10,11 @@
 #import "ThinkGamingLogger.h"
 
 static NSString * const kThinkGamingAPIBaseURLString = @"https://api.thinkgaming.com/api/v2";
+//#warning change this
+//static NSString * const kThinkGamingAPIBaseURLString = @"http://192.168.1.112:8080/api/v2";
 static NSString * const kThinkGamingAPIStorePath = @"/stores";
 static NSString * const kThinkGamingAPIItemsPath = @"/stores/";
+static NSString * const kThinkGamingAPIProductPath = @"/products/";
 
 @interface ThinkGamingStoreApiAdapter()
 
@@ -97,6 +100,17 @@ static NSString * const kThinkGamingAPIItemsPath = @"/stores/";
     [self getPayloadForUrl:[NSURL URLWithString:urlString]];
 }
 
+- (void) getProductForPriceVariationId:(NSString *)productId
+                     success:(void(^)(NSDictionary *))success
+                       error:(void(^)(NSError*))error {
+    self.success = success;
+    self.error = error;
+    
+    NSString *urlString = [NSString stringWithFormat:@"%@%@%@", kThinkGamingAPIBaseURLString, kThinkGamingAPIProductPath, productId];
+    [self getPayloadForUrl:[NSURL URLWithString:urlString]];
+}
+
+
 #pragma mark - NSURLConnection Delegate methods
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     [self.response appendData:data];
@@ -110,8 +124,8 @@ static NSString * const kThinkGamingAPIItemsPath = @"/stores/";
     self.connection = nil;
     self.isFinished = YES;
     
-    //NSString *stringResponse = [[NSString alloc] initWithData:self.response encoding:NSUTF8StringEncoding];
-    //NSLog(@"connectionDidFinishLoading : %@", stringResponse);
+    NSString *stringResponse = [[NSString alloc] initWithData:self.response encoding:NSUTF8StringEncoding];
+    NSLog(@"connectionDidFinishLoading : %@", stringResponse);
     
     
     if (self.success != nil) {
@@ -147,6 +161,13 @@ static NSString * const kThinkGamingAPIItemsPath = @"/stores/";
                        error:(void(^)(NSError*))error {
     ThinkGamingStoreApiAdapter *adapter = [[ThinkGamingStoreApiAdapter alloc] init];
     [adapter getProductsForStore:storeIdentifier success:success error:error];
+}
+
++ (void) getProductForPriceVariationId:(NSString *)productId
+                               success:(void(^)(NSDictionary *))success
+                                 error:(void(^)(NSError*))error {
+    ThinkGamingStoreApiAdapter *adapter = [[ThinkGamingStoreApiAdapter alloc] init];
+    [adapter getProductForPriceVariationId:productId success:success error:error];
 }
 
 @end

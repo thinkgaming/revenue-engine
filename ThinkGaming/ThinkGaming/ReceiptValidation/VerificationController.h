@@ -18,6 +18,7 @@ typedef void (^TG_VerifyCompletionHandler)(BOOL success);
 @interface TG_VerificationController : NSObject {
     NSMutableDictionary *transactionsReceiptStorageDictionary;
 }
+@property BOOL enabled;
 
 @property (strong) NSString *serverUrl;
 + (TG_VerificationController *) sharedInstance;

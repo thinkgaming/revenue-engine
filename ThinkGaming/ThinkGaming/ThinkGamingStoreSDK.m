@@ -106,6 +106,7 @@
             self.didDownloadStoresBlock(NO, nil);
         }
     } error:^(NSError *err) {
+        [ThinkGamingLogger logEvent:@"____UnableToGetStores"];
         NSArray *stores = [ThinkGamingCache getStoreList];
         if (stores) {
             __block NSMutableArray *thinkGamingStores = [NSMutableArray array];
@@ -133,6 +134,7 @@
             self.didDownloadProductsBlock(NO, nil);
         }
     } error:^(NSError *err) {
+        [ThinkGamingLogger logEvent:@"____UnableToFindProducts" withParameters:@{@"storeIdentfier":storeIdentifier}];
         NSArray *stores = [ThinkGamingCache getProductsForStore:storeIdentifier];
         if (stores) {
             [self didGetListOfProducts:stores];
@@ -220,9 +222,15 @@
 //        self.didPurchaseProductBlock(YES, transaction);
 //    }
     
-    if (self.delegate && [self.delegate respondsToSelector:@selector(thinkGamingStore:didRestoreProduct:withTransaction:)]) {
-        [self.delegate thinkGamingStore:self didRestoreProduct:productIdentifier withTransaction:transaction];
-    }
+    [ThinkGamingStoreApiAdapter getProductForPriceVariationId:productIdentifier success:^(NSDictionary *results) {
+        if (self.delegate && [self.delegate respondsToSelector:@selector(thinkGamingStore:didRestoreProduct:withTransaction:)]) {
+            [self.delegate thinkGamingStore:self didRestoreProduct:productIdentifier withTransaction:transaction];
+            [self.delegate thinkGamingStore:self didRestoreProduct:productIdentifier withITunesReference:[results valueForKey:@"itunes_reference"] andTransaction:transaction];
+        }
+    } error:^(NSError *err) {
+        
+    }];
+    
 }
 
 
