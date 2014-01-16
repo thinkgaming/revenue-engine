@@ -43,6 +43,8 @@
         }
         
         [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
+        
+        [ThinkGamingLogger setImplicitStoreLoggingDisabled];
     }
     return self;
 }
@@ -225,6 +227,8 @@
     [ThinkGamingStoreApiAdapter getProductForPriceVariationId:productIdentifier success:^(NSDictionary *results) {
         if (self.delegate && [self.delegate respondsToSelector:@selector(thinkGamingStore:didRestoreProduct:withTransaction:)]) {
             [self.delegate thinkGamingStore:self didRestoreProduct:productIdentifier withTransaction:transaction];
+        }
+        if (self.delegate && [self.delegate respondsToSelector:@selector(thinkGamingStore:didRestoreProduct:withITunesReference:andTransaction:)]) {
             [self.delegate thinkGamingStore:self didRestoreProduct:productIdentifier withITunesReference:[results valueForKey:@"itunes_reference"] andTransaction:transaction];
         }
     } error:^(NSError *err) {

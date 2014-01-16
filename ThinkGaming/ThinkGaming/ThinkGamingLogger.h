@@ -75,6 +75,11 @@ Store and product logging methods
 + (void) setReceiptValidationModeEnabled;
 + (void) setReceiptValidationModeDisabled;
 
+/* DEFAULT IS ENABLED */
++ (void) setImplicitStoreLoggingEnabled;
++ (void) setImplicitStoreLoggingDisabled;
+
+
 
 @end
 

@@ -11,7 +11,7 @@
 
 static NSString * const kThinkGamingAPIBaseURLString = @"https://api.thinkgaming.com/api/v2/";
 //#warning Change this
-//static NSString * const kThinkGamingAPIBaseURLString = @"http://192.168.1.112:8080/api/v2/";
+//static NSString * const kThinkGamingAPIBaseURLString = @"http://10.10.0.2:8080/api/v2/";
 static NSString * const kLoggingPath = @"log_activity";
 
 @interface ThinkGamingLoggingApiAdapter()
@@ -35,7 +35,7 @@ static NSString * const kLoggingPath = @"log_activity";
     self.response = [NSMutableData data];
     NSURL *url = [NSURL URLWithString:@"https://api.thinkgaming.com/api/v2/log_activity"];
 //#warning Change this
-//    NSURL *url = [NSURL URLWithString:@"http://192.168.1.112:8080/api/v2/log_activity"];
+//    NSURL *url = [NSURL URLWithString:@"http://10.10.0.2:8080/api/v2/log_activity"];
     return [NSMutableURLRequest requestWithURL:url];
 }
 

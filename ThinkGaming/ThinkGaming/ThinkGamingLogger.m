@@ -32,7 +32,6 @@
 @property (nonatomic, retain) NSTimer *dispatchTimer;
 @property (nonatomic, retain) NSString *apiKey;
 @property (nonatomic, retain) NSString *mediaSourceID;
-@property (nonatomic, retain) ThinkGamingStoreSDK *storeSDK;
 @property (strong) ThinkGamingStoreKitLogger *storeKitLogger;
 @end
 
@@ -51,7 +50,6 @@ static ThinkGamingLogger* sharedSingleton;
 		if (!sharedSingleton)
         {
 			sharedSingleton = [[ThinkGamingLogger alloc] init];
-            sharedSingleton.storeSDK = [[ThinkGamingStoreSDK alloc] init];
         }
 	}
 	return sharedSingleton;
@@ -64,6 +62,18 @@ static ThinkGamingLogger* sharedSingleton;
 		sharedSingleton = [super alloc];
 	}
 	return sharedSingleton;
+}
+
++ (void) setImplicitStoreLoggingEnabled {
+    if (sharedSingleton.storeKitLogger == nil) {
+        sharedSingleton.storeKitLogger = [[ThinkGamingStoreKitLogger alloc] init];
+    }
+}
+
++ (void) setImplicitStoreLoggingDisabled {
+    if (sharedSingleton.storeKitLogger) {
+        sharedSingleton.storeKitLogger = nil;
+    }
 }
 
 - (id)init {

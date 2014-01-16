@@ -58,6 +58,11 @@ Store and product logging methods
                                   andMessageId:(NSNumber *)messageId
                                      andResult:(NSString*) result;
 
+/* 
+ ThinkGamingStoreKitLogger
+*/
+
++ (void) logProductPurchased:(NSString *)productIdentifier withPrice:(NSDecimalNumber *)price andPriceLocale:(NSString *) priceLocale andTitle:(NSString *)title;
 
 
 
@@ -65,6 +70,16 @@ Store and product logging methods
     THE DEFAULT IS PRODUCTION. */
 + (void) setReceiptValidationModeToSandbox;
 + (void) setReceiptValidationModeToProduction;
+
+/* DEFAULT IS DISABLED */
++ (void) setReceiptValidationModeEnabled;
++ (void) setReceiptValidationModeDisabled;
+
+/* DEFAULT IS ENABLED */
++ (void) setImplicitStoreLoggingEnabled;
++ (void) setImplicitStoreLoggingDisabled;
+
+
 
 @end
 
