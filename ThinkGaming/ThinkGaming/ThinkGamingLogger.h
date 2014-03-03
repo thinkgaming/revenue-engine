@@ -66,15 +66,6 @@ Store and product logging methods
 
 
 
-/* Receipt Validation Server Selectors. 
-    THE DEFAULT IS PRODUCTION. */
-+ (void) setReceiptValidationModeToSandbox;
-+ (void) setReceiptValidationModeToProduction;
-
-/* DEFAULT IS DISABLED */
-+ (void) setReceiptValidationModeEnabled;
-+ (void) setReceiptValidationModeDisabled;
-
 /* DEFAULT IS ENABLED */
 + (void) setImplicitStoreLoggingEnabled;
 + (void) setImplicitStoreLoggingDisabled;

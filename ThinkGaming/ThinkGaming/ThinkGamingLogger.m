@@ -6,13 +6,12 @@
 //
 
 #import "ThinkGamingLogger.h"
-#import "Reachability.h"
+#import "TG_Reachability.h"
 #import <AdSupport/ASIdentifierManager.h>
 #import <ifaddrs.h>
 #import <arpa/inet.h>
 #import "EventQueue.h"
 #import "ThinkGamingLoggingApiAdapter.h"
-#import "VerificationController.h"
 #import "ThinkGamingStoreSDK.h"
 #import "ThinkGamingStoreKitLogger.h"
 
@@ -267,23 +266,6 @@ static ThinkGamingLogger* sharedSingleton;
     
     return sharedSingleton;
 }
-
-+ (void) setReceiptValidationModeToSandbox {
-    [TG_VerificationController sharedInstance].serverUrl = TG_ITMS_SANDBOX_VERIFY_RECEIPT_URL;
-}
-
-+ (void) setReceiptValidationModeToProduction {
-    [TG_VerificationController sharedInstance].serverUrl = TG_ITMS_PROD_VERIFY_RECEIPT_URL;
-}
-
-+ (void) setReceiptValidationModeEnabled {
-    [TG_VerificationController sharedInstance].enabled = YES;
-}
-
-+ (void) setReceiptValidationModeDisabled {
-    [TG_VerificationController sharedInstance].enabled = NO;
-}
-
 
 
 + (ThinkGamingLogger *)startSession:(NSString *)key {

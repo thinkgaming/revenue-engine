@@ -30,11 +30,9 @@
 		867BCCC31795D3980085549C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 867BCCC21795D3980085549C /* StoreKit.framework */; };
 		867BCCC61796C74A0085549C /* ThinkGamingStoreApiAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 867BCCC51796C74A0085549C /* ThinkGamingStoreApiAdapter.m */; };
 		867D1F8317A9E74B0055E024 /* ThinkGamingCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 867D1F8217A9E74B0055E024 /* ThinkGamingCache.m */; };
+		868149AD18C4ECE00085AF6D /* TG_Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 868149AC18C4ECE00085AF6D /* TG_Reachability.m */; };
 		86B184B1175E6C1A00D41466 /* EventQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B184B0175E6C1A00D41466 /* EventQueue.m */; };
 		86B184B5175E6F2400D41466 /* ThinkGamingLoggingApiAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B184B4175E6F2400D41466 /* ThinkGamingLoggingApiAdapter.m */; };
-		86B184B9175E7C9600D41466 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 52205462173D656300A9D253 /* Reachability.m */; };
-		86EC41DB17CF7DB40007FCE9 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EC41D717CF7DB40007FCE9 /* NSData+Base64.m */; };
-		86EC41DC17CF7DB40007FCE9 /* VerificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EC41D817CF7DB40007FCE9 /* VerificationController.m */; };
 		86EC41E317CFD5CE0007FCE9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86EC41E217CFD5CE0007FCE9 /* Security.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,8 +57,6 @@
 		52205438173D49A800A9D253 /* ThinkGaming-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ThinkGaming-Prefix.pch"; sourceTree = "<group>"; };
 		52205439173D49A800A9D253 /* ThinkGamingLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThinkGamingLogger.h; sourceTree = "<group>"; };
 		5220543B173D49A800A9D253 /* ThinkGamingLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThinkGamingLogger.m; sourceTree = "<group>"; };
-		52205461173D656300A9D253 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		52205462173D656300A9D253 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		867BCCBF1795D3260085549C /* ThinkGamingStoreSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThinkGamingStoreSDK.h; sourceTree = "<group>"; };
 		867BCCC01795D3260085549C /* ThinkGamingStoreSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThinkGamingStoreSDK.m; sourceTree = "<group>"; };
 		867BCCC21795D3980085549C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -68,14 +64,12 @@
 		867BCCC51796C74A0085549C /* ThinkGamingStoreApiAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThinkGamingStoreApiAdapter.m; sourceTree = "<group>"; };
 		867D1F8117A9E74B0055E024 /* ThinkGamingCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThinkGamingCache.h; sourceTree = "<group>"; };
 		867D1F8217A9E74B0055E024 /* ThinkGamingCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThinkGamingCache.m; sourceTree = "<group>"; };
+		868149AB18C4ECE00085AF6D /* TG_Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TG_Reachability.h; path = TG_Reachabilty/TG_Reachability.h; sourceTree = "<group>"; };
+		868149AC18C4ECE00085AF6D /* TG_Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TG_Reachability.m; path = TG_Reachabilty/TG_Reachability.m; sourceTree = "<group>"; };
 		86B184AF175E6C1A00D41466 /* EventQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventQueue.h; sourceTree = "<group>"; };
 		86B184B0175E6C1A00D41466 /* EventQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventQueue.m; sourceTree = "<group>"; };
 		86B184B3175E6F2400D41466 /* ThinkGamingLoggingApiAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThinkGamingLoggingApiAdapter.h; sourceTree = "<group>"; };
 		86B184B4175E6F2400D41466 /* ThinkGamingLoggingApiAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThinkGamingLoggingApiAdapter.m; sourceTree = "<group>"; };
-		86EC41D717CF7DB40007FCE9 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+Base64.m"; path = "ReceiptValidation/NSData+Base64.m"; sourceTree = "<group>"; };
-		86EC41D817CF7DB40007FCE9 /* VerificationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VerificationController.m; path = ReceiptValidation/VerificationController.m; sourceTree = "<group>"; };
-		86EC41D917CF7DB40007FCE9 /* VerificationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VerificationController.h; path = ReceiptValidation/VerificationController.h; sourceTree = "<group>"; };
-		86EC41DA17CF7DB40007FCE9 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Base64.h"; path = "ReceiptValidation/NSData+Base64.h"; sourceTree = "<group>"; };
 		86EC41E217CFD5CE0007FCE9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -98,7 +92,6 @@
 		52205428173D49A700A9D253 = {
 			isa = PBXGroup;
 			children = (
-				52205460173D656300A9D253 /* Reachabilty */,
 				52205436173D49A800A9D253 /* ThinkGaming */,
 				52205433173D49A800A9D253 /* Frameworks */,
 				52205432173D49A800A9D253 /* Products */,
@@ -128,7 +121,7 @@
 		52205436173D49A800A9D253 /* ThinkGaming */ = {
 			isa = PBXGroup;
 			children = (
-				86EC41D617CF7C0B0007FCE9 /* ReceiptValidation */,
+				868149AA18C4ECC60085AF6D /* TG_Reachability */,
 				86B184AF175E6C1A00D41466 /* EventQueue.h */,
 				86B184B0175E6C1A00D41466 /* EventQueue.m */,
 				52205439173D49A800A9D253 /* ThinkGamingLogger.h */,
@@ -154,25 +147,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		52205460173D656300A9D253 /* Reachabilty */ = {
+		868149AA18C4ECC60085AF6D /* TG_Reachability */ = {
 			isa = PBXGroup;
 			children = (
-				52205461173D656300A9D253 /* Reachability.h */,
-				52205462173D656300A9D253 /* Reachability.m */,
+				868149AB18C4ECE00085AF6D /* TG_Reachability.h */,
+				868149AC18C4ECE00085AF6D /* TG_Reachability.m */,
 			);
-			name = Reachabilty;
-			path = ../Reachabilty;
-			sourceTree = "<group>";
-		};
-		86EC41D617CF7C0B0007FCE9 /* ReceiptValidation */ = {
-			isa = PBXGroup;
-			children = (
-				86EC41D717CF7DB40007FCE9 /* NSData+Base64.m */,
-				86EC41D817CF7DB40007FCE9 /* VerificationController.m */,
-				86EC41D917CF7DB40007FCE9 /* VerificationController.h */,
-				86EC41DA17CF7DB40007FCE9 /* NSData+Base64.h */,
-			);
-			name = ReceiptValidation;
+			name = TG_Reachability;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,12 +227,10 @@
 				5220543C173D49A800A9D253 /* ThinkGamingLogger.m in Sources */,
 				86B184B1175E6C1A00D41466 /* EventQueue.m in Sources */,
 				86B184B5175E6F2400D41466 /* ThinkGamingLoggingApiAdapter.m in Sources */,
-				86B184B9175E7C9600D41466 /* Reachability.m in Sources */,
 				867BCCC11795D3260085549C /* ThinkGamingStoreSDK.m in Sources */,
 				867BCCC61796C74A0085549C /* ThinkGamingStoreApiAdapter.m in Sources */,
 				867D1F8317A9E74B0055E024 /* ThinkGamingCache.m in Sources */,
-				86EC41DB17CF7DB40007FCE9 /* NSData+Base64.m in Sources */,
-				86EC41DC17CF7DB40007FCE9 /* VerificationController.m in Sources */,
+				868149AD18C4ECE00085AF6D /* TG_Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,7 +11,6 @@
 #import "ThinkGamingStoreApiAdapter.h"
 #import "ThinkGamingLogger.h"
 #import "ThinkGamingCache.h"
-#import "VerificationController.h"
 
 #define kThinkGamingPersistedPurchasedProducts @"kThinkGamingPersistedPurchasedProducts"
 
@@ -225,9 +224,6 @@
 //    }
     
     [ThinkGamingStoreApiAdapter getProductForPriceVariationId:productIdentifier success:^(NSDictionary *results) {
-        if (self.delegate && [self.delegate respondsToSelector:@selector(thinkGamingStore:didRestoreProduct:withTransaction:)]) {
-            [self.delegate thinkGamingStore:self didRestoreProduct:productIdentifier withTransaction:transaction];
-        }
         if (self.delegate && [self.delegate respondsToSelector:@selector(thinkGamingStore:didRestoreProduct:withITunesReference:andTransaction:)]) {
             [self.delegate thinkGamingStore:self didRestoreProduct:productIdentifier withITunesReference:[results valueForKey:@"itunes_reference"] andTransaction:transaction];
         }
@@ -279,16 +275,9 @@
 }
 
 - (void) completeTransaction:(SKPaymentTransaction *)transaction {
-    TG_VerificationController *verifier = [TG_VerificationController sharedInstance];
-    [verifier verifyPurchase:transaction completionHandler:^(BOOL success) {
         [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
 
-        if (success) {
-            [self didCompletePurchaseOfProduct:transaction.payment.productIdentifier withTransaction:transaction];
-        } else {
-            [self didErrorWhilePurchasingProduct:transaction.payment.productIdentifier withTransaction:transaction];
-        }
-    }];
+    [self didCompletePurchaseOfProduct:transaction.payment.productIdentifier withTransaction:transaction];
 }
 
 - (void) failedTransaction:(SKPaymentTransaction *)transaction {
