@@ -139,12 +139,12 @@ extern NSString *const TG_kReachabilityChangedNotification;
 @interface TG_Reachability: NSObject {
 	
 @private
-	NSString                *key_;
-	SCNetworkReachabilityRef reachabilityRef;
+	NSString                *TG_key_;
+	SCNetworkReachabilityRef TG_reachabilityRef;
 
 }
 
-@property (copy) NSString *key; // Atomic because network operations are asynchronous.
+@property (copy) NSString *TG_key; // Atomic because network operations are asynchronous.
 
 // Designated Initializer.
 - (TG_Reachability *) initWithReachabilityRef: (SCNetworkReachabilityRef) ref;
