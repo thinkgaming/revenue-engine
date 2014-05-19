@@ -115,14 +115,8 @@ static ThinkGamingLogger* sharedSingleton;
 - (void) applicationDidEnterBackground:(NSNotification *)notification {
     [self destroyTimer];
     
-    UIApplication *application = [UIApplication sharedApplication];
-    __block UIBackgroundTaskIdentifier background_task;
-    
-    void (^completeBlock)(void) = ^{
-        [application endBackgroundTask: background_task];
-        background_task = UIBackgroundTaskInvalid;
-    };
-    
+    [self logEvent:@"__TG__DID_ENTER_BACKGROUND" withParameters:nil timed:NO stopTimer:NO];
+
     
     NSArray *events = [self.eventQueue drainEvents];
     if (events && [events count]) {
@@ -135,6 +129,9 @@ static ThinkGamingLogger* sharedSingleton;
     if (persitedEvents && [persitedEvents count]) {
         [self.eventQueue addEvents:persitedEvents];
     }
+    
+    [self logEvent:@"__TG__DID_ENTER_FOREGROUND" withParameters:nil timed:NO stopTimer:NO];
+    
     [self initTimer];
 }
 
