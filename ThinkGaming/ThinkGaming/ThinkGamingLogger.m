@@ -193,11 +193,13 @@ static ThinkGamingLogger* sharedSingleton;
 - (void) dispatchEvents {
     if (![self isConnected]) return;
     
-    NSMutableArray *events = [self.eventQueue drainEvents];
+    __block NSMutableArray *events = [self.eventQueue drainEvents];
     if (events && events.count > 0) {
         [ThinkGamingLoggingApiAdapter dispatchEvents:[NSDictionary dictionaryWithObject:events forKey:@"__TG__payload"] success:^(NSData *result) {
             
         } error:^(NSError *err) {
+            [self.eventQueue addEvents:events];
+            [self logEvent:@"__TG__DISPATCH_ERROR_RESULT_ADD_OLD_EVENTS" withParameters:@{@"count" : [NSNumber numberWithInteger:events.count]} timed:NO stopTimer:NO];
         }];
     }
 }
