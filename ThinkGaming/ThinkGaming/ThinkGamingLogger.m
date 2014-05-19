@@ -124,14 +124,17 @@ static ThinkGamingLogger* sharedSingleton;
     };
     
     
-    background_task = [application beginBackgroundTaskWithExpirationHandler:completeBlock];
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [self dispatchEvents];
-        completeBlock();
-    });
+    NSArray *events = [self.eventQueue drainEvents];
+    if (events && [events count]) {
+        [[NSUserDefaults standardUserDefaults] setObject:events forKey:@"__TG__PersistedEvents"];
+    }
 }
 
 - (void) applicationWillEnterForeground:(NSNotification *)notification {
+    NSArray *persitedEvents = [[NSUserDefaults standardUserDefaults] objectForKey:@"__TG__PersistedEvents"];
+    if (persitedEvents && [persitedEvents count]) {
+        [self.eventQueue addEvents:persitedEvents];
+    }
     [self initTimer];
 }
 
