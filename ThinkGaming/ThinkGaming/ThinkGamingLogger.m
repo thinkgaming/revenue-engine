@@ -172,6 +172,8 @@ static ThinkGamingLogger* sharedSingleton;
         [dict setValue:self.mediaSourceID forKey:@"__TG__mediaSourceID"];
     }
     
+    [dict addEntriesFromDictionary:[self advertisingIdentifiers]];
+    
     // Might want to do some size checking for user data or check validity (non-binary items)?
     if (parameters) [dict setValue:parameters forKey:@"__TG__userData"];
     
@@ -254,7 +256,7 @@ static ThinkGamingLogger* sharedSingleton;
         [[NSUserDefaults standardUserDefaults] synchronize];
         
         // Now that we have some info, lets use a log call to send it!
-        NSDictionary *firstRunDict = [NSMutableDictionary dictionaryWithCapacity:4];
+        NSMutableDictionary *firstRunDict = [NSMutableDictionary dictionaryWithCapacity:4];
         [firstRunDict setValue:curTimestamp forKey:@"__TG__firstLaunchDate"];
         [firstRunDict setValue:identifierForVendor forKey:@"__TG__identifierForVendor"];
         [firstRunDict setValue:advertisingIdentifier forKey:@"__TG__advertisingIdentifier"];
@@ -267,6 +269,21 @@ static ThinkGamingLogger* sharedSingleton;
     }
     
     return sharedSingleton;
+}
+
+- (NSDictionary *) advertisingIdentifiers {
+    NSString *advertisingIdentifier = @"";
+    NSString *identifierForVendor = @"";
+
+    if ([[UIDevice currentDevice] respondsToSelector:@selector(identifierForVendor)])
+        identifierForVendor = [[UIDevice currentDevice] identifierForVendor].UUIDString;
+    if (NSClassFromString(@"ASIdentifierManager")) {
+        advertisingIdentifier = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+    }
+    return @{
+             @"__TG__identifierForVendor" : identifierForVendor,
+             @"__TG__advertisingIdentifier" : advertisingIdentifier
+             };
 }
 
 
