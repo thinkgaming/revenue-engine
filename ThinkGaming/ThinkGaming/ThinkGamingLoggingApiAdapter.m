@@ -90,7 +90,10 @@ static NSString * const kLoggingPath = @"log_activity";
     //NSLog(@"Connection Encountered an Error");
     self.connection = nil;
     
-    self.error(error);
+    if (self.error) {
+        self.error(error);
+    }
+    
 }
 
 
