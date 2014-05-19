@@ -12,5 +12,6 @@
 
 - (void) addEvent:(NSDictionary *)event;
 - (NSMutableArray *) drainEvents;
+- (void) addEvents:(NSArray *)events;
 
 @end

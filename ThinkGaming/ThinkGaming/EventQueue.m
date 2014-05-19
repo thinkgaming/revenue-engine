@@ -30,10 +30,19 @@
 - (void) addEvent:(NSDictionary *)event {
     [self.events addObject:event];
     
+    [self purgeIfRequired];
+}
+
+- (void) addEvents:(NSArray *)events {
+    [self.events addObjectsFromArray:events];
+    
+    [self purgeIfRequired];
+}
+
+- (void) purgeIfRequired {
     if ([self queueSizeExceedsThreshold]) {
         [self purgeSomeOldItems];
     }
-
 }
 
 - (void) purgeSomeOldItems {
