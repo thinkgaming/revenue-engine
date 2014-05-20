@@ -27,16 +27,19 @@
 - (void) dispatchEvents;
 - (BOOL) isConnected;
 
-@property (nonatomic, retain) EventQueue *eventQueue;
-@property (nonatomic, retain) NSTimer *dispatchTimer;
-@property (nonatomic, retain) NSString *apiKey;
-@property (nonatomic, retain) NSString *mediaSourceID;
+@property (strong) EventQueue *eventQueue;
+@property (strong) NSTimer *dispatchTimer;
+@property (strong) NSString *apiKey;
+@property (nonatomic, strong) NSString *mediaSourceID;
+@property (nonatomic, strong) NSString *campaign;
 @property (strong) ThinkGamingStoreKitLogger *storeKitLogger;
 @end
 
 @implementation ThinkGamingLogger
 
+
 static ThinkGamingLogger* sharedSingleton;
+
 
 -(void) dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidEnterBackgroundNotification object:nil];
@@ -75,6 +78,16 @@ static ThinkGamingLogger* sharedSingleton;
     }
 }
 
+- (void) setMediaSourceID:(NSString *)mediaSourceID {
+    _mediaSourceID = mediaSourceID;
+    [[NSUserDefaults standardUserDefaults] setObject:mediaSourceID forKey:@"__TG__MediaSource"];
+}
+
+- (void) setCampaign:(NSString *)campaign {
+    _campaign = campaign;
+    [[NSUserDefaults standardUserDefaults] setObject:campaign forKey:@"__TG__Campaign"];
+}
+
 - (id)init {
     self = [super init];
     if (!self) {
@@ -87,6 +100,8 @@ static ThinkGamingLogger* sharedSingleton;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidEnterBackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillEnterForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
     
+    self.mediaSourceID = [[NSUserDefaults standardUserDefaults] objectForKey:@"__TG__MediaSource"];
+    self.campaign = [[NSUserDefaults standardUserDefaults] objectForKey:@"__TG__Campaign"];
     self.storeKitLogger = [[ThinkGamingStoreKitLogger alloc] init];
         
     return self;
@@ -170,6 +185,10 @@ static ThinkGamingLogger* sharedSingleton;
     
     if (self.mediaSourceID) {
         [dict setValue:self.mediaSourceID forKey:@"__TG__mediaSourceID"];
+    }
+    
+    if (self.campaign) {
+        [dict setValue:self.campaign forKey:@"__TG__campaign"];
     }
     
     
