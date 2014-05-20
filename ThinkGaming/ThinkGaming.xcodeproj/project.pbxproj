@@ -26,6 +26,7 @@
 		52205435173D49A800A9D253 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52205434173D49A800A9D253 /* Foundation.framework */; };
 		5220543A173D49A800A9D253 /* ThinkGamingLogger.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 52205439173D49A800A9D253 /* ThinkGamingLogger.h */; };
 		5220543C173D49A800A9D253 /* ThinkGamingLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5220543B173D49A800A9D253 /* ThinkGamingLogger.m */; };
+		86549537192AE6B000090381 /* ThinkGamingStoreKitLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 86549535192AE6B000090381 /* ThinkGamingStoreKitLogger.m */; };
 		867BCCC11795D3260085549C /* ThinkGamingStoreSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 867BCCC01795D3260085549C /* ThinkGamingStoreSDK.m */; };
 		867BCCC31795D3980085549C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 867BCCC21795D3980085549C /* StoreKit.framework */; };
 		867BCCC61796C74A0085549C /* ThinkGamingStoreApiAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 867BCCC51796C74A0085549C /* ThinkGamingStoreApiAdapter.m */; };
@@ -57,6 +58,8 @@
 		52205438173D49A800A9D253 /* ThinkGaming-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ThinkGaming-Prefix.pch"; sourceTree = "<group>"; };
 		52205439173D49A800A9D253 /* ThinkGamingLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThinkGamingLogger.h; sourceTree = "<group>"; };
 		5220543B173D49A800A9D253 /* ThinkGamingLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThinkGamingLogger.m; sourceTree = "<group>"; };
+		86549535192AE6B000090381 /* ThinkGamingStoreKitLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThinkGamingStoreKitLogger.m; sourceTree = "<group>"; };
+		86549536192AE6B000090381 /* ThinkGamingStoreKitLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThinkGamingStoreKitLogger.h; sourceTree = "<group>"; };
 		867BCCBF1795D3260085549C /* ThinkGamingStoreSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThinkGamingStoreSDK.h; sourceTree = "<group>"; };
 		867BCCC01795D3260085549C /* ThinkGamingStoreSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThinkGamingStoreSDK.m; sourceTree = "<group>"; };
 		867BCCC21795D3980085549C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -122,6 +125,8 @@
 			isa = PBXGroup;
 			children = (
 				868149AA18C4ECC60085AF6D /* TG_Reachability */,
+				86549535192AE6B000090381 /* ThinkGamingStoreKitLogger.m */,
+				86549536192AE6B000090381 /* ThinkGamingStoreKitLogger.h */,
 				86B184AF175E6C1A00D41466 /* EventQueue.h */,
 				86B184B0175E6C1A00D41466 /* EventQueue.m */,
 				52205439173D49A800A9D253 /* ThinkGamingLogger.h */,
@@ -132,9 +137,9 @@
 				86B184B4175E6F2400D41466 /* ThinkGamingLoggingApiAdapter.m */,
 				867BCCC41796C74A0085549C /* ThinkGamingStoreApiAdapter.h */,
 				867BCCC51796C74A0085549C /* ThinkGamingStoreApiAdapter.m */,
-				52205437173D49A800A9D253 /* Supporting Files */,
 				867D1F8117A9E74B0055E024 /* ThinkGamingCache.h */,
 				867D1F8217A9E74B0055E024 /* ThinkGamingCache.m */,
+				52205437173D49A800A9D253 /* Supporting Files */,
 			);
 			path = ThinkGaming;
 			sourceTree = "<group>";
@@ -215,7 +220,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "XCODEBUILD_PATH=/Applications/Xcode.app/Contents/Developer/usr/bin\nXCODEBUILD=$XCODEBUILD_PATH/xcodebuild\n\n#$XCODEBUILD -project ThinkGaming.xcodeproj -target \"ThinkGaming\" -sdk \"iphonesimulator\" -configuration \"Debug\" clean build\n#$XCODEBUILD -project ThinkGaming.xcodeproj -target \"ThinkGaming\" -sdk \"iphoneos\" -configuration \"Debug\" clean build\n\nXCODEBUILD -project ThinkGaming.xcodeproj -configuration \"Release\" -target \"ThinkGaming\" -sdk \"iphoneos\" ${ACTION} RUN_CLANG_STATIC_ANALYZER=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\nXCODEBUILD -project ThinkGaming.xcodeproj -configuration \"Release\" -target \"ThinkGaming\" -sdk \"iphonesimulator\" ${ACTION} RUN_CLANG_STATIC_ANALYZER=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n\nmkdir -p \"${SRCROOT}/libs\"\ncp \"${SRCROOT}/ThinkGaming/ThinkGamingLogger.h\" \"${SRCROOT}/libs/\"\ncp \"${SRCROOT}/ThinkGaming/ThinkGamingStoreSDK.h\" \"${SRCROOT}/libs/\"\n\nlipo -create -output \"${SRCROOT}/libs/libThinkGaming.a\" \"${BUILT_PRODUCTS_DIR}/../Release-iphoneos/libThinkGaming.a\" \"${BUILT_PRODUCTS_DIR}/../Release-iphonesimulator/libThinkGaming.a\"";
+			shellScript = "XCODEBUILD_PATH=/Applications/Xcode.app/Contents/Developer/usr/bin\nXCODEBUILD=$XCODEBUILD_PATH/xcodebuild\n\nxcodebuild -project 'ThinkGaming.xcodeproj' -configuration 'Release' -sdk 'iphoneos' clean build ARCHS='armv7 armv7s' IPHONEOS_DEPLOYMENT_TARGET='5.0' TARGET_BUILD_DIR='./build/build-arm' BUILT_PRODUCTS_DIR='./build-arm'\n\nxcodebuild -project 'ThinkGaming.xcodeproj' -configuration 'Release' -sdk 'iphoneos' clean build ARCHS='arm64' IPHONEOS_DEPLOYMENT_TARGET='7.0' TARGET_BUILD_DIR='./build/build-arm64' BUILT_PRODUCTS_DIR='./build-arm64'\n\nxcodebuild -project 'ThinkGaming.xcodeproj' -configuration 'Release' -sdk 'iphonesimulator' clean build ARCHS='i386' IPHONEOS_DEPLOYMENT_TARGET='5.0' TARGET_BUILD_DIR='./build/build-i386' BUILT_PRODUCTS_DIR='./build-i386'\n\nxcodebuild -project 'ThinkGaming.xcodeproj' -configuration 'Release' -sdk 'iphonesimulator' clean build ARCHS='x86_64' VALID_ARCHS='x86_64' IPHONEOS_DEPLOYMENT_TARGET='7.0' TARGET_BUILD_DIR='./build/build-x86_64' BUILT_PRODUCTS_DIR='./build/build-x86_64'\n\nmkdir -p \"${SRCROOT}/libs\"\ncp \"${SRCROOT}/ThinkGaming/ThinkGamingLogger.h\" \"${SRCROOT}/libs/\"\ncp \"${SRCROOT}/ThinkGaming/ThinkGamingStoreSDK.h\" \"${SRCROOT}/libs/\"\n\nlipo -create './build/build-arm/libThinkGaming.a' './build/build-arm64/libThinkGaming.a' './build/build-i386/libThinkGaming.a' './build/build-x86_64/libThinkGaming.a' -output  \"${SRCROOT}/libs/libThinkGaming.a\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -228,6 +233,7 @@
 				86B184B1175E6C1A00D41466 /* EventQueue.m in Sources */,
 				86B184B5175E6F2400D41466 /* ThinkGamingLoggingApiAdapter.m in Sources */,
 				867BCCC11795D3260085549C /* ThinkGamingStoreSDK.m in Sources */,
+				86549537192AE6B000090381 /* ThinkGamingStoreKitLogger.m in Sources */,
 				867BCCC61796C74A0085549C /* ThinkGamingStoreApiAdapter.m in Sources */,
 				867D1F8317A9E74B0055E024 /* ThinkGamingCache.m in Sources */,
 				868149AD18C4ECE00085AF6D /* TG_Reachability.m in Sources */,
@@ -315,14 +321,20 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Think Gaming LLC (A52MVTZYUR)";
 				DSTROOT = /tmp/ThinkGaming.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ThinkGaming",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ThinkGaming/ThinkGaming-Prefix.pch";
 				INSTALL_PATH = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "5ED29C66-2492-49DB-95DD-A983D95DAD5F";
 				SKIP_INSTALL = NO;
+				VALID_ARCHS = "$(ARCHS_STANDARD) ";
 			};
 			name = Debug;
 		};
@@ -331,14 +343,20 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Think Gaming LLC (A52MVTZYUR)";
 				DSTROOT = /tmp/ThinkGaming.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ThinkGaming",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ThinkGaming/ThinkGaming-Prefix.pch";
 				INSTALL_PATH = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "5ED29C66-2492-49DB-95DD-A983D95DAD5F";
 				SKIP_INSTALL = NO;
+				VALID_ARCHS = "$(ARCHS_STANDARD) ";
 			};
 			name = Release;
 		};
