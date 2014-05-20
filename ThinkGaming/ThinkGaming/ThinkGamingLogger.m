@@ -172,10 +172,15 @@ static ThinkGamingLogger* sharedSingleton;
         [dict setValue:self.mediaSourceID forKey:@"__TG__mediaSourceID"];
     }
     
-    [dict addEntriesFromDictionary:[self advertisingIdentifiers]];
     
     // Might want to do some size checking for user data or check validity (non-binary items)?
-    if (parameters) [dict setValue:parameters forKey:@"__TG__userData"];
+    NSMutableDictionary *paramsDict = [NSMutableDictionary dictionary];
+    if (parameters) {
+        [paramsDict addEntriesFromDictionary:parameters];
+    }
+    [paramsDict addEntriesFromDictionary:[self advertisingIdentifiers]];
+    
+    [dict setValue:paramsDict forKey:@"__TG__userData"];
     
     NSData * data = [NSPropertyListSerialization dataFromPropertyList:dict
                                                                format:NSPropertyListBinaryFormat_v1_0 errorDescription:NULL];
