@@ -250,7 +250,7 @@ static ThinkGamingLogger* sharedSingleton;
         NSString *advertisingIdentifier = @"";
         if ([[UIDevice currentDevice] respondsToSelector:@selector(identifierForVendor)])
             identifierForVendor = [[UIDevice currentDevice] identifierForVendor].UUIDString;
-        if (NSClassFromString(@"ASIdentifierManager")) {
+        if (NSClassFromString(@"ASIdentifierManager") && [ASIdentifierManager sharedManager].isAdvertisingTrackingEnabled) {
             advertisingIdentifier = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
         }
         
@@ -282,7 +282,7 @@ static ThinkGamingLogger* sharedSingleton;
 
     if ([[UIDevice currentDevice] respondsToSelector:@selector(identifierForVendor)])
         identifierForVendor = [[UIDevice currentDevice] identifierForVendor].UUIDString;
-    if (NSClassFromString(@"ASIdentifierManager")) {
+    if (NSClassFromString(@"ASIdentifierManager") && [ASIdentifierManager sharedManager].isAdvertisingTrackingEnabled) {
         advertisingIdentifier = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
     }
     return @{
