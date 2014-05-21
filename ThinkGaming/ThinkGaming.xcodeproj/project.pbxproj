@@ -22,7 +22,6 @@
 
 /* Begin PBXBuildFile section */
 		3738D3BA174A57A50088D46B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3738D3B9174A57A50088D46B /* UIKit.framework */; };
-		3738D3BC174A57BD0088D46B /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3738D3BB174A57BD0088D46B /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		52205435173D49A800A9D253 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52205434173D49A800A9D253 /* Foundation.framework */; };
 		5220543A173D49A800A9D253 /* ThinkGamingLogger.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 52205439173D49A800A9D253 /* ThinkGamingLogger.h */; };
 		5220543C173D49A800A9D253 /* ThinkGamingLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5220543B173D49A800A9D253 /* ThinkGamingLogger.m */; };
@@ -83,7 +82,6 @@
 			files = (
 				86EC41E317CFD5CE0007FCE9 /* Security.framework in Frameworks */,
 				867BCCC31795D3980085549C /* StoreKit.framework in Frameworks */,
-				3738D3BC174A57BD0088D46B /* AdSupport.framework in Frameworks */,
 				3738D3BA174A57A50088D46B /* UIKit.framework in Frameworks */,
 				52205435173D49A800A9D253 /* Foundation.framework in Frameworks */,
 			);

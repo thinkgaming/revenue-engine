@@ -29,6 +29,7 @@ Start session with given API key (get your API key from your dashboard)
 */
 + (ThinkGamingLogger *)startSession:(NSString *)apiKey;
 + (ThinkGamingLogger *)startSession:(NSString *)apiKey andMediaSourceId:(NSString *)mediaSourceId;
++ (ThinkGamingLogger *)startSession:(NSString *)apiKey andMediaSourceId:(NSString *)mediaSourceId andIdentifierForAdvertising:(NSString *)idfa;
 
 /*
  log events after session has started. If passing parameters, simply make a dictionary with the key-value pairs as you wish for them to appear in your event dashboard.

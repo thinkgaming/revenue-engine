@@ -7,7 +7,6 @@
 
 #import "ThinkGamingLogger.h"
 #import "TG_Reachability.h"
-#import <AdSupport/ASIdentifierManager.h>
 #import <ifaddrs.h>
 #import <arpa/inet.h>
 #import "EventQueue.h"
@@ -32,6 +31,7 @@
 @property (strong) NSString *apiKey;
 @property (nonatomic, strong) NSString *mediaSourceID;
 @property (nonatomic, strong) NSString *campaign;
+@property (nonatomic, strong) NSString *identifierForAdvertising;
 @property (strong) ThinkGamingStoreKitLogger *storeKitLogger;
 @end
 
@@ -82,6 +82,11 @@ static ThinkGamingLogger* sharedSingleton;
     [[NSUserDefaults standardUserDefaults] setObject:mediaSourceID forKey:@"__TG__MediaSource"];
 }
 
+- (void) setIdentifierForAdvertising:(NSString *)identifierForAdvertising {
+    _identifierForAdvertising = identifierForAdvertising;
+    [[NSUserDefaults standardUserDefaults] setObject:identifierForAdvertising forKey:@"__TG__identifierForAdvertising"];
+}
+
 - (void) setCampaign:(NSString *)campaign {
     _campaign = campaign;
     [[NSUserDefaults standardUserDefaults] setObject:campaign forKey:@"__TG__Campaign"];
@@ -105,6 +110,7 @@ static ThinkGamingLogger* sharedSingleton;
     
     self.mediaSourceID = [[NSUserDefaults standardUserDefaults] objectForKey:@"__TG__MediaSource"];
     self.campaign = [[NSUserDefaults standardUserDefaults] objectForKey:@"__TG__Campaign"];
+    self.identifierForAdvertising = [[NSUserDefaults standardUserDefaults] objectForKey:@"__TG__identifierForAdvertising"];
     self.storeKitLogger = [[ThinkGamingStoreKitLogger alloc] init];
     
     return self;
@@ -273,14 +279,18 @@ static ThinkGamingLogger* sharedSingleton;
     return sharedSingleton.apiKey;
 }
 
-
 + (ThinkGamingLogger *)startSession:(NSString *)apiKey andMediaSourceId:(NSString *)mediaSourceId {
+    return [ThinkGamingLogger startSession:apiKey andMediaSourceId:mediaSourceId andIdentifierForAdvertising:nil];
+}
+
++ (ThinkGamingLogger *)startSession:(NSString *)apiKey andMediaSourceId:(NSString *)mediaSourceId andIdentifierForAdvertising:(NSString *)idfa {
     //if (![sharedSingleton isConnected]) return;
     
     //NSLog(@"ThinkGaming - starting session.");
     [ThinkGamingLogger shared]; // Init if not already started
     sharedSingleton.apiKey = apiKey;
     sharedSingleton.mediaSourceID = mediaSourceId;
+    sharedSingleton.identifierForAdvertising = idfa;
     
     
     // Check to see if we have ever run with the lib
@@ -290,24 +300,30 @@ static ThinkGamingLogger* sharedSingleton;
         //NSLog(@"ThinkGaming - first time run");
         // First time we're run, so lets get some IDs and save 'em out
         NSString *identifierForVendor = @"";
-        NSString *advertisingIdentifier = @"";
+//        NSString *advertisingIdentifier = @"";
         if ([[UIDevice currentDevice] respondsToSelector:@selector(identifierForVendor)])
             identifierForVendor = [[UIDevice currentDevice] identifierForVendor].UUIDString;
-        if (NSClassFromString(@"ASIdentifierManager") && [ASIdentifierManager sharedManager].isAdvertisingTrackingEnabled) {
-            advertisingIdentifier = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
-        }
+//        if (NSClassFromString(@"ASIdentifierManager") && [ASIdentifierManager sharedManager].isAdvertisingTrackingEnabled) {
+//            advertisingIdentifier = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+//        }
         
         NSNumber *curTimestamp = [NSNumber numberWithDouble:[[NSDate date] timeIntervalSince1970]];
         [defaults setObject:curTimestamp forKey:@"__TG__firstLaunchDate"];
         [defaults setObject:identifierForVendor forKey:@"__TG__identifierForVendor"];
-        [defaults setObject:advertisingIdentifier forKey:@"__TG__advertisingIdentifier"];
+        if (sharedSingleton.identifierForAdvertising) {
+            [defaults setObject:sharedSingleton.identifierForAdvertising forKey:@"__TG__advertisingIdentifier"];
+        }
+        
         [[NSUserDefaults standardUserDefaults] synchronize];
         
         // Now that we have some info, lets use a log call to send it!
         NSMutableDictionary *firstRunDict = [NSMutableDictionary dictionaryWithCapacity:4];
         [firstRunDict setValue:curTimestamp forKey:@"__TG__firstLaunchDate"];
         [firstRunDict setValue:identifierForVendor forKey:@"__TG__identifierForVendor"];
-        [firstRunDict setValue:advertisingIdentifier forKey:@"__TG__advertisingIdentifier"];
+        if (sharedSingleton.identifierForAdvertising) {
+            [firstRunDict setValue:sharedSingleton.identifierForAdvertising forKey:@"__TG__advertisingIdentifier"];
+        }
+        
         
         [sharedSingleton logEvent:@"__TG__firstLaunch" withParameters:firstRunDict timed:NO stopTimer:NO];
     }
@@ -320,17 +336,17 @@ static ThinkGamingLogger* sharedSingleton;
 }
 
 - (NSDictionary *) advertisingIdentifiers {
-    NSString *advertisingIdentifier = @"";
+//    NSString *advertisingIdentifier = @"";
     NSString *identifierForVendor = @"";
 
     if ([[UIDevice currentDevice] respondsToSelector:@selector(identifierForVendor)])
         identifierForVendor = [[UIDevice currentDevice] identifierForVendor].UUIDString;
-    if (NSClassFromString(@"ASIdentifierManager") && [ASIdentifierManager sharedManager].isAdvertisingTrackingEnabled) {
-        advertisingIdentifier = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
-    }
+//    if (NSClassFromString(@"ASIdentifierManager") && [ASIdentifierManager sharedManager].isAdvertisingTrackingEnabled) {
+//        advertisingIdentifier = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+//    }
     return @{
              @"__TG__identifierForVendor" : identifierForVendor,
-             @"__TG__advertisingIdentifier" : advertisingIdentifier
+             @"__TG__advertisingIdentifier" : self.identifierForAdvertising
              };
 }
 
