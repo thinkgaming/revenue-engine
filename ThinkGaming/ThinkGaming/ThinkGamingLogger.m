@@ -42,8 +42,7 @@ static ThinkGamingLogger* sharedSingleton;
 
 
 -(void) dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidEnterBackgroundNotification object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationWillEnterForegroundNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 + (ThinkGamingLogger*)shared {
@@ -99,13 +98,33 @@ static ThinkGamingLogger* sharedSingleton;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidEnterBackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillEnterForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(referralReceived:) name:@"__TG__ReferralReceived" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(referralError:) name:@"__TG__ReferralError" object:nil];
+    
+    [self loadPersistedEvents];
     
     self.mediaSourceID = [[NSUserDefaults standardUserDefaults] objectForKey:@"__TG__MediaSource"];
     self.campaign = [[NSUserDefaults standardUserDefaults] objectForKey:@"__TG__Campaign"];
     self.storeKitLogger = [[ThinkGamingStoreKitLogger alloc] init];
-        
+    
     return self;
 }
+
+- (void) referralReceived:(NSNotification *)notification {
+    [self logEvent:@"__TG__ReferralReceived" withParameters:notification.object timed:NO stopTimer:NO];
+    
+    if (notification.object[@"media_source"]) {
+        [self setMediaSourceID:notification.object[@"media_source"]];
+    }
+    if (notification.object[@"campaign"]) {
+        [self setCampaign:notification.object[@"campaign"]];
+    }
+}
+
+- (void) referralError:(NSNotification *)notification {
+    [self logEvent:@"__TG__ReferralError" withParameters:nil timed:NO stopTimer:NO];
+}
+
 
 - (void) initTimer {
     self.dispatchTimer = [NSTimer scheduledTimerWithTimeInterval:QUEUE_FLUSH_TIME target:self selector:@selector(dispatchEvents) userInfo:nil repeats:YES];
@@ -139,11 +158,16 @@ static ThinkGamingLogger* sharedSingleton;
     }
 }
 
-- (void) applicationWillEnterForeground:(NSNotification *)notification {
+- (void) loadPersistedEvents {
     NSArray *persitedEvents = [[NSUserDefaults standardUserDefaults] objectForKey:@"__TG__PersistedEvents"];
     if (persitedEvents && [persitedEvents count]) {
         [self.eventQueue addEvents:persitedEvents];
     }
+}
+
+- (void) applicationWillEnterForeground:(NSNotification *)notification {
+    
+    [self loadPersistedEvents];
     
     [self logEvent:@"__TG__DID_ENTER_FOREGROUND" withParameters:nil timed:NO stopTimer:NO];
     
@@ -368,6 +392,7 @@ static ThinkGamingLogger* sharedSingleton;
 
 + (void) logProductPurchased:(NSString *)productIdentifier withPrice:(NSDecimalNumber *)price andPriceLocale:(NSString *) priceLocale andTitle:(NSString *)title {
     [ThinkGamingLogger logEvent:@"completed_purchase" withParameters:@{@"product_id" : productIdentifier, @"price" : price, @"price_locale" : priceLocale, @"title" : title}];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"__TG__PurchaseCompleted" object:[price stringValue]];
 }
 
 
