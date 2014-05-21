@@ -344,10 +344,14 @@ static ThinkGamingLogger* sharedSingleton;
 //    if (NSClassFromString(@"ASIdentifierManager") && [ASIdentifierManager sharedManager].isAdvertisingTrackingEnabled) {
 //        advertisingIdentifier = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
 //    }
-    return @{
-             @"__TG__identifierForVendor" : identifierForVendor,
-             @"__TG__advertisingIdentifier" : self.identifierForAdvertising
-             };
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    if (identifierForVendor) {
+        [dict setObject:identifierForVendor forKey:@"__TG__identifierForVendor"];
+    }
+    if (self.identifierForAdvertising) {
+        [dict setObject:self.identifierForAdvertising forKey:@"__TG__advertisingIdentifier"];
+    }
+    return dict;
 }
 
 
