@@ -84,7 +84,7 @@ static ThinkGamingLogger* sharedSingleton;
 
 - (void) setIdentifierForAdvertising:(NSString *)identifierForAdvertising {
     _identifierForAdvertising = identifierForAdvertising;
-    [[NSUserDefaults standardUserDefaults] setObject:identifierForAdvertising forKey:@"__TG__identifierForAdvertising"];
+    [[NSUserDefaults standardUserDefaults] setObject:identifierForAdvertising forKey:@"__TG__advertisingIdentifier"];
 }
 
 - (void) setCampaign:(NSString *)campaign {
@@ -110,7 +110,7 @@ static ThinkGamingLogger* sharedSingleton;
     
     self.mediaSourceID = [[NSUserDefaults standardUserDefaults] objectForKey:@"__TG__MediaSource"];
     self.campaign = [[NSUserDefaults standardUserDefaults] objectForKey:@"__TG__Campaign"];
-    self.identifierForAdvertising = [[NSUserDefaults standardUserDefaults] objectForKey:@"__TG__identifierForAdvertising"];
+    self.identifierForAdvertising = [[NSUserDefaults standardUserDefaults] objectForKey:@"__TG__advertisingIdentifier"];
     self.storeKitLogger = [[ThinkGamingStoreKitLogger alloc] init];
     
     return self;
