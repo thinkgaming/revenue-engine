@@ -52,12 +52,12 @@ Start session with given API key (get your API key from your dashboard)
 /*
 Store and product logging methods
 */
-+ (ThinkGamingEvent *) startLoggingViewedStore:(NSString *)storeIdentifier;
-+ (ThinkGamingEvent *) startLoggingBuyingProduct:(NSString *)productIdentifier withPriceId:(NSNumber *)priceId andMessageId:(NSNumber *)messageId;
++ (ThinkGamingEvent *) startLoggingViewedStore:(NSString *)storeIdentifier __deprecated_msg("Store SDK no longer supported.");
++ (ThinkGamingEvent *) startLoggingBuyingProduct:(NSString *)productIdentifier withPriceId:(NSNumber *)priceId andMessageId:(NSNumber *)messageId __deprecated_msg("Store SDK no longer supported.");
 + (ThinkGamingEvent *) endLoggingBuyingProduct:(NSString *)productIdentifier
                                    withPriceId:(NSNumber *)priceId
                                   andMessageId:(NSNumber *)messageId
-                                     andResult:(NSString*) result;
+                                     andResult:(NSString*) result __deprecated_msg("Store SDK no longer supported.");
 
 /* 
  ThinkGamingStoreKitLogger
@@ -68,8 +68,8 @@ Store and product logging methods
 
 
 /* DEFAULT IS ENABLED */
-+ (void) setImplicitStoreLoggingEnabled;
-+ (void) setImplicitStoreLoggingDisabled;
++ (void) setImplicitStoreLoggingEnabled __deprecated_msg("Store SDK no longer supported.");
++ (void) setImplicitStoreLoggingDisabled __deprecated_msg("Store SDK no longer supported.");
 
 
 
