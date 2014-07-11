@@ -53,21 +53,22 @@ typedef void (^DidPurchaseProductBlock)(BOOL success, SKPaymentTransaction *tran
 
 @end
 
+__deprecated_msg("Store SDK no longer supported.")
 @interface ThinkGamingStoreSDK : NSObject <SKProductsRequestDelegate, SKPaymentTransactionObserver>
 
 @property (weak) id<ThinkGamingStoreDelegate> delegate;
 
-- (void) getListOfStoresThenCall:(DidDownloadStoresBlock)didDownloadStoresBlock;
+- (void) getListOfStoresThenCall:(DidDownloadStoresBlock)didDownloadStoresBlock __deprecated_msg("Store SDK no longer supported.");
 
-- (void) getListOfProductsForStoreIdentifier:(NSString *)storeIdentifier thenCall:(DidDownloadProductsBlock)didDownloadProductsBlock;;
+- (void) getListOfProductsForStoreIdentifier:(NSString *)storeIdentifier thenCall:(DidDownloadProductsBlock)didDownloadProductsBlock __deprecated_msg("Store SDK no longer supported.");
 
-- (void) purchaseProduct:(ThinkGamingProduct *)product thenCall:(DidPurchaseProductBlock)didPurchaseProductBlock;
+- (void) purchaseProduct:(ThinkGamingProduct *)product thenCall:(DidPurchaseProductBlock)didPurchaseProductBlock __deprecated_msg("Store SDK no longer supported.");
 
-- (BOOL) hasPreviouslyPurchasedProductWithIdentifider:(NSString *) iTunesProductIdentifier;
+- (BOOL) hasPreviouslyPurchasedProductWithIdentifider:(NSString *) iTunesProductIdentifier __deprecated_msg("Store SDK no longer supported.");
 
-- (void) restorePreviouslyPurchasedProducts;
+- (void) restorePreviouslyPurchasedProducts __deprecated_msg("Store SDK no longer supported.");
 
-- (NSArray *) getListOfPreviouslyPurchasedProductIdentifiers;
+- (NSArray *) getListOfPreviouslyPurchasedProductIdentifiers __deprecated_msg("Store SDK no longer supported.");
 
 
 @end
