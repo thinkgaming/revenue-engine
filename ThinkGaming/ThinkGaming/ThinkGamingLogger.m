@@ -11,7 +11,6 @@
 #import <arpa/inet.h>
 #import "EventQueue.h"
 #import "ThinkGamingLoggingApiAdapter.h"
-#import "ThinkGamingStoreSDK.h"
 #import "ThinkGamingStoreKitLogger.h"
 
 
